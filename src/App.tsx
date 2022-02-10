@@ -1,10 +1,8 @@
 import React from 'react';
-import { Input } from './_shared/components/input/Input';
 
 function App() {
   return (
     <div className="App">
-      <Input />
     </div>
   );
 }
