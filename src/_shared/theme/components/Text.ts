@@ -11,19 +11,19 @@ export const Text: ComponentStyleConfig = {
       fontWeight: 'regular'
     },
     'body-M': {
-      fontSize: '18px',
+      fontSize: '1.125rem',
       fontWeight: 'light'
     },
     'body-M-regular': {
-      fontSize: '18px',
+      fontSize: '1.125rem',
       fontWeight: 'regular'
     },
     'body-S': {
-      fontSize: '16px',
+      fontSize: '1rem',
       fontWeight: 'light'
     },
     'body-S-regular': {
-      fontSize: '16px',
+      fontSize: '1rem',
       fontWeight: 'regular'
     }
   }
