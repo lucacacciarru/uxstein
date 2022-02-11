@@ -1,10 +1,12 @@
 import { extendTheme } from "@chakra-ui/react";
-import { colors, radii } from './style';
+import { colors, radii, shadows, borders } from "./style";
 import { Heading } from "@chakra-ui/react";
 
 const config = {
   colors,
   radii,
+  shadows,
+  borders,
   components: {
     Heading,
   },
