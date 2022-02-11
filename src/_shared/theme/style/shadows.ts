@@ -11,5 +11,9 @@ export const shadows = {
       s: "2px 2px 0px 0px rgba(5,196,107,1)",
       m: "4px 4px 0px 0px rgba(5,196,107,1)",
     },
+    'green-darker': {
+      s: "2px 2px 0px 0px rgba(3,113,62,1)",
+      m: "4px 4px 0px 0px rgba(3,113,62,1)",
+    }
   },
 };

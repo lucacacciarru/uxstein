@@ -14,10 +14,14 @@ export const colors = {
         50: "#9597A5",
         80: "#55586E",
     },
+    white: {
+        bg: '#FAFAFA',
+        pure: '#FFFFFF'
+    },
     status: {
         error: "#D51A52",
         attention: "#FF9500",
         approval: "#00B998",
         link: "#0F0BAB",
-    }
+    },
 }
