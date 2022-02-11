@@ -1,7 +1,5 @@
 export const typography = {
-    // html: {
-    //     fontSize: '16px'
-    // },
+
     h1: {
         fontSize: '2.75rem',
         fontWeight: 'regular'

@@ -21,5 +21,9 @@ const config = {
     Input,
     Tabs,
   },
+  fonts: {
+    heading: 'Nunito',
+    body: 'Lato'
+  }
 };
 export const customTheme = extendTheme(config);
