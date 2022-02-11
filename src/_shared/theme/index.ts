@@ -1,7 +1,8 @@
 import { extendTheme } from "@chakra-ui/react";
 import { colors, radii, shadows, borders, typography } from "./style";
 import { Heading } from "@chakra-ui/react";
-import { Text, Button, Link } from './components';
+import { Text, Button, Link, Input, Tabs } from "./components";
+
 const config = {
   colors,
   radii,
@@ -9,15 +10,16 @@ const config = {
   borders,
   styles: {
     global: {
-      ...typography
-    }
+      ...typography,
+    },
   },
   components: {
     Text,
     Heading,
     Button,
-    Link
-  }
-
+    Link,
+    Input,
+    Tabs,
+  },
 };
 export const customTheme = extendTheme(config);
