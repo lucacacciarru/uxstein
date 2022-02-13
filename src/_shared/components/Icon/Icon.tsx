@@ -30,12 +30,10 @@ export const Icon: FC<Props> = ({ name, size, color }) => {
 		return color;
 	}, [color]);
 
-	const test = size || DEFAULT_SIZE;
-
 	return (
 		<ChackraIcon
 			as={iconLibrary[name]}
-			boxSize={test}
+			boxSize={size || DEFAULT_SIZE}
 			color={selectedColor}
 			data-testid='icon'
 		/>
