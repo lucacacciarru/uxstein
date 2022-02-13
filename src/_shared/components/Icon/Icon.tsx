@@ -4,8 +4,8 @@ import { Icon as ChackraIcon } from '@chakra-ui/react';
 import { FC } from 'react';
 import iconLibrary from './iconLibrary';
 
-const DEFAULT_SIZE = '7rem';
-const DEFAULT_COLOR = 'black.0';
+export const DEFAULT_SIZE = 'full';
+export const DEFAULT_COLOR = 'black.0';
 
 type IconComponentModel = typeof iconLibrary;
 type Props = {

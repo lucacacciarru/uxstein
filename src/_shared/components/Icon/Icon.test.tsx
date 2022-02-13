@@ -1,9 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Icon } from '.';
-
-const DEFAULT_COLOR = 'black.0';
-const DEFAULT_SIZE = '7rem';
+import { DEFAULT_COLOR, DEFAULT_SIZE, Icon } from '.';
 
 describe('Icon custom wrapper', () => {
 	test('Correctly render a SVG', () => {
