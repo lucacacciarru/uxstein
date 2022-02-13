@@ -1,9 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Icon } from '.';
-import { colors } from '../../theme/style/colors';
 
-const DEFAULT_COLOR = colors.black[0];
+const DEFAULT_COLOR = 'black.0';
 const DEFAULT_SIZE = '7rem';
 
 describe('Icon custom wrapper', () => {
@@ -26,12 +25,12 @@ describe('Icon custom wrapper', () => {
 		});
 	});
 	test('Element renders with passed values', () => {
-		render(<Icon name='Add' color='primary' size='100%' />);
+		render(<Icon name='Add' color='brand.primary' size='100%' />);
 
 		const svg = screen.getByTestId('icon');
 
 		expect(svg).toHaveStyle({
-			color: colors.brand.primary,
+			color: 'brand.primary',
 			width: '100%',
 			height: '100%',
 		});
