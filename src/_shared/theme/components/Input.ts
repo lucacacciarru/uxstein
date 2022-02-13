@@ -1,5 +1,4 @@
 import type { ComponentStyleConfig } from "@chakra-ui/react";
-
 export const Input: ComponentStyleConfig = {
   defaultProps: {
     variant: "outline",
@@ -7,7 +6,7 @@ export const Input: ComponentStyleConfig = {
   variants: {
     outline: {
       field: {
-        border: "dark.s",
+        borderWidth: "3px",
         borderColor: "black.0",
         borderRadius: "none",
         color: "black.0",
@@ -21,9 +20,10 @@ export const Input: ComponentStyleConfig = {
         },
         _invalid: {
           borderColor: "status.error",
+          boxShadow: "none",
         },
         _disabled: {
-          border: "dark.s",
+          borderWidth: "3px",
           borderColor: "black.50",
           borderRadius: "none",
           background: "black.20",
