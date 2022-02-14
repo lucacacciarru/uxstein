@@ -1,7 +1,7 @@
-import { LoginResponse } from '../types/login'
+import { LoginResponse } from '../types/login';
 
-const loginResponse: LoginResponse = { data: {} }
+const loginResponse: LoginResponse = { data: {} };
 
 export function loginApi(username: string, password: string) {
-    return Promise.resolve(loginResponse);
+  return Promise.resolve(loginResponse);
 }

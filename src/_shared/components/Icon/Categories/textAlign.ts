@@ -4,8 +4,8 @@ import { ReactComponent as AlignLeft } from '../SVG/AlignLeft.svg';
 import { ReactComponent as AlignRight } from '../SVG/AlignRight.svg';
 
 export const textAlign = {
-    AlignCenter,
-    AlignJustify,
-    AlignLeft,
-    AlignRight,
-}
+  AlignCenter,
+  AlignJustify,
+  AlignLeft,
+  AlignRight,
+};

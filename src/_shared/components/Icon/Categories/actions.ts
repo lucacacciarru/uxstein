@@ -15,24 +15,21 @@ import { ReactComponent as Help } from '../SVG/Help.svg';
 import { ReactComponent as Heart } from '../SVG/Heart.svg';
 import { ReactComponent as Star } from '../SVG/Star.svg';
 
-
-
-
 export const actions = {
-    Add,
-    AddCircle,
-    Close,
-    CloseCircle,
-    Remove,
-    RemoveCircle,
-    Download,
-    Upload,
-    Search,
-    Save,
-    Show,
-    Hide,
-    Link,
-    Help,
-    Heart,
-    Star,
-}
+  Add,
+  AddCircle,
+  Close,
+  CloseCircle,
+  Remove,
+  RemoveCircle,
+  Download,
+  Upload,
+  Search,
+  Save,
+  Show,
+  Hide,
+  Link,
+  Help,
+  Heart,
+  Star,
+};

@@ -6,13 +6,12 @@ import { ReactComponent as TextIcon } from '../SVG/Text.svg';
 import { ReactComponent as TextList } from '../SVG/TextList.svg';
 import { ReactComponent as ProgressBar } from '../SVG/ProgressBar.svg';
 
-
 export const context = {
-    Photo,
-    Album,
-    ChartBar1,
-    ChartBar2,
-    TextIcon,
-    TextList,
-    ProgressBar,
-}
+  Photo,
+  Album,
+  ChartBar1,
+  ChartBar2,
+  TextIcon,
+  TextList,
+  ProgressBar,
+};

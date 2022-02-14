@@ -9,12 +9,12 @@ import '@fontsource/nunito';
 import '@fontsource/lato';
 
 ReactDOM.render(
-	<React.StrictMode>
-		<Provider store={store}>
-			<ChakraProvider theme={customTheme}>
-				<App />
-			</ChakraProvider>
-		</Provider>
-	</React.StrictMode>,
-	document.getElementById('root')
+  <React.StrictMode>
+    <Provider store={store}>
+      <ChakraProvider theme={customTheme}>
+        <App />
+      </ChakraProvider>
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root'),
 );
