@@ -27,9 +27,9 @@ export const Checkbox: ComponentStyleConfig = {
           borderColor: "status.error",
           borderWidth: "3px",
           color: "status.error",
-          bg: "#E8A1B6",
+          bg: "status.errorLighter",
           _hover: {
-            bg: "#E8A1B6",
+            bg: "status.errorLighter",
             borderColor: "status.error",
           },
         },

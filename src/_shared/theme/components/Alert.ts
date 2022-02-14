@@ -1,19 +1,18 @@
 import { ComponentStyleConfig } from "@chakra-ui/react";
 
 export const Alert: ComponentStyleConfig = {
+  defaultProps: {
+    variant: "left-accent",
+  },
   variants: {
     "left-accent": {
       container: {
-        borderWidth: "3px",
-        borderColor: "black.0",
+        outlineWidth: "3px",
+        outlineColor: "black.0",
+        outlineStyle: "solid",
         bg: "white.bg",
         borderRadius: "sm",
-        boxShadow: "noBlur.dark.s",
-      },
-      error: {
-        icon: {
-          color: "green",
-        },
+        boxShadow: "noBlur.dark.m",
       },
     },
   },

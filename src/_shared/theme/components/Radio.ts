@@ -29,7 +29,7 @@ export const Radio: ComponentStyleConfig = {
         },
         _invalid: {
           borderColor: "status.error",
-          bg: "#E8A1B6",
+          bg: "status.errorLighter",
           color: "status.error",
         },
         _disabled: {

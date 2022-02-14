@@ -10,14 +10,11 @@ export const Tag: ComponentStyleConfig = {
         bg: "none",
         boxShadow: "none",
         borderRadius: "none",
-      },
-      label: {
         borderWidth: "3px",
         borderColor: "black.0",
         color: "black.0",
-        p: "0.4rem 1rem",
-        boxShadow: "initial",
         transition: "all .2s ease",
+        p: "0.3rem 1rem",
 
         _hover: {
           boxShadow: "noBlur.dark.s",
