@@ -12,16 +12,16 @@ import { ReactComponent as ChevronRight } from '../SVG/ChevronRight.svg';
 import { ReactComponent as ChevronLeft } from '../SVG/ChevronLeft.svg';
 
 export const arrows = {
-    ArrowDown,
-    ArrowUp,
-    ArrowLeft,
-    ArrowRight,
-    ArrowUpLeft,
-    ArrowUpRight,
-    ArrowDownRight,
-    ArrowDownLeft,
-    ChevronDown,
-    ChevronUp,
-    ChevronRight,
-    ChevronLeft,
-}
+  ArrowDown,
+  ArrowUp,
+  ArrowLeft,
+  ArrowRight,
+  ArrowUpLeft,
+  ArrowUpRight,
+  ArrowDownRight,
+  ArrowDownLeft,
+  ChevronDown,
+  ChevronUp,
+  ChevronRight,
+  ChevronLeft,
+};

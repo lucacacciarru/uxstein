@@ -1,6 +1,6 @@
-import { extendTheme } from "@chakra-ui/react";
-import { colors, radii, shadows, borders, typography, fonts } from "./style";
-import { Heading } from "@chakra-ui/react";
+import { extendTheme } from '@chakra-ui/react';
+import { colors, radii, shadows, borders, typography, fonts } from './style';
+import { Heading } from '@chakra-ui/react';
 import {
   Text,
   Button,
@@ -20,7 +20,7 @@ import {
   Switch,
   Badge,
   Spinner,
-} from "./components";
+} from './components';
 
 const config = {
   colors,

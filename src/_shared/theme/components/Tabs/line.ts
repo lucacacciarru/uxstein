@@ -1,16 +1,16 @@
 export const line = {
   tab: {
-    color: "black.0",
+    color: 'black.0',
     _selected: {
-      boxShadow: "none",
-      borderBottomColor: "brand.primary",
-      color: "brand.primary",
+      boxShadow: 'none',
+      borderBottomColor: 'brand.primary',
+      color: 'brand.primary',
     },
     _focus: {
-      background: "none",
+      background: 'none',
     },
     _active: {
-      background: "none",
+      background: 'none',
     },
   },
 };
