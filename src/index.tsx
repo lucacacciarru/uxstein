@@ -5,6 +5,8 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { customTheme } from './_shared/theme';
 import { Provider } from 'react-redux';
 import { store } from './_shared/store/configureStore';
+import '@fontsource/nunito';
+import '@fontsource/lato';
 
 ReactDOM.render(
 	<React.StrictMode>
