@@ -17,6 +17,9 @@ import {
   Modal,
   Avatar,
   Alert,
+  Switch,
+  Badge,
+  Spinner,
 } from "./components";
 
 const config = {
@@ -47,6 +50,9 @@ const config = {
     Tooltip,
     Modal,
     Alert,
+    Switch,
+    Badge,
+    Spinner,
   },
 };
 export const customTheme = extendTheme(config);

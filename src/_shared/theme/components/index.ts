@@ -13,3 +13,6 @@ export * from "./Tooltip";
 export * from "./Modal";
 export * from "./Avatar";
 export * from "./Alert";
+export * from "./Switch";
+export * from "./Badge";
+export * from "./Spinner";
