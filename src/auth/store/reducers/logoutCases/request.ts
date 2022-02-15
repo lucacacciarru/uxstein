@@ -6,5 +6,5 @@ export const requestCase: CaseReducer<
   LogoutRequestAction
 > = state => ({
   ...state,
-  status: 'logging',
+  status: 'idle',
 });

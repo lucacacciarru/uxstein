@@ -11,14 +11,14 @@ describe('LOGOUT REDUCERS', () => {
   test('should logout request', () => {
     const returnValue = authRootReducer(AUTH_INITIAL_STATE, logoutRequest({}));
     expect(returnValue).toEqual({
-      status: 'logging',
+      status: 'idle',
       profile: {},
     });
   });
   test('should logout success', () => {
     const returnValue = authRootReducer(AUTH_INITIAL_STATE, logoutSuccess({}));
     expect(returnValue).toEqual({
-      status: 'logged',
+      status: 'idle',
       profile: undefined,
     });
   });
