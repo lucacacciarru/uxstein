@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { loginRootReducer } from '../../auth/store';
+import { authRootReducer } from '../../auth/store';
 
 export const reducer = combineReducers({
-  login: loginRootReducer,
+  auth: authRootReducer,
 });
