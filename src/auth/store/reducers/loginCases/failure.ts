@@ -1,8 +1,8 @@
 import { CaseReducer } from '@reduxjs/toolkit';
-import { LoginFailureAction, LoginState } from '..';
+import { LoginFailureAction, AuthState } from '../../types';
 
 export const failureCase: CaseReducer<
-  LoginState,
+  AuthState,
   LoginFailureAction
 > = state => ({
   ...state,

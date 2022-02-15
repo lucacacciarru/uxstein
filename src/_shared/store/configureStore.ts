@@ -1,7 +1,8 @@
 import { all, fork } from 'redux-saga/effects';
 import createSagaMiddleware from 'redux-saga';
 import { configureStore } from '@reduxjs/toolkit';
-import { sagas, reducer } from '.';
+import { reducer } from './reducer';
+import { sagas } from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 

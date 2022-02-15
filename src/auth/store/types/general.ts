@@ -1,7 +1,7 @@
 export type User = {};
 export type ApiError = {};
 
-export type LoginState = {
+export type AuthState = {
   status?: 'idle' | 'logged' | 'logging';
   profile?: User;
 };

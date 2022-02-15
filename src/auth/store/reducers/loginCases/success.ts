@@ -1,7 +1,7 @@
 import { CaseReducer } from '@reduxjs/toolkit';
-import { LoginState, LoginSuccessAction } from '..';
+import { AuthState, LoginSuccessAction } from '../../types';
 
-export const successCase: CaseReducer<LoginState, LoginSuccessAction> = (
+export const successCase: CaseReducer<AuthState, LoginSuccessAction> = (
   state,
   action,
 ) => ({
