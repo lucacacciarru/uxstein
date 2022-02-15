@@ -1,10 +1,10 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { ApiError, User } from './general';
 export enum LOGIN_ACTION_TYPES {
-  TRIGGER = 'login/login/trigger',
-  REQUEST = 'login/login/request',
-  SUCCESS = 'login/login/success',
-  FAILURE = 'login/login/failure',
+  TRIGGER = 'auth/login/trigger',
+  REQUEST = 'auth/login/request',
+  SUCCESS = 'auth/login/success',
+  FAILURE = 'auth/login/failure',
 }
 
 export type LoginResponse = {

@@ -1,8 +1,8 @@
 import { CaseReducer } from '@reduxjs/toolkit';
-import { LoginRequestAction, LoginState } from '..';
+import { LoginRequestAction, AuthState } from '../../types';
 
 export const requestCase: CaseReducer<
-  LoginState,
+  AuthState,
   LoginRequestAction
 > = state => ({
   ...state,

@@ -1,3 +1,3 @@
-import { loginRootSaga } from '../../login/store';
+import { loginRootSaga } from '../../auth/store';
 
 export const sagas = [loginRootSaga];
