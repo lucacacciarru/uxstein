@@ -1,6 +1,6 @@
 import { Button } from '@chakra-ui/react';
 import { FC } from 'react';
-import { useAuth } from '../../auth/hooks';
+import { useAuth } from '../hooks';
 
 export const Login: FC = () => {
   const { login } = useAuth();
