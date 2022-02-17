@@ -31,11 +31,16 @@ describe('LOGIN REDUCER', () => {
       loginSuccess({
         email: 'test@test.com',
         password: 'Test123',
+        username: 'Frank',
       }),
     );
     const expectedValue = {
       status: 'logged',
-      profile: { email: 'test@test.com', password: 'Test123' },
+      profile: {
+        email: 'test@test.com',
+        password: 'Test123',
+        username: 'Frank',
+      },
     };
 
     expect(returnValue).toEqual(expectedValue);

@@ -8,7 +8,7 @@ export function* logoutSaga(action: LogoutAction) {
   yield put(logoutRequest(action.payload));
   try {
     const response: LogoutResponse = yield call(logoutApi);
-    yield put(logoutSuccess(response.data));
+    yield put(logoutSuccess(response));
   } catch (error) {
     yield put(loginFailure({}));
   }

@@ -8,9 +8,7 @@ export enum LOGOUT_ACTION_TYPES {
   FAILURE = 'auth/logout/failure',
 }
 
-export type LogoutResponse = {
-  data: User;
-};
+export type LogoutResponse = {};
 
 export type LogoutPayload = {};
 

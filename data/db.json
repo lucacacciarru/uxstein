@@ -2,11 +2,13 @@
   "users": [
     {
       "email": "test@test.com",
-      "password": "Test1234"
+      "password": "Test1234",
+      "username": "Frank"
     },
     {
-      "email": "frank@test.com",
-      "password": "test"
+      "email": "gennaro@test.com",
+      "password": "test",
+      "username": "Gennaro"
     }
   ]
 }
