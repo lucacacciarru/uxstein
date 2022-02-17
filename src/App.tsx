@@ -1,4 +1,3 @@
-//TODO: ADD 404 page, and unmatched routes
 //TODO: "/app" dont't have same layout, so it shouldn't be wrapped in <LayoutApp /> or maybe LayoutApp can have his exception
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
