@@ -8,7 +8,7 @@ export function* loginSaga(action: LoginAction) {
   try {
     const response: LoginResponse = yield call(
       loginApi,
-      action.payload.username,
+      action.payload.email,
       action.payload.password,
     );
     yield put(loginSuccess(response.data));

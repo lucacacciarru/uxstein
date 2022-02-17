@@ -8,13 +8,11 @@ export enum LOGOUT_ACTION_TYPES {
   FAILURE = 'auth/logout/failure',
 }
 
-export type LogoutResponse = {
-  data: User;
-};
+export type LogoutResponse = {};
 
-export type LogoutPayload = User;
+export type LogoutPayload = {};
 
-export type LogoutSuccessPayload = User;
+export type LogoutSuccessPayload = {};
 export type LogoutFailurePayload = ApiError;
 
 export type LogoutAction = PayloadAction<
