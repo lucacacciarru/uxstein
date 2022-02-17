@@ -1,17 +1,17 @@
 import { createAction } from '@reduxjs/toolkit';
 import {
-  LoginPaylaod,
+  LoginPayload,
   LoginSuccessPayload,
   LoginFailurePayload,
   LOGIN_ACTION_TYPES,
 } from '../types/login';
 
 export const loginTrigger = createAction<
-  LoginPaylaod,
+  LoginPayload,
   LOGIN_ACTION_TYPES.TRIGGER
 >(LOGIN_ACTION_TYPES.TRIGGER);
 export const loginRequest = createAction<
-  LoginPaylaod,
+  LoginPayload,
   LOGIN_ACTION_TYPES.REQUEST
 >(LOGIN_ACTION_TYPES.REQUEST);
 export const loginSuccess = createAction<
