@@ -12,9 +12,9 @@ export type LogoutResponse = {
   data: User;
 };
 
-export type LogoutPayload = User;
+export type LogoutPayload = {};
 
-export type LogoutSuccessPayload = User;
+export type LogoutSuccessPayload = {};
 export type LogoutFailurePayload = ApiError;
 
 export type LogoutAction = PayloadAction<

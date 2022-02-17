@@ -4,7 +4,7 @@ import { AuthState } from '../types';
 
 const AUTH_INITIAL_STATE: AuthState = {
   status: 'logged',
-  profile: {},
+  profile: { email: 'test@test.com', password: 'Test1234' },
 };
 
 describe('LOGOUT REDUCERS', () => {
@@ -12,7 +12,7 @@ describe('LOGOUT REDUCERS', () => {
     const returnValue = authRootReducer(AUTH_INITIAL_STATE, logoutRequest({}));
     expect(returnValue).toEqual({
       status: 'idle',
-      profile: {},
+      profile: { email: 'test@test.com', password: 'Test1234' },
     });
   });
   test('should logout success', () => {

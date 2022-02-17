@@ -11,10 +11,7 @@ export type LoginResponse = {
   data: User;
 };
 
-export type LoginPaylaod = {
-  username: string;
-  password: string;
-};
+export type LoginPaylaod = User;
 export type LoginSuccessPayload = User;
 export type LoginFailurePayload = ApiError;
 
