@@ -1,11 +1,11 @@
 export const typography = {
   h1: {
     fontSize: '2.75rem',
-    fontWeight: 'regular',
+    fontWeight: 'bold',
   },
   h2: {
     fontSize: '1.875rem',
-    fontWeight: 'regular',
+    fontWeight: 'bold',
   },
   h3: {
     fontSize: '1.375rem',
