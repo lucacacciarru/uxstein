@@ -1,8 +1,6 @@
 {
-    
-      "extends": "react-app",
-      "rules": {
-        "no-console": 2
-      }
-    
+  "extends": "react-app",
+  "rules": {
+    "no-console": 1
   }
+}

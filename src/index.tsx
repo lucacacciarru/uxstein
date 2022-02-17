@@ -7,12 +7,15 @@ import { Provider } from 'react-redux';
 import { store } from './_shared/store/configureStore';
 import '@fontsource/nunito';
 import '@fontsource/lato';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ChakraProvider theme={customTheme}>
-        <App />
+        <Router>
+          <App />
+        </Router>
       </ChakraProvider>
     </Provider>
   </React.StrictMode>,
