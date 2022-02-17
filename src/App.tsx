@@ -6,6 +6,7 @@ import { PrivateRoutes } from './auth/components/PrivateRoutes';
 import { Login } from './auth/pages';
 import { LandingLayout } from './_shared/components';
 import { LayoutApp } from './_shared/components/LayoutApp';
+import { ErrorPage } from './_shared/pages';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingLayout />}>
           <Route index element={<>Landing</>} />
+          <Route path="*" element={<ErrorPage />} />
         </Route>
         <Route element={<LayoutApp />}>
           <Route path="login" element={<Login />} />
