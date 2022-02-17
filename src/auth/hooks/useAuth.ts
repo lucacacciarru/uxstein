@@ -30,12 +30,12 @@ export const useAuth = () => {
         }
     }, [isLogged, from, navigate]);
 
-    const profile = useSelector(getUserProfile)
+    const profile = useSelector(getUserProfile);
 
     return {
         login,
         logout,
         isLogged,
-        username: profile?.username
+        profile,
     };
 };
