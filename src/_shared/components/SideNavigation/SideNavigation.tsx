@@ -1,42 +1,31 @@
-import { Spacer, StackProps, Text, VStack } from '@chakra-ui/react';
+//TODO: IF IS THE CASE, IMPLEMENT THE TRANSITION WITH FRAMERMOTION
+import { StackProps, VStack } from '@chakra-ui/react';
 import { FC, useMemo } from 'react';
-import { Icon } from '../Icon';
-import { CustomLink, Logo } from './Partials';
-import styles from './SideNavigation.module.css';
+import { useEtendButton } from './hooks/useExtendButton';
+import { ExtendButton, LinkButtons, Logo } from './Partials';
+import styles from './styles/SideNavigation.module.css';
+import { stackContainerBaseProps } from './styles/sideNavStylingProps';
 
 export const SideNavigation: FC = () => {
+  const { isExtended, toggleIsExtended } = useEtendButton();
+
   const containerProps: StackProps = useMemo(() => {
     return {
-      position: 'absolute',
-      top: '0',
-      left: '0',
-      h: '100vh',
-      w: '28',
-      border: 'dark.s',
-      borderWidth: '0 3px',
-      spacing: '20',
-      bg: 'white.bg',
-      zIndex: '20',
-      overflow: 'hidden',
-      pt: '8',
-      _hover: { w: '56' },
+      ...stackContainerBaseProps,
+      w: isExtended ? '56' : '28',
     };
-  }, []);
+  }, [isExtended]);
 
   return (
-    <VStack {...containerProps} className={styles.container}>
-      <Logo />
-      <VStack spacing="0">
-        <CustomLink to="my-personas">
-          <Icon name="UserGroup" size="12" />
-          <Text>Personas</Text>
-        </CustomLink>
-        <CustomLink to="my-templates">
-          <Icon name="Layout10" size="12" />
-          <Text>Templates</Text>
-        </CustomLink>
-        <Spacer />
+    <>
+      <VStack {...containerProps} className={styles.container}>
+        <Logo />
+        <LinkButtons isExtendedState={isExtended} />
+        <ExtendButton
+          isExtendedState={isExtended}
+          toggleIsExtended={toggleIsExtended}
+        />
       </VStack>
-    </VStack>
+    </>
   );
 };
