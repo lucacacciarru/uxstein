@@ -1,0 +1,25 @@
+.container,
+.container div,
+.container p,
+.container div a {
+  transition: all 0.5s linear;
+}
+
+.container p {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  left: 4rem;
+  font-weight: bolder;
+}
+
+.container:hover div {
+  width: 14rem;
+}
+.container:hover div a {
+  transform: translateX(-3rem);
+}
+.container:hover p {
+  opacity: 1;
+  display: block;
+}

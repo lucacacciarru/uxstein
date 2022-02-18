@@ -10,8 +10,13 @@ export const CustomLink = ({ children, to, ...props }: LinkProps) => {
       bg={match ? 'brand.lightest' : ''}
       w={'32'}
       border={match ? 'dark.s' : 'transparent.s'}
+      py="1"
     >
-      <Link to={to} {...props}>
+      <Link
+        to={to}
+        {...props}
+        style={{ display: 'flex', alignItems: 'center' }}
+      >
         {children}
       </Link>
     </Center>
