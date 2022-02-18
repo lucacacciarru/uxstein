@@ -1,14 +1,16 @@
-import { NavLink, Outlet } from 'react-router-dom';
-import { TopNavigation } from '../TopNavigation/TopNavigation';
+import { Flex } from '@chakra-ui/react';
+import { Outlet } from 'react-router-dom';
+import { SideNavigation } from '../SideNavigation';
+import { TopNavigation } from '../TopNavigation';
 
 export const LayoutApp = () => {
   return (
     <>
       <TopNavigation />
-      <NavLink to="profile"> PROFILE </NavLink>
-      <NavLink to="app"> BUILDER </NavLink>
-      <NavLink to="my-personas"> MY PERSONAS </NavLink>
-      <Outlet />
+      <SideNavigation />
+      <Flex ml={'32'}>
+        <Outlet />
+      </Flex>
       {
         // Footer
       }
