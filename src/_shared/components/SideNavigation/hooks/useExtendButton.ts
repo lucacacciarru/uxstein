@@ -2,7 +2,7 @@ import { IconButtonProps, StackProps } from '@chakra-ui/react';
 import { useCallback, useMemo, useState } from 'react';
 import { iconButtonBaseProps, stackContainerBaseProps } from '../styles/sideNavStylingProps';
 
-export const useEtendButton = () => {
+export const useExtendButton = () => {
     const [isExtended, setIsExtended] = useState(false);
     const toggleIsExtended = useCallback(() => setIsExtended(prev => !prev), []);
 
@@ -25,7 +25,6 @@ export const useEtendButton = () => {
 
     return {
         isExtended,
-        toggleIsExtended,
         iconButtonProps,
         containerProps,
     }
