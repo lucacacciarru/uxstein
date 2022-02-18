@@ -1,20 +1,13 @@
 //TODO: IF IS THE CASE, IMPLEMENT THE TRANSITION WITH FRAMERMOTION
-import { StackProps, VStack } from '@chakra-ui/react';
-import { FC, useMemo } from 'react';
+import { VStack } from '@chakra-ui/react';
+import { FC } from 'react';
 import { useEtendButton } from './hooks/useExtendButton';
 import { ExtendButton, LinkButtons, Logo } from './Partials';
 import styles from './styles/SideNavigation.module.css';
-import { stackContainerBaseProps } from './styles/sideNavStylingProps';
 
 export const SideNavigation: FC = () => {
-  const { isExtended, toggleIsExtended } = useEtendButton();
-
-  const containerProps: StackProps = useMemo(() => {
-    return {
-      ...stackContainerBaseProps,
-      w: isExtended ? '56' : '28',
-    };
-  }, [isExtended]);
+  const { isExtended, toggleIsExtended, iconButtonProps, containerProps } =
+    useEtendButton();
 
   return (
     <>
@@ -24,6 +17,7 @@ export const SideNavigation: FC = () => {
         <ExtendButton
           isExtendedState={isExtended}
           toggleIsExtended={toggleIsExtended}
+          iconButtonProps={iconButtonProps}
         />
       </VStack>
     </>
