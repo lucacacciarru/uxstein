@@ -24,7 +24,7 @@ function App() {
         <Route element={<LayoutApp />}>
           <Route path="login" element={<Login />} />
           <Route element={<PrivateRoutes />}>
-            <Route path="my-personas" element={<>{t('homepage.title')}</>} />
+            <Route path="my-personas" element={<>{t('personas.title')}</>} />
             <Route path="my-templates" element={<>Templates</>} />
             <Route path="profile" element={<>Profile</>} />
             <Route path="app" element={<>Builder</>} />
