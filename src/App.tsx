@@ -1,7 +1,6 @@
 //TODO: "/app" dont't have same layout, so it shouldn't be wrapped in <LayoutApp /> or maybe LayoutApp can have his exception
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Auth } from './auth/components/Auth';
 import { PrivateRoutes } from './auth/components/PrivateRoutes';
 import { Login } from './auth/pages';
 import { LandingLayout } from './_shared/components';
@@ -19,7 +18,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<LandingLayout />}>
-          <Route index element={<Auth />} />
+          <Route index element={<>Landing</>} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
         <Route element={<LayoutApp />}>

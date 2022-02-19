@@ -2,7 +2,11 @@
 .container div,
 .container p,
 .container div a {
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
+}
+
+.container div {
+  width: 7rem;
 }
 
 .container p {
@@ -13,13 +17,13 @@
   font-weight: bolder;
 }
 
-.container:hover div {
+.isExtended div {
   width: 14rem;
 }
-.container:hover div a {
+.isExtended div a {
   transform: translateX(-3rem);
 }
-.container:hover p {
+.isExtended p {
   opacity: 1;
   display: block;
 }

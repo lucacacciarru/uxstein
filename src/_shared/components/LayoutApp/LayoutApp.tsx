@@ -8,7 +8,7 @@ export const LayoutApp = () => {
     <>
       <TopNavigation />
       <SideNavigation />
-      <Flex ml={'32'}>
+      <Flex ml={'28'}>
         <Outlet />
       </Flex>
       {
