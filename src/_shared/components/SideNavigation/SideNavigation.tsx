@@ -13,7 +13,7 @@ export const SideNavigation: FC = () => {
       <VStack {...containerProps} className={styles.container}>
         <Logo />
         <LinkButtons isExtendedState={isExtended} />
-        <ExtendButton iconButtonProps={iconButtonProps} />
+        <ExtendButton {...iconButtonProps} />
       </VStack>
     </>
   );

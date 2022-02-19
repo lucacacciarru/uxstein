@@ -6,6 +6,8 @@ export const useExtendButton = () => {
     const [isExtended, setIsExtended] = useState(false);
     const toggleIsExtended = useCallback(() => setIsExtended(prev => !prev), []);
 
+    const onMouseLeave = useCallback(() => setIsExtended(false), [])
+
     const iconButtonProps: IconButtonProps = useMemo(
         () => ({
             ...iconButtonBaseProps,
@@ -19,9 +21,10 @@ export const useExtendButton = () => {
     const containerProps: StackProps = useMemo(() => {
         return {
             ...stackContainerBaseProps,
+            onMouseLeave,
             w: isExtended ? '56' : '28',
         };
-    }, [isExtended]);
+    }, [isExtended, onMouseLeave]);
 
     return {
         isExtended,

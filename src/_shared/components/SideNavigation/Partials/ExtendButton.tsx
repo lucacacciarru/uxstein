@@ -1,14 +1,10 @@
 import { IconButton, IconButtonProps } from '@chakra-ui/react';
-import { FC } from 'react';
+import React from 'react';
 import { Icon } from '../../Icon';
 
-type Props = {
-  iconButtonProps: IconButtonProps;
-};
-
-export const ExtendButton: FC<Props> = ({ iconButtonProps }) => {
+export const ExtendButton: React.VFC<IconButtonProps> = props => {
   return (
-    <IconButton {...iconButtonProps}>
+    <IconButton {...props}>
       <Icon name="ChevronRight" />
     </IconButton>
   );
