@@ -15,7 +15,7 @@ describe('UserDropdown', () => {
 
     expect(openedMenu).not.toBeVisible();
   });
-  test('menu list should be expanded if user click ONCE on avatar', async () => {
+  test('menu list should be expanded if user click ONCE on avatar', () => {
     render(
       <TestWrapper>
         <UserDropdown />
@@ -26,7 +26,7 @@ describe('UserDropdown', () => {
 
     expect(avatarButton).toHaveAttribute('aria-expanded', 'true');
   });
-  test('menu list should be closed if user click TWICE on avatar', async () => {
+  test('menu list should be closed if user click TWICE on avatar', () => {
     render(
       <TestWrapper>
         <UserDropdown />
