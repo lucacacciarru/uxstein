@@ -22,8 +22,8 @@ export const FieldAuth: React.FC<Props> = ({
   const [showPassword, setShowPassowrd] = useState(false);
 
   const handleShowPassword = useCallback(
-    () => setShowPassowrd(!showPassword),
-    [showPassword],
+    () => setShowPassowrd(prev => !prev),
+    [],
   );
 
   const input = useMemo(() => {
