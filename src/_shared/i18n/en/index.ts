@@ -1,11 +1,9 @@
-import { errorPage } from './Error/errorPage';
-import { topNav } from './Navigation/topNav';
-import { sideNav } from './Navigation/sideNav';
+import { errorPage } from './errorPage';
+import { navigation } from './navigation';
 
 export const en = {
     translation: {
         errorPage,
-        topNav,
-        sideNav,
+        navigation,
     },
 }
