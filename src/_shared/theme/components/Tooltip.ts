@@ -6,5 +6,6 @@ export const Tooltip: ComponentStyleConfig = {
     borderColor: 'black.0',
     color: 'black.0',
     zIndex: '100',
+    boxShadow: 'noBlur.dark.s',
   },
 };

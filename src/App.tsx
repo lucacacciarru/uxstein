@@ -20,8 +20,8 @@ function App() {
           <Route index element={<>Landing</>} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
+        <Route path="login" element={<Login />} />
         <Route element={<LayoutApp />}>
-          <Route path="login" element={<Login />} />
           <Route element={<PrivateRoutes />}>
             <Route path="my-personas" element={<>Personas</>} />
             <Route path="my-templates" element={<>Templates</>} />
