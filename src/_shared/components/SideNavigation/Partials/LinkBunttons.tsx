@@ -15,11 +15,11 @@ export const LinkButtons: FC<Props> = ({ isExtended }) => {
     <VStack spacing="0" className={isExtended ? styles.isExtended : ''}>
       <CustomLink to="my-personas">
         <Icon name="UserGroup" size="12" />
-        <Text>{t('sideNav.personas')}</Text>
+        <Text>{t('navigation.personas')}</Text>
       </CustomLink>
       <CustomLink to="my-templates">
         <Icon name="Layout10" size="12" />
-        <Text>{t('sideNav.templates')}</Text>
+        <Text>{t('navigation.templates')}</Text>
       </CustomLink>
       <Spacer />
     </VStack>

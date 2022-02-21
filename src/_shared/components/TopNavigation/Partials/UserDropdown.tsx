@@ -20,13 +20,13 @@ export const UserDropdown: FC = () => {
     if (isLogged) {
       return (
         <MenuItem onClick={logout} outline="3px solid" outlineColor="black.0">
-          {t('topNav.userDropdown.logout')}
+          {t('navigation.userDropdown.logout')}
         </MenuItem>
       );
     }
     return (
       <MenuItem as={Link} to="login">
-        {t('topNav.userDropdown.login')}
+        {t('navigation.userDropdown.login')}
       </MenuItem>
     );
   }, [isLogged, logout, t]);
@@ -38,7 +38,7 @@ export const UserDropdown: FC = () => {
 
       <MenuList>
         <MenuItem as={Link} to="profile">
-          {t('topNav.userDropdown.profile')}
+          {t('navigation.userDropdown.profile')}
         </MenuItem>
         {LoginOrLogout}
       </MenuList>
