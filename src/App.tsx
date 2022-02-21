@@ -7,13 +7,12 @@ import { LandingLayout } from './_shared/components';
 import { LayoutApp } from './_shared/components/LayoutApp';
 import { ErrorPage } from './_shared/pages';
 import i18n from 'i18next';
-import { useTranslation, initReactI18next } from 'react-i18next';
+import { initReactI18next } from 'react-i18next';
 import { initI18n } from './_shared/i18n';
 
 i18n.use(initReactI18next).init(initI18n);
 
 function App() {
-  const { t } = useTranslation();
   return (
     <div className="App">
       <Routes>
@@ -24,7 +23,7 @@ function App() {
         <Route element={<LayoutApp />}>
           <Route path="login" element={<Login />} />
           <Route element={<PrivateRoutes />}>
-            <Route path="my-personas" element={<>{t('personas.title')}</>} />
+            <Route path="my-personas" element={<>Personas</>} />
             <Route path="my-templates" element={<>Templates</>} />
             <Route path="profile" element={<>Profile</>} />
             <Route path="app" element={<>Builder</>} />
