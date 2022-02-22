@@ -1,6 +1,7 @@
 // TODO: install testing-library
-import { render, screen } from '../../../../customRender';
-import { useExtendButton } from './useExtendButton';
+import React from 'react';
+// import { render, screen } from '../../../../customRender';
+// import { useExtendButton } from './useExtendButton';
 
 describe('UseExtendButton hook', () => {
   describe('isExtended', () => {
