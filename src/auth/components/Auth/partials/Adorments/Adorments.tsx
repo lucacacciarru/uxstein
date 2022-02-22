@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { adormentList } from './adormentList';
 import {
   Tooltip,
   Image,
@@ -7,14 +6,27 @@ import {
   type BoxProps,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import { Adorment } from './types';
 export const MotionBox = motion<BoxProps>(ChakraBox);
 
-export const Adorments = () => {
+type Props = {
+  items: Adorment[];
+};
+
+export const Adorments: React.FC<Props> = ({ items }) => {
   const renderAdorments = useMemo(
     () =>
-      adormentList.map(adorment => (
-        <Tooltip key={adorment.imageProp.src} {...adorment.tooltipsProp}>
-          <MotionBox {...adorment.boxProp} position={'absolute'}>
+      items.map((adorment, i) => (
+        <Tooltip
+          data-testid={`tooltip${i}`}
+          key={adorment.imageProp.src}
+          {...adorment.tooltipsProp}
+        >
+          <MotionBox
+            role="adorment"
+            {...adorment.boxProp}
+            position={'absolute'}
+          >
             <Image
               {...adorment.imageProp}
               w="100%"
@@ -24,7 +36,7 @@ export const Adorments = () => {
           </MotionBox>
         </Tooltip>
       )),
-    [],
+    [items],
   );
   return <>{renderAdorments}</>;
 };

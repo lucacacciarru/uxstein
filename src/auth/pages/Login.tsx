@@ -1,10 +1,11 @@
 import { FC } from 'react';
-import { Auth } from '../components/Auth';
+import { TemplateForm } from '../components/Auth/partials';
+import { LoginForm } from '../components/Auth/partials/LoginForm';
 
 export const Login: FC = () => {
   return (
-    <>
-      <Auth />
-    </>
+    <TemplateForm>
+      <LoginForm />
+    </TemplateForm>
   );
 };

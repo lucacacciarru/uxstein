@@ -2,6 +2,7 @@ import {
   FormControl,
   FormLabel,
   Input,
+  InputGroup,
   InputRightElement,
 } from '@chakra-ui/react';
 import { useCallback, useMemo, useState } from 'react';
@@ -42,19 +43,28 @@ export const FieldAuth: React.FC<Props> = ({
     }
     return (
       <>
-        <FormLabel textTransform="capitalize">Confirm Password</FormLabel>
-        <Input
-          onChange={handleInput}
-          value={value}
-          name={nameInput}
-          type={showPassword ? 'text' : 'password'}
-        />
-        <InputRightElement onClick={handleShowPassword}>
-          <Icon
-            color={showPassword ? 'black.0' : 'black.50'}
-            name={showPassword ? 'Hide' : 'Show'}
+        <FormLabel textTransform="capitalize">
+          {nameInput === 'confirmPassword' ? 'Confirm Password' : nameInput}
+        </FormLabel>
+        <InputGroup>
+          <Input
+            onChange={handleInput}
+            value={value}
+            name={nameInput}
+            type={showPassword ? 'text' : 'password'}
           />
-        </InputRightElement>
+
+          <InputRightElement
+            p="1.5"
+            children={
+              <Icon
+                color={showPassword ? 'black.0' : 'black.50'}
+                name={showPassword ? 'Hide' : 'Show'}
+              />
+            }
+            onClick={handleShowPassword}
+          />
+        </InputGroup>
       </>
     );
   }, [handleInput, handleShowPassword, nameInput, showPassword, value]);

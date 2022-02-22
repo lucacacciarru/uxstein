@@ -3,7 +3,7 @@ import { HTMLMotionProps } from 'framer-motion';
 
 export type MotionChakraBox = BoxProps & HTMLMotionProps<'div'>;
 
-export type AdormentList = {
+export type Adorment = {
   imageProp: {
     src: string;
   };

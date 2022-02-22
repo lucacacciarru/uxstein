@@ -1,8 +1,9 @@
-//TODO: Fix login function
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LoginFormData } from '../components/Auth/partials';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { loginTrigger } from '../store/actions/login';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { getAuthStatus } from '../selectors/getAuthStatus';
 
 export const useLogin = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,19 @@ export const useLogin = () => {
   const login = (dataForm: LoginFormData) => {
     dispatch(loginTrigger(dataForm));
   };
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state as string;
+  const authStatus = useSelector(getAuthStatus);
+  const isLogged = authStatus === 'logged';
+
+  useEffect(() => {
+    if (isLogged && from) {
+      navigate(from, { replace: true });
+    }
+  }, [isLogged, from, navigate]);
 
   return {
     dataFormLogin,

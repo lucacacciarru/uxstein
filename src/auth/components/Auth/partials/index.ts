@@ -1,3 +1,3 @@
 export * from './Hero';
-export * from './FormAuth';
+export * from './TemplateForm';
 export * from './types';

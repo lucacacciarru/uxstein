@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
       gap={'6rem'}
     >
       <Heading as="h2">
-        Create Person in few seconds,
+        Create a User Person in few seconds,
         <br />
         Frankestein will be proud of you
       </Heading>

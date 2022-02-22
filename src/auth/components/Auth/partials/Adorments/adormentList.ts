@@ -1,5 +1,5 @@
 import { imgLibrary } from '../imgLibrary';
-import { MotionChakraBox, AdormentList } from './types';
+import { MotionChakraBox, Adorment } from './types';
 
 const adormentStyle: MotionChakraBox[] = [
   {
@@ -60,7 +60,7 @@ const adormentStyle: MotionChakraBox[] = [
   },
 ];
 
-export const adormentList: AdormentList[] = [
+export const adormentList: Adorment[] = [
   {
     imageProp: {
       src: imgLibrary.firstInput,
