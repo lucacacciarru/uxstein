@@ -6,9 +6,9 @@ import {
   InputRightElement,
 } from '@chakra-ui/react';
 import { useCallback, useMemo, useState } from 'react';
-import { SignupFormData, LoginFormData } from '../types';
-import { Icon } from '../../../../../_shared/components';
+import { Icon } from '../../../_shared/components';
 import { useTranslation } from 'react-i18next';
+import { LoginFormData, SignupFormData } from '../types';
 
 type Props = {
   name: keyof SignupFormData | keyof LoginFormData;

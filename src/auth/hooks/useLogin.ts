@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { LoginFormData } from '../components/Auth/partials';
+import { LoginFormData } from '../components';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginTrigger } from '../store/actions/login';
 import { useLocation, useNavigate } from 'react-router-dom';

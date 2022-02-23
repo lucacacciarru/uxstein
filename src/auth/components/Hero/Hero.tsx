@@ -1,10 +1,6 @@
 import { Stack, Heading } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
-import { Box as ChakraBox, type BoxProps } from '@chakra-ui/layout';
 import { HeroImages } from '../HeroImages';
 import { useTranslation } from 'react-i18next';
-
-export const MotionBox = motion<BoxProps>(ChakraBox);
 
 export const Hero: React.FC = () => {
   const { t } = useTranslation();

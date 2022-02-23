@@ -1,4 +1,4 @@
-import { imgLibrary } from '../imgLibrary';
+import { imgLibrary } from '../../assets/imgLibrary';
 import { MotionChakraBox, Adorment } from './types';
 
 const adormentStyle: MotionChakraBox[] = [

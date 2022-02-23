@@ -1,6 +1,6 @@
 import { AuthField } from '../AuthField';
 import { Text, Button, Stack, Flex } from '@chakra-ui/react';
-import { useLogin } from '../../../../hooks/useLogin';
+import { useLogin } from '../../hooks/useLogin';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';

@@ -1,7 +1,7 @@
 import { Box, Image } from '@chakra-ui/react';
 import { Adorments } from '../Adorments';
 import { adormentList } from '../Adorments/adormentList';
-import { imgLibrary } from '../imgLibrary';
+import { imgLibrary } from '../../assets/imgLibrary';
 
 export const HeroImages: React.FC = () => {
   return (

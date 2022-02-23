@@ -1,5 +1,5 @@
-import { TemplateForm } from '../components/Auth/partials';
-import { SignupForm } from '../components/Auth/partials/SignupForm';
+import { TemplateForm } from '../components';
+import { SignupForm } from '../components';
 
 export const Signup: React.FC = () => {
   return (

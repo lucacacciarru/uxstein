@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SignupFormData } from '../components/Auth/partials';
+import { SignupFormData } from '../components';
 
 export const useSignup = () => {
   const [dataFormSignup, setDataFormSignup] = useState<SignupFormData>({
