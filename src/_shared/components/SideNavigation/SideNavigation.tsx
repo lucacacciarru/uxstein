@@ -9,12 +9,10 @@ export const SideNavigation: FC = () => {
   const { isExtended, iconButtonProps, containerProps } = useExtendButton();
 
   return (
-    <>
-      <VStack {...containerProps} className={styles.container}>
-        <Logo />
-        <LinkButtons isExtended={isExtended} />
-        <ExtendButton {...iconButtonProps} />
-      </VStack>
-    </>
+    <VStack {...containerProps} className={styles.container} role="sidenav">
+      <Logo />
+      <LinkButtons isExtended={isExtended} />
+      <ExtendButton {...iconButtonProps} />
+    </VStack>
   );
 };

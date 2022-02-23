@@ -11,6 +11,8 @@ export const CustomLink = ({ children, to, ...props }: LinkProps) => {
       w={'32'}
       border={match ? 'dark.s' : 'transparent.s'}
       py="1"
+      aria-details={match ? 'active-link' : ''}
+      data-testid="sidenav-link"
     >
       <Link
         to={to}

@@ -7,7 +7,7 @@ export const SearchBar: FC = () => {
   const { t } = useTranslation();
   return (
     <InputGroup w="80">
-      <Input placeholder={t('topNav.searchBar.placeholder')} />
+      <Input placeholder={t('navigation.searchBar.placeholder')} />
       <InputRightElement
         children={<Icon name="Search" color="black.50" />}
         pr="2"
