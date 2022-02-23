@@ -7,6 +7,8 @@ import {
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { Adorment } from './types';
+import { useTranslation } from 'react-i18next';
+
 export const MotionBox = motion<BoxProps>(ChakraBox);
 
 type Props = {
@@ -14,13 +16,15 @@ type Props = {
 };
 
 export const Adorments: React.FC<Props> = ({ items }) => {
+  const { t } = useTranslation();
   const renderAdorments = useMemo(
     () =>
       items.map((adorment, i) => (
         <Tooltip
           data-testid={`tooltip${i}`}
           key={adorment.imageProp.src}
-          {...adorment.tooltipsProp}
+          label={t(adorment.tooltipsProp.label)}
+          placement={adorment.tooltipsProp.placement}
         >
           <MotionBox
             role="adorment"
@@ -36,7 +40,7 @@ export const Adorments: React.FC<Props> = ({ items }) => {
           </MotionBox>
         </Tooltip>
       )),
-    [items],
+    [items, t],
   );
   return <>{renderAdorments}</>;
 };

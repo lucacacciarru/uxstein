@@ -1,5 +1,6 @@
 import { type BoxProps } from '@chakra-ui/layout';
 import { HTMLMotionProps } from 'framer-motion';
+import { TranslationKey } from '../../../../../../_shared/types/i18n';
 
 export type MotionChakraBox = BoxProps & HTMLMotionProps<'div'>;
 
@@ -9,7 +10,7 @@ export type Adorment = {
   };
   tooltipsProp: {
     placement: 'left' | 'right';
-    label: string;
+    label: TranslationKey;
   };
   boxProp: MotionChakraBox;
 };

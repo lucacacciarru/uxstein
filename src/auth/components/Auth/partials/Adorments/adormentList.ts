@@ -67,8 +67,7 @@ export const adormentList: Adorment[] = [
     },
     tooltipsProp: {
       placement: 'right',
-      label:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut culpa recusandae officiis repudiandae quaerat omnis earum tenetur odit enim minima.',
+      label: 'auth.hero.firstTooltip',
     },
     boxProp: {
       ...adormentStyle[0],
@@ -80,8 +79,7 @@ export const adormentList: Adorment[] = [
     },
     tooltipsProp: {
       placement: 'left',
-      label:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut culpa recusandae officiis repudiandae quaerat omnis earum tenetur odit enim minima.',
+      label: 'auth.hero.secondTooltip',
     },
     boxProp: {
       ...adormentStyle[1],
@@ -93,8 +91,7 @@ export const adormentList: Adorment[] = [
     },
     tooltipsProp: {
       placement: 'left',
-      label:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut culpa recusandae officiis repudiandae quaerat omnis earum tenetur odit enim minima.',
+      label: 'auth.hero.thirdTooltip',
     },
     boxProp: {
       ...adormentStyle[2],
@@ -106,8 +103,7 @@ export const adormentList: Adorment[] = [
     },
     tooltipsProp: {
       placement: 'right',
-      label:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut culpa recusandae officiis repudiandae quaerat omnis earum tenetur odit enim minima.',
+      label: 'auth.hero.fourthTooltip',
     },
     boxProp: {
       ...adormentStyle[3],

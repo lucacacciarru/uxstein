@@ -6,20 +6,18 @@ import {
   InputRightElement,
 } from '@chakra-ui/react';
 import { useCallback, useMemo, useState } from 'react';
-import { SignupFormData } from '../types';
+import { SignupFormData, LoginFormData } from '../types';
 import { Icon } from '../../../../../_shared/components';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
-  nameInput: keyof SignupFormData;
-  handleInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  name: keyof SignupFormData | keyof LoginFormData;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
 };
 
-export const FieldAuth: React.FC<Props> = ({
-  nameInput,
-  handleInput,
-  value,
-}) => {
+export const AuthField: React.FC<Props> = ({ name, onChange, value }) => {
+  const { t } = useTranslation();
   const [showPassword, setShowPassowrd] = useState(false);
 
   const handleShowPassword = useCallback(
@@ -28,15 +26,18 @@ export const FieldAuth: React.FC<Props> = ({
   );
 
   const input = useMemo(() => {
-    if (nameInput === 'email') {
+    if (name === 'email') {
       return (
         <>
-          <FormLabel textTransform="capitalize">{nameInput}</FormLabel>
+          <FormLabel textTransform="capitalize">
+            {t('auth.form.fieldEmail')}
+          </FormLabel>
           <Input
-            onChange={handleInput}
+            role="input"
+            onChange={onChange}
             value={value}
-            name={nameInput}
-            type={nameInput}
+            name={name}
+            type={name}
           />
         </>
       );
@@ -44,17 +45,21 @@ export const FieldAuth: React.FC<Props> = ({
     return (
       <>
         <FormLabel textTransform="capitalize">
-          {nameInput === 'confirmPassword' ? 'Confirm Password' : nameInput}
+          {name === 'confirmPassword'
+            ? t('auth.form.fieldConfirmPassword')
+            : t('auth.form.fieldPassword')}
         </FormLabel>
         <InputGroup>
           <Input
-            onChange={handleInput}
+            role="input"
+            onChange={onChange}
             value={value}
-            name={nameInput}
+            name={name}
             type={showPassword ? 'text' : 'password'}
           />
 
           <InputRightElement
+            role={'button'}
             p="1.5"
             children={
               <Icon
@@ -67,7 +72,7 @@ export const FieldAuth: React.FC<Props> = ({
         </InputGroup>
       </>
     );
-  }, [handleInput, handleShowPassword, nameInput, showPassword, value]);
+  }, [handleShowPassword, name, onChange, showPassword, t, value]);
 
   return <FormControl>{input}</FormControl>;
 };
