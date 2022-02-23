@@ -1,5 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit';
-import { ApiError, User } from './general';
+import { ApiError } from './general';
 
 export enum LOGOUT_ACTION_TYPES {
   TRIGGER = 'auth/logout/trigger',

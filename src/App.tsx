@@ -9,6 +9,7 @@ import { ErrorPage } from './_shared/pages';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { initI18n } from './_shared/i18n';
+import { Signup } from './auth/pages/Signup';
 
 i18n.use(initReactI18next).init(initI18n);
 
@@ -20,8 +21,9 @@ function App() {
           <Route index element={<>Landing</>} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
         <Route element={<LayoutApp />}>
-          <Route path="login" element={<Login />} />
           <Route element={<PrivateRoutes />}>
             <Route path="my-personas" element={<>Personas</>} />
             <Route path="my-templates" element={<>Templates</>} />

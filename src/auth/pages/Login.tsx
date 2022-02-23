@@ -1,14 +1,11 @@
-import { Button } from '@chakra-ui/react';
 import { FC } from 'react';
-import { useAuth } from '../hooks';
+import { TemplateForm } from '../components/Auth/partials';
+import { LoginForm } from '../components/Auth/partials/LoginForm';
 
 export const Login: FC = () => {
-  const { login } = useAuth();
   return (
-    <>
-      <Button variant={'solid'} onClick={login}>
-        Login
-      </Button>
-    </>
+    <TemplateForm>
+      <LoginForm />
+    </TemplateForm>
   );
 };
