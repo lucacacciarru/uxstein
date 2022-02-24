@@ -27,9 +27,10 @@ stages:
               npm run build
             displayName: 'Build the app'
   - stage: test
+    dependsOn: build
+    condition: succeeded()
     jobs:
       - job: test_app
-        dependsOn: build
         steps:
           - script: npm run test:ci
             displayName: 'Test the app'
