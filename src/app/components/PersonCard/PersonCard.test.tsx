@@ -29,10 +29,12 @@ describe('Card component', () => {
     expect(icon).toBeInTheDocument();
   });
   test('should show the user avatar if type is "template" and author is not "default"', () => {
+    const TIMESTAMP_CREATED_AT = new Date('2021/02/24').getTime();
+    const TIMESTAMP_UPDATED_AT = new Date('2022/02/24').getTime();
     render(
       <PersonCard
-        updatedAt={1645721297000}
-        createdAt={1614185297000}
+        updatedAt={TIMESTAMP_UPDATED_AT}
+        createdAt={TIMESTAMP_CREATED_AT}
         src="test"
         title="test"
         type="template"
