@@ -1,7 +1,7 @@
 import { Input, InputGroup, InputRightElement } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Icon } from '../../Icon/Icon';
+import { Icon } from '../Icon/Icon';
 
 export const SearchBar: FC = () => {
   const { t } = useTranslation();

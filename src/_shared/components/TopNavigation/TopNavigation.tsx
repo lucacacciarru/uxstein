@@ -1,6 +1,7 @@
 import { Flex, Spacer } from '@chakra-ui/react';
 import { FC } from 'react';
-import { UserDropdown, SearchBar } from './Partials';
+import { SearchBar } from '../SearchBar';
+import { UserDropdown } from './Partials';
 
 export const TopNavigation: FC = () => {
   return (

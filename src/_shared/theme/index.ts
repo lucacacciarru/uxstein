@@ -20,6 +20,7 @@ import {
   Switch,
   Badge,
   Spinner,
+  Accordion,
 } from './components';
 
 const config = {
@@ -35,6 +36,7 @@ const config = {
   },
   components: {
     Avatar,
+    Accordion,
     Text,
     Heading,
     Button,

@@ -11,5 +11,5 @@ export const stackContainerBaseProps: StackProps = {
     bg: 'white.bg',
     zIndex: '20',
     pt: '8',
-    w: '80',
+    w: '96',
 }

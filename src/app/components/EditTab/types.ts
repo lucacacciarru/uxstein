@@ -16,4 +16,5 @@ export type ToolBarModel = {
     title: string;
     sizes: Sizes;
     attributes: Attribute[];
+    style: StyleTypes[];
 }
