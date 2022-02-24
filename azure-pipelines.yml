@@ -19,7 +19,7 @@ stages:
               versionSpec: '16.14.x'
             displayName: 'Install Node.js'
           - script: npm install
-          - displayName: 'Install dependencies'
+            displayName: 'Install dependencies'
   - stage: build
     jobs:
       - job: build-app
