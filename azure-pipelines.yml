@@ -21,8 +21,6 @@ stages:
   - stage: build
     jobs:
       - job: build_app
-        dependsOn:
-          - install_node
         steps:
           - script: |
               npm run install
@@ -31,8 +29,6 @@ stages:
   - stage: test
     jobs:
       - job: test_app
-        dependsOn:
-          - build_app
         steps:
           - script: npm run test:ci
             displayName: 'Test the app'
