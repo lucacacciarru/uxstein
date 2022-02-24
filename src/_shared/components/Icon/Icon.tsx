@@ -1,6 +1,6 @@
 // TODO: find a way to make it as custom chakra component
 // TODO: improve color type management
-import { Icon as ChackraIcon } from '@chakra-ui/react';
+import { Icon as ChackraIcon, IconProps } from '@chakra-ui/react';
 import { FC } from 'react';
 import iconLibrary from './iconLibrary';
 
@@ -11,16 +11,21 @@ type IconComponentModel = typeof iconLibrary;
 type Props = {
   name: keyof IconComponentModel;
   size?: string;
-  color?: string;
-};
+} & IconProps;
 
-export const Icon: FC<Props> = ({ name, size, color }) => {
+export const Icon: FC<Props> = ({
+  name,
+  size = DEFAULT_SIZE,
+  color = DEFAULT_COLOR,
+  ...rest
+}) => {
   return (
     <ChackraIcon
       as={iconLibrary[name]}
-      boxSize={size || DEFAULT_SIZE}
-      color={color || DEFAULT_COLOR}
+      boxSize={size}
+      color={color}
       data-testid="icon"
+      {...rest}
     />
   );
 };
