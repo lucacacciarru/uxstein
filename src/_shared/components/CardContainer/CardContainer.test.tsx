@@ -1,4 +1,4 @@
-import { render } from '../../../customRender';
+import { render } from '../../testConfig/customRender';
 import { CardContainer } from './CardContainer';
 
 describe('CardContainer component', () => {
