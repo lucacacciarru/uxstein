@@ -2,13 +2,15 @@ import { Flex } from '@chakra-ui/react';
 import { Outlet } from 'react-router-dom';
 import { SideNavigation } from '../SideNavigation';
 import { TopNavigation } from '../TopNavigation';
+import { useLayoutApp } from './useLayoutApp';
 
 export const LayoutApp = () => {
+  const { showNavigation, gutter } = useLayoutApp();
   return (
     <>
-      <TopNavigation />
-      <SideNavigation />
-      <Flex ml={'28'}>
+      {showNavigation && <TopNavigation />}
+      {showNavigation && <SideNavigation />}
+      <Flex pl={gutter}>
         <Outlet />
       </Flex>
       {

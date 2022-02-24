@@ -16,3 +16,4 @@ export * from './Alert';
 export * from './Switch';
 export * from './Badge';
 export * from './Spinner';
+export * from './Accordion';
