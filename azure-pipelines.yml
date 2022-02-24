@@ -28,7 +28,7 @@ stages:
             displayName: 'Build the app'
   - stage: test
     jobs:
-      - job: test-app
+      - job: test_app
         steps:
           - script: npm run test:ci
             displayName: 'Test the app'
