@@ -26,7 +26,7 @@ stages:
         steps:
           - script: npm run build
             displayName: 'Build the app'
-  - stage: test:ci
+  - stage: test
     jobs:
       - job: test-app
         steps:
