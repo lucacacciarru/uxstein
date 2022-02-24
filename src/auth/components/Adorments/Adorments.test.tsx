@@ -1,4 +1,8 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import {
+  render,
+  screen,
+  waitFor,
+} from '../../../_shared/testConfig/customRender';
 import { Adorments } from './Adorments';
 import userEvent from '@testing-library/user-event';
 import { adormentList } from './adormentList';

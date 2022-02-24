@@ -1,5 +1,4 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../testConfig/customRender';
 import { DEFAULT_COLOR, DEFAULT_SIZE, Icon } from '.';
 
 describe('Icon custom wrapper', () => {

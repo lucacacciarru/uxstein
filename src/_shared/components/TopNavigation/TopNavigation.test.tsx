@@ -1,5 +1,5 @@
 import { TopNavigation } from './TopNavigation';
-import { render } from '../../../customRender';
+import { render } from '../../../_shared/testConfig/customRender';
 
 describe('TopNavigation', () => {
   test('should render correctly', () => {

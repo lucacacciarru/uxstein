@@ -1,5 +1,5 @@
 import { SideNavigation } from './SideNavigation';
-import { render, screen } from '../../../customRender';
+import { render, screen } from '../../testConfig/customRender';
 import { CustomLink } from './Partials';
 describe('Side Navigation', () => {
   test('should render correctly', () => {
