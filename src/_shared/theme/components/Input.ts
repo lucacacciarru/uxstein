@@ -8,7 +8,7 @@ export const Input: ComponentStyleConfig = {
       field: {
         borderWidth: '3px',
         borderColor: 'black.0',
-        borderRadius: 'none',
+        borderRadius: 'sm',
         color: 'black.0',
         _hover: {
           borderColor: 'brand.primary',
