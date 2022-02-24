@@ -1,4 +1,4 @@
-import { render } from '../../../customRender';
+import { render } from '../../../_shared/testConfig/customRender';
 import { EditTab } from './EditTab';
 
 describe('EditTab', () => {
