@@ -23,7 +23,7 @@ stages:
       - job: build_app
         steps:
           - script: |
-              npm run install
+              npm install
               npm run build
             displayName: 'Build the app'
   - stage: test
