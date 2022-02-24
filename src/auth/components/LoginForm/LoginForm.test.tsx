@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render } from '../../../_shared/testConfig/customRender';
 import { LoginForm } from './LoginForm';
 
 describe('LoginForm component', () => {

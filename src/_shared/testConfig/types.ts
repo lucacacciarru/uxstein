@@ -3,6 +3,7 @@ import {
     Queries,
     RenderOptions,
 } from '@testing-library/react';
+import { RenderHookOptions } from '@testing-library/react-hooks/lib/types';
 import { INITIAL_STATE } from './customRender';
 
 export type CustomRenderOptions<
@@ -13,3 +14,7 @@ export type CustomRenderOptions<
         initialRoutes?: string[];
     };
 
+export type CustomRenderHookOptions<T> = RenderHookOptions<T> & {
+    mocks?: typeof INITIAL_STATE;
+    initialRoutes?: string[];
+}
