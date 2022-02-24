@@ -18,7 +18,7 @@ describe('Collpsable', () => {
     );
   });
 
-  test('content should be NOT visible by default', () => {
+  test('content should be not be visible by default', () => {
     render(
       <Collapsable>
         <CollapsableItem name="Stile">Lorem ipsum</CollapsableItem>
@@ -30,7 +30,7 @@ describe('Collpsable', () => {
     expect(collapsableContent).not.toBeVisible();
   });
 
-  test('content should be visible if click on button', async () => {
+  test('content should be visible after clicking the button', async () => {
     render(
       <Collapsable>
         <CollapsableItem name="Stile">Lorem ipsum</CollapsableItem>
