@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { LoginFormData } from '../components';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginTrigger } from '../store/actions/login';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getAuthStatus } from '../selectors/getAuthStatus';
+import { LoginFormData } from '../components';
 
 export const useLogin = () => {
   const dispatch = useDispatch();
