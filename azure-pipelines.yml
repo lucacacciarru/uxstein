@@ -4,23 +4,37 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-  branches: 
-    include: 
-      - "*"
+  - main
 
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '16.14.x'
-  displayName: 'Install Node.js'
-
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
-
-- script: npm run test
-  displayName: 'run tests'
+stages:
+  - stage: install
+    jobs:
+      - job: install-node
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '16.14.x'
+            displayName: 'Install Node.js'
+          - script: npm install
+          - displayName: 'Install dependencies'
+  - stage: build
+    jobs:
+      - job: build-app
+        steps:
+          - script: npm run build
+            displayName: 'Build the app'
+  - stage: test:ci
+    jobs:
+      - job: test-app
+        steps:
+          - script: npm run test:ci
+            displayName: 'Test the app'
+# TODO: deploy stage
+# - stage: deploy
+#   jobs: 
+#     - job: deploy-app
+#       steps: 
+#         - script: npm run deploy  
