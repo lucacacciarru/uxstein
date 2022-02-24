@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '../../../../customRender';
+import { render, screen, waitFor } from '../../../testConfig/customRender';
 import userEvent from '@testing-library/user-event';
 import { UserDropdown } from './UserDropdown';
 
@@ -68,7 +68,5 @@ describe('UserDropdown', () => {
     expect(profileLink).toHaveAttribute('href', '/profile');
     expect(logoutButton).not.toBeNull();
     expect(loginLink).toBeNull();
-
-    screen.debug();
   });
 });

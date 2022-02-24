@@ -1,4 +1,8 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import {
+  fireEvent,
+  render,
+  screen,
+} from '../../../_shared/testConfig/customRender';
 import { AuthField } from './AuthField';
 
 describe('FieldAuth component', () => {
