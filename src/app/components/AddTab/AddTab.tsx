@@ -1,3 +1,4 @@
+// TODO: Change key of <WrapItem> to something better, like a id prop
 import { Center, Stack, Wrap, WrapItem } from '@chakra-ui/react';
 import { FC, useMemo } from 'react';
 import { BlockItem, BlockItemProps } from './BlockItem';
@@ -14,8 +15,8 @@ const mockedBolckItems: BlockItemProps[] = [
 
 export const AddTab: FC = () => {
   const renderedWrapItems = useMemo(() => {
-    return mockedBolckItems.map(item => (
-      <WrapItem>
+    return mockedBolckItems.map((item, i) => (
+      <WrapItem key={i}>
         <BlockItem iconName={item.iconName} name={item.name} />
       </WrapItem>
     ));
