@@ -7,7 +7,7 @@ const MAX_NAME_CHARS = 20;
 const TOAST_ID = '1';
 const ERROR_TOAST: UseToastOptions = {
   id: TOAST_ID,
-  title: '',
+  title: 'app.toast.maxCharacters',
   status: 'error',
   variant: 'left-accent',
   position: 'bottom',
@@ -21,7 +21,7 @@ export const useCustomEditable = (id?: string) => {
   const { t } = useTranslation();
   const errorToast = useToast({
     ...ERROR_TOAST,
-    title: t('app.toast.maxCharacters'),
+    title: t(ERROR_TOAST.title),
   });
 
   const onChange = (newFileName: string) => {
