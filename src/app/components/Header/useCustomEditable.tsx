@@ -5,9 +5,10 @@ import { useTranslation } from 'react-i18next';
 const DEFAULT_NAME = 'untilted';
 const MAX_NAME_CHARS = 20;
 const TOAST_ID = '1';
+const TOAST_TITLE = 'app.toast.maxCharacters';
 const ERROR_TOAST: UseToastOptions = {
   id: TOAST_ID,
-  title: 'app.toast.maxCharacters',
+  title: '',
   status: 'error',
   variant: 'left-accent',
   position: 'bottom',
@@ -21,7 +22,7 @@ export const useCustomEditable = (id?: string) => {
   const { t } = useTranslation();
   const errorToast = useToast({
     ...ERROR_TOAST,
-    title: t(ERROR_TOAST.title),
+    title: t(TOAST_TITLE),
   });
 
   const onChange = (newFileName: string) => {
