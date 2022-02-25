@@ -1,5 +1,6 @@
 import { Editable, EditableInput, EditablePreview } from '@chakra-ui/react';
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   render,
   screen,
@@ -26,19 +27,16 @@ describe('useEditable', () => {
 
   test('shoud show modal if write more than 20 char', () => {
     render(<EditableMock />);
-
-    expect(
-      screen.queryByText('Massimi caratteri raggiunti!'),
-    ).not.toBeInTheDocument();
+    const { result } = renderHook(() => useTranslation());
+    const maxCharMessage = result.current.t('app.toast.maxCharacters');
+    expect(screen.queryByText(maxCharMessage)).not.toBeInTheDocument();
 
     const editable = screen.getByDisplayValue('untilted');
     fireEvent.change(editable, {
       target: { value: 'somestringlongmorethan20char' },
     });
 
-    expect(
-      screen.getByText('Massimi caratteri raggiunti!'),
-    ).toBeInTheDocument();
+    expect(screen.getByText(maxCharMessage)).toBeInTheDocument();
   });
 });
 

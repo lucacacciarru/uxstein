@@ -1,12 +1,13 @@
 import { useToast, UseToastOptions } from '@chakra-ui/react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const DEFAULT_NAME = 'untilted';
 const MAX_NAME_CHARS = 20;
 const TOAST_ID = '1';
 const ERROR_TOAST: UseToastOptions = {
   id: TOAST_ID,
-  title: 'Massimi caratteri raggiunti!',
+  title: '',
   status: 'error',
   variant: 'left-accent',
   position: 'bottom',
@@ -17,7 +18,11 @@ export const useCustomEditable = (id?: string) => {
   const name = getNameById(id) || DEFAULT_NAME;
   const [fileName, setFileName] = useState(name);
 
-  const errorToast = useToast(ERROR_TOAST);
+  const { t } = useTranslation();
+  const errorToast = useToast({
+    ...ERROR_TOAST,
+    title: t('app.toast.maxCharacters'),
+  });
 
   const onChange = (newFileName: string) => {
     const trimmed = newFileName.trim();
