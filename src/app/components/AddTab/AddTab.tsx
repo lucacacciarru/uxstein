@@ -8,6 +8,7 @@ const mockedBolckItems: BlockItemProps[] = [
   { name: 'Text', iconName: 'TextIcon' },
   { name: 'Image', iconName: 'Photo' },
   { name: 'Text-list', iconName: 'TextList' },
+  { name: 'Image-list', iconName: 'Album' },
   { name: 'Checkbox', iconName: 'CheckBox' },
   { name: 'Progress', iconName: 'ProgressBar' },
   { name: 'Rate', iconName: 'Star' },
