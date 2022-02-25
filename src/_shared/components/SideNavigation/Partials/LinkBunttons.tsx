@@ -12,7 +12,11 @@ type Props = {
 export const LinkButtons: FC<Props> = ({ isExtended }) => {
   const { t } = useTranslation();
   return (
-    <VStack spacing="0" className={isExtended ? styles.isExtended : ''}>
+    <VStack
+      spacing="0"
+      className={isExtended ? styles.isExtended : ''}
+      data-testid="linkButton"
+    >
       <CustomLink to="my-personas">
         <Icon name="UserGroup" size="12" />
         <Text>{t('navigation.personas')}</Text>

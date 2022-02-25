@@ -2,7 +2,6 @@
 import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { PrivateRoutes } from '../PrivateRoutes';
-import App from '../../../App';
 import { render, screen } from '../../../_shared/testConfig/customRender';
 
 const MockPrivatePage: FC = () => {
@@ -10,7 +9,7 @@ const MockPrivatePage: FC = () => {
 };
 
 const MockLoginPage: FC = () => {
-  return <div>Login page content</div>;
+  return <div data-testid="login-page">Login page content</div>;
 };
 
 const MockRoutes: FC = () => {
@@ -32,16 +31,18 @@ describe('App', () => {
     });
 
     const privatePage = screen.getByTestId('private-page');
-
     expect(privatePage).toBeInTheDocument();
   });
 
-  test('should not render PrivatePage if not logged', () => {
-    render(<App />, {
+  test('should render LoginPage instead to PrivatePage, if not logged', () => {
+    render(<MockRoutes />, {
       initialRoutes: ['/private'],
     });
 
     const privatePage = screen.queryByTestId('private-page');
     expect(privatePage).not.toBeInTheDocument();
+
+    const loginPage = screen.queryByTestId('login-page');
+    expect(loginPage).toBeInTheDocument();
   });
 });
