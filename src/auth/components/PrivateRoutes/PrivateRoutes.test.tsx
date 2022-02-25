@@ -34,7 +34,7 @@ describe('App', () => {
     expect(privatePage).toBeInTheDocument();
   });
 
-  test('should render LoginPage instead to PrivatePage, if not logged', () => {
+  test('should render LoginPage instead of PrivatePage, if not logged', () => {
     render(<MockRoutes />, {
       initialRoutes: ['/private'],
     });
