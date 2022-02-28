@@ -4,6 +4,7 @@ import { personCard } from './personCard';
 import { auth } from '../../../auth/i18n/en';
 import { persona } from '../../../persona/i18n/en';
 import { template } from '../../../template/i18n/en';
+import { app } from '../../../app/i18n/en';
 
 export const en = {
   translation: {
@@ -13,5 +14,6 @@ export const en = {
     personCard,
     persona,
     template,
+    app,
   },
 };
