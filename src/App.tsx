@@ -11,6 +11,8 @@ import { initReactI18next } from 'react-i18next';
 import { initI18n } from './_shared/i18n';
 import { Signup } from './auth/pages/Signup';
 import { Application } from './app/pages/Application';
+import { MyPersona } from './persona/pages/MyPersona';
+import { MyTemplates } from './template/pages/MyTemplates';
 
 i18n.use(initReactI18next).init(initI18n);
 
@@ -27,8 +29,8 @@ function App() {
         <Route element={<LayoutApp />}>
           <Route element={<PrivateRoutes />}>
             <Route path="app" element={<Application />} />
-            <Route path="my-personas" element={<>Personas</>} />
-            <Route path="my-templates" element={<>Templates</>} />
+            <Route path="my-personas" element={<MyPersona />} />
+            <Route path="my-templates" element={<MyTemplates />} />
             <Route path="profile" element={<>Profile</>} />
           </Route>
         </Route>
