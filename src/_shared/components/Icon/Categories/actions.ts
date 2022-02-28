@@ -14,6 +14,7 @@ import { ReactComponent as Link } from '../SVG/Link.svg';
 import { ReactComponent as Help } from '../SVG/Help.svg';
 import { ReactComponent as Heart } from '../SVG/Heart.svg';
 import { ReactComponent as Star } from '../SVG/Star.svg';
+import { ReactComponent as ThreeDots } from '../SVG/ThreeDots.svg';
 
 export const actions = {
   Add,
@@ -32,4 +33,5 @@ export const actions = {
   Help,
   Heart,
   Star,
+  ThreeDots,
 };
