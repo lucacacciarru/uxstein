@@ -3,6 +3,6 @@ import { AddTab } from './AddTab';
 
 describe('AddTab', () => {
   test('should render correctly', () => {
-    render(<AddTab />);
+    render(<AddTab setBlockSetup={() => {}} />);
   });
 });

@@ -7,11 +7,16 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { FC } from 'react';
+import { BlockSetup } from '../../hooks/useBlockSetup';
 import { AddTab } from '../AddTab/AddTab';
 import { EditTab } from '../EditTab/EditTab';
 import { stackContainerBaseProps } from './styles/toolBarStylingProps';
 
-export const ToolBar: FC = () => {
+type Props = {
+  setBlockSetup: React.Dispatch<React.SetStateAction<BlockSetup>>;
+};
+
+export const ToolBar: FC<Props> = ({ setBlockSetup }) => {
   return (
     <VStack {...stackContainerBaseProps}>
       <Tabs variant="soft-rounded" w={'full'}>
@@ -22,7 +27,7 @@ export const ToolBar: FC = () => {
 
         <TabPanels>
           <TabPanel>
-            <AddTab />
+            <AddTab setBlockSetup={setBlockSetup} />
           </TabPanel>
           <TabPanel>
             <EditTab />
