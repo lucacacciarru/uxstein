@@ -10,4 +10,17 @@ export const form = {
   linkForSignup: 'Iscriviti ora',
   textForLogin: 'Sei già iscritto?',
   linkForLogin: 'Accedi ora',
+  errors: {
+    email: {
+      invalid: 'Inserisci una mail valida',
+    },
+    password: {
+      tooShort: 'Deve avere almeno 6 caratteri',
+      noCapitalLetters: 'Inserisci almeno un lettera maiuscola',
+      noNumbers: 'Inserisci almeno un numero',
+    },
+    confirmPassowrd: {
+      notEqualToPassword: 'Le due password non coincidono',
+    },
+  },
 };

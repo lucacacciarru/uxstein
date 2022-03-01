@@ -1,22 +1,35 @@
 import {
   FormControl,
+  FormErrorMessage,
+  FormHelperText,
   FormLabel,
   Input,
   InputGroup,
   InputRightElement,
+  List,
+  ListItem,
 } from '@chakra-ui/react';
 import { useCallback, useMemo, useState } from 'react';
 import { Icon } from '../../../_shared/components';
 import { useTranslation } from 'react-i18next';
 import { LoginFormData, SignupFormData } from '../types';
+import { TranslationKey } from '../../../_shared/types/i18n';
 
 type Props = {
   name: keyof SignupFormData | keyof LoginFormData;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
+  isInvalid: boolean;
+  errorList: TranslationKey[];
 };
 
-export const AuthField: React.FC<Props> = ({ name, onChange, value }) => {
+export const AuthField: React.FC<Props> = ({
+  name,
+  onChange,
+  value,
+  isInvalid,
+  errorList,
+}) => {
   const { t } = useTranslation();
   const [showPassword, setShowPassowrd] = useState(false);
 
@@ -25,10 +38,15 @@ export const AuthField: React.FC<Props> = ({ name, onChange, value }) => {
     [],
   );
 
+  const renderErrorList = useMemo(
+    () => errorList.map(error => <ListItem key={error}>{t(error)}</ListItem>),
+    [errorList, t],
+  );
+
   const input = useMemo(() => {
     if (name === 'email') {
       return (
-        <>
+        <FormControl isInvalid={isInvalid}>
           <FormLabel textTransform="capitalize">
             {t('auth.form.fieldEmail')}
           </FormLabel>
@@ -37,13 +55,16 @@ export const AuthField: React.FC<Props> = ({ name, onChange, value }) => {
             onChange={onChange}
             value={value}
             name={name}
-            type={name}
+            type="text"
           />
-        </>
+          <FormErrorMessage>
+            <List spacing="1">{renderErrorList}</List>
+          </FormErrorMessage>
+        </FormControl>
       );
     }
     return (
-      <>
+      <FormControl isInvalid={isInvalid}>
         <FormLabel textTransform="capitalize">
           {name === 'confirmPassword'
             ? t('auth.form.fieldConfirmPassword')
@@ -70,9 +91,21 @@ export const AuthField: React.FC<Props> = ({ name, onChange, value }) => {
             onClick={handleShowPassword}
           />
         </InputGroup>
-      </>
+        <FormErrorMessage>
+          <List spacing="1">{renderErrorList}</List>
+        </FormErrorMessage>
+      </FormControl>
     );
-  }, [handleShowPassword, name, onChange, showPassword, t, value]);
+  }, [
+    handleShowPassword,
+    isInvalid,
+    name,
+    onChange,
+    renderErrorList,
+    showPassword,
+    t,
+    value,
+  ]);
 
   return <FormControl>{input}</FormControl>;
 };

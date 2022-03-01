@@ -1,5 +1,8 @@
 import { useState } from 'react';
+import { TranslationKey } from '../../_shared/types/i18n';
 import { SignupFormData } from '../components';
+import { checkSignupMap } from '../utils/';
+import { validateAllField } from '../utils/';
 
 export const useSignup = () => {
   const [dataFormSignup, setDataFormSignup] = useState<SignupFormData>({
@@ -7,6 +10,23 @@ export const useSignup = () => {
     password: '',
     confirmPassword: '',
   });
+
+  const [errorDataFormSignup, setErrorDataFormSignup] = useState<
+    Record<keyof SignupFormData, TranslationKey[]>
+  >({
+    email: [],
+    password: [],
+    confirmPassword: [],
+  });
+
+  function onSignup() {
+    const currentError = validateAllField(dataFormSignup, checkSignupMap);
+    setErrorDataFormSignup(prev => ({ ...prev, ...currentError }));
+    const checkError = Object.values(currentError);
+    if (checkError.every(dataForm => dataForm.length === 0)) {
+      //TODO: ADD REGISTER
+    }
+  }
 
   const handleSignupInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDataFormSignup(prev => ({
@@ -18,6 +38,7 @@ export const useSignup = () => {
   return {
     dataFormSignup,
     handleSignupInput,
+    onSignup,
+    errorDataFormSignup,
   };
 };
-
