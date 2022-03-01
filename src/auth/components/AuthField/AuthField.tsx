@@ -1,7 +1,6 @@
 import {
   FormControl,
   FormErrorMessage,
-  FormHelperText,
   FormLabel,
   Input,
   InputGroup,
@@ -55,7 +54,7 @@ export const AuthField: React.FC<Props> = ({
             onChange={onChange}
             value={value}
             name={name}
-            type="text"
+            type={name}
           />
           <FormErrorMessage>
             <List spacing="1">{renderErrorList}</List>
