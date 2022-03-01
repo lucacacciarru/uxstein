@@ -34,7 +34,7 @@ export const ToolBar: FC<Props> = ({ setBlockSetup }) => {
             <AddTab setBlockSetup={setBlockSetup} />
           </TabPanel>
           <TabPanel>
-            <EditTab />
+            <EditTab selectedBlockId={selectedBlockId} />
           </TabPanel>
         </TabPanels>
       </Tabs>

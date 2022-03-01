@@ -1,23 +1,25 @@
 import { Box, HStack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
-type Size = { b: number; h: number };
+import { BlockSetup } from '../../hooks/useBlockSetup';
+import { useOptionalSettings } from './useOptionalSettings';
 
 type Props = {
   title: string;
-  minSize: Size;
-  maxSize: Size;
+  optionalSettings?: BlockSetup['optionalSettings'];
 };
 
-export const EditTabHeader: FC<Props> = ({ title, minSize, maxSize }) => {
+export const EditTabHeader: FC<Props> = ({ title, optionalSettings }) => {
+  const { settingsWithDefault } = useOptionalSettings(optionalSettings);
+
   return (
     <Box as={'header'} pl="4" mb="8" mt="4">
       <Text fontSize="4xl">{title}</Text>
       <HStack spacing="8">
         <p>
-          Min-size: {minSize.b} x {minSize.h}
+          Min-size: {settingsWithDefault.minW} x {settingsWithDefault.minH}
         </p>
         <p>
-          Max-size: {maxSize.b} x {maxSize.h}
+          Max-size: {settingsWithDefault.maxW} x {settingsWithDefault.maxH}
         </p>
       </HStack>
     </Box>
