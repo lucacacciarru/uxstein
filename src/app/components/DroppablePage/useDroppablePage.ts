@@ -2,6 +2,7 @@ import { Layout, ReactGridLayoutProps } from 'react-grid-layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { BlockSetup } from '../../hooks/useBlockSetup';
 import { addItemRequest } from '../../store/actions/addItem';
+import { selectItem } from '../../store/actions/selected';
 import { getPageSettings } from '../../store/selectors/getPageSettings';
 
 export const useDroppablePage = (blockSetup: BlockSetup) => {
@@ -9,7 +10,7 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
     const layout = useSelector(getPageSettings);
 
     const onDrop = (newLayout: Layout[], newBlock: Layout, _event: Event) => {
-        const itemWithSettings = { ...newBlock, ...blockSetup.layoutSettings };
+        const itemWithSettings = { ...newBlock, ...blockSetup.layoutSettings, ...blockSetup.optionalSettings };
         const pageLayoutWithSettedItem = newLayout.map(item => {
             if (item.i === newBlock.i) {
                 return itemWithSettings;
@@ -28,6 +29,7 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
                 pageSettings: pageLayoutWithSettedItem,
             }),
         );
+        dispatch(selectItem({ itemId: newItem.layoutSettings.i }));
     };
 
     const gridLayoutProps: ReactGridLayoutProps = {

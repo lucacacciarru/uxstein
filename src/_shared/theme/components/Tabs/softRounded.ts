@@ -18,6 +18,7 @@ export const softRounded = {
       _active: {
         background: 'none',
       },
+      _disabled: { color: 'black.50' }
     },
   },
 };

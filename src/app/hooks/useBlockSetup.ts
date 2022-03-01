@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Layout } from 'react-grid-layout';
 import { GridItem } from '../store/types';
 
 export type BlockSetup = {
@@ -8,6 +9,7 @@ export type BlockSetup = {
         w: number;
         i: string;
     };
+    optionalSettings?: Omit<Layout, 'w' | 'h' | 'i' | 'x' | 'y'>
 };
 
 export const useBlockSetup = () => {

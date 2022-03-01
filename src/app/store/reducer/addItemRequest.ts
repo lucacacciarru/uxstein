@@ -2,7 +2,7 @@ import { CaseReducer } from '@reduxjs/toolkit';
 import { BuilderState } from '../types';
 import { AddItemAction } from '../types/addItem';
 
-export const addItemRequestCase: CaseReducer<BuilderState, AddItemAction> = (state, action) => {
+export const addItemCase: CaseReducer<BuilderState, AddItemAction> = (state, action) => {
     const id = action.payload.item.layoutSettings.i;
     return {
         ...state,

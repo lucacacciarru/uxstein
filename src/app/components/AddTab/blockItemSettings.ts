@@ -12,6 +12,9 @@ export const blockItemSettings: Record<BlockItemType, BlockSetup> = {
             h: 2,
             w: 2,
             i: ''
+        },
+        optionalSettings: {
+            maxW: 3,
         }
     },
     "text-list": {

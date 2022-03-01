@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react';
 import { FC } from 'react';
 import { BlockSetup } from '../../hooks/useBlockSetup';
+import { useSeletedBlock } from '../../hooks/useSelectedBlock';
 import { AddTab } from '../AddTab/AddTab';
 import { EditTab } from '../EditTab/EditTab';
 import { stackContainerBaseProps } from './styles/toolBarStylingProps';
@@ -17,12 +18,15 @@ type Props = {
 };
 
 export const ToolBar: FC<Props> = ({ setBlockSetup }) => {
+  const { clearSelection, selectedBlockId } = useSeletedBlock();
+  const selectedIndex = selectedBlockId ? 1 : 0;
+
   return (
     <VStack {...stackContainerBaseProps}>
-      <Tabs variant="soft-rounded" w={'full'}>
+      <Tabs variant="soft-rounded" w={'full'} index={selectedIndex}>
         <TabList placeContent={'center'}>
-          <Tab>Add</Tab>
-          <Tab>Edit</Tab>
+          <Tab onClick={clearSelection}>Add</Tab>
+          <Tab isDisabled={!selectedBlockId}>Edit</Tab>
         </TabList>
 
         <TabPanels>

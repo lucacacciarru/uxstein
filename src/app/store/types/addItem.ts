@@ -1,10 +1,7 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { Layout } from 'react-grid-layout';
+import { BUILDER_ACTION_TYPES } from '.';
 import { GridItem } from './general';
-
-export enum ADDITEM_ACTION_TYPES {
-    REQUEST = 'builder/add/request',
-}
 
 export type ItemModel = {
     layoutSettings: Layout;
@@ -18,5 +15,5 @@ export type AddItemPayload = {
 
 export type AddItemAction = PayloadAction<
     AddItemPayload,
-    ADDITEM_ACTION_TYPES.REQUEST
+    BUILDER_ACTION_TYPES.ADD
 >;
