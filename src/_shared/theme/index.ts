@@ -1,8 +1,15 @@
 import { extendTheme } from '@chakra-ui/react';
-import { colors, radii, shadows, borders, typography, fonts } from './style';
+import {
+  colors,
+  radii,
+  shadows,
+  borders,
+  typography,
+  fonts,
+  textStyles,
+} from './style';
 import { Heading } from '@chakra-ui/react';
 import {
-  Text,
   Button,
   Link,
   Input,
@@ -29,6 +36,7 @@ const config = {
   shadows,
   borders,
   fonts,
+  textStyles,
   styles: {
     global: {
       ...typography,
@@ -37,7 +45,6 @@ const config = {
   components: {
     Avatar,
     Accordion,
-    Text,
     Heading,
     Button,
     Link,

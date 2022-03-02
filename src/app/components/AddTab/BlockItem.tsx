@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { Icon } from '../../../_shared/components';
 import iconLibrary from '../../../_shared/components/Icon/iconLibrary';
@@ -19,7 +19,9 @@ export const BlockItem: FC<BlockItemProps> = ({ name, iconName }) => {
       py="4"
     >
       <Icon name={iconName} size="8" />
-      <h5>{name}</h5>
+      <Text as="h5" textStyle="h5">
+        {name}
+      </Text>
     </Box>
   );
 };

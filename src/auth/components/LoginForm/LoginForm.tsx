@@ -23,7 +23,9 @@ export const LoginForm: React.FC = () => {
           border="dark.s"
           boxShadow="noBlur.dark.m"
         >
-          <h1>{t('auth.form.titleLogin')}</h1>
+          <Text as="h1" textStyle="h1">
+            {t('auth.form.titleLogin')}
+          </Text>
           <AuthField
             name="email"
             onChange={handleLoginInput}

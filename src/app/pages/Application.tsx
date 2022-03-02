@@ -1,4 +1,4 @@
-import { Stack } from '@chakra-ui/react';
+import { Stack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { ToolBar } from '../components';
 import { Header } from '../components/Header/Header';
@@ -9,7 +9,9 @@ export const Application: FC = () => {
       <ToolBar />
       <Stack w="full">
         <Header />
-        <h1>Builder</h1>
+        <Text as="h1" textStyle="h1">
+          Builder
+        </Text>
       </Stack>
     </>
   );

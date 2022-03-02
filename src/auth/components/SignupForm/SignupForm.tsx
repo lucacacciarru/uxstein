@@ -23,7 +23,9 @@ export const SignupForm: React.FC = () => {
           border="dark.s"
           boxShadow="noBlur.dark.m"
         >
-          <h1>{t('auth.form.titleSignup')}</h1>
+          <Text as="h1" textStyle="h1">
+            {t('auth.form.titleSignup')}
+          </Text>
           <AuthField
             name="email"
             onChange={handleSignupInput}
