@@ -1,4 +1,4 @@
-import { Stack, Text, Box } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { FC } from 'react';
 import { ToolBar } from '../components';
 import { DroppablePage } from '../components/DroppablePage/DroppablePage';

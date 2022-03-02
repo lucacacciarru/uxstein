@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react';
 import { FC } from 'react';
 
 type Props = {
@@ -7,7 +8,7 @@ type Props = {
 
 export const TextGridItem: FC<Props> = ({ type, style }) => {
   return (
-    <div
+    <Box
       style={{
         width: '100%',
         height: '100%',
@@ -15,6 +16,6 @@ export const TextGridItem: FC<Props> = ({ type, style }) => {
       }}
     >
       {type}
-    </div>
+    </Box>
   );
 };

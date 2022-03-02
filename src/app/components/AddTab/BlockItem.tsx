@@ -43,7 +43,7 @@ export const BlockItem: FC<Props> = ({ type, iconName, setBlockSetup }) => {
       onDragStart={onDragStart}
     >
       <Icon name={iconName} size="8" />
-      <Text as="h5" textStyle="h5">
+      <Text as="h5" textStyle="h5" textTransform="capitalize">
         {type}
       </Text>
     </Box>

@@ -13,14 +13,16 @@ export const EditTabHeader: FC<Props> = ({ title, optionalSettings }) => {
 
   return (
     <Box as={'header'} pl="4" mb="8" mt="4">
-      <Text fontSize="4xl">{title}</Text>
+      <Text fontSize="4xl" textTransform="capitalize">
+        {title}
+      </Text>
       <HStack spacing="8">
-        <p>
+        <Text>
           Min-size: {settingsWithDefault.minW} x {settingsWithDefault.minH}
-        </p>
-        <p>
+        </Text>
+        <Text>
           Max-size: {settingsWithDefault.maxW} x {settingsWithDefault.maxH}
-        </p>
+        </Text>
       </HStack>
     </Box>
   );

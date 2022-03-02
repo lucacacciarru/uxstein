@@ -1,6 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit'
 import { BuilderState } from '../types'
-import { addItemRequest } from '../actions/addItem'
+import { addItem } from '../actions/addItem'
 import { addItemCase } from './addItemRequest'
 import { getBlockItemSettings } from '../../components/AddTab/blockItemSettings'
 import { clearSelected, selectItem } from '../actions/selected'
@@ -18,7 +18,7 @@ const INITIAL_STATE: BuilderState = {
 
 export const builderRooorReducer = createReducer(INITIAL_STATE, builder => {
     builder
-        .addCase(addItemRequest, addItemCase)
+        .addCase(addItem, addItemCase)
         .addCase(selectItem, selectItemCase)
         .addCase(clearSelected, clearSelectedCase)
         .addDefaultCase(state => state)

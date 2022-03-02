@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { getGridItemById } from '../../store/selectors/getGridItemById';
@@ -26,7 +27,7 @@ type DefaultGridItemProps = {
 
 const DefaultGridItem: FC<DefaultGridItemProps> = ({ style, type }) => {
   return (
-    <div
+    <Box
       style={{
         width: '100%',
         height: '100%',
@@ -34,6 +35,6 @@ const DefaultGridItem: FC<DefaultGridItemProps> = ({ style, type }) => {
       }}
     >
       {type}
-    </div>
+    </Box>
   );
 };

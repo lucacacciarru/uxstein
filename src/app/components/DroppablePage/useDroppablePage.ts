@@ -1,7 +1,7 @@
 import { Layout, ReactGridLayoutProps } from 'react-grid-layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { BlockSetup } from '../../hooks/useBlockSetup';
-import { addItemRequest } from '../../store/actions/addItem';
+import { addItem } from '../../store/actions/addItem';
 import { selectItem } from '../../store/actions/selected';
 import { getPageSettings } from '../../store/selectors/getPageSettings';
 
@@ -24,7 +24,7 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
         };
 
         dispatch(
-            addItemRequest({
+            addItem({
                 item: newItem,
                 pageSettings: pageLayoutWithSettedItem,
             }),

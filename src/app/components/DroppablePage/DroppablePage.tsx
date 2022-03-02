@@ -7,6 +7,7 @@ import { ComponentMap } from '../ComponentMap/ComponentMap';
 import { useDroppablePage } from './useDroppablePage';
 import { BlockSetup } from '../../hooks/useBlockSetup';
 import { useSeletedBlock } from '../../hooks/useSelectedBlock';
+import { Box } from '@chakra-ui/react';
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -20,7 +21,7 @@ export const DroppablePage: FC<{ blockSetup: BlockSetup }> = ({
     <>
       <ReactGridLayout {...gridLayoutProps}>
         {layout.map(item => (
-          <div
+          <Box
             data-grid={item}
             key={item.i}
             onClick={() => {
@@ -28,7 +29,7 @@ export const DroppablePage: FC<{ blockSetup: BlockSetup }> = ({
             }}
           >
             <ComponentMap id={item.i} />
-          </div>
+          </Box>
         ))}
       </ReactGridLayout>
     </>
