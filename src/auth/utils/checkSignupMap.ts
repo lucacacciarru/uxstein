@@ -31,7 +31,7 @@ export const checkSignupMap: CheckFieldsSignup = {
       return null;
     },
     hasNumber: (signupData: SignupFormData) => {
-      const regex = /\\*[0-9]/;
+      const regex = /\d/;
       if (!signupData.password.match(regex)) {
         return 'auth.form.errors.password.noNumbers';
       }

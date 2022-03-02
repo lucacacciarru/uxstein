@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { TranslationKey } from '../../_shared/types/i18n';
 import { SignupFormData } from '../components';
-import { checkSignupMap } from '../utils/';
-import { validateAllField } from '../utils/';
+import { checkSignupMap, validateAllField } from '../utils';
 
 export const useSignup = () => {
   const [dataFormSignup, setDataFormSignup] = useState<SignupFormData>({
@@ -23,6 +22,7 @@ export const useSignup = () => {
     const currentError = validateAllField(dataFormSignup, checkSignupMap);
     setErrorDataFormSignup(prev => ({ ...prev, ...currentError }));
     const checkError = Object.values(currentError);
+    console.log(currentError);
     if (checkError.every(dataForm => dataForm.length === 0)) {
       //TODO: ADD REGISTER
     }

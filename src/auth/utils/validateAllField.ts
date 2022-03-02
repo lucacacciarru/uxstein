@@ -20,7 +20,9 @@ export function validateAllField<T>(
           response,
         ];
       } else {
-        currentErrorMessage[key as keyof CurrentErrorMessage] = [];
+        currentErrorMessage[key as keyof CurrentErrorMessage] = [
+          ...(currentErrorMessage[key as keyof CurrentErrorMessage] || []),
+        ];
       }
     }
   }

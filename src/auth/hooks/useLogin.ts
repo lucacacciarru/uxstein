@@ -4,9 +4,8 @@ import { loginTrigger } from '../store/actions/login';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getAuthStatus } from '../selectors/getAuthStatus';
 import { LoginFormData } from '../components';
-import { validateAllField } from '../utils/';
+import { validateAllField, checkLoginMap } from '../utils';
 import { TranslationKey } from '../../_shared/types/i18n';
-import { checkLoginMap } from '../utils';
 
 export const useLogin = () => {
   const dispatch = useDispatch();
