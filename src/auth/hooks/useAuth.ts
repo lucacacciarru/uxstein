@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getAuthStatus } from '../selectors/getAuthStatus';
-import { getUserProfile } from '../selectors/getUserProfile';
+import { getAuthStatus, getUserProfile } from '../store/selectors';
 import { logoutTrigger } from '../store/actions/logout';
 
 export const useAuth = () => {

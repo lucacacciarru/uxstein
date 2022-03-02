@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginTrigger } from '../store/actions/login';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { getAuthStatus } from '../selectors/getAuthStatus';
+import { getAuthStatus } from '../store/selectors';
 import { LoginFormData } from '../components';
 import { validateAllField, checkLoginMap } from '../utils';
 import { TranslationKey } from '../../_shared/types/i18n';
