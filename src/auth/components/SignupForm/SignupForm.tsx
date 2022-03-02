@@ -7,11 +7,11 @@ import { useTranslation } from 'react-i18next';
 
 export const SignupForm: React.FC = () => {
   const { t } = useTranslation();
-  const { dataFormSignup, handleSignupInput, onSignup, errorDataFormSignup } =
+  const { dataFormSignup, handleSignupInput, signup, errorDataFormSignup } =
     useSignup();
   function handlerForm(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    onSignup();
+    signup();
   }
   return (
     <Flex width={'50%'} alignItems="center" justifyContent="center">

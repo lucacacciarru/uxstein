@@ -19,7 +19,7 @@ export const useSignup = () => {
     confirmPassword: [],
   });
 
-  function onSignup() {
+  function signup() {
     const currentError = validateAllField(dataFormSignup, checkSignupMap);
     setErrorDataFormSignup(prev => ({ ...prev, ...currentError }));
     const checkError = Object.values(currentError);
@@ -38,7 +38,7 @@ export const useSignup = () => {
   return {
     dataFormSignup,
     handleSignupInput,
-    onSignup,
+    signup,
     errorDataFormSignup,
   };
 };
