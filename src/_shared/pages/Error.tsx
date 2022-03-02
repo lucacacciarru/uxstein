@@ -1,4 +1,4 @@
-import { Box, Button, Center } from '@chakra-ui/react';
+import { Box, Button, Center, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -10,8 +10,12 @@ export const ErrorPage: FC = () => {
     <Center h="90vh" w="100vw">
       <Box textAlign="center">
         <Icon name="Error" size="44" />
-        <h1>{t('errorPage.title')}</h1>
-        <h3>{t('errorPage.subtitle')}</h3>
+        <Text as="h1" textStyle="h1">
+          {t('errorPage.title')}
+        </Text>
+        <Text as="h3" textStyle="h3">
+          {t('errorPage.subtitle')}
+        </Text>
         <Link to="/">
           <Button mt="4">{t('errorPage.cta')}</Button>
         </Link>

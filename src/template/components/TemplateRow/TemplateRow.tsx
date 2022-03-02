@@ -1,5 +1,5 @@
 //TODO: change "Frank" to username of User
-import { Box, BoxProps, HStack } from '@chakra-ui/react';
+import { Box, BoxProps, HStack, Text } from '@chakra-ui/react';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PersonCard } from '../../../_shared/components';
@@ -33,7 +33,9 @@ export const TemplateRow: React.FC<Props> = ({ category }) => {
 
   return (
     <Box overflow="hidden" py="4">
-      <h4>{t(`template.container.category.${category}`)}</h4>
+      <Text as="h4" textStyle="h4">
+        {t(`template.container.category.${category}`)}
+      </Text>
       <Box position="relative">
         <HStack translateX={`${carouselX * 350}px`} {...containerProps}>
           {renderTemplateByAuthor}

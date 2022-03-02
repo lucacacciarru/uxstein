@@ -6,3 +6,4 @@ export * from './colors';
 export * from './radii';
 export * from './typography';
 export * from './fonts';
+export * from './textStyles';
