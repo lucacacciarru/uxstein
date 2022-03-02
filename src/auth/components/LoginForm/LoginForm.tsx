@@ -1,17 +1,18 @@
 import { AuthField } from '../AuthField';
 import { Text, Button, Stack, Flex } from '@chakra-ui/react';
 import { useLogin } from '../../hooks/useLogin';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 export const LoginForm: React.FC = () => {
   const { t } = useTranslation();
-  const { dataFormLogin, handleLoginInput, login } = useLogin();
+  const { dataFormLogin, handleLoginInput, login, errorDataFormLogin } =
+    useLogin();
   function handlerForm(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    login(dataFormLogin);
+    login();
   }
+
   return (
     <Flex width={'50%'} alignItems="center" justifyContent="center">
       <form onSubmit={handlerForm}>
@@ -27,11 +28,15 @@ export const LoginForm: React.FC = () => {
             name="email"
             onChange={handleLoginInput}
             value={dataFormLogin.email}
+            isInvalid={errorDataFormLogin.email.length > 0}
+            errorList={errorDataFormLogin.email}
           />
           <AuthField
             name="password"
             onChange={handleLoginInput}
             value={dataFormLogin.password}
+            isInvalid={errorDataFormLogin.password.length > 0}
+            errorList={errorDataFormLogin.password}
           />
 
           <Text as="p">

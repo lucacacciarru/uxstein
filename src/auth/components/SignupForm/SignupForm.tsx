@@ -7,9 +7,11 @@ import { useTranslation } from 'react-i18next';
 
 export const SignupForm: React.FC = () => {
   const { t } = useTranslation();
-  const { dataFormSignup, handleSignupInput } = useSignup();
+  const { dataFormSignup, handleSignupInput, signup, errorDataFormSignup } =
+    useSignup();
   function handlerForm(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    signup();
   }
   return (
     <Flex width={'50%'} alignItems="center" justifyContent="center">
@@ -26,16 +28,24 @@ export const SignupForm: React.FC = () => {
             name="email"
             onChange={handleSignupInput}
             value={dataFormSignup.email}
+            isInvalid={errorDataFormSignup.email.length > 0 ? true : false}
+            errorList={errorDataFormSignup.email}
           />
           <AuthField
             name="password"
             onChange={handleSignupInput}
             value={dataFormSignup.password}
+            isInvalid={errorDataFormSignup.password.length > 0 ? true : false}
+            errorList={errorDataFormSignup.password}
           />
           <AuthField
             name="confirmPassword"
             onChange={handleSignupInput}
             value={dataFormSignup.confirmPassword}
+            isInvalid={
+              errorDataFormSignup.confirmPassword.length > 0 ? true : false
+            }
+            errorList={errorDataFormSignup.confirmPassword}
           />
 
           <Text as="p">

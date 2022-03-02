@@ -6,6 +6,7 @@ import {
   render,
   fireEvent,
   screen,
+  waitFor,
 } from '../../_shared/testConfig/customRender';
 
 describe('useLogin', () => {
@@ -63,5 +64,65 @@ describe('useLogin', () => {
     fireEvent.change(password, { target: { value: 'aaa' } });
 
     expect(result.current.dataFormLogin).toEqual(expected);
+  });
+
+  test('errorDataFormLogin should have errors inside array if field conditions are not satisfied', () => {
+    const { result } = renderHook(() => useLogin());
+
+    render(
+      <form onSubmit={() => result.current.login()}>
+        <input
+          onChange={result.current.handleLoginInput}
+          value={result.current.dataFormLogin.password}
+          data-testid="password-input"
+          name="password"
+        />
+        ,
+        <button type="submit" data-testId="button-submit">
+          Test
+        </button>
+      </form>,
+    );
+    const button = screen.getByTestId('button-submit');
+    fireEvent.click(button);
+
+    Object.values(result.current.errorDataFormLogin).forEach(errorList => {
+      expect(errorList.length).not.toEqual(0);
+    });
+  });
+  test('errorDataFormLogin should not have errors inside array if field conditions are satisfied', async () => {
+    const { result } = renderHook(() => useLogin());
+
+    render(
+      <form onSubmit={result.current.login}>
+        <input
+          onChange={result.current.handleLoginInput}
+          value={result.current.dataFormLogin.email}
+          data-testid="email-input"
+          name="email"
+        />
+        <input
+          onChange={result.current.handleLoginInput}
+          value={result.current.dataFormLogin.password}
+          data-testid="password-input"
+          name="password"
+          type="password"
+        />
+        <button type="submit" data-testId="button-submit">
+          Test
+        </button>
+      </form>,
+    );
+    const inputEmail = screen.getByTestId('email-input');
+    const inputPassword = screen.getByTestId('password-input');
+    const button = screen.getByTestId('button-submit');
+    fireEvent.change(inputEmail, { target: { value: 'test@test.com' } });
+    fireEvent.change(inputPassword, { target: { value: 'testtesttest' } });
+    await waitFor(() => {
+      fireEvent.click(button);
+      Object.values(result.current.errorDataFormLogin).forEach(errorList => {
+        expect(errorList).toEqual([]);
+      });
+    });
   });
 });

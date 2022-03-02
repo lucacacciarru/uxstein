@@ -66,4 +66,29 @@ describe('useSignup', () => {
 
     expect(result.current.dataFormSignup).toEqual(expected);
   });
+
+  test('errorDataFormSignup should have errors inside array if field conditions are not satisfied', () => {
+    const { result } = renderHook(() => useSignup());
+
+    render(
+      <form onSubmit={() => result.current.signup()}>
+        <input
+          onChange={result.current.handleSignupInput}
+          value={result.current.dataFormSignup.password}
+          data-testid="password-input"
+          name="password"
+        />
+        ,
+        <button type="submit" data-testId="button-submit">
+          Test
+        </button>
+      </form>,
+    );
+    const button = screen.getByTestId('button-submit');
+    fireEvent.click(button);
+
+    Object.values(result.current.errorDataFormSignup).forEach(errorList => {
+      expect(errorList.length).not.toEqual(0);
+    });
+  });
 });

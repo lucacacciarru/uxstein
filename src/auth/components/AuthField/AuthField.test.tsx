@@ -8,7 +8,15 @@ import { AuthField } from './AuthField';
 describe('FieldAuth component', () => {
   test('onChange should be called when typing', () => {
     const onChange = jest.fn();
-    render(<AuthField onChange={onChange} name="email" value="" />);
+    render(
+      <AuthField
+        isInvalid={false}
+        onChange={onChange}
+        name="email"
+        value=""
+        errorList={[]}
+      />,
+    );
     const Field = screen.getByRole('input');
     fireEvent.change(Field, { target: { value: 'test' } });
     expect(onChange).toHaveBeenCalled();
@@ -16,7 +24,15 @@ describe('FieldAuth component', () => {
 
   test('Should change type when passing "email" to the input', () => {
     const onChange = jest.fn();
-    render(<AuthField onChange={onChange} name="email" value="" />);
+    render(
+      <AuthField
+        isInvalid={false}
+        onChange={onChange}
+        name="email"
+        value=""
+        errorList={[]}
+      />,
+    );
     const field = screen.getByRole('input');
     expect(field).toHaveAttribute('type', 'email');
   });
@@ -25,8 +41,20 @@ describe('FieldAuth component', () => {
 
     render(
       <>
-        <AuthField onChange={onChange} name={'password'} value="" />
-        <AuthField onChange={onChange} name={'confirmPassword'} value="" />{' '}
+        <AuthField
+          errorList={[]}
+          isInvalid={false}
+          onChange={onChange}
+          name={'password'}
+          value=""
+        />
+        <AuthField
+          isInvalid={false}
+          onChange={onChange}
+          name={'confirmPassword'}
+          value=""
+          errorList={[]}
+        />{' '}
       </>,
     );
     screen.getAllByRole('input').forEach(item => {
@@ -36,7 +64,15 @@ describe('FieldAuth component', () => {
   test('Should change type "password" to "text" when click on button', () => {
     const onChange = jest.fn();
 
-    render(<AuthField onChange={onChange} name={'password'} value="" />);
+    render(
+      <AuthField
+        isInvalid={false}
+        onChange={onChange}
+        name={'password'}
+        value=""
+        errorList={[]}
+      />,
+    );
     const buttonShowPassword = screen.getByRole('button');
     const field = screen.getByRole('input');
     fireEvent.click(buttonShowPassword);

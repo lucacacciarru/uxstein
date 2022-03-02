@@ -4,12 +4,21 @@ import { loginTrigger } from '../store/actions/login';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getAuthStatus } from '../selectors/getAuthStatus';
 import { LoginFormData } from '../components';
+import { validateAllField, checkLoginMap } from '../utils';
+import { TranslationKey } from '../../_shared/types/i18n';
 
 export const useLogin = () => {
   const dispatch = useDispatch();
   const [dataFormLogin, setDataFormLogin] = useState<LoginFormData>({
     email: '',
     password: '',
+  });
+
+  const [errorDataFormLogin, setErrorDataFormLogin] = useState<
+    Record<keyof LoginFormData, TranslationKey[]>
+  >({
+    email: [],
+    password: [],
   });
 
   const handleLoginInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,14 +28,19 @@ export const useLogin = () => {
     }));
   };
 
-  const login = (dataForm: LoginFormData) => {
-    dispatch(loginTrigger(dataForm));
+  const login = () => {
+    const currentError = validateAllField(dataFormLogin, checkLoginMap);
+    setErrorDataFormLogin(currentError);
+    const checkError = Object.values(currentError);
+    if (checkError.every(dataForm => dataForm.length === 0)) {
+      dispatch(loginTrigger(dataFormLogin));
+    }
   };
 
   const location = useLocation();
   const navigate = useNavigate();
 
-  const from = location.state as string || '/my-personas';
+  const from = (location.state as string) || '/my-personas';
   const authStatus = useSelector(getAuthStatus);
   const isLogged = authStatus === 'logged';
 
@@ -40,5 +54,6 @@ export const useLogin = () => {
     dataFormLogin,
     handleLoginInput,
     login,
+    errorDataFormLogin,
   };
 };
