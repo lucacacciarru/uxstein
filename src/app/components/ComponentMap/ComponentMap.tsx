@@ -33,6 +33,7 @@ const DefaultGridItem: FC<DefaultGridItemProps> = ({ style, type }) => {
         height: '100%',
         ...style,
       }}
+      data-testid="default-grid-item"
     >
       {type}
     </Box>

@@ -14,6 +14,7 @@ export const TextGridItem: FC<Props> = ({ type, style }) => {
         height: '100%',
         ...style,
       }}
+      data-testid="text-grid-item"
     >
       {type}
     </Box>

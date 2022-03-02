@@ -1,7 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit'
 import { BuilderState } from '../types'
 import { addItem } from '../actions/addItem'
-import { addItemCase } from './addItemRequest'
+import { addItemCase } from './addItem'
 import { getBlockItemSettings } from '../../components/AddTab/blockItemSettings'
 import { clearSelected, selectItem } from '../actions/selected'
 import { selectItemCase } from './selectItem'

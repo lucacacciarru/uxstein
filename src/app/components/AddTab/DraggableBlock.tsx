@@ -5,12 +5,12 @@ import iconLibrary from '../../../_shared/components/Icon/iconLibrary';
 import { BlockSetup } from '../../hooks/useBlockSetup';
 import { getBlockItemSettings } from './blockItemSettings';
 
-export type BlockItemProps = {
-  type: BlockItemType;
+export type DraggableBlockProps = {
+  type: DraggableBlockType;
   iconName: keyof typeof iconLibrary;
 };
 
-export type BlockItemType =
+export type DraggableBlockType =
   | 'text'
   | 'image'
   | 'text-list'
@@ -19,11 +19,15 @@ export type BlockItemType =
   | 'progress'
   | 'rate';
 
-type Props = BlockItemProps & {
+type Props = DraggableBlockProps & {
   setBlockSetup: React.Dispatch<React.SetStateAction<BlockSetup>>;
 };
 
-export const BlockItem: FC<Props> = ({ type, iconName, setBlockSetup }) => {
+export const DraggableBlock: FC<Props> = ({
+  type,
+  iconName,
+  setBlockSetup,
+}) => {
   const onDragStart = (e: React.DragEvent<HTMLDivElement>) => {
     e.dataTransfer.setData('text/plain', '');
     setBlockSetup(getBlockItemSettings(type));
@@ -41,6 +45,7 @@ export const BlockItem: FC<Props> = ({ type, iconName, setBlockSetup }) => {
       unselectable="on"
       draggable={true}
       onDragStart={onDragStart}
+      data-testid="draggable"
     >
       <Icon name={iconName} size="8" />
       <Text as="h5" textStyle="h5" textTransform="capitalize">

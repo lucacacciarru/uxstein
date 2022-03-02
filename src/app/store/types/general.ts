@@ -1,8 +1,8 @@
 import { Layout } from 'react-grid-layout'
-import { BlockItemType } from '../../components/AddTab/BlockItem'
+import { DraggableBlockType } from '../../components/AddTab/DraggableBlock'
 
 export type GridItem = {
-    type: BlockItemType;
+    type: DraggableBlockType;
     attributes: {};
     style: {};
 }

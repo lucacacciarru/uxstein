@@ -1,7 +1,7 @@
 import { BlockSetup } from '../../hooks/useBlockSetup';
-import { BlockItemType } from './BlockItem';
+import { DraggableBlockType } from './DraggableBlock';
 
-export const blockItemSettings: Record<BlockItemType, BlockSetup> = {
+export const blockItemSettings: Record<DraggableBlockType, BlockSetup> = {
     text: {
         gridItemSettings: {
             type: 'text',
@@ -91,7 +91,7 @@ export const blockItemSettings: Record<BlockItemType, BlockSetup> = {
     },
 }
 
-export const getBlockItemSettings = (type: BlockItemType) => ({
+export const getBlockItemSettings = (type: DraggableBlockType) => ({
     ...blockItemSettings[type],
     layoutSettings: {
         ...blockItemSettings[type].layoutSettings,

@@ -1,11 +1,11 @@
 // TODO: Change key of <WrapItem> to something better, like a id prop
 import { Center, Stack, Wrap, WrapItem } from '@chakra-ui/react';
 import { FC, useMemo } from 'react';
-import { BlockItem, BlockItemProps } from './BlockItem';
+import { DraggableBlock, DraggableBlockProps } from './DraggableBlock';
 import { SearchBar } from '../../../_shared/components/SearchBar';
 import { BlockSetup } from '../../hooks/useBlockSetup';
 
-const mockedBolckItems: BlockItemProps[] = [
+const mockedDraggableBlocks: DraggableBlockProps[] = [
   { type: 'text', iconName: 'TextIcon' },
   { type: 'image', iconName: 'Photo' },
   { type: 'text-list', iconName: 'TextList' },
@@ -21,9 +21,9 @@ type Props = {
 
 export const AddTab: FC<Props> = ({ setBlockSetup }) => {
   const renderedWrapItems = useMemo(() => {
-    return mockedBolckItems.map((item, i) => (
+    return mockedDraggableBlocks.map((item, i) => (
       <WrapItem key={i}>
-        <BlockItem
+        <DraggableBlock
           iconName={item.iconName}
           type={item.type}
           setBlockSetup={setBlockSetup}
