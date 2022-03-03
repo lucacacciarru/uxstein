@@ -5,7 +5,7 @@
 
 ## Types of changes
 
-> What types of changes does your code introduce to morfeo?
+> What types of changes does your code introduce to uxstein?
 > _Put an `x` in the boxes that apply_
 
 - [ ] 🐛 Bugfix (non-breaking change which fixes an issue)
@@ -19,7 +19,7 @@
 
 > _Put an `x` in the boxes that apply. You can also fill these out after creating the PR. If you're unsure about any of them, don't hesitate to ask. We're here to help! This is simply a reminder of what we are going to look for before merging your code._
 
-- [ ] 👀 I have read the [CONTRIBUTING](https://github.com/morfeojs/morfeo/blob/main/CONTRIBUTING.md) doc
+- [ ] 👀 I have read the [README](https://dev.azure.com/vlkstudio/VLK%20Studio/_git/frankenstein?path=/README.md) doc
 - [ ] ✅ Lint and unit tests pass locally with my changes
 - [ ] 🧪 I have added tests that prove my fix is effective or that my feature works
 - [ ] 📚 I have added necessary documentation (if appropriate)
