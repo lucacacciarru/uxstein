@@ -5,7 +5,7 @@
 
 ## Types of changes
 
-> What types of changes does your code introduce to morfeo?
+> What types of changes does your code introduce to uxstein?
 > _Put an `x` in the boxes that apply_
 
 - [ ] 🐛 Bugfix (non-breaking change which fixes an issue)
