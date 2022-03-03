@@ -3,12 +3,89 @@
     {
       "email": "test@test.com",
       "password": "Test1234",
-      "username": "Frank"
+      "username": "test"
     },
     {
       "email": "gennaro@test.com",
       "password": "test",
       "username": "Gennaro"
+    }
+  ],
+  "personas": [
+    {
+      "username": "test",
+      "data": [
+        {
+          "id": "0144ab8e-9ae3-11ec-b909-0242ac120002",
+          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-11.png",
+          "title": "Test",
+          "createdAt": "0",
+          "updatedAt": "0"
+        },
+        {
+          "id": "0121ab8e-9ae3-11ec-b909-0242ac120002",
+          "src": "https://assets.justinmind.com/wp-content/uploads/2020/07/young-working-student-user-persona.png",
+          "title": "Test",
+          "createdAt": "0",
+          "updatedAt": "0"
+        },
+        {
+          "id": "0121ab8e-23ha-11ec-bab09-0242ac120002",
+          "src": "https://assets.justinmind.com/wp-content/uploads/2020/07/young-working-student-user-persona.png",
+          "title": "Test",
+          "createdAt": "0",
+          "updatedAt": "0"
+        },
+        {
+          "id": "0121ab8e-23ha-aaec-22909-0242ac120002",
+          "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
+          "title": "Test",
+          "createdAt": "0",
+          "updatedAt": "0"
+        },
+        {
+          "id": "0121ab8e-23ha-ryaec-b909-0242ac120042",
+          "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
+          "title": "Test",
+          "createdAt": "0",
+          "updatedAt": "0"
+        },
+        {
+          "id": "012112b8e-23ha-aaec-b909-0242ac120042",
+          "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
+          "title": "Test",
+          "createdAt": "0",
+          "updatedAt": "0"
+        },
+        {
+          "id": "0121sb8e-23ha-aaec-b909-03322ac120042",
+          "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
+          "title": "Test",
+          "createdAt": "0",
+          "updatedAt": "0"
+        },
+        {
+          "id": "0121sb8e-23ha-aaec-b909-02dfd2ac120042",
+          "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
+          "title": "Test",
+          "createdAt": "0",
+          "updatedAt": "0"
+        },
+        {
+          "id": "0121sb8e-23ha-aaec-b909-02kkac120042",
+          "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
+          "title": "Test",
+          "createdAt": "0",
+          "updatedAt": "0"
+        },
+        {
+          "id": "0121sb8e-23ha-aaec-b909-0242ac1dmnd042",
+          "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
+          "title": "Test",
+          "createdAt": "0",
+          "updatedAt": "0"
+        }
+      ]
     }
   ]
 }

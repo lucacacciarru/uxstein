@@ -11,7 +11,7 @@ describe('useAuth', () => {
 
   test('isLogged should be true if logged', () => {
     const { result } = renderHook(() => useAuth(), {
-      mocks: { auth: { status: 'logged', profile: {} } },
+      mocks: { auth: { status: 'logged', profile: {} }, persona: {} },
     });
 
     expect(result.current.isLogged).toBeTruthy();
@@ -19,7 +19,7 @@ describe('useAuth', () => {
 
   test('isLogged shoud be false if call logout', () => {
     const { result } = renderHook(() => useAuth(), {
-      mocks: { auth: { status: 'logged', profile: {} } },
+      mocks: { auth: { status: 'logged', profile: {} }, persona: {} },
     });
 
     expect(result.current.isLogged).toBeTruthy();
@@ -43,7 +43,7 @@ describe('useAuth', () => {
     };
 
     const { result } = renderHook(() => useAuth(), {
-      mocks: { auth: { status: 'logged', profile: mockProfile } },
+      mocks: { auth: { status: 'logged', profile: mockProfile }, persona: {} },
     });
 
     expect(result.current.profile).toEqual(mockProfile);

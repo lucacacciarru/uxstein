@@ -13,7 +13,10 @@ describe('Side Navigation', () => {
   describe('-CustomLink', () => {
     test('should be active if the actual location match the destination one', () => {
       render(<CustomLink to="/my-personas" />, {
-        mocks: { auth: { status: 'logged', profile: { username: 'ss' } } },
+        mocks: {
+          auth: { status: 'logged', profile: { username: 'ss' } },
+          persona: {},
+        },
         initialRoutes: ['/my-personas'],
       });
 
@@ -23,7 +26,10 @@ describe('Side Navigation', () => {
 
     test('should be NOT active if the actual location DONT match the destination one', async () => {
       render(<CustomLink to="/my-personas" />, {
-        mocks: { auth: { status: 'logged', profile: { username: 'ss' } } },
+        mocks: {
+          auth: { status: 'logged', profile: { username: 'ss' } },
+          persona: {},
+        },
         initialRoutes: ['/my-templates'],
       });
 

@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { PersonCard } from '../../../_shared/components';
-import { mockPersonas } from '../../utils/mockPerson';
 import { SimpleGrid, SimpleGridProps, Spacer } from '@chakra-ui/react';
+import { usePersona } from '../../hook/usePersona';
 
 const containerProps: SimpleGridProps = {
   spacingX: '7',
@@ -12,11 +12,14 @@ const containerProps: SimpleGridProps = {
 };
 
 export const Personas: React.FC = () => {
+  const { personaList } = usePersona();
   const renderPersona = useMemo(() => {
-    return mockPersonas.map(persona => (
-      <PersonCard key={persona.createdAt} {...persona} />
-    ));
-  }, []);
+    return personaList
+      ? personaList.map(persona => (
+          <PersonCard type="persona" key={persona.id} {...persona} />
+        ))
+      : null;
+  }, [personaList]);
   return (
     <SimpleGrid {...containerProps}>
       {renderPersona}
