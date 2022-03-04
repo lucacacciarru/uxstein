@@ -8,20 +8,7 @@ import {
     Renderer,
 } from '@testing-library/react-hooks/lib/types';
 import { CustomRenderHookOptions } from './types';
-import { getBlockItemSettings } from '../../app/components/AddTab/blockItemSettings';
-
-export const INITIAL_STATE = {
-    auth: {},
-    persona: {},
-    builder: {
-        allIds: ['existingId'],
-        byId: {
-            existingId: getBlockItemSettings('text').gridItemSettings,
-        },
-        pageSettings: [{ i: 'existingId', x: 0, y: 0, w: 2, h: 2, maxW: 3 }],
-        selectedBlockId: undefined,
-    }
-};
+import { INITIAL_STATE } from './customRender';
 
 export function customRenderHook<TProps, TResult>(
     callback: (props: TProps) => TResult,

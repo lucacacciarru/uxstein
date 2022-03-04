@@ -1,5 +1,15 @@
+import { AuthState } from '../../../auth/store';
 import { renderHook } from '../../testConfig/customRenderHook';
 import { useLayoutApp } from './useLayoutApp';
+
+const MOCK_AUTH_LOGGED_STATE: AuthState = {
+  status: 'logged',
+  profile: {
+    email: 'anyMail',
+    password: 'anyPassword',
+    username: 'anyUsername',
+  },
+};
 
 describe('useLayoutApp', () => {
   test('showNavigation should return true if the path is NOT /app', () => {
@@ -14,13 +24,7 @@ describe('useLayoutApp', () => {
     const { result } = renderHook(() => useLayoutApp(), {
       initialRoutes: ['/app'],
       mocks: {
-        persona: {},
-        auth: {
-          status: 'logged',
-          profile: {
-            username: '',
-          },
-        },
+        auth: MOCK_AUTH_LOGGED_STATE,
       },
     });
 

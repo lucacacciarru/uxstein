@@ -4,18 +4,23 @@ import { reducer } from '../store/reducer';
 import { TestWrapper } from './TestWrapper';
 import { CustomRenderOptions } from './types';
 import { rootSaga, sagaMiddleware } from './middleware';
-import { getBlockItemSettings } from '../../app/components/AddTab/blockItemSettings';
+import { AuthState } from '../../auth/store';
+import { BuilderState } from '../../app/store/types';
+import { PersonaState } from '../../persona/store/types/general';
 
-export const INITIAL_STATE = {
+type State = {
+    auth: AuthState;
+    builder: BuilderState;
+    persona: PersonaState;
+}
+
+export const INITIAL_STATE: State = {
     auth: {},
     persona: {},
     builder: {
-        allIds: ['existingId'],
-        byId: {
-            existingId: getBlockItemSettings('text').gridItemSettings,
-        },
-        pageSettings: [{ i: 'existingId', x: 0, y: 0, w: 2, h: 2, maxW: 3 }],
-        selectedBlockId: undefined,
+        allIds: [],
+        byId: {},
+        pageSettings: [],
     }
 };
 

@@ -1,6 +1,17 @@
 import { SideNavigation } from './SideNavigation';
 import { render, screen } from '../../testConfig/customRender';
 import { CustomLink } from './Partials';
+import { AuthState } from '../../../auth/store';
+
+const MOCK_AUTH_LOGGED_STATE: AuthState = {
+  status: 'logged',
+  profile: {
+    email: 'anyMail',
+    password: 'anyPassword',
+    username: 'anyUsername',
+  },
+};
+
 describe('Side Navigation', () => {
   test('should render correctly', () => {
     render(<SideNavigation />);
@@ -14,8 +25,7 @@ describe('Side Navigation', () => {
     test('should be active if the actual location match the destination one', () => {
       render(<CustomLink to="/my-personas" />, {
         mocks: {
-          auth: { status: 'logged', profile: { username: 'ss' } },
-          persona: {},
+          auth: MOCK_AUTH_LOGGED_STATE,
         },
         initialRoutes: ['/my-personas'],
       });
@@ -27,8 +37,7 @@ describe('Side Navigation', () => {
     test('should NOT be active if the actual location DOES NOT match the destination one', async () => {
       render(<CustomLink to="/my-personas" />, {
         mocks: {
-          auth: { status: 'logged', profile: { username: 'ss' } },
-          persona: {},
+          auth: MOCK_AUTH_LOGGED_STATE,
         },
         initialRoutes: ['/my-templates'],
       });

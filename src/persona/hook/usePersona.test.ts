@@ -9,7 +9,6 @@ describe('usePersona', () => {
   test('personList should be full if the user has created persona before', () => {
     const { result } = renderHook(() => usePersona(), {
       mocks: {
-        auth: { profile: { username: 'test' } },
         persona: {},
       },
     });
@@ -18,7 +17,6 @@ describe('usePersona', () => {
   test('personList should be empty if the user not has created persona before', () => {
     const { result } = renderHook(() => usePersona(), {
       mocks: {
-        auth: { profile: { username: 'test' } },
         persona: { personas: undefined },
       },
     });
@@ -27,7 +25,6 @@ describe('usePersona', () => {
   test('personList should be full if the user has created persona before', () => {
     const { result } = renderHook(() => usePersona(), {
       mocks: {
-        auth: { profile: { username: 'test' } },
         persona: {
           personas: [
             {

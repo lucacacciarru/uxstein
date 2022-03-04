@@ -1,6 +1,14 @@
 import { useAuth } from './useAuth';
 import { renderHook, act } from '../../_shared/testConfig/customRenderHook';
-import { User } from '../store';
+import { AuthState, User } from '../store';
+
+const MOCK_PROFILE: User = {
+  username: 'Frank',
+  email: 'frak.enstain@mail.com',
+  password: 'aa',
+};
+
+const MOCK_AUTH_STATE: AuthState = { status: 'logged', profile: MOCK_PROFILE };
 
 describe('useAuth', () => {
   test('isLogged should be false by default', () => {
@@ -11,7 +19,7 @@ describe('useAuth', () => {
 
   test('isLogged should be true if logged', () => {
     const { result } = renderHook(() => useAuth(), {
-      mocks: { auth: { status: 'logged', profile: {} }, persona: {} },
+      mocks: { auth: MOCK_AUTH_STATE, persona: {} },
     });
 
     expect(result.current.isLogged).toBeTruthy();
@@ -19,7 +27,7 @@ describe('useAuth', () => {
 
   test('isLogged shoud be false if call logout', () => {
     const { result } = renderHook(() => useAuth(), {
-      mocks: { auth: { status: 'logged', profile: {} }, persona: {} },
+      mocks: { auth: MOCK_AUTH_STATE },
     });
 
     expect(result.current.isLogged).toBeTruthy();
@@ -36,16 +44,10 @@ describe('useAuth', () => {
   });
 
   test('profile should return a matching User if logged', () => {
-    const mockProfile: User = {
-      username: 'Frank',
-      email: 'frak.enstain@mail.com',
-      password: 'aa',
-    };
-
     const { result } = renderHook(() => useAuth(), {
-      mocks: { auth: { status: 'logged', profile: mockProfile }, persona: {} },
+      mocks: { auth: { status: 'logged', profile: MOCK_PROFILE }, persona: {} },
     });
 
-    expect(result.current.profile).toEqual(mockProfile);
+    expect(result.current.profile).toEqual(MOCK_PROFILE);
   });
 });
