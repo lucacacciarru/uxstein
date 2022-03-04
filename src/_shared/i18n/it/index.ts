@@ -4,7 +4,7 @@ import { auth } from '../../../auth/i18n/it';
 import { persona } from '../../../persona/i18n/it';
 import { template } from '../../../template/i18n/it';
 import { personCard } from './personCard';
-import { app } from '../../../app/i18n/it';
+import { app } from '../../../builder/i18n/it';
 
 export const it = {
   translation: {

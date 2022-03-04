@@ -10,7 +10,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { initI18n } from './_shared/i18n';
 import { Signup } from './auth/pages/Signup';
-import { Application } from './app/pages/Application';
+import { Builder } from './builder/pages/Builder';
 import { MyPersona } from './persona/pages/MyPersona';
 import { MyTemplates } from './template/pages/MyTemplates';
 
@@ -28,7 +28,7 @@ function App() {
         <Route path="signup" element={<Signup />} />
         <Route element={<LayoutApp />}>
           <Route element={<PrivateRoutes />}>
-            <Route path="app" element={<Application />} />
+            <Route path="app" element={<Builder />} />
             <Route path="my-personas" element={<MyPersona />} />
             <Route path="my-templates" element={<MyTemplates />} />
             <Route path="profile" element={<>Profile</>} />
