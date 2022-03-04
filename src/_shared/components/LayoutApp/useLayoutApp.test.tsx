@@ -13,7 +13,15 @@ describe('useLayoutApp', () => {
   test('showNavigation should return false if the path IS /app', () => {
     const { result } = renderHook(() => useLayoutApp(), {
       initialRoutes: ['/app'],
-      mocks: { auth: { status: 'logged', profile: { username: '' } } },
+      mocks: {
+        persona: {},
+        auth: {
+          status: 'logged',
+          profile: {
+            username: '',
+          },
+        },
+      },
     });
 
     expect(result.current.showNavigation).toBeFalsy();

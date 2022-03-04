@@ -58,7 +58,10 @@ describe('UserDropdown', () => {
 
   test('when logged, should render Profile and Logout button, instead to Login link', () => {
     render(<UserDropdown />, {
-      mocks: { auth: { status: 'logged', profile: { username: 'ss' } } },
+      mocks: {
+        auth: { status: 'logged', profile: { username: 'ss' } },
+        persona: {},
+      },
     });
 
     const profileLink = screen.getByTestId('profile-link');
