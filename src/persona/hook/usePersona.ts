@@ -9,11 +9,11 @@ export function usePersona() {
   const personaList = useSelector(getPersonaItems);
   const personaStatus = useSelector(getPersonaStatus);
   const username = useSelector(getUserProfile)?.username || '';
-  const fetchPersonList = () => {
+  const fetchPersonaList = () => {
     dispatch(fetchPersonaTrigger({ username }));
   };
   return {
-    fetchPersonList,
+    fetchPersonaList,
     personaList,
     personaStatus,
   };

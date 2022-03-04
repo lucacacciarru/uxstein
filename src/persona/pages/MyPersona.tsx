@@ -5,10 +5,10 @@ import { Personas } from '../components';
 import { usePersona } from '../hook/usePersona';
 
 export const MyPersona: React.FC = () => {
-  const { fetchPersonList } = usePersona();
+  const { fetchPersonaList } = usePersona();
 
   useEffect(() => {
-    fetchPersonList();
+    fetchPersonaList();
   }, []);
 
   const { t } = useTranslation();
