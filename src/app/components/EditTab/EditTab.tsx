@@ -1,20 +1,33 @@
 import { FC } from 'react';
+import { useSelector } from 'react-redux';
 import {
   Collapsable,
   CollapsableItem,
 } from '../../../_shared/components/Collapsable';
+import { getGridItemById } from '../../store/selectors/getGridItemById';
+import { GridItem } from '../../store/types';
+import { blockItemSettings } from '../AddTab/blockItemSettings';
 import { EditTabHeader } from './EditTabHeader';
 
-const mockHeaderProps = {
-  title: 'Text Box',
-  minSize: { b: 1, h: 2 },
-  maxSize: { b: 4, h: 6 },
+type Props = {
+  selectedBlockId?: string;
 };
 
-export const EditTab: FC = () => {
+export const EditTab: FC<Props> = ({ selectedBlockId = '' }) => {
+  const selectedBlockItem: GridItem | undefined = useSelector(
+    getGridItemById(selectedBlockId),
+  );
+
+  const type = selectedBlockItem?.type || '';
+
+  const headerProps = {
+    title: type, //probably attributes will have a title value soon
+    optionalSettings: blockItemSettings[type]?.optionalSettings,
+  };
+
   return (
     <>
-      <EditTabHeader {...mockHeaderProps} />
+      <EditTabHeader {...headerProps} />
       <Collapsable defaultIndex={0}>
         <CollapsableItem name="Attributes">Various attributes</CollapsableItem>
         <CollapsableItem name="Style">

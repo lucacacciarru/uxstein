@@ -59,7 +59,14 @@ describe('UserDropdown', () => {
   test('when logged, should render Profile and Logout button, instead to Login link', () => {
     render(<UserDropdown />, {
       mocks: {
-        auth: { status: 'logged', profile: { username: 'ss' } },
+        auth: {
+          status: 'logged',
+          profile: {
+            email: 'anyEmail',
+            password: 'anyPassword',
+            username: 'anyUsername',
+          },
+        },
         persona: {},
       },
     });

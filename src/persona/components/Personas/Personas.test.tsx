@@ -8,9 +8,7 @@ describe('Personas component', () => {
   test('Card should be rendered if personas array exists in the store', () => {
     render(<Personas />, {
       mocks: {
-        auth: {},
         persona: {
-          username: '',
           personas: [
             {
               id: '78274384',

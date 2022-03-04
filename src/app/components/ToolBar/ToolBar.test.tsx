@@ -3,6 +3,6 @@ import { ToolBar } from './ToolBar';
 
 describe('ToolBar', () => {
   test('should render correctly', () => {
-    render(<ToolBar />);
+    render(<ToolBar setBlockSetup={() => {}} />);
   });
 });

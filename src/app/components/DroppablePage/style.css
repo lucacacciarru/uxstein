@@ -1,0 +1,10 @@
+.react-grid-item.react-draggable-dragging {
+  opacity: 0.5;
+}
+.react-grid-item.react-grid-placeholder {
+  background-color: var(--chakra-colors-brand-primary);
+  opacity: 0.5;
+}
+.react-grid-item {
+  cursor: pointer;
+}

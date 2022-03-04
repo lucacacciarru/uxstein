@@ -10,11 +10,11 @@ export type CustomRenderOptions<
     Q extends Queries = typeof queries,
     Container extends Element | DocumentFragment = HTMLElement,
     > = RenderOptions<Q, Container> & {
-        mocks?: typeof INITIAL_STATE;
+        mocks?: Partial<typeof INITIAL_STATE>;
         initialRoutes?: string[];
     };
 
 export type CustomRenderHookOptions<T> = RenderHookOptions<T> & {
-    mocks?: typeof INITIAL_STATE;
+    mocks?: Partial<typeof INITIAL_STATE>;
     initialRoutes?: string[];
 }
