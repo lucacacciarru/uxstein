@@ -1,8 +1,8 @@
 import { render } from '../../_shared/testConfig/customRender';
-import { Application } from './Application';
+import { Builder } from './Builder';
 
-describe('Application page', () => {
+describe('Builder page', () => {
   test('should render correctly', () => {
-    render(<Application />);
+    render(<Builder />);
   });
 });

@@ -11,7 +11,7 @@ import { BlockSetup } from '../../hooks/useBlockSetup';
 import { useSeletedBlock } from '../../hooks/useSelectedBlock';
 import { AddTab } from '../AddTab/AddTab';
 import { EditTab } from '../EditTab/EditTab';
-import { stackContainerBaseProps } from './styles/toolBarStylingProps';
+import { stackContainerBaseProps } from './toolBarStylingProps';
 
 type Props = {
   setBlockSetup: React.Dispatch<React.SetStateAction<BlockSetup>>;

@@ -5,7 +5,7 @@ import { TestWrapper } from './TestWrapper';
 import { CustomRenderOptions } from './types';
 import { rootSaga, sagaMiddleware } from './middleware';
 import { AuthState } from '../../auth/store';
-import { BuilderState } from '../../app/store/types';
+import { BuilderState } from '../../builder/store/types';
 import { PersonaState } from '../../persona/store/types/general';
 
 type State = {

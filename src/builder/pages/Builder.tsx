@@ -5,7 +5,7 @@ import { DroppablePage } from '../components/DroppablePage/DroppablePage';
 import { Header } from '../components/Header/Header';
 import { useBlockSetup } from '../hooks/useBlockSetup';
 
-export const Application: FC = () => {
+export const Builder: FC = () => {
   const { blockSetup, setBlockSetup } = useBlockSetup();
 
   return (

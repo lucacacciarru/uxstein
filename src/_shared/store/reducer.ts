@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { builderRooorReducer } from '../../app/store';
+import { builderRooorReducer } from '../../builder/store';
 import { authRootReducer } from '../../auth/store';
 import { personaRootReducer } from '../../persona/store/reducers';
 
