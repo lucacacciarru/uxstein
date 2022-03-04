@@ -24,7 +24,7 @@ describe('Side Navigation', () => {
       expect(customLink).toHaveAttribute('aria-details', 'active-link');
     });
 
-    test('should be NOT active if the actual location DONT match the destination one', async () => {
+    test('should NOT be active if the actual location DOES NOT match the destination one', async () => {
       render(<CustomLink to="/my-personas" />, {
         mocks: {
           auth: { status: 'logged', profile: { username: 'ss' } },
