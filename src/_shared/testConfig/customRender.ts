@@ -1,50 +1,22 @@
 import { queries, Queries, render, RenderResult } from '@testing-library/react';
-import { configureStore } from '@reduxjs/toolkit';
-import { reducer } from '../store/reducer';
 import { TestWrapper } from './TestWrapper';
 import { CustomRenderOptions } from './types';
-import { rootSaga, sagaMiddleware } from './middleware';
-import { AuthState } from '../../auth/store';
-import { BuilderState } from '../../builder/store/types';
-import { PersonaState } from '../../persona/store/types/general';
-
-type State = {
-    auth: AuthState;
-    builder: BuilderState;
-    persona: PersonaState;
-}
-
-export const INITIAL_STATE: State = {
-    auth: {},
-    persona: {},
-    builder: {
-        allIds: [],
-        byId: {},
-        pageSettings: [],
-    }
-};
+import { getStoreForTesting } from './getStoreForTesting';
 
 export function customRender<
-    Q extends Queries = typeof queries,
-    Container extends Element | DocumentFragment = HTMLElement,
-    >(
-        ui: React.ReactElement,
-        options?: CustomRenderOptions<Q, Container>,
+  Q extends Queries = typeof queries,
+  Container extends Element | DocumentFragment = HTMLElement,
+>(
+  ui: React.ReactElement,
+  options?: CustomRenderOptions<Q, Container>,
 ): RenderResult<Q, Container> {
-    const state = { ...INITIAL_STATE, ...options?.mocks }; //TODO: add deep merge here
+  const store = getStoreForTesting(options);
 
-    const store = configureStore({
-        reducer,
-        middleware: [sagaMiddleware],
-        preloadedState: state,
-    });
-    sagaMiddleware.run(rootSaga);
-
-    return render(ui, {
-        wrapper: args =>
-            TestWrapper({ ...args, store, initialRoutes: options?.initialRoutes }),
-        ...options,
-    });
+  return render(ui, {
+    wrapper: args =>
+      TestWrapper({ ...args, store, initialRoutes: options?.initialRoutes }),
+    ...options,
+  });
 }
 
 export * from '@testing-library/react';
