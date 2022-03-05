@@ -34,6 +34,18 @@ stages:
               npm install
               npm run test:ci
             displayName: 'Test the app'
+          - task: PublishTestResults@2
+            condition: succeededOrFailed()
+            inputs:
+              testResultsFiles: '**/junit.xml'
+              testRunTitle: 'Publish test results'
+          - task: PublishCodeCoverageResults@1
+            inputs:
+              codeCoverageTool: Cobertura
+              summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
+              reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
+          
+
 # TODO: deploy stage
 # - stage: deploy
 #   jobs: 
