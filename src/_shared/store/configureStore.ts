@@ -1,14 +1,9 @@
-import { all, fork } from 'redux-saga/effects';
 import createSagaMiddleware from 'redux-saga';
 import { configureStore } from '@reduxjs/toolkit';
 import { reducer } from './reducer';
-import { sagas } from './sagas';
+import { createRootSaga } from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
-
-function* rootSaga() {
-  yield all(sagas.map(saga => fork(saga)));
-}
 
 export const store = configureStore({
   reducer,
@@ -16,4 +11,4 @@ export const store = configureStore({
   devTools: true,
 });
 
-sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(createRootSaga());
