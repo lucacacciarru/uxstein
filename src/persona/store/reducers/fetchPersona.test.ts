@@ -2,7 +2,10 @@ import { personaRootReducer } from '.';
 import { PersonaState } from '../types/general';
 
 const PERSONA_INITIAL_STATE: PersonaState = {
-  status: 'idle',
+  personasData: {
+    allIds: [],
+    byId: {},
+  },
 };
 
 describe('FETCHPERSONA REDUCER', () => {

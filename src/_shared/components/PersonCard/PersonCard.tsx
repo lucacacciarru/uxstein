@@ -6,6 +6,7 @@ import { PersonCardContainerInfo } from './PersonCardContainerInfo';
 import { timeBetweenTwoDays } from './timeBetweenTwoDays';
 
 type Props = {
+  id: string;
   src: string;
   title: string;
   createdAt: number;
@@ -23,6 +24,7 @@ const cardContainerProps: ChakraProps = {
 };
 
 export const PersonCard: React.FC<Props> = ({
+  id,
   src,
   title,
   updatedAt,
@@ -34,7 +36,7 @@ export const PersonCard: React.FC<Props> = ({
 
   return (
     <CardContainer role="card" {...cardContainerProps}>
-      <OptionPersonCard />
+      <OptionPersonCard idPersona={id} />
       <Link to={`/builder/${title}`}>
         <Box w="100%" h="20vh" p="3" background="black.20">
           <Image src={src} w="100%" h="100%" objectFit="contain" />

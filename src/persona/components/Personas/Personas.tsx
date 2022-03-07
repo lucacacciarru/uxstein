@@ -12,14 +12,14 @@ const containerProps: SimpleGridProps = {
 };
 
 export const Personas: React.FC = () => {
-  const { personaList } = usePersona();
+  const { personas } = usePersona();
   const renderPersona = useMemo(() => {
-    return personaList
-      ? personaList.map(persona => (
+    return personas
+      ? personas.map(persona => (
           <PersonCard type="persona" key={persona.id} {...persona} />
         ))
       : null;
-  }, [personaList]);
+  }, [personas]);
   return (
     <SimpleGrid {...containerProps}>
       {renderPersona}

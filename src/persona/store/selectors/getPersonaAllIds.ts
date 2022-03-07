@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { baseSelector } from './baseSelectors';
 
-export const getPersonaItems = createSelector(
+export const getPersonaAllIds = createSelector(
   baseSelector,
-  personaState => personaState.personas,
+  personaState => personaState.personasData.allIds,
 );

@@ -67,7 +67,12 @@ describe('UserDropdown', () => {
             username: 'anyUsername',
           },
         },
-        persona: {},
+        persona: {
+          personasData: {
+            allIds: [],
+            byId: {},
+          },
+        },
       },
     });
 

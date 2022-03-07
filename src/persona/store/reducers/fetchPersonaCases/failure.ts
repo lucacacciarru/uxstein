@@ -7,5 +7,4 @@ export const failureCase: CaseReducer<
   FetchPersonaFailureAction
 > = state => ({
   ...state,
-  status: 'idle',
 });

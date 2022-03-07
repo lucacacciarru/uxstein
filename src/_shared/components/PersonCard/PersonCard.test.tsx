@@ -5,6 +5,7 @@ describe('Card component', () => {
   test('should be rendered', () => {
     render(
       <PersonCard
+        id="anyid"
         updatedAt={0}
         createdAt={0}
         src="test"
@@ -18,6 +19,7 @@ describe('Card component', () => {
   test('should show avatar with icon if type is "template"', () => {
     render(
       <PersonCard
+        id="anyid"
         updatedAt={0}
         createdAt={0}
         src="test"

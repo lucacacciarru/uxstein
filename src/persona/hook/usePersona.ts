@@ -1,20 +1,27 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserProfile } from '../../auth/store/selectors';
+import { deletePersonaTrigger } from '../store/actions/deletePersona';
 import { fetchPersonaTrigger } from '../store/actions/fetchPersona';
-import { getPersonaItems } from '../store/selectors/getPersonaItems';
-import { getPersonaStatus } from '../store/selectors/getPersonaStatus';
+import { getPersonaAllIds } from '../store/selectors/getPersonaAllIds';
+import { getPersonas } from '../store/selectors/getPersonas';
 
 export function usePersona() {
   const dispatch = useDispatch();
-  const personaList = useSelector(getPersonaItems);
-  const personaStatus = useSelector(getPersonaStatus);
+  const personaAllIds = useSelector(getPersonaAllIds);
+  const personas = useSelector(getPersonas);
   const username = useSelector(getUserProfile)?.username || '';
+
   const fetchPersonaList = () => {
     dispatch(fetchPersonaTrigger({ username }));
   };
+
+  const deletePersona = (id: string) => {
+    dispatch(deletePersonaTrigger({ id }));
+  };
   return {
     fetchPersonaList,
-    personaList,
-    personaStatus,
+    personaAllIds,
+    personas,
+    deletePersona,
   };
 }
