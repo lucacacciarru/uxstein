@@ -13,7 +13,7 @@ export function createSagaWithLoadingManagement<
   return function* sagaWithLoadingManagement(...args: unknown[]) {
     yield put(setLoading({ key }));
     try {
-      yield saga(args);
+      yield saga(...args);
     } catch (e) {
     } finally {
       if (forceReset) {
