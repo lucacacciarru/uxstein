@@ -26,14 +26,14 @@ export type AttributesModel = Partial<
     Record<AttributeName, SingleItemAttribute | MultipleItemAttribute>
 >
 
-type SingleItemAttribute = {
+export type SingleItemAttribute = {
     label: TranslationKey;
     placeholder: TranslationKey;
     value: string;
     style: {};
 }
 
-type MultipleItemAttribute = {
+export type MultipleItemAttribute = {
     label: TranslationKey;
     placeholder: TranslationKey;
     items: { label: string, value?: string }[];

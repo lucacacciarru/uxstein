@@ -1,7 +1,7 @@
 import { Box, FormLabel, Input, InputGroup } from '@chakra-ui/react';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useAttributeField } from '../../hooks/useAttributeField';
 import { getAttributeByNameAndId } from '../../store/selectors/getAttributeByNameAndId';
 import { AttributeName } from '../../store/types';
 
@@ -12,22 +12,13 @@ type Props = {
 
 export const TextFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
   const attribute = useSelector(getAttributeByNameAndId(name, blockItemId));
-  const { t } = useTranslation();
+  const { label, placeholder } = useAttributeField(attribute);
 
   return (
     <Box>
-      <FormLabel>
-        {t(attribute?.label || 'app.toolBar.attributes.default.label')}
-      </FormLabel>
+      <FormLabel>{label}</FormLabel>
       <InputGroup>
-        <Input
-          placeholder={
-            t(
-              attribute?.placeholder ||
-                'app.toolBar.attributes.default.placeholder',
-            ) as string
-          }
-        />
+        <Input placeholder={placeholder} />
       </InputGroup>
     </Box>
   );
