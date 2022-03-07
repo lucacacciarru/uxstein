@@ -14,7 +14,7 @@ import * as fetchPersonaCase from './fetchPersonaCases';
 import * as deletePersonaCase from './deletePersonaCases';
 
 const INITIAL_STATE: PersonaState = {
-  personasData: {
+  data: {
     allIds: [],
     byId: {},
   },

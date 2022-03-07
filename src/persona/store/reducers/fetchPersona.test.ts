@@ -2,7 +2,7 @@ import { personaRootReducer } from '.';
 import { PersonaState } from '../types/general';
 
 const PERSONA_INITIAL_STATE: PersonaState = {
-  personasData: {
+  data: {
     allIds: [],
     byId: {},
   },

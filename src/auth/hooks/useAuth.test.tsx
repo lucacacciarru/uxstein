@@ -22,7 +22,7 @@ describe('useAuth', () => {
       mocks: {
         auth: MOCK_AUTH_STATE,
         persona: {
-          personasData: {
+          data: {
             allIds: [],
             byId: {},
           },
@@ -56,7 +56,7 @@ describe('useAuth', () => {
       mocks: {
         auth: { status: 'logged', profile: MOCK_PROFILE },
         persona: {
-          personasData: {
+          data: {
             allIds: [],
             byId: {},
           },

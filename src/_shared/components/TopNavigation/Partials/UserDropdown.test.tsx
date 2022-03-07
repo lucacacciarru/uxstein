@@ -68,7 +68,7 @@ describe('UserDropdown', () => {
           },
         },
         persona: {
-          personasData: {
+          data: {
             allIds: [],
             byId: {},
           },

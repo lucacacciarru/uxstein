@@ -10,7 +10,7 @@ export const successCase: CaseReducer<
 > = (state, action) => {
   return {
     ...state,
-    personasData: {
+    data: {
       allIds: createIdList(action.payload),
       byId: personaListToObject(action.payload),
     },

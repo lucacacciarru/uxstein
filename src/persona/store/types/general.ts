@@ -14,5 +14,5 @@ export type PersonasData = {
 };
 
 export type PersonaState = {
-  personasData: PersonasData;
+  data: PersonasData;
 };

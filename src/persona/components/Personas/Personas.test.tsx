@@ -9,7 +9,7 @@ describe('Personas component', () => {
     render(<Personas />, {
       mocks: {
         persona: {
-          personasData: {
+          data: {
             allIds: ['1'],
             byId: {
               '1': {

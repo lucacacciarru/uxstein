@@ -16,7 +16,7 @@ describe('usePersona', () => {
     const { result } = renderHook(() => usePersona(), {
       mocks: {
         persona: {
-          personasData: {
+          data: {
             allIds: ['1'],
             byId: {
               '1': {
@@ -56,7 +56,7 @@ describe('usePersona', () => {
     const { result } = renderHook(() => usePersona(), {
       mocks: {
         persona: {
-          personasData: {
+          data: {
             allIds: ['1'],
             byId: { '1': { ...personaDetails } },
           },
@@ -81,7 +81,7 @@ describe('usePersona', () => {
     const { result } = renderHook(() => usePersona(), {
       mocks: {
         persona: {
-          personasData: {
+          data: {
             allIds: ['1'],
             byId: {
               '1': {

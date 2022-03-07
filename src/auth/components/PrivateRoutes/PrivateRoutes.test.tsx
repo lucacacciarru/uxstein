@@ -30,7 +30,7 @@ describe('App', () => {
       mocks: {
         auth: { status: 'logged' },
         persona: {
-          personasData: {
+          data: {
             allIds: [],
             byId: {},
           },

@@ -8,8 +8,8 @@ export const successCase: CaseReducer<
   DeletePersonaSuccessAction
 > = (state, action) => ({
   ...state,
-  personasData: {
-    allIds: state.personasData.allIds.filter(id => id !== action.payload),
-    byId: removePersonaById(state.personasData.byId, action.payload),
+  data: {
+    allIds: state.data.allIds.filter(id => id !== action.payload),
+    byId: removePersonaById(state.data.byId, action.payload),
   },
 });
