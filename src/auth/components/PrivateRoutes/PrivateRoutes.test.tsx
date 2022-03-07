@@ -27,7 +27,15 @@ describe('App', () => {
   test('should render the PrivatePage if logged', () => {
     render(<MockRoutes />, {
       initialRoutes: ['/private'],
-      mocks: { auth: { status: 'logged' }, persona: {} },
+      mocks: {
+        auth: { status: 'logged' },
+        persona: {
+          data: {
+            allIds: [],
+            byId: {},
+          },
+        },
+      },
     });
 
     const privatePage = screen.getByTestId('private-page');

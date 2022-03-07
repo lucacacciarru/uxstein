@@ -27,7 +27,11 @@ export const TemplateRow: React.FC<Props> = ({ category }) => {
 
   const renderTemplateByAuthor = useMemo(() => {
     return filteredByCategory.map(template => (
-      <PersonCard key={template.createdAt} {...template} />
+      <PersonCard
+        id={Date.now().toString()}
+        key={template.createdAt}
+        {...template}
+      />
     ));
   }, [filteredByCategory]);
 

@@ -1,10 +1,10 @@
 import { CaseReducer } from '@reduxjs/toolkit';
+import { DeletePersonaFailureAction } from '../../types/deletePersona';
 import { PersonaState } from '../../types/general';
-import { FetchPersonaRequestAction } from '../../types/fetchPersona';
 
-export const requestCase: CaseReducer<
+export const failureCase: CaseReducer<
   PersonaState,
-  FetchPersonaRequestAction
+  DeletePersonaFailureAction
 > = state => ({
   ...state,
 });

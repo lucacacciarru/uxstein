@@ -7,7 +7,12 @@ import { DefaultRootState } from 'react-redux';
 
 const INITIAL_STATE: DefaultRootState = {
   auth: {},
-  persona: {},
+  persona: {
+    data: {
+      allIds: [],
+      byId: {},
+    },
+  },
   builder: {
     allIds: [],
     byId: {},

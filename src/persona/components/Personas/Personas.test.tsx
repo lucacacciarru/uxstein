@@ -9,15 +9,18 @@ describe('Personas component', () => {
     render(<Personas />, {
       mocks: {
         persona: {
-          personas: [
-            {
-              id: '78274384',
-              title: 'VLK',
-              src: 'https://miro.medium.com/max/800/1*zslyy_N64PbkRflC3mOeoQ.jpeg',
-              createdAt: 1,
-              updatedAt: 0,
+          data: {
+            allIds: ['1'],
+            byId: {
+              '1': {
+                id: '1',
+                src: 'https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-11.png',
+                title: 'Test',
+                createdAt: 0,
+                updatedAt: 0,
+              },
             },
-          ],
+          },
         },
       },
     });

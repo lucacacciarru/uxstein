@@ -8,7 +8,11 @@ export type Persona = {
 
 export type ApiError = {};
 
+export type PersonasData = {
+  allIds: string[];
+  byId: Record<string, Persona>;
+};
+
 export type PersonaState = {
-  status?: 'idle' | 'logged' | 'logging';
-  personas?: Persona[];
+  data: PersonasData;
 };
