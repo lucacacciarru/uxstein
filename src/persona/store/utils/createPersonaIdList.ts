@@ -1,5 +1,5 @@
 import { Persona } from '../types/general';
 
-export function createIdList(personaList: Persona[]) {
+export function createPersonaIdList(personaList: Persona[]) {
   return personaList.map(persona => persona.id);
 }

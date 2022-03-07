@@ -1,8 +1,7 @@
 import { CaseReducer } from '@reduxjs/toolkit';
 import { PersonaState } from '../../types/general';
 import { FetchPersonaSuccesssAction } from '../../types/fetchPersona';
-import { createIdList } from '../../utils/createIdList';
-import { personaListToObject } from '../../utils/personaListToObject';
+import { formatPersonaListToObject, createPersonaIdList } from '../../utils';
 
 export const successCase: CaseReducer<
   PersonaState,
@@ -11,8 +10,8 @@ export const successCase: CaseReducer<
   return {
     ...state,
     data: {
-      allIds: createIdList(action.payload),
-      byId: personaListToObject(action.payload),
+      allIds: createPersonaIdList(action.payload),
+      byId: formatPersonaListToObject(action.payload),
     },
   };
 };

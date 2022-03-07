@@ -1,6 +1,6 @@
 import { Persona } from '../types/general';
 
-export function personaListToObject(
+export function formatPersonaListToObject(
   personaList: Persona[],
 ): Record<string, Persona> {
   return personaList.reduce(

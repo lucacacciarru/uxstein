@@ -1,5 +1,5 @@
 import { CaseReducer } from '@reduxjs/toolkit';
-import { removePersonaById } from '../../utils/removePersonaById';
+import { removePersonaById } from '../../utils';
 import { DeletePersonaSuccessAction } from '../../types/deletePersona';
 import { PersonaState } from '../../types/general';
 
