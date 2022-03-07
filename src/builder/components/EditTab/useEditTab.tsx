@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { getGridItemById } from '../../store/selectors/getGridItemById';
 import { AttributeName, GridItem } from '../../store/types';
-import { blockItemSettings } from '../AddTab/blockItemSettings';
+import { blockItemSettings } from '../../config/blockItemSettings';
 
 export const useEditTab = (selectedBlockId: string) => {
   const selectedBlockItem: GridItem | undefined = useSelector(

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 const DEFAULT_NAME = 'untilted';
 const MAX_NAME_CHARS = 20;
 const TOAST_ID = '1';
-const TOAST_TITLE = 'app.toast.maxCharacters';
+const TOAST_TITLE = 'builder.toast.maxCharacters';
 const ERROR_TOAST: UseToastOptions = {
   id: TOAST_ID,
   title: '',

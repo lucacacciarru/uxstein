@@ -1,35 +1,9 @@
 import { BlockSetup } from '../../hooks/useBlockSetup';
-import { DraggableBlockType } from './DraggableBlock';
+import { DraggableBlockType } from '../../components/AddTab/DraggableBlock';
+import { text } from './text';
 
 export const blockItemSettings: Record<DraggableBlockType, BlockSetup> = {
-    text: {
-        gridItemSettings: {
-            type: 'text',
-            attributes: {
-                title: {
-                    label: 'app.toolBar.attributes.title.label',
-                    placeholder: 'app.toolBar.attributes.title.placeholder',
-                    value: '',
-                    style: {},
-                },
-                subtitle: {
-                    label: 'app.toolBar.attributes.subtitle.label',
-                    placeholder: 'app.toolBar.attributes.subtitle.placeholder',
-                    value: '',
-                    style: {}
-                },
-            },
-            style: { background: 'red', color: 'white' },
-        },
-        layoutSettings: {
-            h: 2,
-            w: 2,
-            i: ''
-        },
-        optionalSettings: {
-            maxW: 3,
-        }
-    },
+    text,
     "text-list": {
         gridItemSettings: {
             type: 'text-list',

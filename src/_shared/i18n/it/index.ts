@@ -6,7 +6,7 @@ import { auth } from '../../../auth/i18n/it';
 import { persona } from '../../../persona/i18n/it';
 import { template } from '../../../template/i18n/it';
 import { personCard } from './personCard';
-import { app } from '../../../builder/i18n/it';
+import { builder } from '../../../builder/i18n/it';
 
 export const it = {
   translation: {
@@ -16,7 +16,7 @@ export const it = {
     personCard,
     persona,
     template,
-    app,
+    builder,
     deletePersona,
     optionsCard,
   },

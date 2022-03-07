@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { Icon } from '../../../_shared/components';
 import iconLibrary from '../../../_shared/components/Icon/iconLibrary';
 import { BlockSetup } from '../../hooks/useBlockSetup';
-import { getBlockItemSettings } from './blockItemSettings';
+import { getBlockItemSettings } from '../../config/blockItemSettings';
 
 export type DraggableBlockProps = {
   type: DraggableBlockType;
