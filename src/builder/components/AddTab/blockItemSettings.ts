@@ -7,14 +7,14 @@ export const blockItemSettings: Record<DraggableBlockType, BlockSetup> = {
             type: 'text',
             attributes: {
                 title: {
-                    label: 'Title',
-                    placeholder: 'Insert something',
+                    label: 'app.toolBar.attributes.title.label',
+                    placeholder: 'app.toolBar.attributes.title.placeholder',
                     value: '',
                     style: {},
                 },
                 subtitle: {
-                    label: 'Subtitle',
-                    placeholder: 'Insert something',
+                    label: 'app.toolBar.attributes.subtitle.label',
+                    placeholder: 'app.toolBar.attributes.subtitle.placeholder',
                     value: '',
                     style: {}
                 },

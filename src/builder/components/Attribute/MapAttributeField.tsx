@@ -1,13 +1,11 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { AttributeName } from '../../store/types';
 import { TextFieldAttribute } from './TextFieldAttribute';
 
 // remove partial, all AttributeName have to be mapped
-const map: Partial<Record<AttributeName, any>> = {
+const map: Partial<Record<AttributeName, React.FC<Props>>> = {
   title: TextFieldAttribute,
   subtitle: TextFieldAttribute,
-  body: 'text-area',
-  image: 'image',
 };
 
 type Props = {

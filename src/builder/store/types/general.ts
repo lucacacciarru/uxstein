@@ -1,4 +1,5 @@
 import { Layout } from 'react-grid-layout'
+import { TranslationKey } from '../../../_shared/types/i18n';
 import { DraggableBlockType } from '../../components/AddTab/DraggableBlock'
 
 export type GridItem = {
@@ -26,15 +27,15 @@ export type AttributesModel = Partial<
 >
 
 type SingleItemAttribute = {
-    label: string;
-    placeholder: string;
+    label: TranslationKey;
+    placeholder: TranslationKey;
     value: string;
     style: {};
 }
 
 type MultipleItemAttribute = {
-    label: string;
-    placeholder: string;
+    label: TranslationKey;
+    placeholder: TranslationKey;
     items: { label: string, value?: string }[];
     style: {};
 }
