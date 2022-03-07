@@ -5,7 +5,20 @@ export const blockItemSettings: Record<DraggableBlockType, BlockSetup> = {
     text: {
         gridItemSettings: {
             type: 'text',
-            attributes: {},
+            attributes: {
+                title: {
+                    label: 'Title',
+                    placeholder: 'Insert something',
+                    value: '',
+                    style: {},
+                },
+                subtitle: {
+                    label: 'Subtitle',
+                    placeholder: 'Insert something',
+                    value: '',
+                    style: {}
+                },
+            },
             style: { background: 'red', color: 'white' },
         },
         layoutSettings: {
