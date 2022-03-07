@@ -12,21 +12,21 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
-import { usePersona } from '../../../persona/hook/usePersona';
+import { usePersonas } from '../../../persona/hook/usePersonas';
 import { Icon } from '../Icon';
 
 type Props = {
   isOpen: boolean;
   onClose: () => void;
-  idPersona: string;
+  personaId: string;
 };
 
 export const ModalDeletePersona: React.FC<Props> = ({
   isOpen,
   onClose,
-  idPersona,
+  personaId,
 }) => {
-  const { deletePersona } = usePersona();
+  const { deletePersona } = usePersonas();
   const { t } = useTranslation();
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered>
@@ -48,7 +48,7 @@ export const ModalDeletePersona: React.FC<Props> = ({
             <Button
               variant="error"
               mr={3}
-              onClick={() => deletePersona(idPersona)}
+              onClick={() => deletePersona(personaId)}
             >
               {t('deletePersona.confirmButton')}
             </Button>

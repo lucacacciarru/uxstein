@@ -11,10 +11,10 @@ import { Icon } from '../../../_shared/components';
 import { ModalDeletePersona } from '../ModalDeletePerson';
 
 type Props = {
-  idPersona: string;
+  personaId: string;
 };
 
-export const OptionPersonCard: React.FC<Props> = ({ idPersona }) => {
+export const OptionPersonCard: React.FC<Props> = ({ personaId }) => {
   const { isOpen, onClose, onOpen } = useDisclosure();
   const { t } = useTranslation();
   return (
@@ -44,7 +44,7 @@ export const OptionPersonCard: React.FC<Props> = ({ idPersona }) => {
       <ModalDeletePersona
         isOpen={isOpen}
         onClose={onClose}
-        idPersona={idPersona}
+        personaId={personaId}
       />
     </>
   );

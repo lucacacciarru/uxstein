@@ -3,17 +3,16 @@ import {
   act,
   waitFor,
 } from '../../_shared/testConfig/customRenderHook';
-import { usePersona } from './usePersona';
+import { usePersonas } from './usePersonas';
 
 describe('usePersona', () => {
-  test('personas and personasAllids should be empty array by default', () => {
-    const { result } = renderHook(() => usePersona());
-    expect(result.current.personaAllIds).toEqual([]);
+  test('personas should be empty array by default', () => {
+    const { result } = renderHook(() => usePersonas());
     expect(result.current.personas).toEqual([]);
   });
 
   test('personList should be full if the user has created persona before', () => {
-    const { result } = renderHook(() => usePersona(), {
+    const { result } = renderHook(() => usePersonas(), {
       mocks: {
         persona: {
           data: {
@@ -31,7 +30,6 @@ describe('usePersona', () => {
         },
       },
     });
-    const expectAllIds = ['1'];
     const expectById = [
       {
         id: '1',
@@ -41,7 +39,6 @@ describe('usePersona', () => {
         updatedAt: 0,
       },
     ];
-    expect(result.current.personaAllIds).toEqual(expectAllIds);
     expect(result.current.personas).toEqual(expectById);
   });
   test('test', () => {
@@ -53,7 +50,7 @@ describe('usePersona', () => {
       updatedAt: 0,
     };
 
-    const { result } = renderHook(() => usePersona(), {
+    const { result } = renderHook(() => usePersonas(), {
       mocks: {
         persona: {
           data: {
@@ -65,7 +62,6 @@ describe('usePersona', () => {
     });
     act(() => result.current.fetchPersonaList());
     waitFor(() => {
-      expect(result.current.personaAllIds).toContain('1');
       expect(result.current.personas).toContain(personaDetails);
     });
   });
@@ -78,7 +74,7 @@ describe('usePersona', () => {
       updatedAt: 0,
     };
 
-    const { result } = renderHook(() => usePersona(), {
+    const { result } = renderHook(() => usePersonas(), {
       mocks: {
         persona: {
           data: {
@@ -96,7 +92,6 @@ describe('usePersona', () => {
     act(() => result.current.deletePersona('1'));
 
     waitFor(() => {
-      expect(result.current.personaAllIds).not.toContain('1');
       expect(result.current.personas).not.toContain(personaDetails);
     });
   });

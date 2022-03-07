@@ -36,7 +36,7 @@ export const PersonCard: React.FC<Props> = ({
 
   return (
     <CardContainer role="card" {...cardContainerProps}>
-      <OptionPersonCard idPersona={id} />
+      <OptionPersonCard personaId={id} />
       <Link to={`/builder/${title}`}>
         <Box w="100%" h="20vh" p="3" background="black.20">
           <Image src={src} w="100%" h="100%" objectFit="contain" />

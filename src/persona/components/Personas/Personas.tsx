@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { PersonCard } from '../../../_shared/components';
 import { SimpleGrid, SimpleGridProps, Spacer } from '@chakra-ui/react';
-import { usePersona } from '../../hook/usePersona';
+import { usePersonas } from '../../hook/usePersonas';
 
 const containerProps: SimpleGridProps = {
   spacingX: '7',
@@ -12,7 +12,7 @@ const containerProps: SimpleGridProps = {
 };
 
 export const Personas: React.FC = () => {
-  const { personas } = usePersona();
+  const { personas } = usePersonas();
   const renderPersona = useMemo(() => {
     return personas
       ? personas.map(persona => (
