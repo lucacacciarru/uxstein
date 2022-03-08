@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { useDebouncedCallback } from 'use-debounce';
 import { TranslationKey } from '../../_shared/types/i18n';
 import { updateAttributeValue } from '../store/actions/updateAttributeValue';
 import { getAttributeByNameAndId } from '../store/selectors/getAttributeByNameAndId';
@@ -19,17 +20,25 @@ export const useAttributeFieldByIdAndName = (blockId: string, actualAttributeNam
     const placeholderTranslationKey: TranslationKey = attribute?.placeholder || 'builder.toolBar.attributes.default.placeholder';
     const placeholder = t(placeholderTranslationKey) as string;
 
-    const [value, setValue] = useState(attribute?.value || '');
+    const getInitialValueState = () => {
+        if (attribute?.value) {
+            return attribute?.value;
+        }
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            dispatch(updateAttributeValue({ attributeToUpdate: actualAttributeName, blockId, value }));
-        }, 500);
+        if (attribute?.initialValue) {
+            return t(attribute?.initialValue) as string;
+        }
+    }
+    const [value, setValue] = useState(getInitialValueState());
 
-        return () => clearTimeout(timer);
-    }, [value]);
+    const debouncedUpdateValue = useDebouncedCallback((value) => {
+        dispatch(updateAttributeValue({ attributeToUpdate: actualAttributeName, blockId, value }));
+    }, 800);
 
-    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setValue(e.target.value);
+        debouncedUpdateValue(e.target.value);
+    };
 
     return {
         label,

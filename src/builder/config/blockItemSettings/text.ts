@@ -7,13 +7,15 @@ export const text: BlockSetup = {
             title: {
                 label: 'builder.toolBar.attributes.title.label',
                 placeholder: 'builder.toolBar.attributes.title.placeholder',
-                value: 'Franco Uxstein',
+                value: '',
+                initialValue: 'builder.toolBar.attributes.title.placeholder',
                 style: {},
             },
             subtitle: {
                 label: 'builder.toolBar.attributes.subtitle.label',
                 placeholder: 'builder.toolBar.attributes.subtitle.placeholder',
-                value: 'best frank in the world',
+                value: '',
+                initialValue: 'builder.toolBar.attributes.subtitle.placeholder',
                 style: {}
             },
         },
