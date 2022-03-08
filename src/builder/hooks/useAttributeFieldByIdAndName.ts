@@ -9,7 +9,7 @@ import { AttributeName } from '../store/types';
 
 export const useAttributeFieldByIdAndName = (blockId: string, attributeName: AttributeName) => {
 
-    const attribute = useSelector(getAttributeByNameAndId(actualAttributeName, blockId));
+    const attribute = useSelector(getAttributeByNameAndId(attributeName, blockId));
 
     const dispatch = useDispatch()
     const { t } = useTranslation();
@@ -32,7 +32,7 @@ export const useAttributeFieldByIdAndName = (blockId: string, attributeName: Att
     const [value, setValue] = useState(getInitialValueState());
 
     const debouncedUpdateValue = useDebouncedCallback((value) => {
-        dispatch(updateAttributeValue({ attributeToUpdate: actualAttributeName, blockId, value }));
+        dispatch(updateAttributeValue({ attributeToUpdate: attributeName, blockId, value }));
     }, 800);
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
