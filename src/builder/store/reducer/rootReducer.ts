@@ -6,6 +6,8 @@ import { getBlockItemSettings } from '../../config/blockItemSettings'
 import { clearSelected, selectItem } from '../actions/selected'
 import { selectItemCase } from './selectItem'
 import { clearSelectedCase } from './clearSelected'
+import { updateAttributeValue } from '../actions/updateAttributeValue'
+import { updateAttributeValueCase } from './updateAttributeValue'
 
 
 const INITIAL_STATE: BuilderState = {
@@ -21,5 +23,6 @@ export const builderRooorReducer = createReducer(INITIAL_STATE, builder => {
         .addCase(addItem, addItemCase)
         .addCase(selectItem, selectItemCase)
         .addCase(clearSelected, clearSelectedCase)
+        .addCase(updateAttributeValue, updateAttributeValueCase)
         .addDefaultCase(state => state)
 });
