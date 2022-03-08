@@ -7,7 +7,7 @@ import { updateAttributeValue } from '../store/actions/updateAttributeValue';
 import { getAttributeByNameAndId } from '../store/selectors/getAttributeByNameAndId';
 import { AttributeName } from '../store/types';
 
-export const useAttributeFieldByIdAndName = (blockId: string, actualAttributeName: AttributeName) => {
+export const useAttributeFieldByIdAndName = (blockId: string, attributeName: AttributeName) => {
 
     const attribute = useSelector(getAttributeByNameAndId(actualAttributeName, blockId));
 
