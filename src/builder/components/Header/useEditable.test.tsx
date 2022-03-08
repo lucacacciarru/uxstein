@@ -28,7 +28,7 @@ describe('useEditable', () => {
   test('shoud show modal if write more than 20 char', () => {
     render(<EditableMock />);
     const { result } = renderHook(() => useTranslation());
-    const maxCharMessage = result.current.t('app.toast.maxCharacters');
+    const maxCharMessage = result.current.t('builder.toast.maxCharacters');
     expect(screen.queryByText(maxCharMessage)).not.toBeInTheDocument();
 
     const editable = screen.getByDisplayValue('untilted');

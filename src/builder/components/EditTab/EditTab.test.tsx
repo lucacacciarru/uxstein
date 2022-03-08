@@ -1,6 +1,6 @@
 import { render } from '../../../_shared/testConfig/customRender';
 import { BuilderState } from '../../store/types';
-import { getBlockItemSettings } from '../AddTab/blockItemSettings';
+import { getBlockItemSettings } from '../../config/blockItemSettings';
 import { EditTab } from './EditTab';
 
 const EXISTING_ID = 'existingId';

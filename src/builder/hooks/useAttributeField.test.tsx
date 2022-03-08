@@ -3,8 +3,8 @@ import { SingleItemAttribute } from '../store/types';
 import { useAttributeField } from './useAttributeField';
 
 const MOCK_ATTRIBUTE: SingleItemAttribute = {
-  label: 'app.toolBar.attributes.title.label',
-  placeholder: 'app.toolBar.attributes.title.placeholder',
+  label: 'builder.toolBar.attributes.title.label',
+  placeholder: 'builder.toolBar.attributes.title.placeholder',
   value: '',
   style: {},
 };
