@@ -11,7 +11,7 @@ export function usePersonas() {
   const dispatch = useDispatch();
   const personas = useSelector(getPersonas);
   const username = useSelector(getUserProfile)?.username || '';
-  const { isLoading } = useLoading('personas');
+  const { isLoading } = useLoading('persona');
 
   const fetchPersonaList = () => {
     dispatch(fetchPersonaTrigger({ username }));
