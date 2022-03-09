@@ -7,4 +7,9 @@ export const failureCase: CaseReducer<
   DeletePersonaFailureAction
 > = state => ({
   ...state,
+  data: {
+    ...state.data,
+    ...state.rollbackData,
+  },
+  rollbackData: undefined,
 });

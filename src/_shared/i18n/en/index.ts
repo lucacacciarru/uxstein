@@ -1,7 +1,8 @@
 import { errorPage } from './errorPage';
 import { navigation } from './navigation';
 import { personCard } from './personCard';
-import { deletePersona } from './deletePersona';
+import { deletePersonaModal } from './deletePersonaModal';
+import { renamePersonaModal } from './renamePersonaModal';
 import { optionsCard } from './optionsCard';
 import { auth } from '../../../auth/i18n/en';
 import { persona } from '../../../persona/i18n/en';
@@ -17,7 +18,8 @@ export const en = {
     persona,
     template,
     builder,
-    deletePersona,
+    deletePersonaModal,
+    renamePersonaModal,
     optionsCard,
   },
 };

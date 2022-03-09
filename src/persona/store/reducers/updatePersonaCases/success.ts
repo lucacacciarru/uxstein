@@ -1,10 +1,10 @@
 import { CaseReducer } from '@reduxjs/toolkit';
-import { DeletePersonaSuccessAction } from '../../types/deletePersona';
 import { PersonaState } from '../../types/general';
+import { UpdatePersonaSuccessAction } from '../../types/updatePersonaCases';
 
 export const successCase: CaseReducer<
   PersonaState,
-  DeletePersonaSuccessAction
+  UpdatePersonaSuccessAction
 > = state => ({
   ...state,
   rollbackData: undefined,

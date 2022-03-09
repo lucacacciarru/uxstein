@@ -7,4 +7,7 @@ export const requestCase: CaseReducer<
   FetchPersonaRequestAction
 > = state => ({
   ...state,
+  rollbackData: {
+    ...state.data,
+  },
 });

@@ -15,4 +15,5 @@ export type PersonasData = {
 
 export type PersonaState = {
   data: PersonasData;
+  rollbackData?: PersonasData;
 };

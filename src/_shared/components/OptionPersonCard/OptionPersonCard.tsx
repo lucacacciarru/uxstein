@@ -1,21 +1,24 @@
-import {
-  Box,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  useDisclosure,
-} from '@chakra-ui/react';
+import { Box, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { Icon } from '../../../_shared/components';
 import { ModalDeletePersona } from '../ModalDeletePerson';
+import { ModalRenamePerson } from '../ModalRenamePerson';
+import { usePersonaModal } from '../../hooks/usePersonaModal';
 
 type Props = {
   personaId: string;
 };
 
 export const OptionPersonCard: React.FC<Props> = ({ personaId }) => {
-  const { isOpen, onClose, onOpen } = useDisclosure();
+  const {
+    isOpenRename,
+    onCloseRename,
+    onOpenRename,
+    isOpenDelete,
+    onCloseDelete,
+    onOpenDelete,
+  } = usePersonaModal();
+
   const { t } = useTranslation();
   return (
     <>
@@ -30,11 +33,14 @@ export const OptionPersonCard: React.FC<Props> = ({ personaId }) => {
           <Icon name="ThreeDots" color="black.50" />
         </MenuButton>
         <MenuList>
-          <MenuItem icon={<Icon name="Edit" color="black20" />}>
+          <MenuItem
+            onClick={onOpenRename}
+            icon={<Icon name="Edit" color="black20" />}
+          >
             {t('optionsCard.rename')}
           </MenuItem>
           <MenuItem
-            onClick={onOpen}
+            onClick={onOpenDelete}
             icon={<Icon name="Delete" color="black20" />}
           >
             {t('optionsCard.delete')}
@@ -42,8 +48,13 @@ export const OptionPersonCard: React.FC<Props> = ({ personaId }) => {
         </MenuList>
       </Menu>
       <ModalDeletePersona
-        isOpen={isOpen}
-        onClose={onClose}
+        isOpen={isOpenDelete}
+        onClose={onCloseDelete}
+        personaId={personaId}
+      />
+      <ModalRenamePerson
+        isOpen={isOpenRename}
+        onClose={onCloseRename}
         personaId={personaId}
       />
     </>
