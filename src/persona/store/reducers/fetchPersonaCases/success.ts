@@ -13,5 +13,6 @@ export const successCase: CaseReducer<
       allIds: createPersonaIdList(action.payload),
       byId: formatPersonaListToObject(action.payload),
     },
+    rollbackData: undefined,
   };
 };

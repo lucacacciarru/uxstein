@@ -12,6 +12,12 @@ import {
 import { PersonaState } from '../types/general';
 import * as fetchPersonaCase from './fetchPersonaCases';
 import * as deletePersonaCase from './deletePersonaCases';
+import * as updatePersonaCase from './updatePersonaCases';
+import {
+  updatePersonaFailure,
+  updatePersonaRequest,
+  updatePersonaSuccess,
+} from '../actions/updatePersona';
 
 const INITIAL_STATE: PersonaState = {
   data: {
@@ -27,6 +33,8 @@ export const personaRootReducer = createReducer(INITIAL_STATE, builder => {
     .addCase(deletePersonaRequest, deletePersonaCase.requestCase)
     .addCase(deletePersonaFailure, deletePersonaCase.failureCase)
     .addCase(deletePersonaSuccess, deletePersonaCase.successCase)
-
+    .addCase(updatePersonaRequest, updatePersonaCase.requestCase)
+    .addCase(updatePersonaFailure, updatePersonaCase.failureCase)
+    .addCase(updatePersonaSuccess, updatePersonaCase.successCase)
     .addDefaultCase(state => state);
 });
