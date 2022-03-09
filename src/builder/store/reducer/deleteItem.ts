@@ -1,5 +1,5 @@
 import { CaseReducer } from '@reduxjs/toolkit';
-import { removeItemInsideMap } from '../../../_shared/utils';
+import { omitFromObject } from '../../../_shared/utils';
 import { BuilderState } from '../types';
 import { DeleteItemAction } from '../types/deleteItem';
 import { deleteItemInsideList } from '../utils/deleteItemInsidePageSettings';
@@ -12,7 +12,7 @@ export const deleteItemCase: CaseReducer<BuilderState, DeleteItemAction> = (
   return {
     ...state,
     allIds: state.allIds.filter(item => item !== id),
-    byId: removeItemInsideMap(state.byId, id),
+    byId: omitFromObject(state.byId, id),
     pageSettings: deleteItemInsideList(state.pageSettings, id),
   };
 };

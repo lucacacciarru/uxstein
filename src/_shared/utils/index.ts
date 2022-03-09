@@ -1,1 +1,1 @@
-export * from './removeItemInsideMap';
+export * from './omitFromObject ';
