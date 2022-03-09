@@ -1,6 +1,7 @@
 import { BlockSetup } from '../../hooks/useBlockSetup';
 import { DraggableBlockType } from '../../components/AddTab/DraggableBlock';
 import { text } from './text';
+import { AttributeName, AttributesModel } from '../../store/types';
 
 export const blockItemSettings: Record<DraggableBlockType, BlockSetup> = {
     text,
@@ -84,4 +85,23 @@ export const getBlockItemSettings = (type: DraggableBlockType) => ({
         ...blockItemSettings[type].layoutSettings,
         i: Date.now().toString(),
     },
+    gridItemSettings: {
+        ...blockItemSettings[type].gridItemSettings,
+        attributes: populateAttributesValueWithInitial(blockItemSettings[type].gridItemSettings.attributes),
+    }
 })
+
+const populateAttributesValueWithInitial = (attributes: AttributesModel) => {
+    let result: AttributesModel = {};
+    let attribute: AttributeName;
+    for (attribute in attributes) {
+        result = {
+            ...result,
+            [attribute]: {
+                ...attributes[attribute],
+                value: attributes[attribute]?.initialValue
+            },
+        }
+    }
+    return result;
+}

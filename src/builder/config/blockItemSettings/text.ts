@@ -8,16 +8,18 @@ export const text: BlockSetup = {
                 label: 'builder.toolBar.attributes.title.label',
                 placeholder: 'builder.toolBar.attributes.title.placeholder',
                 value: '',
+                initialValue: 'Titolo',
                 style: {},
             },
             subtitle: {
                 label: 'builder.toolBar.attributes.subtitle.label',
                 placeholder: 'builder.toolBar.attributes.subtitle.placeholder',
                 value: '',
+                initialValue: 'Sottotitolo',
                 style: {}
             },
         },
-        style: { background: 'red', color: 'white' },
+        style: { background: 'black', color: 'white' },
     },
     layoutSettings: {
         h: 2,

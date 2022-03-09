@@ -19,6 +19,7 @@ export enum BUILDER_ACTION_TYPES {
     ADD = 'builder/add',
     SELECT_ITEM = 'builder/select-item',
     CLEAR_SELECTED = 'builder/clear-selected',
+    UPDATE_ATTRIBUTE_VALUE = 'builder/update-attribute-value'
 }
 
 export type AttributeName = 'title' | 'subtitle' | 'body' | 'image' | 'progress';
@@ -30,6 +31,7 @@ export type SingleItemAttribute = {
     label: TranslationKey;
     placeholder: TranslationKey;
     value: string;
+    initialValue?: string;
     style: {};
 }
 
@@ -37,5 +39,7 @@ export type MultipleItemAttribute = {
     label: TranslationKey;
     placeholder: TranslationKey;
     items: { label: string, value?: string }[];
+    initialValue?: string;
     style: {};
+    value: undefined;
 }
