@@ -37,6 +37,7 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
             height: '800px',
             background: '#dadada',
         },
+        draggableCancel: '.delete-block',
         isResizable: true,
         compactType: null,
         autoSize: false,

@@ -1,10 +1,39 @@
 .react-grid-item.react-draggable-dragging {
   opacity: 0.5;
 }
+
 .react-grid-item.react-grid-placeholder {
   background-color: var(--chakra-colors-brand-primary);
   opacity: 0.5;
 }
+
 .react-grid-item {
-  cursor: pointer;
+  cursor: grab;
+}
+
+.react-grid-item.react-draggable-dragging:hover .delete-block,
+.react-grid-item.resizing:hover .delete-block {
+  opacity: 0;
+}
+
+.delete-block {
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+
+.delete-block:hover {
+  transform: scale(1.1);
+}
+
+.react-grid-item:hover .delete-block {
+  opacity: 1;
+}
+
+.react-grid-item > .react-resizable-handle::after {
+  border-right: 2px solid rgba(0, 0, 0, 0);
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.react-resizable-handle {
+  background: transparent;
 }
