@@ -1,7 +1,7 @@
 import { CaseReducer } from '@reduxjs/toolkit';
+import { removeItemInsideMap } from '../../../../_shared/utils';
 import { DeletePersonaRequestAction } from '../../types/deletePersona';
 import { PersonaState } from '../../types/general';
-import { removePersonaById } from '../../utils';
 
 export const requestCase: CaseReducer<
   PersonaState,
@@ -13,6 +13,6 @@ export const requestCase: CaseReducer<
   },
   data: {
     allIds: state.data.allIds.filter(id => id !== action.payload.id),
-    byId: removePersonaById(state.data.byId, action.payload.id),
+    byId: removeItemInsideMap(state.data.byId, action.payload.id),
   },
 });

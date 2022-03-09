@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { getGridItemById } from '../../store/selectors/getGridItemById';
 import { TextGridItem } from '../TextGridItem/TextGridItem';
+
 const map: Record<string, any> = {
   text: TextGridItem,
 };
@@ -15,17 +16,18 @@ export const ComponentMap: FC<Props> = ({ id }) => {
   const gridItem = useSelector(getGridItemById(id));
   const Component = map[gridItem.type];
   if (!Component) {
-    return <DefaultGridItem {...gridItem} />;
+    return <DefaultGridItem {...gridItem} id={id} />;
   }
-  return <Component {...gridItem} />;
+  return <Component {...gridItem} id={id} />;
 };
 
 type DefaultGridItemProps = {
   style: {};
   type: string;
+  id: string;
 };
 
-const DefaultGridItem: FC<DefaultGridItemProps> = ({ style, type }) => {
+const DefaultGridItem: FC<DefaultGridItemProps> = ({ style, type, id }) => {
   return (
     <Box
       style={{
