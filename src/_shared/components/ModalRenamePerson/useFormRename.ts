@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { usePersonas } from '../../../persona/hook/usePersonas';
 export function useFormRename() {
-  const { uploadPersona } = usePersonas();
+  const { updatePersona } = usePersonas();
   const { t } = useTranslation();
 
   const mapErrorMessage: Record<string, string> = {
@@ -30,7 +30,7 @@ export function useFormRename() {
       return;
     }
     setInputError(false);
-    uploadPersona(personaId, { title: nameValue });
+    updatePersona(personaId, { title: nameValue });
     closeModal();
   };
 

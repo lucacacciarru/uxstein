@@ -21,7 +21,7 @@ export function usePersonas() {
     dispatch(deletePersonaTrigger({ id }));
   };
 
-  const uploadPersona = (
+  const updatePersona = (
     id: string,
     properties: Omit<Partial<Persona>, 'id'>,
   ) => {
@@ -32,7 +32,7 @@ export function usePersonas() {
     fetchPersonaList,
     personas,
     deletePersona,
-    uploadPersona,
+    updatePersona,
     isLoading,
   };
 }
