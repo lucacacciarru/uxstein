@@ -16,7 +16,6 @@ export const updateAttributeValueCase: CaseReducer<BuilderState, UpdateAttribute
                     [attribute]: {
                         ...state.byId[id].attributes[attribute],
                         value: action.payload.value,
-                        initialValue: undefined,
                     }
                 }
             },

@@ -20,16 +20,7 @@ export const useAttributeFieldByIdAndName = (blockId: string, attributeName: Att
     const placeholderTranslationKey: TranslationKey = attribute?.placeholder || 'builder.toolBar.attributes.default.placeholder';
     const placeholder = t(placeholderTranslationKey) as string;
 
-    const getInitialValueState = () => {
-        if (attribute?.value) {
-            return attribute?.value;
-        }
-
-        if (attribute?.initialValue) {
-            return t(attribute?.initialValue) as string;
-        }
-    }
-    const [value, setValue] = useState(getInitialValueState());
+    const [value, setValue] = useState(attribute?.value);
 
     const debouncedUpdateValue = useDebouncedCallback((value) => {
         dispatch(updateAttributeValue({ attributeToUpdate: attributeName, blockId, value }));

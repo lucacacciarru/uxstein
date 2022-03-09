@@ -31,7 +31,7 @@ export type SingleItemAttribute = {
     label: TranslationKey;
     placeholder: TranslationKey;
     value: string;
-    initialValue?: TranslationKey;
+    initialValue?: string;
     style: {};
 }
 
@@ -39,7 +39,7 @@ export type MultipleItemAttribute = {
     label: TranslationKey;
     placeholder: TranslationKey;
     items: { label: string, value?: string }[];
-    initialValue?: TranslationKey;
+    initialValue?: string;
     style: {};
     value: undefined;
 }

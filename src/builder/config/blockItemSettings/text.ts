@@ -8,14 +8,14 @@ export const text: BlockSetup = {
                 label: 'builder.toolBar.attributes.title.label',
                 placeholder: 'builder.toolBar.attributes.title.placeholder',
                 value: '',
-                initialValue: 'builder.toolBar.attributes.title.placeholder',
+                initialValue: 'Titolo',
                 style: {},
             },
             subtitle: {
                 label: 'builder.toolBar.attributes.subtitle.label',
                 placeholder: 'builder.toolBar.attributes.subtitle.placeholder',
                 value: '',
-                initialValue: 'builder.toolBar.attributes.subtitle.placeholder',
+                initialValue: 'Sottotitolo',
                 style: {}
             },
         },

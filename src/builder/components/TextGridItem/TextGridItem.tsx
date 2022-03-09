@@ -1,7 +1,6 @@
 import { Box, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { AttributesModel } from '../../store/types';
-import { useTextGridItem } from './useTextGridItem';
 
 type Props = {
   type: string;
@@ -10,7 +9,6 @@ type Props = {
 };
 
 export const TextGridItem: FC<Props> = ({ type, style, attributes }) => {
-  const { titleValue, subtitleValue } = useTextGridItem(attributes);
   return (
     <Box
       style={{
@@ -22,10 +20,10 @@ export const TextGridItem: FC<Props> = ({ type, style, attributes }) => {
       p="4"
     >
       <Text as="h2" textStyle="h2">
-        {titleValue}
+        {attributes.title?.value}
       </Text>
 
-      <Text as="em">{subtitleValue}</Text>
+      <Text as="em">{attributes.subtitle?.value}</Text>
     </Box>
   );
 };
