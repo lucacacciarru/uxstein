@@ -29,19 +29,9 @@ export type AttributeName =
   | 'body'
   | 'image'
   | 'progress';
-export type AttributesModel = Partial<
-  Record<AttributeName, MultipleItemAttribute>
->;
+export type AttributesModel = Partial<Record<AttributeName, ItemAttribute>>;
 
-export type SingleItemAttribute = {
-  label: TranslationKey;
-  placeholder: TranslationKey;
-  value: string;
-  initialValue?: string;
-  style: {};
-};
-
-export type MultipleItemAttribute = {
+export type ItemAttribute = {
   label: TranslationKey;
   placeholder: TranslationKey;
   items: { label?: string; value: string }[];

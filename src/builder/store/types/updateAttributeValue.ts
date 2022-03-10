@@ -1,11 +1,11 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { BUILDER_ACTION_TYPES } from '.';
-import { AttributeName, MultipleItemAttribute } from './general';
+import { AttributeName, ItemAttribute } from './general';
 
 export type UpdateAttributeValuePayload = {
   blockId: string;
   attributeToUpdate: AttributeName;
-  items: MultipleItemAttribute['items'];
+  items: ItemAttribute['items'];
 };
 
 export type UpdateAttributeValueAction = PayloadAction<
