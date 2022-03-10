@@ -21,9 +21,9 @@ export const TextGridItem: FC<Props> = ({ type, style, attributes, id }) => {
       p="4"
     >
       <Text as="h2" textStyle="h2">
-        {attributes.title?.value}
+        {attributes.title?.items[0].value}
       </Text>
-      <Text as="em">{attributes.subtitle?.value}</Text>
+      <Text as="em">{attributes.subtitle?.items[0].value}</Text>
       <Handles id={id} bg={style.background} />
     </Box>
   );

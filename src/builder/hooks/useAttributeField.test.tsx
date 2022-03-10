@@ -15,7 +15,8 @@ const MOCK_ATTRIBUTES: AttributesModel = {
     label: 'builder.toolBar.attributes.default.label',
     placeholder: 'builder.toolBar.attributes.default.placeholder',
     style: {},
-    value: 'Any value',
+    items: [{ value: 'anyValue' }],
+    initialValue: [{ value: 'anyValue' }],
   },
 };
 

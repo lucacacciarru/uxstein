@@ -4,104 +4,106 @@ import { text } from './text';
 import { AttributeName, AttributesModel } from '../../store/types';
 
 export const blockItemSettings: Record<DraggableBlockType, BlockSetup> = {
-    text,
-    "text-list": {
-        gridItemSettings: {
-            type: 'text-list',
-            attributes: {},
-            style: { background: 'green', color: 'white' },
-        },
-        layoutSettings: {
-            h: 2,
-            w: 1,
-            i: ''
-        }
+  text,
+  'text-list': {
+    gridItemSettings: {
+      type: 'text-list',
+      attributes: {},
+      style: { background: 'green', color: 'white' },
     },
-    "image-list": {
-        gridItemSettings: {
-            type: 'image-list',
-            attributes: {},
-            style: { background: 'red', color: 'white' },
-        },
-        layoutSettings: {
-            h: 1,
-            w: 2,
-            i: ''
-        }
+    layoutSettings: {
+      h: 2,
+      w: 1,
+      i: '',
     },
-    checkbox: {
-        gridItemSettings: {
-            type: 'checkbox',
-            attributes: {},
-            style: { background: 'purple', color: 'white' },
-        },
-        layoutSettings: {
-            h: 3,
-            w: 2,
-            i: ''
-        }
+  },
+  'image-list': {
+    gridItemSettings: {
+      type: 'image-list',
+      attributes: {},
+      style: { background: 'red', color: 'white' },
     },
-    image: {
-        gridItemSettings: {
-            type: 'image',
-            attributes: {},
-            style: { background: 'purple', color: 'white' },
-        },
-        layoutSettings: {
-            h: 2,
-            w: 3,
-            i: ''
-        }
+    layoutSettings: {
+      h: 1,
+      w: 2,
+      i: '',
     },
-    progress: {
-        gridItemSettings: {
-            type: 'progress',
-            attributes: {},
-            style: { background: 'black', color: 'white' },
-        },
-        layoutSettings: {
-            h: 1,
-            w: 1,
-            i: ''
-        }
+  },
+  checkbox: {
+    gridItemSettings: {
+      type: 'checkbox',
+      attributes: {},
+      style: { background: 'purple', color: 'white' },
     },
-    rate: {
-        gridItemSettings: {
-            type: 'rate',
-            attributes: {},
-            style: { background: 'grey', color: 'white' },
-        },
-        layoutSettings: {
-            h: 2,
-            w: 2,
-            i: ''
-        }
+    layoutSettings: {
+      h: 3,
+      w: 2,
+      i: '',
     },
-}
+  },
+  image: {
+    gridItemSettings: {
+      type: 'image',
+      attributes: {},
+      style: { background: 'purple', color: 'white' },
+    },
+    layoutSettings: {
+      h: 2,
+      w: 3,
+      i: '',
+    },
+  },
+  progress: {
+    gridItemSettings: {
+      type: 'progress',
+      attributes: {},
+      style: { background: 'black', color: 'white' },
+    },
+    layoutSettings: {
+      h: 1,
+      w: 1,
+      i: '',
+    },
+  },
+  rate: {
+    gridItemSettings: {
+      type: 'rate',
+      attributes: {},
+      style: { background: 'grey', color: 'white' },
+    },
+    layoutSettings: {
+      h: 2,
+      w: 2,
+      i: '',
+    },
+  },
+};
 
 export const getBlockItemSettings = (type: DraggableBlockType) => ({
-    ...blockItemSettings[type],
-    layoutSettings: {
-        ...blockItemSettings[type].layoutSettings,
-        i: Date.now().toString(),
-    },
-    gridItemSettings: {
-        ...blockItemSettings[type].gridItemSettings,
-        attributes: populateAttributesValueWithInitial(blockItemSettings[type].gridItemSettings.attributes),
-    }
-})
+  ...blockItemSettings[type],
+  layoutSettings: {
+    ...blockItemSettings[type].layoutSettings,
+    i: Date.now().toString(),
+  },
+  gridItemSettings: {
+    ...blockItemSettings[type].gridItemSettings,
+    attributes: populateAttributesValueWithInitial(
+      blockItemSettings[type].gridItemSettings.attributes,
+    ),
+  },
+});
 
 const populateAttributesValueWithInitial = (attributes: AttributesModel) => {
-    let result: AttributesModel = {};
-    let attribute: AttributeName;
-    for (attribute in attributes) {
-        result = {
-            ...result,
-            [attribute]: {
-                ...attributes[attribute],
-                value: attributes[attribute]?.initialValue
-            },
-        }
-    }
-    return result;
-}
+  let result: AttributesModel = {};
+  let attribute: AttributeName;
+  for (attribute in attributes) {
+    result = {
+      ...result,
+      [attribute]: {
+        ...attributes[attribute],
+        items: attributes[attribute]?.initialValue,
+      },
+    };
+  }
+  return result;
+};

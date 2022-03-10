@@ -29,23 +29,12 @@ export type AttributeName =
   | 'body'
   | 'image'
   | 'progress';
-export type AttributesModel = Partial<
-  Record<AttributeName, SingleItemAttribute | MultipleItemAttribute>
->;
+export type AttributesModel = Partial<Record<AttributeName, ItemAttribute>>;
 
-export type SingleItemAttribute = {
+export type ItemAttribute = {
   label: TranslationKey;
   placeholder: TranslationKey;
-  value: string;
-  initialValue?: string;
+  items: { label?: string; value: string }[];
+  initialValue: { label?: string; value: string }[];
   style: {};
-};
-
-export type MultipleItemAttribute = {
-  label: TranslationKey;
-  placeholder: TranslationKey;
-  items: { label: string; value?: string }[];
-  initialValue?: string;
-  style: {};
-  value: undefined;
 };
