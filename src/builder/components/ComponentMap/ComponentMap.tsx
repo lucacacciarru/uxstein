@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { getGridItemById } from '../../store/selectors/getGridItemById';
 import { TextGridItem } from '../TextGridItem/TextGridItem';
 
-const map: Record<string, any> = {
+const map: Record<string, React.FC<any>> = {
   text: TextGridItem,
 };
 
@@ -22,7 +22,7 @@ export const ComponentMap: FC<Props> = ({ id }) => {
 };
 
 type DefaultGridItemProps = {
-  style: {};
+  style: Record<string, string>;
   type: string;
   id: string;
 };

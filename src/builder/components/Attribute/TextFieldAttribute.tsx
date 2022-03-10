@@ -2,6 +2,7 @@ import { Box, FormLabel, Input, InputGroup } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useAttributeFieldByIdAndName } from '../../hooks/useAttributeFieldByIdAndName';
 import { AttributeName } from '../../store/types';
+import { AttributeStyleFields } from './AttributeStyleFields';
 
 type Props = {
   blockItemId: string;
@@ -9,10 +10,8 @@ type Props = {
 };
 
 export const TextFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
-  const { value, onChange, label, placeholder } = useAttributeFieldByIdAndName(
-    blockItemId,
-    name,
-  );
+  const { value, onChange, label, placeholder, style, styleKeys } =
+    useAttributeFieldByIdAndName(blockItemId, name);
 
   return (
     <Box>
@@ -20,6 +19,12 @@ export const TextFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
       <InputGroup>
         <Input placeholder={placeholder} value={value} onChange={onChange} />
       </InputGroup>
+      <AttributeStyleFields
+        name={name}
+        blockItemId={blockItemId}
+        style={style}
+        styleKeys={styleKeys}
+      />
     </Box>
   );
 };

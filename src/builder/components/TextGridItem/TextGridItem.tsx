@@ -4,12 +4,11 @@ import { AttributesModel } from '../../store/types';
 import { Handles } from '../Handles/Handles';
 
 type Props = {
-  type: string;
-  style: any;
+  style: Record<string, string>;
   attributes: AttributesModel;
   id: string;
 };
-export const TextGridItem: FC<Props> = ({ type, style, attributes, id }) => {
+export const TextGridItem: FC<Props> = ({ style, attributes = {}, id }) => {
   return (
     <Box
       style={{
@@ -20,10 +19,12 @@ export const TextGridItem: FC<Props> = ({ type, style, attributes, id }) => {
       data-testid="text-grid-item"
       p="4"
     >
-      <Text as="h2" textStyle="h2">
+      <Text style={attributes.title?.style}>
         {attributes.title?.items[0].value}
       </Text>
-      <Text as="em">{attributes.subtitle?.items[0].value}</Text>
+      <Text style={attributes.subtitle?.style}>
+        {attributes.subtitle?.items[0].value}
+      </Text>
       <Handles id={id} bg={style.background} />
     </Box>
   );
