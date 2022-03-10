@@ -25,7 +25,7 @@ export const EditTab: FC<Props> = ({ selectedBlockId = '' }) => {
           />
         </CollapsableItem>
         <CollapsableItem name="Style">
-          global block style attribute here
+          {/* TODO: GlobalAttributes here */}
         </CollapsableItem>
       </Collapsable>
     </>

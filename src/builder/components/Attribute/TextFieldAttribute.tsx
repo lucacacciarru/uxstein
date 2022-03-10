@@ -1,12 +1,8 @@
-import { Box, FormLabel, Input, InputGroup, Stack } from '@chakra-ui/react';
+import { Box, FormLabel, Input, InputGroup } from '@chakra-ui/react';
 import { FC } from 'react';
-import {
-  Collapsable,
-  CollapsableItem,
-} from '../../../_shared/components/Collapsable';
 import { useAttributeFieldByIdAndName } from '../../hooks/useAttributeFieldByIdAndName';
 import { AttributeName } from '../../store/types';
-import { MapStyleField } from '../StyleFields/MapStyleField';
+import { AttributeStyleFields } from './AttributeStyleFields';
 
 type Props = {
   blockItemId: string;
@@ -23,21 +19,12 @@ export const TextFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
       <InputGroup>
         <Input placeholder={placeholder} value={value} onChange={onChange} />
       </InputGroup>
-      <Collapsable>
-        <CollapsableItem name={`${name} style`} nested>
-          <Stack spacing={'6'}>
-            {styleKeys.map(styleKey => (
-              <MapStyleField
-                key={styleKey}
-                attributeName={name}
-                blockItemId={blockItemId}
-                styleKey={styleKey}
-                styleValue={style ? style[styleKey] : ''}
-              />
-            ))}
-          </Stack>
-        </CollapsableItem>
-      </Collapsable>
+      <AttributeStyleFields
+        name={name}
+        blockItemId={blockItemId}
+        style={style}
+        styleKeys={styleKeys}
+      />
     </Box>
   );
 };

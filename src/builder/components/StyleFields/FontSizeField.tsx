@@ -26,6 +26,7 @@ export const FontSizeField: FC<Props> = ({
 
   const select = (size: keyof SizesModel) => {
     setSelected(size);
+    // TODO: implement debounced dispatch
     // const newStyle = {[styleKey]: sizeSettings.sizes[size]}
     // dispatch(updateStyle({blockItemId, attributeName, newStyle}))
   };

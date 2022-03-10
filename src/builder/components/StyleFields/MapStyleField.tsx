@@ -3,7 +3,7 @@ import { AttributeName } from '../../store/types';
 import { AttributeColorField } from './AttributeColorField';
 import { FontSizeField } from './FontSizeField';
 
-// remove partial, all AttributeName have to be mapped
+// TODO: remove partial, all AttributeName have to be mapped
 const map: Partial<Record<string, React.FC<Props>>> = {
   fontSize: FontSizeField,
   color: AttributeColorField,
