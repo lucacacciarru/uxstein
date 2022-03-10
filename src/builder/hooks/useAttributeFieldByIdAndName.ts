@@ -7,34 +7,46 @@ import { updateAttributeValue } from '../store/actions/updateAttributeValue';
 import { getAttributeByNameAndId } from '../store/selectors/getAttributeByNameAndId';
 import { AttributeName } from '../store/types';
 
-export const useAttributeFieldByIdAndName = (blockId: string, attributeName: AttributeName) => {
+export const useAttributeFieldByIdAndName = (
+  blockId: string,
+  attributeName: AttributeName,
+) => {
+  const attribute = useSelector(
+    getAttributeByNameAndId(attributeName, blockId),
+  );
 
-    const attribute = useSelector(getAttributeByNameAndId(attributeName, blockId));
+  const dispatch = useDispatch();
+  const { t } = useTranslation();
 
-    const dispatch = useDispatch()
-    const { t } = useTranslation();
+  const labelTranslationKey: TranslationKey =
+    attribute?.label || 'builder.toolBar.attributes.default.label';
+  const label = t(labelTranslationKey);
 
-    const labelTranslationKey: TranslationKey = attribute?.label || 'builder.toolBar.attributes.default.label';
-    const label = t(labelTranslationKey);
+  const placeholderTranslationKey: TranslationKey =
+    attribute?.placeholder || 'builder.toolBar.attributes.default.placeholder';
+  const placeholder = t(placeholderTranslationKey) as string;
 
-    const placeholderTranslationKey: TranslationKey = attribute?.placeholder || 'builder.toolBar.attributes.default.placeholder';
-    const placeholder = t(placeholderTranslationKey) as string;
+  const [value, setValue] = useState(attribute?.items[0].value);
 
-    const [value, setValue] = useState(attribute?.value);
+  const debouncedUpdateValue = useDebouncedCallback(value => {
+    dispatch(
+      updateAttributeValue({
+        attributeToUpdate: attributeName,
+        blockId,
+        items: [{ value }],
+      }),
+    );
+  }, 800);
 
-    const debouncedUpdateValue = useDebouncedCallback((value) => {
-        dispatch(updateAttributeValue({ attributeToUpdate: attributeName, blockId, value }));
-    }, 800);
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+    debouncedUpdateValue(e.target.value);
+  };
 
-    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(e.target.value);
-        debouncedUpdateValue(e.target.value);
-    };
-
-    return {
-        label,
-        placeholder,
-        value,
-        onChange
-    }
-}
+  return {
+    label,
+    placeholder,
+    value,
+    onChange,
+  };
+};

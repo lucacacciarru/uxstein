@@ -30,7 +30,7 @@ export type AttributeName =
   | 'image'
   | 'progress';
 export type AttributesModel = Partial<
-  Record<AttributeName, SingleItemAttribute | MultipleItemAttribute>
+  Record<AttributeName, MultipleItemAttribute>
 >;
 
 export type SingleItemAttribute = {
@@ -44,8 +44,7 @@ export type SingleItemAttribute = {
 export type MultipleItemAttribute = {
   label: TranslationKey;
   placeholder: TranslationKey;
-  items: { label: string; value?: string }[];
-  initialValue?: string;
+  items: { label?: string; value: string }[];
+  initialValue: { label?: string; value: string }[];
   style: {};
-  value: undefined;
 };
