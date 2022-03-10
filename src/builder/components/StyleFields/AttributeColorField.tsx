@@ -16,7 +16,7 @@ export const AttributeColorField: FC<Props> = ({ styleValue, styleKey }) => {
 
   const setNewColor = (e: React.ChangeEvent<HTMLInputElement>) => {
     setColor(e.target.value);
-    // debounced dispatch
+    // TODO: debounced dispatch
   };
 
   const { t } = useTranslation();
