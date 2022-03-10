@@ -1,4 +1,5 @@
 import { BlockSetup } from '../../hooks/useBlockSetup';
+import { textSizeSettings } from '../styleSettings/text';
 
 export const text: BlockSetup = {
   gridItemSettings: {
@@ -9,14 +10,20 @@ export const text: BlockSetup = {
         placeholder: 'builder.toolBar.attributes.title.placeholder',
         items: [{ value: '' }],
         initialValue: [{ value: 'Title' }],
-        style: {},
+        style: {
+          fontSize: textSizeSettings.title.sizes[textSizeSettings.title.selected] || '',
+          color: '#ffffff'
+        },
       },
       subtitle: {
         label: 'builder.toolBar.attributes.subtitle.label',
         placeholder: 'builder.toolBar.attributes.subtitle.placeholder',
         items: [{ value: '' }],
         initialValue: [{ value: 'Subtitle' }],
-        style: {},
+        style: {
+          fontSize: textSizeSettings.subtitle.sizes[textSizeSettings.subtitle.selected] || '',
+          color: '#ffffff'
+        }
       },
     },
     style: { background: 'black', color: 'white' },

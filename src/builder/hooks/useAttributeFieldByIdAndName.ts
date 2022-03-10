@@ -48,5 +48,7 @@ export const useAttributeFieldByIdAndName = (
     placeholder,
     value,
     onChange,
-  };
-};
+    style: attribute?.style,
+    styleKeys: Object.keys(attribute?.style || {}),
+  }
+}

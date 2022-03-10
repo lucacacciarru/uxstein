@@ -5,7 +5,7 @@ import { DraggableBlockType } from '../../components/AddTab/DraggableBlock';
 export type GridItem = {
   type: DraggableBlockType;
   attributes: AttributesModel;
-  style: {};
+  style: Record<string, string>;
 };
 
 export type BuilderState = {
@@ -36,5 +36,5 @@ export type ItemAttribute = {
   placeholder: TranslationKey;
   items: { label?: string; value: string }[];
   initialValue: { label?: string; value: string }[];
-  style: {};
+  style: Record<string, string>;
 };

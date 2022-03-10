@@ -6,7 +6,7 @@ export const toolBar = {
         },
         title: {
             label: 'Titolo',
-            placeholder: 'Inserisci qui il titolo'
+            placeholder: 'Inserisci qui il titolo',
         },
         subtitle: {
             label: 'Sottotitolo',
@@ -16,5 +16,11 @@ export const toolBar = {
             label: 'Corpo',
             placeholder: 'Inserisci qui il corpo'
         },
+    },
+    style: {
+        labels: {
+            color: 'Colore testo',
+            fontSize: 'Dimensione font',
+        }
     }
 }
