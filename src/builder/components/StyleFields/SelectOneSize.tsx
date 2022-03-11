@@ -60,6 +60,7 @@ const SelectableSizeIcon: FC<SelectableSizeIconProps> = ({
     return (
       <IconButton
         aria-label="empty value"
+        data-testid="emptyValue-icon"
         size="icon-md"
         variant="toggle"
         icon={<Icon name="RemoveCircle" color="" size="7" />}
@@ -72,6 +73,7 @@ const SelectableSizeIcon: FC<SelectableSizeIconProps> = ({
     <Button
       size="icon-md"
       variant="toggle"
+      role="size-button"
       isActive={isSelected}
       onClick={() => select(name)}
       textTransform="capitalize"
