@@ -21,6 +21,7 @@ export enum BUILDER_ACTION_TYPES {
   CLEAR_SELECTED = 'builder/clear-selected',
   UPDATE_ATTRIBUTE_VALUE = 'builder/update/attribute-value',
   UPDATE_ATTRIBUTE_STYLE = 'builder/update/attribute-style',
+  UPDATE_BLOCK_STYLE = 'builder/update/block-style',
   DELETE = 'builder/delete',
 }
 

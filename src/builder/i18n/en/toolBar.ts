@@ -21,6 +21,7 @@ export const toolBar = {
         labels: {
             color: 'Colore testo',
             fontSize: 'Dimensione font',
+            backgroundColor: 'Background-color',
         }
     }
 }

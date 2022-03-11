@@ -4,6 +4,7 @@ import {
   CollapsableItem,
 } from '../../../_shared/components/Collapsable';
 import { Attributes } from '../Attribute/Attributes';
+import { BlockStyleFields } from '../BlockStyleFields/BlockStyleFields';
 import { EditTabHeader } from './EditTabHeader';
 import { useEditTab } from './useEditTab';
 
@@ -12,7 +13,8 @@ type Props = {
 };
 
 export const EditTab: FC<Props> = ({ selectedBlockId = '' }) => {
-  const { headerProps, attributesNameKeyList } = useEditTab(selectedBlockId);
+  const { headerProps, attributesNameKeyList, blockStyle } =
+    useEditTab(selectedBlockId);
 
   return (
     <>
@@ -25,7 +27,7 @@ export const EditTab: FC<Props> = ({ selectedBlockId = '' }) => {
           />
         </CollapsableItem>
         <CollapsableItem name="Style">
-          {/* TODO: GlobalAttributes here */}
+          <BlockStyleFields style={blockStyle} blockItemId={selectedBlockId} />
         </CollapsableItem>
       </Collapsable>
     </>
