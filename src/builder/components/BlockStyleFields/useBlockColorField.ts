@@ -20,7 +20,7 @@ export const useBlockColorField = ({ styleValue, blockItemId, styleKey }: Params
         dispatch(updateBlockStyle(value));
     }, 500);
 
-    const setNewColor = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const setColor = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newStyle = { [styleKey]: e.target.value };
         const payload = {
             blockId: blockItemId,
@@ -30,7 +30,7 @@ export const useBlockColorField = ({ styleValue, blockItemId, styleKey }: Params
     };
 
     return {
-        setNewColor,
+        setColor,
         label,
         color: styleValue,
     };

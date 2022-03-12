@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const BlockColorField: FC<Props> = props => {
-  const { color, label, setNewColor } = useBlockColorField({ ...props });
+  const { color, label, setColor } = useBlockColorField({ ...props });
 
-  return <ColorField label={label} value={color} onChange={setNewColor} />;
+  return <ColorField label={label} value={color} onChange={setColor} />;
 };
