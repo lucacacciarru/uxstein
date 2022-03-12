@@ -12,6 +12,8 @@ import { deleteItem } from '../actions/deleteItem';
 import { deleteItemCase } from './deleteItem';
 import { updateAttributeStyle } from '../actions/updateAttributeStyle';
 import { updateAttributeStyleCase } from './updateAttributeStyle';
+import { updateBlockStyleCase } from './updateBlockStyle';
+import { updateBlockStyle } from '../actions/updateBlockStyle';
 
 const INITIAL_STATE: BuilderState = {
   allIds: ['a'],
@@ -28,6 +30,7 @@ export const builderRooorReducer = createReducer(INITIAL_STATE, builder => {
     .addCase(clearSelected, clearSelectedCase)
     .addCase(updateAttributeValue, updateAttributeValueCase)
     .addCase(updateAttributeStyle, updateAttributeStyleCase)
+    .addCase(updateBlockStyle, updateBlockStyleCase)
     .addCase(deleteItem, deleteItemCase)
     .addDefaultCase(state => state);
 });

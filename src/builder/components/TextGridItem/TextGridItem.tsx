@@ -25,7 +25,7 @@ export const TextGridItem: FC<Props> = ({ style, attributes = {}, id }) => {
       <Text style={attributes.subtitle?.style}>
         {attributes.subtitle?.items[0].value}
       </Text>
-      <Handles id={id} bg={style.background} />
+      <Handles id={id} bg={style.backgroundColor} />
     </Box>
   );
 };

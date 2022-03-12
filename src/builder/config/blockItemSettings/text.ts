@@ -26,7 +26,7 @@ export const text: BlockSetup = {
         }
       },
     },
-    style: { background: 'black', color: 'white' },
+    style: { backgroundColor: '#000000' },
   },
   layoutSettings: {
     h: 2,

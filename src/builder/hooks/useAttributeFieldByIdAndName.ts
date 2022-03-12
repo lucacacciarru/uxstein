@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useDebouncedCallback } from 'use-debounce';
@@ -11,12 +11,14 @@ export const useAttributeFieldByIdAndName = (
   blockId: string,
   attributeName: AttributeName,
 ) => {
+  const dispatch = useDispatch();
+  const { t } = useTranslation();
   const attribute = useSelector(
     getAttributeByNameAndId(attributeName, blockId),
   );
+  const [value, setValue] = useState(attribute?.items[0].value);
 
-  const dispatch = useDispatch();
-  const { t } = useTranslation();
+  const attributeValue = useMemo(() => attribute?.items[0].value, [attribute]);
 
   const labelTranslationKey: TranslationKey =
     attribute?.label || 'builder.toolBar.attributes.default.label';
@@ -25,8 +27,6 @@ export const useAttributeFieldByIdAndName = (
   const placeholderTranslationKey: TranslationKey =
     attribute?.placeholder || 'builder.toolBar.attributes.default.placeholder';
   const placeholder = t(placeholderTranslationKey) as string;
-
-  const [value, setValue] = useState(attribute?.items[0].value);
 
   const debouncedUpdateValue = useDebouncedCallback(value => {
     dispatch(
@@ -42,6 +42,10 @@ export const useAttributeFieldByIdAndName = (
     setValue(e.target.value);
     debouncedUpdateValue(e.target.value);
   };
+
+  useEffect(() => {
+    setValue(attributeValue)
+  }, [attributeValue])
 
   return {
     label,

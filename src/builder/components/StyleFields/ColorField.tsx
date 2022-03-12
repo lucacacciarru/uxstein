@@ -7,7 +7,11 @@ type Props = {
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 };
 
-export const ColorField: FC<Props> = ({ value, label, onChange }) => {
+export const ColorField: FC<Props> = ({
+  value = '#000000',
+  label,
+  onChange,
+}) => {
   return (
     <Box>
       <FormLabel>{label}</FormLabel>

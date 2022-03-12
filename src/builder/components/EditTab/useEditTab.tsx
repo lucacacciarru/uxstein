@@ -19,8 +19,11 @@ export const useEditTab = (selectedBlockId: string) => {
     selectedBlockItem?.attributes || [],
   );
 
+  const blockStyle = selectedBlockItem?.style || {};
+
   return {
     headerProps,
     attributesNameKeyList: attributesNameKeyList as AttributeName[],
+    blockStyle,
   };
 };
