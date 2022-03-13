@@ -9,7 +9,7 @@ const AUTH_INITIAL_STATE: AuthState = {
 
 describe('LOGOUT REDUCERS', () => {
   test('should logout request', () => {
-    const returnValue = authRootReducer(AUTH_INITIAL_STATE, logoutRequest({}));
+    const returnValue = authRootReducer(AUTH_INITIAL_STATE, logoutRequest());
     expect(returnValue).toEqual({
       status: 'idle',
       profile: {
@@ -20,7 +20,7 @@ describe('LOGOUT REDUCERS', () => {
     });
   });
   test('should logout success', () => {
-    const returnValue = authRootReducer(AUTH_INITIAL_STATE, logoutSuccess({}));
+    const returnValue = authRootReducer(AUTH_INITIAL_STATE, logoutSuccess());
     expect(returnValue).toEqual({
       status: 'idle',
       profile: undefined,

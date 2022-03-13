@@ -1,11 +1,13 @@
+import wretch from 'wretch';
 import { FetchPersonaResponse } from '../types/fetchPersona';
 
 export async function fetchPersonaApi(username: string) {
   try {
-    const response = await fetch(
+    const resData = await wretch(
       `${process.env.REACT_APP_API_URL}/personas?username=${username}`,
-    );
-    const resData = await response.json();
+    )
+      .get()
+      .json();
     const userResponse: FetchPersonaResponse = { data: resData[0].data };
     return userResponse;
   } catch (error) {

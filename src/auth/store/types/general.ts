@@ -1,5 +1,6 @@
 export type User = {
   email: string;
+  token?: string; // Will probably be removed after backend integration
   password: string;
   username: string;
 };

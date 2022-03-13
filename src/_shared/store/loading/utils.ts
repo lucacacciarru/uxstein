@@ -1,4 +1,3 @@
-import { SagaIterator } from 'redux-saga';
 import { put } from 'redux-saga/effects';
 import { resetLoading, setLoading, unsetLoading } from './actions';
 

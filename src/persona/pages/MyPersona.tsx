@@ -9,6 +9,8 @@ export const MyPersona: React.FC = () => {
 
   useEffect(() => {
     fetchPersonaList();
+    // TODO: move this call in an after login saga
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const { t } = useTranslation();
