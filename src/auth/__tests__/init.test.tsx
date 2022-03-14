@@ -91,7 +91,7 @@ describe('Authentication', () => {
       expect(storageUtils.getAuthToken()).toBe(AUTH_TOKEN);
     });
 
-    it('should check call additional postLogin sagas after a successful login', async () => {
+    it('should call the additional postLogin sagas after a successful login', async () => {
       const postLoginSaga = jest.fn();
       const store = getStoreForTesting({
         postAuthOptions: {
