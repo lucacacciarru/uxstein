@@ -1,4 +1,5 @@
 import { BlockSetup } from '../../hooks/useBlockSetup';
+import { blockSizeSettings } from '../styleSettings/block';
 import { textSizeSettings } from '../styleSettings/text';
 
 export const text: BlockSetup = {
@@ -26,7 +27,12 @@ export const text: BlockSetup = {
         }
       },
     },
-    style: { backgroundColor: '#000000' },
+    style: {
+      backgroundColor: '#000000',
+      borderColor: '#fafafa',
+      borderWidth: blockSizeSettings.borderWidth.sizes[blockSizeSettings.borderWidth.selected] || '',
+      borderRadius: blockSizeSettings.borderRadius.sizes[blockSizeSettings.borderRadius.selected] || '',
+    },
   },
   layoutSettings: {
     h: 2,

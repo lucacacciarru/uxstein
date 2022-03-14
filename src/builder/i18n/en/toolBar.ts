@@ -22,6 +22,9 @@ export const toolBar = {
             color: 'Colore testo',
             fontSize: 'Dimensione font',
             backgroundColor: 'Background-color',
+            borderColor: 'Border-color',
+            borderWidth: 'Border-width',
+            borderRadius: 'Border-radius',
         }
     }
 }

@@ -1,5 +1,6 @@
 import { Stack } from '@chakra-ui/react';
 import { FC } from 'react';
+import { BorderField } from '../BorderSizeField/BorderField';
 import { BlockColorField } from './BlockColorField';
 
 type Props = {
@@ -13,6 +14,21 @@ export const BlockStyleFields: FC<Props> = ({ style, blockItemId }) => {
       <BlockColorField
         styleKey="backgroundColor"
         styleValue={style?.backgroundColor}
+        blockItemId={blockItemId}
+      />
+      <BlockColorField
+        styleKey="borderColor"
+        styleValue={style?.borderColor}
+        blockItemId={blockItemId}
+      />
+      <BorderField
+        styleKey="borderWidth"
+        styleValue={style?.borderWidth}
+        blockItemId={blockItemId}
+      />
+      <BorderField
+        styleKey="borderRadius"
+        styleValue={style?.borderRadius}
         blockItemId={blockItemId}
       />
     </Stack>
