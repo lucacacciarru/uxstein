@@ -2,7 +2,6 @@ import {
   Button,
   FormControl,
   FormErrorMessage,
-  FormHelperText,
   HStack,
   Input,
   Modal,
@@ -13,8 +12,9 @@ import {
   ModalHeader,
   ModalOverlay,
 } from '@chakra-ui/react';
-import { useCallback, useMemo, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { MaxLengthMessage } from '../MaxLengthMessage';
 import { useFormRename } from './useFormRename';
 
 type Props = {
@@ -39,16 +39,6 @@ export const ModalRenamePerson: React.FC<Props> = ({
   const initialFocus = useRef(null);
   const { t } = useTranslation();
 
-  const renderNameLength = useMemo(() => {
-    return (
-      <FormHelperText
-        color={nameValue.length > 20 ? 'status.error' : 'black.50'}
-      >
-        {nameValue.length}/20
-      </FormHelperText>
-    );
-  }, [nameValue]);
-
   const handlerConfirm = useCallback(() => {
     checkAndConfirmRename(personaId, onClose);
   }, [checkAndConfirmRename, onClose, personaId]);
@@ -72,7 +62,7 @@ export const ModalRenamePerson: React.FC<Props> = ({
               ref={initialFocus}
               placeholder={t('renamePersonaModal.placeholder')}
             />
-            {renderNameLength}
+            <MaxLengthMessage selectString={nameValue} maxLength={20} />
             <FormErrorMessage>{errorMessage}</FormErrorMessage>
           </FormControl>
         </ModalBody>

@@ -9,6 +9,7 @@ type Props = {
   id: string;
 };
 export const TextGridItem: FC<Props> = ({ style, attributes = {}, id }) => {
+  console.log(style);
   return (
     <Box
       style={{
