@@ -1,15 +1,15 @@
-import { Box, FormLabel, Input, InputGroup } from '@chakra-ui/react';
+import { Box, FormLabel, InputGroup, Textarea } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useAttributeFieldByIdAndName } from '../../hooks/useAttributeFieldByIdAndName';
 import { AttributeName } from '../../store/types';
-import { AttributeStyleFields } from './AttributeStyleFields';
+import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
 
 type Props = {
   blockItemId: string;
   name: AttributeName;
 };
 
-export const TextFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
+export const TextAreaFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
   const { value, onChange, label, placeholder, style, styleKeys } =
     useAttributeFieldByIdAndName(blockItemId, name);
 
@@ -17,7 +17,7 @@ export const TextFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
     <Box>
       <FormLabel>{label}</FormLabel>
       <InputGroup>
-        <Input placeholder={placeholder} value={value} onChange={onChange} />
+        <Textarea placeholder={placeholder} value={value} onChange={onChange} />
       </InputGroup>
       <AttributeStyleFields
         name={name}

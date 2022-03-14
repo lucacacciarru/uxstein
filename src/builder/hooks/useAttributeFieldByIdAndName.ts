@@ -38,7 +38,7 @@ export const useAttributeFieldByIdAndName = (
     );
   }, 800);
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setValue(e.target.value);
     debouncedUpdateValue(e.target.value);
   };

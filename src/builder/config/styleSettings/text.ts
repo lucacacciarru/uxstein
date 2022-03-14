@@ -10,11 +10,11 @@ export const textSizeSettings: TextSizesSettingsModel = {
         selected: 'l'
     },
     subtitle: {
-        sizes: { s: '13px', m: '16px', l: '18px' },
+        sizes: { s: '16px', m: '18px', l: '20px' },
         selected: 'm'
     },
     body: {
-        sizes: { s: '5px', m: '10px', l: '15px' },
+        sizes: { s: '12px', m: '13px', l: '14px' },
         selected: 'm'
     },
 }
