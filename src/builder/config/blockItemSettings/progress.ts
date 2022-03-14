@@ -17,8 +17,8 @@ export const progress: BlockSetup = {
         },
       },
       progress: {
-        label: 'builder.toolBar.attributes.title.label',
-        placeholder: 'builder.toolBar.attributes.title.placeholder',
+        label: 'builder.toolBar.attributes.items.label',
+        placeholder: 'builder.toolBar.attributes.items.placeholder',
         items: [{ id: '221', label: '', value: '' }],
         initialValue: [
           { id: '221', label: 'Test', value: '50' },

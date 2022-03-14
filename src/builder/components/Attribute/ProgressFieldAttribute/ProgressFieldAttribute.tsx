@@ -10,9 +10,13 @@ type Props = {
   name: AttributeName;
 };
 
-export const ProgressFieldAttribute: React.FC<Props> = prop => {
+export const ProgressFieldAttribute: React.FC<Props> = ({
+  blockItemId,
+  name,
+}) => {
   const { attributeItems, placeholder, addItem, ...rest } =
-    useMultipleAttributeField(prop.blockItemId, prop.name);
+    useMultipleAttributeField(blockItemId, name);
+  console.log(placeholder);
 
   const renderAllProgressField = useMemo(
     () =>

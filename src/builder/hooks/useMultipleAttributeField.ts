@@ -18,11 +18,11 @@ export function useMultipleAttributeField(
   );
 
   const labelTranslationKey: TranslationKey =
-    attribute?.label || 'builder.toolBar.attributes.default.label';
+    attribute?.label || 'builder.toolBar.attributes.items.label';
   const label = t(labelTranslationKey);
 
   const placeholderTranslationKey: TranslationKey =
-    attribute?.placeholder || 'builder.toolBar.attributes.default.placeholder';
+    attribute?.placeholder || 'builder.toolBar.attributes.items.placeholder';
   const placeholder = t(placeholderTranslationKey) as string;
 
   const [attributeItems, setAttributeItems] = useState<
