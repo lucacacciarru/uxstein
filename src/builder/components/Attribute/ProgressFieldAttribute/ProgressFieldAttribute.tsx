@@ -1,5 +1,5 @@
 import { Box, Divider, FormLabel, Stack } from '@chakra-ui/react';
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import { LabelItemField } from '../LabelItemField';
 import { useMultipleAttributeField } from '../../../hooks/useMultipleAttributeField';
 import { useAttributeFieldByIdAndName } from '../../../hooks/useAttributeFieldByIdAndName';
@@ -44,11 +44,6 @@ export const ProgressFieldAttribute: React.FC<Props> = ({
       )),
     [attributeItems, rest],
   );
-  useEffect(() => {
-    attributeItems?.forEach(item => {
-      console.log(item.id);
-    });
-  });
 
   return (
     <Box>

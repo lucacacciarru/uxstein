@@ -1,5 +1,5 @@
-import { Box, HStack, Progress, Stack, Text } from '@chakra-ui/react';
-import { CSSProperties, useMemo } from 'react';
+import { Box, Progress, Stack, Text } from '@chakra-ui/react';
+import { useMemo } from 'react';
 import { AttributesModel } from '../../store/types';
 import { Handles } from '../Handles/Handles';
 
