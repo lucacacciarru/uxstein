@@ -125,7 +125,7 @@ describe('Authentication', () => {
       expect(storageUtils.getAuthToken()).toBe(null);
     });
 
-    it('should check call additional postLogout sagas after a successful logout', async () => {
+    it('should call the additional postLogout sagas after a successful logout', async () => {
       const postLogoutSaga = jest.fn();
       const store = getStoreForTesting({
         postAuthOptions: {
