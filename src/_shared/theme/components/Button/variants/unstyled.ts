@@ -1,5 +1,6 @@
 export const unstyled = {
-    _focus: {
-        boxShadow: 'none',
-    },
-} 
+  color: 'green',
+  _focus: {
+    boxShadow: 'none',
+  },
+};

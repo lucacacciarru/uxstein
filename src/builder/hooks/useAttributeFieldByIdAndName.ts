@@ -33,7 +33,7 @@ export const useAttributeFieldByIdAndName = (
       updateAttributeValue({
         attributeToUpdate: attributeName,
         blockId,
-        items: [{ value }],
+        items: [{ id: attribute?.items[0].id || '1', value }],
       }),
     );
   }, 800);
@@ -44,8 +44,8 @@ export const useAttributeFieldByIdAndName = (
   };
 
   useEffect(() => {
-    setValue(attributeValue)
-  }, [attributeValue])
+    setValue(attributeValue);
+  }, [attributeValue]);
 
   return {
     label,
@@ -54,5 +54,5 @@ export const useAttributeFieldByIdAndName = (
     onChange,
     style: attribute?.style,
     styleKeys: Object.keys(attribute?.style || {}),
-  }
-}
+  };
+};

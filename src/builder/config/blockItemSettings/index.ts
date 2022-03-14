@@ -1,10 +1,12 @@
 import { BlockSetup } from '../../hooks/useBlockSetup';
 import { DraggableBlockType } from '../../components/AddTab/DraggableBlock';
 import { text } from './text';
+import { progress } from './progress';
 import { AttributeName, AttributesModel } from '../../store/types';
 
 export const blockItemSettings: Record<DraggableBlockType, BlockSetup> = {
   text,
+  progress,
   'text-list': {
     gridItemSettings: {
       type: 'text-list',
@@ -50,18 +52,6 @@ export const blockItemSettings: Record<DraggableBlockType, BlockSetup> = {
     layoutSettings: {
       h: 2,
       w: 3,
-      i: '',
-    },
-  },
-  progress: {
-    gridItemSettings: {
-      type: 'progress',
-      attributes: {},
-      style: { background: 'black', color: 'white' },
-    },
-    layoutSettings: {
-      h: 1,
-      w: 1,
       i: '',
     },
   },

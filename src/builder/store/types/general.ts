@@ -36,7 +36,7 @@ export type AttributesModel = Partial<Record<AttributeName, ItemAttribute>>;
 export type ItemAttribute = {
   label: TranslationKey;
   placeholder: TranslationKey;
-  items: { label?: string; value: string }[];
-  initialValue: { label?: string; value: string }[];
+  items: { id: string; label?: string; value: string }[];
+  initialValue: { id: string; label?: string; value: string }[];
   style: Record<string, string>;
 };

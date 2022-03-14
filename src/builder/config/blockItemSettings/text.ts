@@ -9,22 +9,26 @@ export const text: BlockSetup = {
       title: {
         label: 'builder.toolBar.attributes.title.label',
         placeholder: 'builder.toolBar.attributes.title.placeholder',
-        items: [{ value: '' }],
-        initialValue: [{ value: 'Title' }],
+        items: [{ id: '1', value: '' }],
+        initialValue: [{ id: '1', value: 'Title' }],
         style: {
-          fontSize: textSizeSettings.title.sizes[textSizeSettings.title.selected] || '',
-          color: '#ffffff'
+          fontSize:
+            textSizeSettings.title.sizes[textSizeSettings.title.selected] || '',
+          color: '#ffffff',
         },
       },
       subtitle: {
         label: 'builder.toolBar.attributes.subtitle.label',
         placeholder: 'builder.toolBar.attributes.subtitle.placeholder',
-        items: [{ value: '' }],
-        initialValue: [{ value: 'Subtitle' }],
+        items: [{ id: '1', value: '' }],
+        initialValue: [{ id: '1', value: 'Subtitle' }],
         style: {
-          fontSize: textSizeSettings.subtitle.sizes[textSizeSettings.subtitle.selected] || '',
-          color: '#ffffff'
-        }
+          fontSize:
+            textSizeSettings.subtitle.sizes[
+              textSizeSettings.subtitle.selected
+            ] || '',
+          color: '#ffffff',
+        },
       },
     },
     style: {
