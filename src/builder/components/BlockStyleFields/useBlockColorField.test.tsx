@@ -1,12 +1,15 @@
+import { useSelector } from 'react-redux';
 import {
   render,
   fireEvent,
   screen,
+  waitFor,
 } from '../../../_shared/testConfig/customRender';
 import { renderHook } from '../../../_shared/testConfig/customRenderHook';
 import { getBlockItemSettings } from '../../config/blockItemSettings';
 import { BuilderState } from '../../store/types';
 import { useBlockColorField } from './useBlockColorField';
+import { getGridItemById } from '../../store/selectors/getGridItemById';
 
 type Params = {
   styleKey: string;
@@ -16,7 +19,7 @@ type Params = {
 const EXISTING_ID = 'exsistingId';
 const MOCK_HOOK_PARAMS: Params = {
   blockItemId: EXISTING_ID,
-  styleKey: 'borderWidth',
+  styleKey: 'borderColor',
   styleValue: '#000000',
 };
 
@@ -28,9 +31,20 @@ const MOCK_BUILDER_STATE: BuilderState = {
   pageSettings: [{ i: EXISTING_ID, h: 1, w: 1, x: 1, y: 1 }],
 };
 
+const useTestBlockColorField = () => {
+  const { setColor } = useBlockColorField(MOCK_HOOK_PARAMS);
+
+  const color = useSelector(getGridItemById(EXISTING_ID)).style.borderColor;
+
+  return {
+    color,
+    setColor,
+  };
+};
+
 describe('useBorderField', () => {
   test('should update "color" when call setColor()', async () => {
-    const { result } = renderHook(() => useBlockColorField(MOCK_HOOK_PARAMS), {
+    const { result } = renderHook(() => useTestBlockColorField(), {
       mocks: { builder: MOCK_BUILDER_STATE },
     });
 
@@ -44,5 +58,8 @@ describe('useBorderField', () => {
     );
     const input = screen.getByTestId('colorInput');
     fireEvent.change(input, { target: { value: '#1a1a1a' } });
+    await waitFor(() => {
+      expect(result.current.color).toBe('#1a1a1a');
+    });
   });
 });
