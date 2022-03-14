@@ -8,8 +8,7 @@ type Props = {
   attributes: AttributesModel;
   id: string;
 };
-export const TextGridItem: FC<Props> = ({ style, attributes = {}, id }) => {
-  console.log(style);
+export const TextGridItem: FC<Props> = ({ style, attributes, id }) => {
   return (
     <Box
       style={{
@@ -25,6 +24,9 @@ export const TextGridItem: FC<Props> = ({ style, attributes = {}, id }) => {
       </Text>
       <Text style={attributes.subtitle?.style}>
         {attributes.subtitle?.items[0].value}
+      </Text>
+      <Text style={attributes.body?.style} mt="4">
+        {attributes.body?.items[0].value}
       </Text>
       <Handles id={id} bg={style.backgroundColor} />
     </Box>

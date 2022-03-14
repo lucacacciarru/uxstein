@@ -1,13 +1,15 @@
 import React, { FC } from 'react';
 import { AttributeName } from '../../store/types';
 import { ProgressFieldAttribute } from './ProgressFieldAttribute/ProgressFieldAttribute';
-import { TextFieldAttribute } from './TextFieldAttribute';
+import { TextAreaFieldAttribute } from '../TextAreaFieldAttribute/TextAreaFieldAttribute';
+import { TextFieldAttribute } from '../TextFieldAttribute/TextFieldAttribute';
 
 // remove partial, all AttributeName have to be mapped
 const map: Partial<Record<AttributeName, React.FC<Props>>> = {
   title: TextFieldAttribute,
   subtitle: TextFieldAttribute,
   progress: ProgressFieldAttribute,
+  body: TextAreaFieldAttribute,
 };
 
 type Props = {

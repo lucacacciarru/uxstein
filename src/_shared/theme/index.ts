@@ -28,6 +28,7 @@ import {
   Badge,
   Spinner,
   Accordion,
+  Textarea
 } from './components';
 
 const config = {
@@ -62,6 +63,7 @@ const config = {
     Switch,
     Badge,
     Spinner,
+    Textarea
   },
 };
 export const customTheme = extendTheme(config);

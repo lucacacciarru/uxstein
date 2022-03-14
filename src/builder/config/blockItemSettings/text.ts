@@ -25,10 +25,21 @@ export const text: BlockSetup = {
         style: {
           fontSize:
             textSizeSettings.subtitle.sizes[
-              textSizeSettings.subtitle.selected
+            textSizeSettings.subtitle.selected
             ] || '',
           color: '#ffffff',
+          fontStyle: 'italic'
         },
+      },
+      body: {
+        label: 'builder.toolBar.attributes.body.label',
+        placeholder: 'builder.toolBar.attributes.body.placeholder',
+        items: [{ id: '1', value: '' }],
+        initialValue: [{ id: '1', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et morbi adipiscing leo nibh porttitor diam in nibh malesuada. Sed velit lobortis volutpat, eget.' }],
+        style: {
+          fontSize: textSizeSettings.body.sizes[textSizeSettings.body.selected] || '',
+          color: '#ffffff'
+        }
       },
     },
     style: {
