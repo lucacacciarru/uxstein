@@ -6,18 +6,17 @@ import {
 } from '../../../_shared/testConfig/customRenderHook';
 import { getBlockItemSettings } from '../../config/blockItemSettings';
 import { getGridItemById } from '../../store/selectors/getGridItemById';
-import { AttributeName, BuilderState } from '../../store/types';
-import { useFontSizeField } from './useFontSizeField';
+import { BuilderState } from '../../store/types';
+import { useBorderField } from './useBorderField';
+
 type Params = {
-  attributeName: AttributeName;
   styleKey: string;
   blockItemId: string;
 };
 const EXISTING_ID = 'existingId';
 const MOCK_HOOK_PARAMS: Params = {
-  attributeName: 'title',
   blockItemId: EXISTING_ID,
-  styleKey: 'fontSize',
+  styleKey: 'borderWidth',
 };
 
 const MOCK_BUILDER_STATE: BuilderState = {
@@ -28,23 +27,23 @@ const MOCK_BUILDER_STATE: BuilderState = {
   pageSettings: [{ i: EXISTING_ID, h: 1, w: 1, x: 1, y: 1 }],
 };
 
-const useTestFontSizeField = () => {
-  const { select, selected, sizes } = useFontSizeField(MOCK_HOOK_PARAMS);
+const useTestBorderField = () => {
+  const { select, selected, sizes } = useBorderField(MOCK_HOOK_PARAMS);
 
-  const storeFontSize = useSelector(getGridItemById(EXISTING_ID)).attributes
-    .title?.style.fontSize;
+  const storeBorderWidth = useSelector(getGridItemById(EXISTING_ID)).style
+    .borderWidth;
 
   return {
     select,
     selected,
-    storeFontSize,
+    storeBorderWidth,
     sizes,
   };
 };
 
-describe('useFontSizeField', () => {
+describe('useBorderField', () => {
   test('should update "selected" when call select()', async () => {
-    const { result } = renderHook(() => useTestFontSizeField(), {
+    const { result } = renderHook(() => useTestBorderField(), {
       mocks: { builder: MOCK_BUILDER_STATE },
     });
 
@@ -52,7 +51,7 @@ describe('useFontSizeField', () => {
 
     expect(result.current.selected).toBe('s');
     await waitFor(() => {
-      expect(result.current.storeFontSize).toBe(
+      expect(result.current.storeBorderWidth).toBe(
         result.current.sizes[result.current.selected],
       );
     });

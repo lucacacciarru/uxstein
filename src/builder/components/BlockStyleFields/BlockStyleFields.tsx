@@ -1,6 +1,6 @@
 import { Stack } from '@chakra-ui/react';
 import { FC } from 'react';
-import { BorderField } from '../BorderSizeField/BorderField';
+import { BorderField } from '../BorderField/BorderField';
 import { BlockColorField } from './BlockColorField';
 
 type Props = {
