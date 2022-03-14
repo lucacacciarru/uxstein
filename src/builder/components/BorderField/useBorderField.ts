@@ -30,7 +30,7 @@ export const useBorderField = ({ styleKey, blockItemId }: Params) => {
 
     const select = (size: keyof SizesModel) => {
         setSelected(size);
-        const newStyle = { [styleKey]: sizeSettings.sizes[size] || '' };
+        const newStyle = { [styleKey]: sizeSettings.sizes[size] };
         const payload = {
             blockId: blockItemId,
             style: newStyle,
