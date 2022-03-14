@@ -22,21 +22,21 @@ describe('NumberInputSlider component', () => {
     render(<NumberInputSlider {...prop} />);
   });
 
-  test('deleteItem should be called if click deleteButton', () => {
+  test('deleteItem should be called on click deleteButton', () => {
     render(<NumberInputSlider {...prop} />);
     const deleteButton = screen.getByTestId('deleteButton');
     fireEvent.click(deleteButton);
     expect(fn).toBeCalled();
   });
 
-  test('onChangeValue should be called if change value of NumberInput ', () => {
+  test('onChangeValue should be called on change value of NumberInput ', () => {
     render(<NumberInputSlider {...prop} />);
     const numberInput = screen.getByTestId('numberInput');
     fireEvent.change(numberInput, { target: { value: '30' } });
     expect(fn).toBeCalled();
   });
 
-  test('onChangeLabel should be called if change value of labelInput ', async () => {
+  test('onChangeLabel should be called on change value of labelInput ', async () => {
     render(<NumberInputSlider {...prop} />);
     const labelInput = screen.getByTestId('labelInput');
     fireEvent.change(labelInput, { target: { value: 'test' } });
@@ -45,5 +45,3 @@ describe('NumberInputSlider component', () => {
     });
   });
 });
-
-// fireEvent.change(input, { target: { value: testValue } });
