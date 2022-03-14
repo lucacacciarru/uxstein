@@ -9,7 +9,7 @@ export const useAuth = () => {
   const isLogged = authStatus === 'logged';
 
   const logout = () => {
-    dispatch(logoutTrigger({}));
+    dispatch(logoutTrigger());
   };
 
   const profile = useSelector(getUserProfile);

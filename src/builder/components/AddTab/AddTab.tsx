@@ -30,7 +30,7 @@ export const AddTab: FC<Props> = ({ setBlockSetup }) => {
         />
       </WrapItem>
     ));
-  }, []);
+  }, [setBlockSetup]);
 
   return (
     <Stack spacing={'8'}>

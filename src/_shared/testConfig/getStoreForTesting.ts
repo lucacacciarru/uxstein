@@ -32,7 +32,12 @@ export function getStoreForTesting(options?: CustomOptions) {
     preloadedState: state,
   });
 
-  sagaMiddleware.run(createRootSaga(options?.additionalSagas));
+  sagaMiddleware.run(
+    createRootSaga({
+      additionalSagas: options?.additionalSagas,
+      postAuthOptions: options?.postAuthOptions,
+    }),
+  );
 
   return store;
 }

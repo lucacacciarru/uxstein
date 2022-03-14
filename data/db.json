@@ -3,11 +3,13 @@
     {
       "email": "test@test.com",
       "password": "Test1234",
+      "token": "Bearer test-token",
       "username": "test"
     },
     {
       "email": "gennaro@test.com",
       "password": "test",
+      "token": "Bearer gennaro-token",
       "username": "Gennaro"
     }
   ],

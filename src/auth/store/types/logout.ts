@@ -1,4 +1,4 @@
-import { PayloadAction } from '@reduxjs/toolkit';
+import { PayloadAction, Action } from '@reduxjs/toolkit';
 import { ApiError } from './general';
 
 export enum LOGOUT_ACTION_TYPES {
@@ -10,23 +10,14 @@ export enum LOGOUT_ACTION_TYPES {
 
 export type LogoutResponse = {};
 
-export type LogoutPayload = {};
-
-export type LogoutSuccessPayload = {};
 export type LogoutFailurePayload = ApiError;
 
-export type LogoutAction = PayloadAction<
-  LogoutPayload,
-  LOGOUT_ACTION_TYPES.TRIGGER
->;
-export type LogoutRequestAction = PayloadAction<
-  LogoutPayload,
-  LOGOUT_ACTION_TYPES.REQUEST
->;
-export type LogoutSuccessAction = PayloadAction<
-  LogoutSuccessPayload,
-  LOGOUT_ACTION_TYPES.SUCCESS
->;
+export type LogoutAction = Action<LOGOUT_ACTION_TYPES.TRIGGER>;
+
+export type LogoutRequestAction = Action<LOGOUT_ACTION_TYPES.REQUEST>;
+
+export type LogoutSuccessAction = Action<LOGOUT_ACTION_TYPES.SUCCESS>;
+
 export type LogoutFailureAction = PayloadAction<
   LogoutFailurePayload,
   LOGOUT_ACTION_TYPES.FAILURE
