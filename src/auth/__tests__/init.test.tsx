@@ -62,7 +62,7 @@ describe('Authentication', () => {
       expect(getItemSpy).toHaveBeenCalled();
     });
 
-    it('should check call the login api in case the token exists', async () => {
+    it('should call the login api in case the token exists', async () => {
       const getItemSpy = jest.spyOn(window.localStorage, 'getItem');
       storageUtils.setAuthToken(AUTH_TOKEN);
       const store = getStoreForTesting({});
