@@ -6,7 +6,7 @@ describe('MaxLengthMessage component', () => {
   test('Should be rendered', () => {
     render(
       <FormControl>
-        <MaxLengthMessage maxLength={10} selectString="Test" />
+        <MaxLengthMessage maxLength={10}>Test</MaxLengthMessage>
       </FormControl>,
     );
   });

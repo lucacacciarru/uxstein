@@ -62,7 +62,7 @@ export const ModalRenamePerson: React.FC<Props> = ({
               ref={initialFocus}
               placeholder={t('renamePersonaModal.placeholder')}
             />
-            <MaxLengthMessage selectString={nameValue} maxLength={20} />
+            <MaxLengthMessage maxLength={20}>{nameValue}</MaxLengthMessage>
             <FormErrorMessage>{errorMessage}</FormErrorMessage>
           </FormControl>
         </ModalBody>
