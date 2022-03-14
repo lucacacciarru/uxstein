@@ -9,7 +9,7 @@ import { useAddItem } from './useAddItem';
 
 const fn = jest.fn();
 
-describe('USEADDITEM HOOK', () => {
+describe('useAddItem hook', () => {
   test('initial states should be false', () => {
     const { result } = renderHook(() => useAddItem(fn, 'test'));
     const stateList = [
@@ -22,7 +22,7 @@ describe('USEADDITEM HOOK', () => {
     });
   });
 
-  test('if call onChange, textLabel state should be change', () => {
+  test('if onChange is called, textLabel state should be change', () => {
     const { result } = renderHook(() => useAddItem(fn, 'test'));
     render(
       <input

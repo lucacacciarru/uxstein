@@ -1,19 +1,19 @@
 import { FormHelperText, HelpTextProps } from '@chakra-ui/react';
 
 type Props = {
-  selectString: string;
+  children: string;
   maxLength: number;
 } & HelpTextProps;
 
 export const MaxLengthMessage: React.FC<Props> = ({
-  selectString,
   maxLength,
+  children,
   ...style
 }) => {
   return (
     <FormHelperText
       {...style}
-      color={selectString.length <= maxLength ? 'black.80' : 'status.error'}
-    >{`${selectString.length}/${maxLength}`}</FormHelperText>
+      color={children.length <= maxLength ? 'black.80' : 'status.error'}
+    >{`${children.length}/${maxLength}`}</FormHelperText>
   );
 };

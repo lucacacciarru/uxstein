@@ -23,7 +23,7 @@ const MOCK_BUILDER_STATE: BuilderState = {
 };
 
 describe('useMultipleAttributeField hook', () => {
-  test('if call onChangeLabel, label of select item should be change', () => {
+  test('if onChangeLabel is called, label of select item should be change', () => {
     const { result } = renderHook(
       () => useMultipleAttributeField('1', 'progress'),
       {
@@ -42,7 +42,7 @@ describe('useMultipleAttributeField hook', () => {
     }
   });
 
-  test('if call onChangeLabel and item does not exist, label of select item should be equal', () => {
+  test('if onChangeLabel is called and item does not exist, label of select item should be equal', () => {
     const { result } = renderHook(
       () => useMultipleAttributeField('1', 'progress'),
       {
@@ -61,7 +61,7 @@ describe('useMultipleAttributeField hook', () => {
     }
   });
 
-  test('if call onChangeValue, value of select item should be change', () => {
+  test('if onChangeValue is called, value of select item should be change', () => {
     const { result } = renderHook(
       () => useMultipleAttributeField('1', 'progress'),
       {
@@ -80,7 +80,7 @@ describe('useMultipleAttributeField hook', () => {
     }
   });
 
-  test('if call onChangeValue and item does not exist, value of select item should be equal', () => {
+  test('if onChangeValue is called and item does not exist, value of select item should be equal', () => {
     const { result } = renderHook(
       () => useMultipleAttributeField('1', 'progress'),
       {
@@ -99,7 +99,7 @@ describe('useMultipleAttributeField hook', () => {
     }
   });
 
-  test('if call add, item should be add to Items', () => {
+  test('if add is called, item should be add to Items', () => {
     const { result } = renderHook(
       () => useMultipleAttributeField('1', 'progress'),
       {
@@ -117,7 +117,7 @@ describe('useMultipleAttributeField hook', () => {
       expect(result.current.attributeItems[1].label).toBe('labelTest');
     }
   });
-  test('if call deleteItem, item should be delete to Items', () => {
+  test('if deleteItem is called, item should be delete to Items', () => {
     const { result } = renderHook(
       () => useMultipleAttributeField('1', 'progress'),
       {

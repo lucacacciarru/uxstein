@@ -42,7 +42,7 @@ export const LabelItemField: React.FC<Props> = ({ addItem, placeholder }) => {
             onClick={checkAndAddItem}
           />
         </InputRightElement>
-        <MaxLengthMessage maxLength={15} selectString={textLabel} />
+        <MaxLengthMessage maxLength={15}>{textLabel}</MaxLengthMessage>
         <FormErrorMessage position="fixed">{errorMessage}</FormErrorMessage>
       </FormControl>
     </>

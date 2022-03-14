@@ -16,7 +16,6 @@ export const ProgressFieldAttribute: React.FC<Props> = ({
 }) => {
   const { attributeItems, placeholder, addItem, ...rest } =
     useMultipleAttributeField(blockItemId, name);
-  console.log(placeholder);
 
   const renderAllProgressField = useMemo(
     () =>
