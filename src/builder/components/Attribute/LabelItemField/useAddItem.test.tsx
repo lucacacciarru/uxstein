@@ -22,7 +22,7 @@ describe('useAddItem hook', () => {
     });
   });
 
-  test('if onChange is called, textLabel state should be change', () => {
+  test('should change textLabel when onChange is called', () => {
     const { result } = renderHook(() => useAddItem(fn, 'test'));
     render(
       <input
