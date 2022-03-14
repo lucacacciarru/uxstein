@@ -29,6 +29,10 @@ export const toolBar = {
       borderColor: 'Colore bordi',
       borderWidth: 'Spessore bordo',
       borderRadius: 'Arrotondamento bordo',
+      progressBarTrackBackgroundColor: 'Colore barra dei progressi',
+      progressBarFilledTrackBackgroundColor:
+        'Colore di sfondo barra dei progressi',
+      progressBarBorderColor: 'Colore bordo barra dei progressi',
     },
   },
 };

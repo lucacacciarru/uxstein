@@ -7,6 +7,9 @@ import { FontSizeField } from '../FontSizeField/FontSizeField';
 const map: Record<string, React.FC<Props>> = {
   fontSize: FontSizeField,
   color: AttributeColorField,
+  progressBarFilledTrackBackgroundColor: AttributeColorField,
+  progressBarTrackBackgroundColor: AttributeColorField,
+  progressBarBorderColor: AttributeColorField,
 };
 
 type Props = {

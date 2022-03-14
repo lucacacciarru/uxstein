@@ -21,7 +21,7 @@ export const AttributeStyleFields: FC<Props> = ({
   style,
 }) => {
   return (
-    <Collapsable>
+    <Collapsable mt="2">
       <CollapsableItem name={`${name} style`} nested>
         <Stack spacing={'6'}>
           {styleKeys.map(styleKey => (

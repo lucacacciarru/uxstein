@@ -26,6 +26,9 @@ export const progress: BlockSetup = {
         ],
         style: {
           color: '#ffffff',
+          progressBarFilledTrackBackgroundColor: '#E5E5E5',
+          progressBarTrackBackgroundColor: '#05C46B',
+          progressBarBorderColor: '#1b1b1b',
         },
       },
     },
