@@ -1,7 +1,8 @@
-import { Box, Progress, Stack, Text } from '@chakra-ui/react';
+import { Box, Stack, Text } from '@chakra-ui/react';
 import { useMemo } from 'react';
 import { AttributesModel } from '../../store/types';
 import { Handles } from '../Handles/Handles';
+import { ProgressBar } from './ProgressBar';
 
 type Props = {
   style: Record<string, string>;
@@ -21,22 +22,7 @@ export const ProgressbarGridItem: React.FC<Props> = ({
           <Text mb="1" style={attributes.progress?.style}>
             {item.label}
           </Text>
-          <Progress
-            __css={{
-              '> div': {
-                backgroundColor:
-                  attributes.progress?.style.progressBarTrackBackgroundColor,
-                border: 'none',
-              },
-              height: '10px',
-            }}
-            background={
-              attributes.progress?.style.progressBarFilledTrackBackgroundColor
-            }
-            border={`1.5px solid ${attributes.progress?.style.progressBarBorderColor}`}
-            style={attributes.progress?.style}
-            value={parseInt(item.value)}
-          />
+          <ProgressBar style={attributes.progress?.style} value={item.value} />
         </Box>
       )),
     [attributes.progress?.items, attributes.progress?.style],

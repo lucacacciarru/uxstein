@@ -38,7 +38,9 @@ export const useAttributeFieldByIdAndName = (
     );
   }, 800);
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const onChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setValue(e.target.value);
     debouncedUpdateValue(e.target.value);
   };
@@ -47,6 +49,13 @@ export const useAttributeFieldByIdAndName = (
     setValue(attributeValue);
   }, [attributeValue]);
 
+  const attributeStyleFieldsProp = {
+    name: attributeName,
+    blockItemId: blockId,
+    style: attribute?.style,
+    styleKeys: Object.keys(attribute?.style || {}),
+  };
+
   return {
     label,
     placeholder,
@@ -54,5 +63,6 @@ export const useAttributeFieldByIdAndName = (
     onChange,
     style: attribute?.style,
     styleKeys: Object.keys(attribute?.style || {}),
+    attributeStyleFieldsProp,
   };
 };
