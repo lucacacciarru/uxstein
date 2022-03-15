@@ -45,7 +45,7 @@ const useTestAttributeColorField = () => {
   };
 };
 
-describe('useFontSizeField', () => {
+describe('useAttributeColorField', () => {
   test('should update "color" when call setNewColor()', async () => {
     const { result } = renderHook(() => useTestAttributeColorField(), {
       mocks: { builder: MOCK_BUILDER_STATE },
@@ -62,7 +62,6 @@ describe('useFontSizeField', () => {
     const colorInput = screen.getByTestId('colorInput');
     fireEvent.change(colorInput, { target: { value: '#111111' } });
 
-    expect(result.current.color).toBe('#111111');
     await waitFor(() => {
       expect(result.current.storeColorValue).toBe('#111111');
     });

@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useDebouncedCallback } from 'use-debounce';
 import { textSizeSettings } from '../../config/styleSettings/text';
 import { updateAttributeStyle } from '../../store/actions/updateAttributeStyle';
+import { getAttributeByNameAndId } from '../../store/selectors/getAttributeByNameAndId';
 import { AttributeName } from '../../store/types';
+import { getSizeByValueAndSizeSettings } from '../../utils/getSizeByValueAndSizeSettings';
 import { SizesModel } from '../StyleFields/SelectOneSize';
 
 type Props = {
@@ -22,12 +24,25 @@ export const useFontSizeField = ({
   const { t } = useTranslation();
   const label = t(`builder.toolBar.style.labels.fontSize`);
 
-  const sizeSettings =
-    textSizeSettings[attributeName as keyof typeof textSizeSettings];
+  const sizeSettings = useMemo(() => {
+    return textSizeSettings[attributeName as keyof typeof textSizeSettings];
+  }, [attributeName]);
+
+  const selectedValue =
+    useSelector(getAttributeByNameAndId(attributeName, blockItemId))?.style
+      .fontSize || '';
+
+  const selectedSize = useMemo(() => {
+    return getSizeByValueAndSizeSettings(selectedValue, sizeSettings);
+  }, [selectedValue, sizeSettings]);
 
   const [selected, setSelected] = useState<keyof SizesModel>(
     sizeSettings.selected,
   );
+
+  const debouncedUpdateValue = useDebouncedCallback(value => {
+    dispatch(updateAttributeStyle(value));
+  }, 500);
 
   const select = (size: keyof SizesModel) => {
     setSelected(size);
@@ -40,9 +55,9 @@ export const useFontSizeField = ({
     debouncedUpdateValue(payload);
   };
 
-  const debouncedUpdateValue = useDebouncedCallback(value => {
-    dispatch(updateAttributeStyle(value));
-  }, 500);
+  useEffect(() => {
+    setSelected(selectedSize);
+  }, [selectedSize]);
 
   return {
     label,

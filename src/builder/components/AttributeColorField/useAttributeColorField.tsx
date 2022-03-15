@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { useDebouncedCallback } from 'use-debounce';
@@ -21,10 +20,8 @@ export const useAttributeColorField = ({
   const { t } = useTranslation();
 
   const label = t(colorFieldsLabels[styleKey]) as string;
-  const [color, setColor] = useState(styleValue);
 
   const setNewColor = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setColor(e.target.value);
     const newStyle = { [styleKey]: e.target.value };
     const payload = {
       attributeToUpdate: attributeName,
@@ -41,6 +38,6 @@ export const useAttributeColorField = ({
   return {
     setNewColor,
     label,
-    color,
+    color: styleValue,
   };
 };
