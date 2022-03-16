@@ -1,11 +1,16 @@
 import { useMemo } from 'react';
-import { PersonCard } from '../../../_shared/components';
-import { SimpleGrid, SimpleGridProps, Spacer } from '@chakra-ui/react';
+import {
+  PersonCard,
+  SkeletonPersonCardList,
+} from '../../../_shared/components';
+import { SimpleGrid, SimpleGridProps } from '@chakra-ui/react';
 import { usePersonas } from '../../hook/usePersonas';
+import { useLoading } from '../../../_shared/store/loading';
 
 const containerProps: SimpleGridProps = {
   spacingX: '7',
   spacingY: '10',
+  minChildWidth: '350px',
   columns: 4,
   w: '100%',
   mt: '8',
@@ -13,17 +18,16 @@ const containerProps: SimpleGridProps = {
 
 export const Personas: React.FC = () => {
   const { personas } = usePersonas();
+  const { isLoading } = useLoading('persona');
+
   const renderPersona = useMemo(() => {
-    return personas
-      ? personas.map(persona => (
-          <PersonCard type="persona" key={persona.id} {...persona} />
-        ))
-      : null;
-  }, [personas]);
-  return (
-    <SimpleGrid {...containerProps}>
-      {renderPersona}
-      <Spacer />
-    </SimpleGrid>
-  );
+    return isLoading ? (
+      <SkeletonPersonCardList numberOfItems={10} />
+    ) : (
+      personas.map(persona => (
+        <PersonCard type="persona" key={persona.id} {...persona} />
+      ))
+    );
+  }, [isLoading, personas]);
+  return <SimpleGrid {...containerProps}>{renderPersona}</SimpleGrid>;
 };
