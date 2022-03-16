@@ -30,8 +30,8 @@ const MOCK_BUILDER_STATE: BuilderState = {
         progress: {
           initialValue: [{ id: 'test', value: 'test' }],
           items: [{ id: 'test', value: 'test' }],
-          label: 'auth.form.textForSignup',
-          placeholder: 'auth.form.buttonLogin',
+          label: 'auth.form.textForSignup' as never,
+          placeholder: 'auth.form.buttonLogin' as never,
           style: {
             progressBarBorderWidth: '0px',
           },

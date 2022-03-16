@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { useDebouncedCallback } from 'use-debounce';
 import { borderItemSettings } from '../../config/styleSettings/borderItem';
+import { colorFieldsLabels } from '../../config/styleSettings/colorFieldsLabels';
 import { updateAttributeStyle } from '../../store/actions/updateAttributeStyle';
 import { AttributeName } from '../../store/types';
-import { useBorderField } from '../BorderField/useBorderField';
 import { SizesModel } from '../StyleFields/SelectOneSize';
 
 type Params = {
@@ -19,7 +20,9 @@ export function useProgressBorderField({
   attributeToUpdate,
 }: Params) {
   const dispatch = useDispatch();
-  const { label } = useBorderField({ styleKey, blockItemId });
+  const { t } = useTranslation();
+  const label = t(colorFieldsLabels[styleKey]) as string;
+
   const sizeSettings = borderItemSettings[styleKey];
 
   const [selected, setSelected] = useState<keyof SizesModel>(
