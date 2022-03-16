@@ -1,9 +1,11 @@
-import { Box, FormLabel, Stack } from '@chakra-ui/react';
+import { Box, Divider, FormLabel, Stack } from '@chakra-ui/react';
 import { useMemo } from 'react';
 import { LabelItemField } from '../LabelItemField';
 import { useMultipleAttributeField } from '../../../hooks/useMultipleAttributeField';
+import { useAttributeFieldByIdAndName } from '../../../hooks/useAttributeFieldByIdAndName';
 import { AttributeName } from '../../../store/types';
 import { NumberInputSlider } from './NumberInputSlider';
+import { AttributeStyleFields } from '../AttributeStyleFields';
 
 type Props = {
   blockItemId: string;
@@ -17,16 +19,23 @@ export const ProgressFieldAttribute: React.FC<Props> = ({
   const { attributeItems, placeholder, addItem, ...rest } =
     useMultipleAttributeField(blockItemId, name);
 
+  const { attributeStyleFieldsProp } = useAttributeFieldByIdAndName(
+    blockItemId,
+    name,
+  );
+
   const renderAllProgressField = useMemo(
     () =>
       attributeItems?.map(item => (
-        <NumberInputSlider
-          {...rest}
-          key={item.id}
-          numberValue={parseInt(item.value)}
-          idItem={item.id}
-          label={item.label}
-        />
+        <Box key={item.id}>
+          <NumberInputSlider
+            {...rest}
+            numberValue={parseInt(item.value)}
+            idItem={item.id}
+            label={item.label}
+          />
+          <Divider />
+        </Box>
       )),
     [attributeItems, rest],
   );
@@ -35,9 +44,10 @@ export const ProgressFieldAttribute: React.FC<Props> = ({
     <Box>
       <FormLabel>{rest.label}</FormLabel>
       <LabelItemField addItem={addItem} placeholder={placeholder} />
-      <Stack gap="1rem" mt="2rem">
+      <Stack gap="2" mt="5">
         {renderAllProgressField}
       </Stack>
+      <AttributeStyleFields {...attributeStyleFieldsProp} />
     </Box>
   );
 };
