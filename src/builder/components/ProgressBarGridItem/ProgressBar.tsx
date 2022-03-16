@@ -10,12 +10,12 @@ export const ProgressBar: React.FC<Props> = ({ style, value }) => {
       __css={{
         '> div': {
           backgroundColor: style?.progressBarTrackBackgroundColor,
-          border: 'none',
         },
         height: '10px',
       }}
       background={style?.progressBarFilledTrackBackgroundColor}
-      border={`1.5px solid ${style?.progressBarBorderColor}`}
+      borderWidth={style?.progressBarBorderWidth}
+      borderRadius={style?.progressBarBorderRadius}
       style={style}
       value={parseInt(value)}
     />

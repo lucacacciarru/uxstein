@@ -1,4 +1,4 @@
-import { render, screen } from '../../../../_shared/testConfig/customRender';
+import { render } from '../../../../_shared/testConfig/customRender';
 import { ProgressFieldAttribute } from './ProgressFieldAttribute';
 
 describe('ProgressFieldAttribute component', () => {

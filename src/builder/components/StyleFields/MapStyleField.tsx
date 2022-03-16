@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { AttributeName } from '../../store/types';
+import { ProgressBorderField } from '../ProgressBorderField';
 import { AttributeColorField } from '../AttributeColorField/AttributeColorField';
 import { FontSizeField } from '../FontSizeField/FontSizeField';
 
@@ -10,6 +11,8 @@ const map: Record<string, React.FC<Props>> = {
   progressBarFilledTrackBackgroundColor: AttributeColorField,
   progressBarTrackBackgroundColor: AttributeColorField,
   progressBarBorderColor: AttributeColorField,
+  progressBarBorderWidth: ProgressBorderField,
+  progressBarBorderRadius: ProgressBorderField,
 };
 
 type Props = {

@@ -27,16 +27,15 @@ export const ProgressFieldAttribute: React.FC<Props> = ({
   const renderAllProgressField = useMemo(
     () =>
       attributeItems?.map(item => (
-        <>
+        <Box key={item.id}>
           <NumberInputSlider
-            key={item.id}
             {...rest}
             numberValue={parseInt(item.value)}
             idItem={item.id}
             label={item.label}
           />
           <Divider />
-        </>
+        </Box>
       )),
     [attributeItems, rest],
   );

@@ -10,51 +10,51 @@ import { getSizeByValueAndSizeSettings } from '../../utils/getSizeByValueAndSize
 import { SizesModel } from '../StyleFields/SelectOneSize';
 
 type Params = {
-    styleKey: string;
-    blockItemId: string;
+  styleKey: string;
+  blockItemId: string;
 };
 
 export const useBorderField = ({ styleKey, blockItemId }: Params) => {
+  const dispatch = useDispatch();
+  const { t } = useTranslation();
+  const label = t(colorFieldsLabels[styleKey]) as string;
 
-    const dispatch = useDispatch();
-    const { t } = useTranslation();
-    const label = t(colorFieldsLabels[styleKey]) as string;
+  const sizeSettings = blockSizeSettings[styleKey];
 
-    const sizeSettings = blockSizeSettings[styleKey];
+  const selectedValue = useSelector(getGridItemById(blockItemId))?.style[
+    styleKey
+  ];
 
-    const selectedValue = useSelector(getGridItemById(blockItemId))?.style[styleKey];
+  const selectedSize = useMemo(() => {
+    return getSizeByValueAndSizeSettings(selectedValue, sizeSettings);
+  }, [selectedValue, sizeSettings]);
 
-    const selectedSize = useMemo(() => {
-        return getSizeByValueAndSizeSettings(selectedValue, sizeSettings);
-    }, [selectedValue, sizeSettings]);
+  const [selected, setSelected] = useState<keyof SizesModel>(
+    sizeSettings.selected,
+  );
 
-    const [selected, setSelected] = useState<keyof SizesModel>(
-        sizeSettings.selected,
-    );
+  const debouncedUpdateValue = useDebouncedCallback(value => {
+    dispatch(updateBlockStyle(value));
+  }, 500);
 
-    const debouncedUpdateValue = useDebouncedCallback(value => {
-        dispatch(updateBlockStyle(value));
-    }, 500);
-
-    const select = (size: keyof SizesModel) => {
-        setSelected(size);
-        const newStyle = { [styleKey]: sizeSettings.sizes[size] };
-        const payload = {
-            blockId: blockItemId,
-            style: newStyle,
-        };
-        debouncedUpdateValue(payload);
+  const select = (size: keyof SizesModel) => {
+    setSelected(size);
+    const newStyle = { [styleKey]: sizeSettings.sizes[size] };
+    const payload = {
+      blockId: blockItemId,
+      style: newStyle,
     };
+    debouncedUpdateValue(payload);
+  };
 
-    useEffect(() => {
-        setSelected(selectedSize);
-    }, [selectedSize]);
+  useEffect(() => {
+    setSelected(selectedSize);
+  }, [selectedSize]);
 
-    return {
-        label,
-        selected,
-        select,
-        sizes: sizeSettings.sizes,
-    }
-
-}
+  return {
+    label,
+    selected,
+    select,
+    sizes: sizeSettings.sizes,
+  };
+};

@@ -1,4 +1,6 @@
 import { BlockSetup } from '../../hooks/useBlockSetup';
+import { blockSizeSettings } from '../styleSettings/block';
+import { borderItemSettings } from '../styleSettings/borderItem';
 import { textSizeSettings } from '../styleSettings/text';
 
 export const progress: BlockSetup = {
@@ -29,10 +31,29 @@ export const progress: BlockSetup = {
           progressBarFilledTrackBackgroundColor: '#E5E5E5',
           progressBarTrackBackgroundColor: '#05C46B',
           progressBarBorderColor: '#1b1b1b',
+          progressBarBorderWidth:
+            borderItemSettings.progressBarBorderWidth.sizes[
+              borderItemSettings.progressBarBorderWidth.selected
+            ] || '',
+          progressBarBorderRadius:
+            borderItemSettings.progressBarBorderRadius.sizes[
+              borderItemSettings.progressBarBorderRadius.selected
+            ] || '',
         },
       },
     },
-    style: { backgroundColor: '#1b1b1b', color: 'white' },
+    style: {
+      backgroundColor: '#000000',
+      borderColor: '#fafafa',
+      borderWidth:
+        blockSizeSettings.borderWidth.sizes[
+          blockSizeSettings.borderWidth.selected
+        ] || '',
+      borderRadius:
+        blockSizeSettings.borderRadius.sizes[
+          blockSizeSettings.borderRadius.selected
+        ] || '',
+    },
   },
   layoutSettings: {
     h: 2,
