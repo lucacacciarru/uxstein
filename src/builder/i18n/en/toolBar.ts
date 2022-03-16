@@ -32,6 +32,8 @@ export const toolBar = {
       progressBarTrackBackgroundColor: 'Background progress bar ',
       progressBarFilledTrackBackgroundColor: 'Color progress bar',
       progressBarBorderColor: 'Border-color progress bar',
+      progressBarBorderWidth: 'Border-width progress bar',
+      progressBarBorderRadius: 'Border-radius progress bar',
     },
   },
 };

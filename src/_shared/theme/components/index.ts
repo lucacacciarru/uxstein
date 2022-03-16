@@ -17,3 +17,4 @@ export * from './Badge';
 export * from './Spinner';
 export * from './Accordion';
 export * from './Textarea';
+export * from './NumberInput';

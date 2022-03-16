@@ -28,7 +28,8 @@ import {
   Badge,
   Spinner,
   Accordion,
-  Textarea
+  Textarea,
+  NumberInput,
 } from './components';
 
 const config = {
@@ -63,7 +64,8 @@ const config = {
     Switch,
     Badge,
     Spinner,
-    Textarea
+    Textarea,
+    NumberInput,
   },
 };
 export const customTheme = extendTheme(config);
