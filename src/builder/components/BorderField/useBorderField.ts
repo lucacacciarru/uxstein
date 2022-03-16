@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useDebouncedCallback } from 'use-debounce';
 import { blockSizeSettings } from '../../config/styleSettings/block';
 import { colorFieldsLabels } from '../../config/styleSettings/colorFieldsLabels';
 import { updateBlockStyle } from '../../store/actions/updateBlockStyle';
+import { getGridItemById } from '../../store/selectors/getGridItemById';
+import { getSizeByValueAndSizeSettings } from '../../utils/getSizeByValueAndSizeSettings';
 import { SizesModel } from '../StyleFields/SelectOneSize';
 
 type Params = {
@@ -19,6 +21,12 @@ export const useBorderField = ({ styleKey, blockItemId }: Params) => {
     const label = t(colorFieldsLabels[styleKey]) as string;
 
     const sizeSettings = blockSizeSettings[styleKey];
+
+    const selectedValue = useSelector(getGridItemById(blockItemId))?.style[styleKey];
+
+    const selectedSize = useMemo(() => {
+        return getSizeByValueAndSizeSettings(selectedValue, sizeSettings);
+    }, [selectedValue, sizeSettings]);
 
     const [selected, setSelected] = useState<keyof SizesModel>(
         sizeSettings.selected,
@@ -37,6 +45,10 @@ export const useBorderField = ({ styleKey, blockItemId }: Params) => {
         };
         debouncedUpdateValue(payload);
     };
+
+    useEffect(() => {
+        setSelected(selectedSize);
+    }, [selectedSize]);
 
     return {
         label,
