@@ -3,4 +3,4 @@ export * from './NumberInput';
 export * from './LandingLayout';
 export * from './NumberInput';
 export * from './PersonCard';
-export * from './SkeletonPersonCard';
+export * from './SkeletonPersonCardList';

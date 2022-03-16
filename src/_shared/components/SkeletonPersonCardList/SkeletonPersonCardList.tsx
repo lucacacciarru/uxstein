@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { SkeletonPersonCard } from '../SkeletonPersonCard/SkeletonPersonCard';
+import { SkeletonPersonCard } from './SkeletonPersonCard';
 
 type Props = {
   numberOfItems: number;

@@ -1,9 +1,11 @@
 import { useMemo } from 'react';
-import { PersonCard, SkeletonPersonCard } from '../../../_shared/components';
-import { SimpleGrid, SimpleGridProps, Spacer } from '@chakra-ui/react';
+import {
+  PersonCard,
+  SkeletonPersonCardList,
+} from '../../../_shared/components';
+import { SimpleGrid, SimpleGridProps } from '@chakra-ui/react';
 import { usePersonas } from '../../hook/usePersonas';
 import { useLoading } from '../../../_shared/store/loading';
-import { SkeletonPersonCardList } from '../../../_shared/components/SkeletonPersonCardList';
 
 const containerProps: SimpleGridProps = {
   spacingX: '7',
