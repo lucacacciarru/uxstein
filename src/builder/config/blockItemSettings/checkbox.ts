@@ -27,6 +27,8 @@ export const checkbox: BlockSetup = {
         ],
         style: {
           color: '#ffffff',
+          checkboxBorderColor: '#ffffff',
+          checkboxCheckColor: '#ffffff',
         },
       },
     },

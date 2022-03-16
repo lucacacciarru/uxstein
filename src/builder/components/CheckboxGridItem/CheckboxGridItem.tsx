@@ -2,6 +2,7 @@ import { Box, Checkbox, Stack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { AttributesModel } from '../../store/types';
 import { Handles } from '../Handles/Handles';
+import { useCheckboxGridItem } from './useCheckboxGridItem';
 
 type Props = {
   style: Record<string, string>;
@@ -10,6 +11,8 @@ type Props = {
 };
 
 export const CheckboxGridItem: FC<Props> = ({ id, attributes, style }) => {
+  const checkboxStyleProps = useCheckboxGridItem(attributes);
+
   return (
     <Box
       p="4"
@@ -25,10 +28,10 @@ export const CheckboxGridItem: FC<Props> = ({ id, attributes, style }) => {
       <Stack>
         {attributes.checkbox?.items.map(item => (
           <Checkbox
-            cursor={'grab'}
             key={item.id}
             isChecked={!!item.value}
-            style={{ ...attributes.checkbox?.style }}
+            style={{ color: attributes.checkbox?.style.color }}
+            {...checkboxStyleProps}
           >
             {item.label}
           </Checkbox>

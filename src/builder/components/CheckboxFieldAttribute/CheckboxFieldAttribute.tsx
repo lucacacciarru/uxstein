@@ -4,6 +4,8 @@ import { AttributeName } from '../../store/types';
 import { LabelItemField } from '../Attribute/LabelItemField';
 import { useMultipleAttributeField } from '../../hooks/useMultipleAttributeField';
 import { CheckboxFieldItem } from './CheckboxFieldItem';
+import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
+import { useAttributeFieldByIdAndName } from '../../hooks/useAttributeFieldByIdAndName';
 type Props = {
   blockItemId: string;
   name: AttributeName;
@@ -12,6 +14,11 @@ type Props = {
 export const CheckboxFieldAttribute: FC<Props> = ({ blockItemId, name }) => {
   const { addItem, label, placeholder, attributeItems, ...restCallbacks } =
     useMultipleAttributeField(blockItemId, name);
+
+  const { attributeStyleFieldsProp } = useAttributeFieldByIdAndName(
+    blockItemId,
+    name,
+  );
 
   const renderAttributeItems = useMemo(() => {
     return attributeItems.map(item => (
@@ -30,6 +37,7 @@ export const CheckboxFieldAttribute: FC<Props> = ({ blockItemId, name }) => {
       <Stack gap="1rem" mt="2rem">
         {renderAttributeItems}
       </Stack>
+      <AttributeStyleFields {...attributeStyleFieldsProp} />
     </Box>
   );
 };

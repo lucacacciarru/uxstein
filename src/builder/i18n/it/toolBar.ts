@@ -35,6 +35,8 @@ export const toolBar = {
       progressBarBorderColor: 'Colore bordo barra dei progressi',
       progressBarBorderWidth: 'Spessore bordo barra dei progressi',
       progressBarBorderRadius: 'Smussatura barra dei progressi',
+      checkboxBorderColor: 'Colore bordo casella',
+      checkboxCheckColor: 'Colore spunta',
     },
   },
 };

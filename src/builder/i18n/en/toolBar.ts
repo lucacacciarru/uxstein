@@ -34,6 +34,8 @@ export const toolBar = {
       progressBarBorderColor: 'Border-color progress bar',
       progressBarBorderWidth: 'Border-width progress bar',
       progressBarBorderRadius: 'Border-radius progress bar',
+      checkboxBorderColor: 'Border-color box',
+      checkboxCheckColor: 'Check color',
     },
   },
 };

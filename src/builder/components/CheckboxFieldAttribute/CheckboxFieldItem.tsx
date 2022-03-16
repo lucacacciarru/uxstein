@@ -31,7 +31,11 @@ export const CheckboxFieldItem: FC<Props> = ({ label, ...rest }) => {
   return (
     <>
       <HStack>
-        <Checkbox isChecked={isChecked} onChange={handlerOnChangeValue} />
+        <Checkbox
+          isChecked={isChecked}
+          onChange={handlerOnChangeValue}
+          iconColor="brand.primary"
+        />
         <Editable defaultValue={label}>
           <EditablePreview />
           <EditableInput pl="1" onChange={handlerOnChangeLabel} value={label} />

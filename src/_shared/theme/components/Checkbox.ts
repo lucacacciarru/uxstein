@@ -8,7 +8,7 @@ export const Checkbox: ComponentStyleConfig = {
   variants: {
     outlined: {
       control: {
-        borderWidth: '3px',
+        borderWidth: '2px',
         borderColor: 'black.0',
         boxShadow: 'none',
         _focus: {
@@ -25,7 +25,7 @@ export const Checkbox: ComponentStyleConfig = {
         },
         _invalid: {
           borderColor: 'status.error',
-          borderWidth: '3px',
+          borderWidth: '2.8px',
           color: 'status.error',
           bg: 'status.errorLighter',
           _hover: {
@@ -41,9 +41,6 @@ export const Checkbox: ComponentStyleConfig = {
             borderColor: 'black.50',
           },
         },
-      },
-      icon: {
-        color: 'brand.primary',
       },
     },
   },
