@@ -3,6 +3,7 @@ import { AttributeName } from '../../store/types';
 import { ProgressFieldAttribute } from './ProgressFieldAttribute/ProgressFieldAttribute';
 import { TextAreaFieldAttribute } from '../TextAreaFieldAttribute/TextAreaFieldAttribute';
 import { TextFieldAttribute } from '../TextFieldAttribute/TextFieldAttribute';
+import { CheckboxFieldAttribute } from '../CheckboxFieldAttribute/CheckboxFieldAttribute';
 
 // remove partial, all AttributeName have to be mapped
 const map: Partial<Record<AttributeName, React.FC<Props>>> = {
@@ -10,6 +11,7 @@ const map: Partial<Record<AttributeName, React.FC<Props>>> = {
   subtitle: TextFieldAttribute,
   progress: ProgressFieldAttribute,
   body: TextAreaFieldAttribute,
+  checkbox: CheckboxFieldAttribute,
 };
 
 type Props = {

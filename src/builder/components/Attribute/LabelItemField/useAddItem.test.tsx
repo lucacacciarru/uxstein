@@ -11,7 +11,7 @@ const fn = jest.fn();
 
 describe('useAddItem hook', () => {
   test('initial states should be false', () => {
-    const { result } = renderHook(() => useAddItem(fn, 'test'));
+    const { result } = renderHook(() => useAddItem(fn, 'test', ''));
     const stateList = [
       result.current.textLabel,
       result.current.inputError,
@@ -23,7 +23,7 @@ describe('useAddItem hook', () => {
   });
 
   test('should change textLabel when onChange is called', () => {
-    const { result } = renderHook(() => useAddItem(fn, 'test'));
+    const { result } = renderHook(() => useAddItem(fn, 'test', ''));
     render(
       <input
         data-testid="inputTextLabel"
@@ -37,7 +37,7 @@ describe('useAddItem hook', () => {
   });
 
   test('if textLabel is too long, inputError and ErrorMessage should be truthy', () => {
-    const { result } = renderHook(() => useAddItem(fn, 'test'));
+    const { result } = renderHook(() => useAddItem(fn, 'test', ''));
     render(
       <input
         data-testid="inputTextLabel"
@@ -56,7 +56,7 @@ describe('useAddItem hook', () => {
     expect(result.current.errorMessage).toBeTruthy();
   });
   test('if textLabel is empty, inputError and ErrorMessage should be truthy', () => {
-    const { result } = renderHook(() => useAddItem(fn, 'test'));
+    const { result } = renderHook(() => useAddItem(fn, 'test', ''));
     render(
       <input
         data-testid="inputTextLabel"
@@ -75,7 +75,7 @@ describe('useAddItem hook', () => {
     expect(result.current.errorMessage).toBeTruthy();
   });
   test('if textLabel is correct, inputError and ErrorMessage should be falsy and add function should be call', () => {
-    const { result } = renderHook(() => useAddItem(fn, 'test'));
+    const { result } = renderHook(() => useAddItem(fn, 'test', ''));
     render(
       <input
         data-testid="inputTextLabel"

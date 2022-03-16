@@ -21,7 +21,7 @@ export const progress: BlockSetup = {
       progress: {
         label: 'builder.toolBar.attributes.items.label',
         placeholder: 'builder.toolBar.attributes.items.placeholder',
-        items: [{ id: '221', label: '', value: '' }],
+        items: [],
         initialValue: [
           { id: '221', label: 'Test', value: '50' },
           { id: '4984', label: 'Test2', value: '60' },
@@ -33,11 +33,11 @@ export const progress: BlockSetup = {
           progressBarBorderColor: '#1b1b1b',
           progressBarBorderWidth:
             borderItemSettings.progressBarBorderWidth.sizes[
-              borderItemSettings.progressBarBorderWidth.selected
+            borderItemSettings.progressBarBorderWidth.selected
             ] || '',
           progressBarBorderRadius:
             borderItemSettings.progressBarBorderRadius.sizes[
-              borderItemSettings.progressBarBorderRadius.selected
+            borderItemSettings.progressBarBorderRadius.selected
             ] || '',
         },
       },
@@ -47,11 +47,11 @@ export const progress: BlockSetup = {
       borderColor: '#fafafa',
       borderWidth:
         blockSizeSettings.borderWidth.sizes[
-          blockSizeSettings.borderWidth.selected
+        blockSizeSettings.borderWidth.selected
         ] || '',
       borderRadius:
         blockSizeSettings.borderRadius.sizes[
-          blockSizeSettings.borderRadius.selected
+        blockSizeSettings.borderRadius.selected
         ] || '',
     },
   },

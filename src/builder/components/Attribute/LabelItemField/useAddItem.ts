@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export function useAddItem(add: (label: string) => void, placeholder: string) {
+export function useAddItem(add: (label: string, value: string) => void, placeholder: string, initValue: string) {
   const [textLabel, setTextLabel] = useState<string>('');
   const [inputError, setInputError] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
@@ -22,7 +22,7 @@ export function useAddItem(add: (label: string) => void, placeholder: string) {
     }
     setInputError(false);
     setErrorMessage('');
-    add(textLabel);
+    add(textLabel, initValue);
   };
 
   return {

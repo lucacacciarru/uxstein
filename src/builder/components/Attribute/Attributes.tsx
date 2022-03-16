@@ -12,7 +12,11 @@ export const Attributes: FC<Props> = ({ items, blockItemId }) => {
   return (
     <Stack spacing={'6'}>
       {items.map(item => (
-        <MapAttributeField key={item} name={item} blockItemId={blockItemId} />
+        <MapAttributeField
+          key={`${blockItemId}-${item}`}
+          name={item}
+          blockItemId={blockItemId}
+        />
       ))}
     </Stack>
   );

@@ -61,11 +61,11 @@ export function useMultipleAttributeField(
     debouncedUpdateValue(itemsList);
   };
 
-  const addItem = (label: string) => {
+  const addItem = (label: string, value: string) => {
     const item = {
       id: Date.now().toString(),
       label,
-      value: '30',
+      value,
     };
     const uploadedItemsList = [...(attributeItems || []), item];
     setAttributeItems(uploadedItemsList);
@@ -81,7 +81,7 @@ export function useMultipleAttributeField(
   return {
     label,
     placeholder,
-    attributeItems,
+    attributeItems: attributeItems || [],
     onChangeValue,
     onChangeLabel,
     addItem,

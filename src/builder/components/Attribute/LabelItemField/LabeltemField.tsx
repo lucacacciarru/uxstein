@@ -10,13 +10,18 @@ import { MaxLengthMessage } from '../../../../_shared/components/MaxLengthMessag
 import { useAddItem } from './useAddItem';
 
 type Props = {
-  addItem: (label: string) => void;
+  addItem: (label: string, value: string) => void;
   placeholder: string;
+  initValue: string;
 };
 
-export const LabelItemField: React.FC<Props> = ({ addItem, placeholder }) => {
+export const LabelItemField: React.FC<Props> = ({
+  addItem,
+  placeholder,
+  initValue,
+}) => {
   const { checkAndAddItem, errorMessage, inputError, onChange, textLabel } =
-    useAddItem(addItem, placeholder);
+    useAddItem(addItem, placeholder, initValue);
   return (
     <>
       <FormControl position="relative" isInvalid={inputError}>

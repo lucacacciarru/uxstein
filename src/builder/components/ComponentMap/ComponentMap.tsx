@@ -2,12 +2,14 @@ import { Box } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { getGridItemById } from '../../store/selectors/getGridItemById';
+import { CheckboxGridItem } from '../CheckboxGridItem/CheckboxGridItem';
 import { ProgressbarGridItem } from '../ProgressBarGridItem/ProgressBarGridItem';
 import { TextGridItem } from '../TextGridItem/TextGridItem';
 
 const map: Record<string, React.FC<any>> = {
   text: TextGridItem,
   progress: ProgressbarGridItem,
+  checkbox: CheckboxGridItem,
 };
 
 type Props = {

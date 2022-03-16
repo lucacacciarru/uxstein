@@ -43,7 +43,11 @@ export const ProgressFieldAttribute: React.FC<Props> = ({
   return (
     <Box>
       <FormLabel>{rest.label}</FormLabel>
-      <LabelItemField addItem={addItem} placeholder={placeholder} />
+      <LabelItemField
+        addItem={addItem}
+        placeholder={placeholder}
+        initValue="30"
+      />
       <Stack gap="2" mt="5">
         {renderAllProgressField}
       </Stack>

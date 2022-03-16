@@ -30,7 +30,8 @@ export type AttributeName =
   | 'subtitle'
   | 'body'
   | 'image'
-  | 'progress';
+  | 'progress'
+  | 'checkbox';
 export type AttributesModel = Partial<Record<AttributeName, ItemAttribute>>;
 
 export type ItemAttribute = {
