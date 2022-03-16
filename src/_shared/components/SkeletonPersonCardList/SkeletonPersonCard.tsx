@@ -1,10 +1,13 @@
-import { Box, Skeleton, SkeletonText } from '@chakra-ui/react';
+import { Skeleton, Stack } from '@chakra-ui/react';
 
 export const SkeletonPersonCard: React.FC = () => {
   return (
-    <Box w={'350px'} h="29vh" border="dark.s">
+    <Stack w={'350px'} h="29vh" border="dark.s">
       <Skeleton h="20vh" w="full" />
-      <SkeletonText px="8" noOfLines={2} w="100%" mt="6" spacing={'4'} />
-    </Box>
+      <Stack py="4" px="4" alignItems="center">
+        <Skeleton w="100%" h="10px" />
+        <Skeleton w="100%" h="10px" />
+      </Stack>
+    </Stack>
   );
 };
