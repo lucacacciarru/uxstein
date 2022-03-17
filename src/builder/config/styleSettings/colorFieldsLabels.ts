@@ -12,7 +12,6 @@ export const colorFieldsLabels: Record<string, TranslationKey> = {
   progressBarTrackBackgroundColor:
     'builder.toolBar.style.labels.progressBarTrackBackgroundColor',
   progressBarBorderColor: 'builder.toolBar.style.labels.progressBarBorderColor',
-  progressBarBorderWidth: 'builder.toolBar.style.labels.progressBarBorderColor',
-  progressBarBorderRadius:
-    'builder.toolBar.style.labels.progressBarBorderColor',
+  progressBarBorderWidth: 'builder.toolBar.style.labels.borderWidth',
+  progressBarBorderRadius: 'builder.toolBar.style.labels.borderRadius',
 };
