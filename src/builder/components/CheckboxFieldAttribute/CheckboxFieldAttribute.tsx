@@ -30,7 +30,7 @@ export const CheckboxFieldAttribute: FC<Props> = ({ blockItemId, name }) => {
     <Box>
       <FormLabel>{label}</FormLabel>
       <LabelItemField
-        addItem={addItem}
+        addCallback={addItem}
         placeholder={placeholder}
         initValue=""
       />

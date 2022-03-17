@@ -6,7 +6,7 @@ type Options = {
   initValue?: string;
 }
 
-export function useAddItem(add: (label: string, value: string) => void, options: Options) {
+export function useAddItem(addCallback: (label: string, value: string) => void, options: Options) {
   const { t } = useTranslation();
 
   const [textLabel, setTextLabel] = useState<string>('');
@@ -17,7 +17,7 @@ export function useAddItem(add: (label: string, value: string) => void, options:
     setTextLabel(e.target.value);
   };
 
-  const validateAndAdd = (e: React.FormEvent<HTMLFormElement>) => {
+  const addItem = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (textLabel.length > 15) {
       setInputError(true);
@@ -31,7 +31,7 @@ export function useAddItem(add: (label: string, value: string) => void, options:
     }
     setInputError(false);
     setErrorMessage('');
-    add(textLabel, options.initValue || '');
+    addCallback(textLabel, options.initValue || '');
     setTextLabel('');
   };
 
@@ -43,6 +43,6 @@ export function useAddItem(add: (label: string, value: string) => void, options:
     inputError,
     errorMessage,
     onChange,
-    validateAndAdd,
+    addItem,
   };
 }

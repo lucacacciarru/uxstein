@@ -44,7 +44,7 @@ describe('useAddItem hook', () => {
       useAddItem(fn, { placeholder: 'test' }),
     );
     render(
-      <form onSubmit={result.current.validateAndAdd} data-testid="form">
+      <form onSubmit={result.current.addItem} data-testid="form">
         <input
           data-testid="inputTextLabel"
           value={result.current.textLabel}
@@ -69,7 +69,7 @@ describe('useAddItem hook', () => {
       useAddItem(fn, { placeholder: 'test' }),
     );
     render(
-      <form onSubmit={result.current.validateAndAdd} data-testid="form">
+      <form onSubmit={result.current.addItem} data-testid="form">
         <input
           data-testid="inputTextLabel"
           value={result.current.textLabel}
@@ -94,7 +94,7 @@ describe('useAddItem hook', () => {
       useAddItem(fn, { placeholder: 'test' }),
     );
     render(
-      <form onSubmit={e => result.current.validateAndAdd(e)} data-testid="form">
+      <form onSubmit={e => result.current.addItem(e)} data-testid="form">
         <input
           data-testid="inputTextLabel"
           value={result.current.textLabel}
