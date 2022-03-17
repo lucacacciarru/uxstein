@@ -1,5 +1,6 @@
 .react-grid-item.react-draggable-dragging {
   opacity: 0.5;
+  cursor: grabbing;
 }
 
 .react-grid-item.react-grid-placeholder {

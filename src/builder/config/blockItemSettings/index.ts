@@ -2,11 +2,13 @@ import { BlockSetup } from '../../hooks/useBlockSetup';
 import { DraggableBlockType } from '../../components/AddTab/DraggableBlock';
 import { text } from './text';
 import { progress } from './progress';
+import { checkbox } from './checkbox';
 import { AttributeName, AttributesModel } from '../../store/types';
 
 export const blockItemSettings: Record<DraggableBlockType, BlockSetup> = {
   text,
   progress,
+  checkbox,
   'text-list': {
     gridItemSettings: {
       type: 'text-list',
@@ -27,18 +29,6 @@ export const blockItemSettings: Record<DraggableBlockType, BlockSetup> = {
     },
     layoutSettings: {
       h: 1,
-      w: 2,
-      i: '',
-    },
-  },
-  checkbox: {
-    gridItemSettings: {
-      type: 'checkbox',
-      attributes: {},
-      style: { background: 'purple', color: 'white' },
-    },
-    layoutSettings: {
-      h: 3,
       w: 2,
       i: '',
     },

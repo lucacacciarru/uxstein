@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useDebouncedCallback } from 'use-debounce';
@@ -36,9 +36,7 @@ export const useFontSizeField = ({
     return getSizeByValueAndSizeSettings(selectedValue, sizeSettings);
   }, [selectedValue, sizeSettings]);
 
-  const [selected, setSelected] = useState<keyof SizesModel>(
-    sizeSettings.selected,
-  );
+  const [selected, setSelected] = useState<keyof SizesModel>(selectedSize);
 
   const debouncedUpdateValue = useDebouncedCallback(value => {
     dispatch(updateAttributeStyle(value));
@@ -54,10 +52,6 @@ export const useFontSizeField = ({
     };
     debouncedUpdateValue(payload);
   };
-
-  useEffect(() => {
-    setSelected(selectedSize);
-  }, [selectedSize]);
 
   return {
     label,
