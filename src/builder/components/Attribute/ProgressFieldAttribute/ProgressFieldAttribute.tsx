@@ -44,7 +44,7 @@ export const ProgressFieldAttribute: React.FC<Props> = ({
     <Box>
       <FormLabel>{rest.label}</FormLabel>
       <LabelItemField
-        addItem={addItem}
+        addCallback={addItem}
         placeholder={placeholder}
         initValue="30"
       />

@@ -10,22 +10,22 @@ import { MaxLengthMessage } from '../../../../_shared/components/MaxLengthMessag
 import { useAddItem } from './useAddItem';
 
 type Props = {
-  addItem: (label: string, value: string) => void;
+  addCallback: (label: string, value: string) => void;
   placeholder?: string;
   initValue?: string;
 };
 
-export const LabelItemField: React.FC<Props> = ({ addItem, ...rest }) => {
+export const LabelItemField: React.FC<Props> = ({ addCallback, ...rest }) => {
   const {
-    checkAndAddItem,
+    addItem,
     errorMessage,
     inputError,
     onChange,
     textLabel,
     placeholder,
-  } = useAddItem(addItem, rest);
+  } = useAddItem(addCallback, rest);
   return (
-    <>
+    <form onSubmit={addItem}>
       <FormControl position="relative" isInvalid={inputError}>
         <Input
           value={textLabel}
@@ -46,12 +46,12 @@ export const LabelItemField: React.FC<Props> = ({ addItem, ...rest }) => {
             }
             variant="unstyled"
             _hover={{ color: 'brand.primary' }}
-            onClick={checkAndAddItem}
+            type="submit"
           />
         </InputRightElement>
         <MaxLengthMessage maxLength={15}>{textLabel}</MaxLengthMessage>
         <FormErrorMessage position="fixed">{errorMessage}</FormErrorMessage>
       </FormControl>
-    </>
+    </form>
   );
 };
