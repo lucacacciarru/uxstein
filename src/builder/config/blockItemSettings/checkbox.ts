@@ -20,8 +20,11 @@ export const checkbox: BlockSetup = {
       checkbox: {
         label: 'builder.toolBar.attributes.items.label',
         placeholder: 'builder.toolBar.attributes.items.placeholder',
-        items: [{ id: '', label: '', value: '' }],
-        initialValue: [],
+        items: [],
+        initialValue: [
+          { id: '221', label: 'Skill 1', value: '' },
+          { id: '4984', label: 'Skill 2', value: '' },
+        ],
         style: {
           color: '#ffffff',
           checkboxBorderColor: '#ffffff',

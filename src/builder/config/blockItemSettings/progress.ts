@@ -23,8 +23,8 @@ export const progress: BlockSetup = {
         placeholder: 'builder.toolBar.attributes.items.placeholder',
         items: [],
         initialValue: [
-          { id: '221', label: 'Test', value: '50' },
-          { id: '4984', label: 'Test2', value: '60' },
+          { id: '221', label: 'Skill 1', value: '50' },
+          { id: '4984', label: 'Skill 2', value: '60' },
         ],
         style: {
           color: '#ffffff',
