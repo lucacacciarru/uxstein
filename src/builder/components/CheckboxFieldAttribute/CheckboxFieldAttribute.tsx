@@ -34,7 +34,7 @@ export const CheckboxFieldAttribute: FC<Props> = ({ blockItemId, name }) => {
         placeholder={placeholder}
         initValue=""
       />
-      <Stack gap="1rem" mt="2rem">
+      <Stack gap="2" mt="8">
         {renderAttributeItems}
       </Stack>
       <AttributeStyleFields {...attributeStyleFieldsProp} />

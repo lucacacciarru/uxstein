@@ -38,4 +38,8 @@ export const toolBar = {
       checkboxCheckColor: 'Check color',
     },
   },
+  errors: {
+    tooLong: 'Il nome è inserito troppo lungo!',
+    noText: 'Nessun testo inserito!',
+  }
 };

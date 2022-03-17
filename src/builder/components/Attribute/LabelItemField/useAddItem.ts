@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
-export function useAddItem(add: (label: string, value: string) => void, placeholder: string, initValue: string) {
+type Options = {
+  placeholder?: string;
+  initValue?: string;
+}
+
+export function useAddItem(add: (label: string, value: string) => void, options: Options) {
+  const { t } = useTranslation();
+
   const [textLabel, setTextLabel] = useState<string>('');
   const [inputError, setInputError] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
@@ -12,18 +20,20 @@ export function useAddItem(add: (label: string, value: string) => void, placehol
   const checkAndAddItem = () => {
     if (textLabel.length > 15) {
       setInputError(true);
-      setErrorMessage('Too long');
+      setErrorMessage(t('builder.toolBar.errors.tooLong'));
       return;
     }
     if (textLabel.trim().length === 0) {
       setInputError(true);
-      setErrorMessage('No text');
+      setErrorMessage(t('builder.toolBar.errors.noText'));
       return;
     }
     setInputError(false);
     setErrorMessage('');
-    add(textLabel, initValue);
+    add(textLabel, options.initValue || '');
   };
+
+  const placeholder = options.placeholder || t('builder.toolBar.attributes.items.placeholder');
 
   return {
     textLabel,

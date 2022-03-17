@@ -39,4 +39,8 @@ export const toolBar = {
       checkboxCheckColor: 'Colore spunta',
     },
   },
+  errors: {
+    tooLong: 'Il nome è inserito troppo lungo!',
+    noText: 'Nessun testo inserito!',
+  }
 };

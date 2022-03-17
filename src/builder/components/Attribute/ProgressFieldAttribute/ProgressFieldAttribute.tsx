@@ -48,7 +48,7 @@ export const ProgressFieldAttribute: React.FC<Props> = ({
         placeholder={placeholder}
         initValue="30"
       />
-      <Stack gap="2" mt="5">
+      <Stack gap="2" mt="8">
         {renderAllProgressField}
       </Stack>
       <AttributeStyleFields {...attributeStyleFieldsProp} />
