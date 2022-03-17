@@ -31,7 +31,8 @@ export type AttributeName =
   | 'body'
   | 'image'
   | 'progress'
-  | 'checkbox';
+  | 'checkbox'
+  | 'text-list';
 export type AttributesModel = Partial<Record<AttributeName, ItemAttribute>>;
 
 export type ItemAttribute = {

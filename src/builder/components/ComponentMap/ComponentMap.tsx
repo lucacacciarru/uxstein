@@ -5,11 +5,13 @@ import { getGridItemById } from '../../store/selectors/getGridItemById';
 import { CheckboxGridItem } from '../CheckboxGridItem/CheckboxGridItem';
 import { ProgressbarGridItem } from '../ProgressBarGridItem/ProgressBarGridItem';
 import { TextGridItem } from '../TextGridItem/TextGridItem';
+import { TextListGridItem } from '../TextListGridItem';
 
 const map: Record<string, React.FC<any>> = {
   text: TextGridItem,
   progress: ProgressbarGridItem,
   checkbox: CheckboxGridItem,
+  'text-list': TextListGridItem,
 };
 
 type Props = {
