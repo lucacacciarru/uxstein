@@ -1,5 +1,5 @@
 import { Center, IconButton } from '@chakra-ui/react';
-import { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import { Icon } from '../../../_shared/components';
 import { useDeleteBlock } from '../../hooks/useDeleteBlock';
 
@@ -10,9 +10,14 @@ type Props = {
 
 export const DeleteButton: FC<Props> = ({ color, id }) => {
   const { deleteBlock } = useDeleteBlock();
-  const handlerDeleteButton = () => {
-    deleteBlock(id);
-  };
+  const handlerDeleteButton = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      e.stopPropagation();
+      deleteBlock(id);
+    },
+    [deleteBlock, id],
+  );
+
   return (
     <Center
       position="absolute"

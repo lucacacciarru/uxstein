@@ -17,7 +17,8 @@ export function useAddItem(add: (label: string, value: string) => void, options:
     setTextLabel(e.target.value);
   };
 
-  const checkAndAddItem = () => {
+  const validateAndAdd = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     if (textLabel.length > 15) {
       setInputError(true);
       setErrorMessage(t('builder.toolBar.errors.tooLong'));
@@ -31,6 +32,7 @@ export function useAddItem(add: (label: string, value: string) => void, options:
     setInputError(false);
     setErrorMessage('');
     add(textLabel, options.initValue || '');
+    setTextLabel('');
   };
 
   const placeholder = options.placeholder || t('builder.toolBar.attributes.items.placeholder');
@@ -41,6 +43,6 @@ export function useAddItem(add: (label: string, value: string) => void, options:
     inputError,
     errorMessage,
     onChange,
-    checkAndAddItem,
+    validateAndAdd,
   };
 }

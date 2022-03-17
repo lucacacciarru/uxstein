@@ -17,7 +17,7 @@ type Props = {
 
 export const LabelItemField: React.FC<Props> = ({ addItem, ...rest }) => {
   const {
-    checkAndAddItem,
+    validateAndAdd,
     errorMessage,
     inputError,
     onChange,
@@ -25,7 +25,7 @@ export const LabelItemField: React.FC<Props> = ({ addItem, ...rest }) => {
     placeholder,
   } = useAddItem(addItem, rest);
   return (
-    <>
+    <form onSubmit={validateAndAdd}>
       <FormControl position="relative" isInvalid={inputError}>
         <Input
           value={textLabel}
@@ -46,12 +46,12 @@ export const LabelItemField: React.FC<Props> = ({ addItem, ...rest }) => {
             }
             variant="unstyled"
             _hover={{ color: 'brand.primary' }}
-            onClick={checkAndAddItem}
+            type="submit"
           />
         </InputRightElement>
         <MaxLengthMessage maxLength={15}>{textLabel}</MaxLengthMessage>
         <FormErrorMessage position="fixed">{errorMessage}</FormErrorMessage>
       </FormControl>
-    </>
+    </form>
   );
 };

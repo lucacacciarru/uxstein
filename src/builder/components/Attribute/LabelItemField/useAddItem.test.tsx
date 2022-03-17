@@ -3,7 +3,6 @@ import {
   renderHook,
   screen,
   fireEvent,
-  act,
 } from '../../../../_shared/testConfig/customRenderHook';
 import { useAddItem } from './useAddItem';
 
@@ -45,61 +44,74 @@ describe('useAddItem hook', () => {
       useAddItem(fn, { placeholder: 'test' }),
     );
     render(
-      <input
-        data-testid="inputTextLabel"
-        value={result.current.textLabel}
-        onChange={result.current.onChange}
-      />,
+      <form onSubmit={result.current.validateAndAdd} data-testid="form">
+        <input
+          data-testid="inputTextLabel"
+          value={result.current.textLabel}
+          onChange={result.current.onChange}
+        />
+      </form>,
     );
     const inputLabel = screen.getByTestId('inputTextLabel');
     fireEvent.change(inputLabel, {
       target: { value: 'string long enough to be longer than 15 characters' },
     });
-    act(() => {
-      result.current.checkAndAddItem();
-    });
+
+    const form = screen.getByTestId('form');
+    fireEvent.submit(form);
+
     expect(result.current.inputError).toBeTruthy();
     expect(result.current.errorMessage).toBeTruthy();
   });
+
   test('if textLabel is empty, inputError and ErrorMessage should be truthy', () => {
     const { result } = renderHook(() =>
       useAddItem(fn, { placeholder: 'test' }),
     );
     render(
-      <input
-        data-testid="inputTextLabel"
-        value={result.current.textLabel}
-        onChange={result.current.onChange}
-      />,
+      <form onSubmit={result.current.validateAndAdd} data-testid="form">
+        <input
+          data-testid="inputTextLabel"
+          value={result.current.textLabel}
+          onChange={result.current.onChange}
+        />
+      </form>,
     );
     const inputLabel = screen.getByTestId('inputTextLabel');
     fireEvent.change(inputLabel, {
       target: { value: '' },
     });
-    act(() => {
-      result.current.checkAndAddItem();
-    });
+
+    const form = screen.getByTestId('form');
+    fireEvent.submit(form);
+
     expect(result.current.inputError).toBeTruthy();
     expect(result.current.errorMessage).toBeTruthy();
   });
+
   test('if textLabel is correct, inputError and ErrorMessage should be falsy and add function should be call', () => {
     const { result } = renderHook(() =>
       useAddItem(fn, { placeholder: 'test' }),
     );
     render(
-      <input
-        data-testid="inputTextLabel"
-        value={result.current.textLabel}
-        onChange={result.current.onChange}
-      />,
+      <form onSubmit={e => result.current.validateAndAdd(e)} data-testid="form">
+        <input
+          data-testid="inputTextLabel"
+          value={result.current.textLabel}
+          onChange={result.current.onChange}
+        />
+      </form>,
     );
+    const form = screen.getByTestId('form');
+
     const inputLabel = screen.getByTestId('inputTextLabel');
     fireEvent.change(inputLabel, {
-      target: { value: 'Test' },
+      target: { value: 'valid' },
     });
-    act(() => {
-      result.current.checkAndAddItem();
-    });
+
+    expect(result.current.textLabel).toBe('valid');
+    fireEvent.submit(form);
+
     expect(result.current.inputError).toBeFalsy();
     expect(result.current.errorMessage).toBeFalsy();
     expect(fn).toBeCalled();
