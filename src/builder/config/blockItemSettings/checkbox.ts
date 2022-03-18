@@ -1,4 +1,5 @@
 import { BlockSetup } from '../../hooks/useBlockSetup';
+import { getSelectedSizeValue } from '../../utils/getSelectedSizeValue';
 import { blockSizeSettings } from '../styleSettings/block';
 import { textSizeSettings } from '../styleSettings/text';
 
@@ -12,8 +13,7 @@ export const checkbox: BlockSetup = {
         items: [{ id: '', label: '', value: '' }],
         initialValue: [{ id: '5', label: 'Test', value: 'Title' }],
         style: {
-          fontSize:
-            textSizeSettings.title.sizes[textSizeSettings.title.selected] || '',
+          fontSize: getSelectedSizeValue(textSizeSettings.title),
           color: '#ffffff',
         },
       },
@@ -35,8 +35,8 @@ export const checkbox: BlockSetup = {
     style: {
       backgroundColor: '#000000',
       borderColor: '#fafafa',
-      borderWidth: blockSizeSettings.borderWidth.sizes[blockSizeSettings.borderWidth.selected] || '',
-      borderRadius: blockSizeSettings.borderRadius.sizes[blockSizeSettings.borderRadius.selected] || '',
+      borderWidth: getSelectedSizeValue(blockSizeSettings.borderWidth),
+      borderRadius: getSelectedSizeValue(blockSizeSettings.borderRadius),
     },
   },
   layoutSettings: {
