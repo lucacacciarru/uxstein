@@ -1,61 +1,54 @@
 //TODO: change "Frank" to username of User
-import { Box, BoxProps, HStack, Text } from '@chakra-ui/react';
-import { useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Box, HStack, Text } from '@chakra-ui/react';
+import { useMemo } from 'react';
 import { PersonCard } from '../../../_shared/components';
-import { mockTemplate } from '../..//utils/mockTemplate';
-import { ControlButton } from './ControlButton';
+import { ControlButtons } from '../ControlButtons/ControlButtons';
+import { useTemplateRow } from './useTemplateRow';
 
 type Props = {
   category: 'mine' | 'default';
 };
 
-const containerProps: BoxProps = {
-  transition: 'all .2s ease',
-  transform: 'auto',
-  mt: '4',
-  gap: '5',
-};
-
 export const TemplateRow: React.FC<Props> = ({ category }) => {
-  const [carouselX, setCarouselX] = useState<number>(0);
-  const { t } = useTranslation();
-  const author = category === 'mine' ? 'Frank' : category;
-  const filteredByCategory = useMemo(() => {
-    return mockTemplate.filter(template => template.author === author);
-  }, [author]);
+  const {
+    title,
+    disabled,
+    filteredByCategory,
+    containerProps,
+    containerRef,
+    firstCardRef,
+    lastCardRef,
+  } = useTemplateRow(category);
 
   const renderTemplateByAuthor = useMemo(() => {
-    return filteredByCategory.map(template => (
-      <PersonCard
-        id={Date.now().toString()}
-        key={template.createdAt}
-        {...template}
-      />
-    ));
-  }, [filteredByCategory]);
+    return filteredByCategory.map((template, index, list) => {
+      const ref =
+        index === 0
+          ? firstCardRef
+          : index === list.length - 1
+          ? lastCardRef
+          : undefined;
+      return (
+        <PersonCard
+          id={Date.now().toString()}
+          {...template}
+          cardRef={ref}
+          key={template.createdAt}
+        />
+      );
+    });
+  }, [filteredByCategory, firstCardRef, lastCardRef]);
 
   return (
     <Box overflow="hidden" py="4">
       <Text as="h4" textStyle="h4">
-        {t(`template.container.category.${category}`)}
+        {title}
       </Text>
-      <Box position="relative">
-        <HStack translateX={`${carouselX * 350}px`} {...containerProps}>
+      <Box position={'relative'}>
+        <HStack {...containerProps} ref={containerRef}>
           {renderTemplateByAuthor}
         </HStack>
-        <ControlButton
-          setCarouselX={setCarouselX}
-          direction="sx"
-          disabled={carouselX === 0 ? true : false}
-        />
-        <ControlButton
-          setCarouselX={setCarouselX}
-          direction="dx"
-          disabled={
-            carouselX < (filteredByCategory.length * -1) / 2 ? true : false
-          }
-        />
+        <ControlButtons disabled={disabled} containerRef={containerRef} />
       </Box>
     </Box>
   );
