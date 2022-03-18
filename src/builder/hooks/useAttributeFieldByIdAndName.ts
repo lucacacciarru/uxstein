@@ -16,9 +16,9 @@ export const useAttributeFieldByIdAndName = (
   const attribute = useSelector(
     getAttributeByNameAndId(attributeName, blockId),
   );
-  const [value, setValue] = useState(attribute?.items[0].value);
+  const [value, setValue] = useState(attribute?.items[0]?.value);
 
-  const attributeValue = useMemo(() => attribute?.items[0].value, [attribute]);
+  const attributeValue = useMemo(() => attribute?.items[0]?.value, [attribute]);
 
   const labelTranslationKey: TranslationKey =
     attribute?.label || 'builder.toolBar.attributes.default.label';
@@ -61,8 +61,6 @@ export const useAttributeFieldByIdAndName = (
     placeholder,
     value,
     onChange,
-    style: attribute?.style,
-    styleKeys: Object.keys(attribute?.style || {}),
     attributeStyleFieldsProp,
   };
 };

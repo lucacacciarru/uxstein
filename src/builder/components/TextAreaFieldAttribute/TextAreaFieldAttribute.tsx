@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const TextAreaFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
-  const { value, onChange, label, placeholder, style, styleKeys } =
+  const { value, onChange, label, placeholder, attributeStyleFieldsProp } =
     useAttributeFieldByIdAndName(blockItemId, name);
 
   return (
@@ -19,12 +19,7 @@ export const TextAreaFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
       <InputGroup>
         <Textarea placeholder={placeholder} value={value} onChange={onChange} />
       </InputGroup>
-      <AttributeStyleFields
-        name={name}
-        blockItemId={blockItemId}
-        style={style}
-        styleKeys={styleKeys}
-      />
+      <AttributeStyleFields {...attributeStyleFieldsProp} />
     </Box>
   );
 };
