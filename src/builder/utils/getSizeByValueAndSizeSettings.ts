@@ -9,7 +9,7 @@ export const getSizeByValueAndSizeSettings = (
   value: string,
   sizeSettings: SizeSettingsModel,
 ) => {
-  const sizes = sizeSettings.sizes || {};
+  const sizes = sizeSettings.sizes;
 
   let size: keyof SizesModel;
   for (size in sizes) {

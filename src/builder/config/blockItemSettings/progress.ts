@@ -1,4 +1,5 @@
 import { BlockSetup } from '../../hooks/useBlockSetup';
+import { getSelectedSizeValue } from '../../utils/getSelectedSizeValue';
 import { blockSizeSettings } from '../styleSettings/block';
 import { borderItemSettings } from '../styleSettings/borderItem';
 import { textSizeSettings } from '../styleSettings/text';
@@ -14,7 +15,7 @@ export const progress: BlockSetup = {
         initialValue: [{ id: '5', label: 'Test', value: 'Title' }],
         style: {
           fontSize:
-            textSizeSettings.title.sizes[textSizeSettings.title.selected] || '',
+            getSelectedSizeValue(textSizeSettings.title),
           color: '#ffffff',
         },
       },
@@ -32,13 +33,9 @@ export const progress: BlockSetup = {
           progressBarTrackBackgroundColor: '#05C46B',
           progressBarBorderColor: '#1b1b1b',
           progressBarBorderWidth:
-            borderItemSettings.progressBarBorderWidth.sizes[
-            borderItemSettings.progressBarBorderWidth.selected
-            ] || '',
+            getSelectedSizeValue(borderItemSettings.progressBarBorderWidth),
           progressBarBorderRadius:
-            borderItemSettings.progressBarBorderRadius.sizes[
-            borderItemSettings.progressBarBorderRadius.selected
-            ] || '',
+            getSelectedSizeValue(borderItemSettings.progressBarBorderRadius),
         },
       },
     },
@@ -46,13 +43,9 @@ export const progress: BlockSetup = {
       backgroundColor: '#000000',
       borderColor: '#fafafa',
       borderWidth:
-        blockSizeSettings.borderWidth.sizes[
-        blockSizeSettings.borderWidth.selected
-        ] || '',
+        getSelectedSizeValue(blockSizeSettings.borderWidth),
       borderRadius:
-        blockSizeSettings.borderRadius.sizes[
-        blockSizeSettings.borderRadius.selected
-        ] || '',
+        getSelectedSizeValue(blockSizeSettings.borderRadius),
     },
   },
   layoutSettings: {
