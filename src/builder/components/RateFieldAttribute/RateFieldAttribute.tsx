@@ -35,7 +35,7 @@ export const RateFieldAttribute: React.FC<Props> = ({ blockItemId, name }) => {
       <LabelItemField
         addCallback={addItem}
         placeholder={placeholder}
-        initValue=""
+        initValue="3"
       />
       <Stack gap="2" mt="8">
         {renderAttributeItems}
