@@ -1,20 +1,17 @@
-import { Box, FormLabel, Stack } from '@chakra-ui/react';
-import { useMemo } from 'react';
-import { useMultipleAttributeField } from '../../hooks/useMultipleAttributeField';
 import { AttributeName } from '../../store/types';
-import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
+import { useMultipleAttributeField } from '../../hooks/useMultipleAttributeField';
+import { Box, FormLabel, Stack } from '@chakra-ui/react';
 import { LabelItemField } from '../Attribute/LabelItemField';
-import { TextListFieldItem } from './TextListFieldItem';
+import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
+import { useMemo } from 'react';
+import { RateFieldItem } from './RateFieldItem';
 
 type Props = {
   blockItemId: string;
   name: AttributeName;
 };
 
-export const TextListFieldAttribute: React.FC<Props> = ({
-  blockItemId,
-  name,
-}) => {
+export const RateFieldAttribute: React.FC<Props> = ({ blockItemId, name }) => {
   const {
     addItem,
     label,
@@ -27,7 +24,7 @@ export const TextListFieldAttribute: React.FC<Props> = ({
   const renderAttributeItems = useMemo(
     () =>
       attributeItems.map(item => (
-        <TextListFieldItem key={item.id} {...rest} {...item} />
+        <RateFieldItem key={item.id} {...item} {...rest} />
       )),
     [attributeItems, rest],
   );
@@ -38,7 +35,7 @@ export const TextListFieldAttribute: React.FC<Props> = ({
       <LabelItemField
         addCallback={addItem}
         placeholder={placeholder}
-        initValue=""
+        initValue="3"
       />
       <Stack gap="2" mt="8">
         {renderAttributeItems}

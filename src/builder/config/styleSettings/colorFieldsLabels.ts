@@ -17,4 +17,5 @@ export const colorFieldsLabels: Record<string, TranslationKey> = {
     'builder.toolBar.style.labels.progressBarBorderColor',
   checkboxBorderColor: 'builder.toolBar.style.labels.checkboxBorderColor',
   checkboxCheckColor: 'builder.toolBar.style.labels.checkboxCheckColor',
+  colorRateIcon: 'builder.toolBar.style.labels.colorRateIcon',
 };

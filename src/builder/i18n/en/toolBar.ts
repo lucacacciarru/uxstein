@@ -36,10 +36,11 @@ export const toolBar = {
       progressBarBorderRadius: 'Border-radius progress bar',
       checkboxBorderColor: 'Border-color box',
       checkboxCheckColor: 'Check color',
+      colorRateIcon: 'Rate icon color',
     },
   },
   errors: {
     tooLong: 'Il nome è inserito troppo lungo!',
     noText: 'Nessun testo inserito!',
-  }
+  },
 };

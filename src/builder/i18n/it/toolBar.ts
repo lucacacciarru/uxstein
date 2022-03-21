@@ -37,10 +37,11 @@ export const toolBar = {
       progressBarBorderRadius: 'Smussatura barra dei progressi',
       checkboxBorderColor: 'Colore bordo casella',
       checkboxCheckColor: 'Colore spunta',
+      colorRateIcon: 'Colore icone valutazione',
     },
   },
   errors: {
     tooLong: 'Il nome è inserito troppo lungo!',
     noText: 'Nessun testo inserito!',
-  }
+  },
 };

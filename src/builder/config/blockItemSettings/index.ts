@@ -4,12 +4,14 @@ import { text } from './text';
 import { progress } from './progress';
 import { checkbox } from './checkbox';
 import { textList } from './textList';
+import { rate } from './rate';
 import { AttributeName, AttributesModel } from '../../store/types';
 
 export const blockItemSettings: Record<DraggableBlockType, BlockSetup> = {
   text,
   progress,
   checkbox,
+  rate,
   'text-list': textList,
   'image-list': {
     gridItemSettings: {
@@ -32,18 +34,6 @@ export const blockItemSettings: Record<DraggableBlockType, BlockSetup> = {
     layoutSettings: {
       h: 2,
       w: 3,
-      i: '',
-    },
-  },
-  rate: {
-    gridItemSettings: {
-      type: 'rate',
-      attributes: {},
-      style: { background: 'grey', color: 'white' },
-    },
-    layoutSettings: {
-      h: 2,
-      w: 2,
       i: '',
     },
   },
