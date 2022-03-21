@@ -1,4 +1,5 @@
 import { BlockSetup } from '../../hooks/useBlockSetup';
+import { getSelectedSizeValue } from '../../utils/getSelectedSizeValue';
 import { blockSizeSettings } from '../styleSettings/block';
 import { textSizeSettings } from '../styleSettings/text';
 
@@ -12,8 +13,7 @@ export const textList: BlockSetup = {
         items: [{ id: '', label: '', value: '' }],
         initialValue: [{ id: '134', label: 'Test', value: 'Title' }],
         style: {
-          fontSize:
-            textSizeSettings.title.sizes[textSizeSettings.title.selected] || '',
+          fontSize: getSelectedSizeValue(textSizeSettings.title),
           color: '#ffffff',
         },
       },
@@ -27,24 +27,15 @@ export const textList: BlockSetup = {
         ],
         style: {
           color: '#ffffff',
-          fontSize:
-            textSizeSettings['text-list'].sizes[
-              textSizeSettings['text-list'].selected
-            ] || '',
+          fontSize: getSelectedSizeValue(textSizeSettings['text-list']),
         },
       },
     },
     style: {
       backgroundColor: '#000000',
       borderColor: '#fafafa',
-      borderWidth:
-        blockSizeSettings.borderWidth.sizes[
-          blockSizeSettings.borderWidth.selected
-        ] || '',
-      borderRadius:
-        blockSizeSettings.borderRadius.sizes[
-          blockSizeSettings.borderRadius.selected
-        ] || '',
+      borderWidth: getSelectedSizeValue(blockSizeSettings.borderWidth),
+      borderRadius: getSelectedSizeValue(blockSizeSettings.borderRadius),
     },
   },
   layoutSettings: {

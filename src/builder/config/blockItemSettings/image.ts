@@ -1,4 +1,5 @@
 import { BlockSetup } from '../../hooks/useBlockSetup';
+import { getSelectedSizeValue } from '../../utils/getSelectedSizeValue';
 import { blockSizeSettings } from '../styleSettings/block';
 
 export const image: BlockSetup = {
@@ -16,8 +17,8 @@ export const image: BlockSetup = {
     style: {
       backgroundColor: '#000000',
       borderColor: '#fafafa',
-      borderWidth: blockSizeSettings.borderWidth.sizes[blockSizeSettings.borderWidth.selected] || '',
-      borderRadius: blockSizeSettings.borderRadius.sizes[blockSizeSettings.borderRadius.selected] || '',
+      borderWidth: getSelectedSizeValue(blockSizeSettings.borderWidth),
+      borderRadius: getSelectedSizeValue(blockSizeSettings.borderRadius),
     },
   },
   layoutSettings: {

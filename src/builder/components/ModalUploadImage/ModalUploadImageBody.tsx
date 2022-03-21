@@ -7,22 +7,19 @@ import {
   TabPanels,
   Tabs,
 } from '@chakra-ui/react';
-import { FC, useMemo } from 'react';
+import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { UploadImageBox } from '../ImageFieldAttribute/UploadImageBox';
 
+const tabPanelProps = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  h: 'full',
+};
+
 export const ModalUploadImageBody: FC = props => {
   const { t } = useTranslation();
-
-  const tabPanelProps = useMemo(
-    () => ({
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      h: 'full',
-    }),
-    [],
-  );
 
   return (
     <Tabs align="center" defaultIndex={1}>

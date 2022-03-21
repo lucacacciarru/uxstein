@@ -25,6 +25,7 @@ export const ImageFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
         border={'dark.s'}
         _hover={{ border: 'green.s' }}
         onClick={onOpen}
+        data-testid="openModal"
       >
         <Image
           src={value}

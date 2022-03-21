@@ -1,4 +1,5 @@
 import { BlockSetup } from '../../hooks/useBlockSetup';
+import { getSelectedSizeValue } from '../../utils/getSelectedSizeValue';
 import { blockSizeSettings } from '../styleSettings/block';
 import { textSizeSettings } from '../styleSettings/text';
 
@@ -12,8 +13,7 @@ export const text: BlockSetup = {
         items: [{ id: '1', value: '' }],
         initialValue: [{ id: '1', value: 'Title' }],
         style: {
-          fontSize:
-            textSizeSettings.title.sizes[textSizeSettings.title.selected] || '',
+          fontSize: getSelectedSizeValue(textSizeSettings.title),
           color: '#ffffff',
         },
       },
@@ -23,10 +23,7 @@ export const text: BlockSetup = {
         items: [{ id: '1', value: '' }],
         initialValue: [{ id: '1', value: 'Subtitle' }],
         style: {
-          fontSize:
-            textSizeSettings.subtitle.sizes[
-            textSizeSettings.subtitle.selected
-            ] || '',
+          fontSize: getSelectedSizeValue(textSizeSettings.subtitle),
           color: '#ffffff',
           fontStyle: 'italic'
         },
@@ -37,7 +34,7 @@ export const text: BlockSetup = {
         items: [{ id: '1', value: '' }],
         initialValue: [{ id: '1', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et morbi adipiscing leo nibh porttitor diam in nibh malesuada. Sed velit lobortis volutpat, eget.' }],
         style: {
-          fontSize: textSizeSettings.body.sizes[textSizeSettings.body.selected] || '',
+          fontSize: getSelectedSizeValue(textSizeSettings.body),
           color: '#ffffff'
         }
       },
@@ -45,8 +42,8 @@ export const text: BlockSetup = {
     style: {
       backgroundColor: '#000000',
       borderColor: '#fafafa',
-      borderWidth: blockSizeSettings.borderWidth.sizes[blockSizeSettings.borderWidth.selected] || '',
-      borderRadius: blockSizeSettings.borderRadius.sizes[blockSizeSettings.borderRadius.selected] || '',
+      borderWidth: getSelectedSizeValue(blockSizeSettings.borderWidth),
+      borderRadius: getSelectedSizeValue(blockSizeSettings.borderRadius),
     },
   },
   layoutSettings: {
