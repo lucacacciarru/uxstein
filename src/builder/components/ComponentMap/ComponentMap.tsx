@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { getGridItemById } from '../../store/selectors/getGridItemById';
 import { CheckboxGridItem } from '../CheckboxGridItem/CheckboxGridItem';
 import { ProgressbarGridItem } from '../ProgressBarGridItem/ProgressBarGridItem';
+import { RateGridItem } from '../RateGridItem';
 import { TextGridItem } from '../TextGridItem/TextGridItem';
 import { TextListGridItem } from '../TextListGridItem';
 
@@ -12,6 +13,7 @@ const map: Record<string, React.FC<any>> = {
   progress: ProgressbarGridItem,
   checkbox: CheckboxGridItem,
   'text-list': TextListGridItem,
+  rate: RateGridItem,
 };
 
 type Props = {

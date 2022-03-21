@@ -15,6 +15,7 @@ const map: Record<string, React.FC<Props>> = {
   progressBarBorderRadius: ProgressBorderField,
   checkboxBorderColor: AttributeColorField,
   checkboxCheckColor: AttributeColorField,
+  colorRateIcon: AttributeColorField,
 };
 
 type Props = {

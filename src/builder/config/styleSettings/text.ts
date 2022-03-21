@@ -1,7 +1,7 @@
 import { SizesModel } from '../../components/StyleFields/SelectOneSize';
 
 type TextSizesSettingsModel = Record<
-  'title' | 'body' | 'subtitle' | 'text-list',
+  'title' | 'body' | 'subtitle' | 'text-list' | 'rate',
   {
     sizes: SizesModel;
     selected: keyof SizesModel;
@@ -22,6 +22,10 @@ export const textSizeSettings: TextSizesSettingsModel = {
     selected: 'm',
   },
   'text-list': {
+    sizes: { s: '15px', m: '17px', l: '19px' },
+    selected: 'm',
+  },
+  rate: {
     sizes: { s: '15px', m: '17px', l: '19px' },
     selected: 'm',
   },
