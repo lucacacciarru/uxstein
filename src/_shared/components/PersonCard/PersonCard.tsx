@@ -13,14 +13,18 @@ type Props = {
   updatedAt: number;
   type: 'persona' | 'template';
   author?: string;
+  cardRef?: React.RefObject<HTMLDivElement>;
 };
 
 const cardContainerProps: ChakraProps = {
-  maxW: '350px',
-  minW: '350px',
-  w: '20vw',
   cursor: 'pointer',
-  position: 'relative',
+  flexBasis: '350px',
+  flexGrow: '0',
+  flexShrink: '0',
+  scrollSnapAlign: 'start',
+  ml: '32',
+  _last: { scrollSnapAlign: 'end' },
+  _first: { ml: '0' },
 };
 
 export const PersonCard: React.FC<Props> = ({
@@ -31,11 +35,12 @@ export const PersonCard: React.FC<Props> = ({
   author = 'default',
   type,
   createdAt,
+  cardRef,
 }) => {
   const timeSinceLastUpdate = timeBetweenTwoDays(createdAt, updatedAt);
 
   return (
-    <CardContainer role="card" {...cardContainerProps}>
+    <CardContainer role="card" {...cardContainerProps} ref={cardRef}>
       <OptionPersonCard personaId={id} />
       <Link to={`/builder/${title}`}>
         <Box w="100%" h="20vh" p="3" background="black.20">
