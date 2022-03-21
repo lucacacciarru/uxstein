@@ -78,6 +78,13 @@ export function useMultipleAttributeField(
     debouncedUpdateValue(filteredItems);
   };
 
+  const attributeStyleFieldsProp = {
+    name: attributeName,
+    blockItemId: blockId,
+    style: attribute?.style,
+    styleKeys: Object.keys(attribute?.style || {}),
+  };
+
   return {
     label,
     placeholder,
@@ -86,5 +93,6 @@ export function useMultipleAttributeField(
     onChangeLabel,
     addItem,
     deleteItem,
+    attributeStyleFieldsProp,
   };
 }

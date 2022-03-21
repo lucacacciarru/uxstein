@@ -1,6 +1,5 @@
 import { Box, FormLabel, Stack } from '@chakra-ui/react';
 import { useMemo } from 'react';
-import { useAttributeFieldByIdAndName } from '../../hooks/useAttributeFieldByIdAndName';
 import { useMultipleAttributeField } from '../../hooks/useMultipleAttributeField';
 import { AttributeName } from '../../store/types';
 import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
@@ -16,13 +15,15 @@ export const TextListFieldAttribute: React.FC<Props> = ({
   blockItemId,
   name,
 }) => {
-  const { addItem, label, placeholder, attributeItems, ...rest } =
-    useMultipleAttributeField(blockItemId, name);
+  const {
+    addItem,
+    label,
+    placeholder,
+    attributeItems,
+    attributeStyleFieldsProp,
+    ...rest
+  } = useMultipleAttributeField(blockItemId, name);
 
-  const { attributeStyleFieldsProp } = useAttributeFieldByIdAndName(
-    blockItemId,
-    name,
-  );
   const renderAttributeItems = useMemo(
     () =>
       attributeItems.map(item => (
