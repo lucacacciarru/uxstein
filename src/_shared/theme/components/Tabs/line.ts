@@ -3,7 +3,7 @@ export const line = {
     color: 'black.0',
     _selected: {
       boxShadow: 'none',
-      borderBottomColor: 'brand.primary',
+      borderBottom: 'green.s',
       color: 'brand.primary',
     },
     _focus: {

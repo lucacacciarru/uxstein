@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { getGridItemById } from '../../store/selectors/getGridItemById';
 import { CheckboxGridItem } from '../CheckboxGridItem/CheckboxGridItem';
+import { ImageGridItem } from '../ImageGridItem/ImageGridItem';
 import { ProgressbarGridItem } from '../ProgressBarGridItem/ProgressBarGridItem';
 import { RateGridItem } from '../RateGridItem';
 import { TextGridItem } from '../TextGridItem/TextGridItem';
@@ -14,6 +15,7 @@ const map: Record<string, React.FC<any>> = {
   checkbox: CheckboxGridItem,
   'text-list': TextListGridItem,
   rate: RateGridItem,
+  image: ImageGridItem,
 };
 
 type Props = {

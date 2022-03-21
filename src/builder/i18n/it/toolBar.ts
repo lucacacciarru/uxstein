@@ -20,6 +20,14 @@ export const toolBar = {
       label: 'Nome',
       placeholder: 'Nome del nuovo elemento...',
     },
+    image: {
+      label: 'Immagine',
+      placeholder: 'Carica la tua immagine',
+      modalHeader: 'Carica immagine',
+      modalButton: 'Fatto !',
+      modalUploadTab: 'Carica',
+      modalUrlTab: 'Url',
+    }
   },
   style: {
     labels: {
