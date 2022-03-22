@@ -27,7 +27,7 @@ export const toolBar = {
       modalButton: 'Fatto !',
       modalUploadTab: 'Carica',
       modalUrlTab: 'Url',
-    }
+    },
   },
   style: {
     labels: {
@@ -46,12 +46,13 @@ export const toolBar = {
       checkboxBorderColor: 'Colore bordo casella',
       checkboxCheckColor: 'Colore spunta',
       colorRateIcon: 'Colore icone valutazione',
-      objectFit: 'Adatta immagine'
+      objectFit: 'Adatta immagine',
+      icon: 'Tipologia icona',
     },
     buttons: {
       contain: 'Contain',
       cover: 'Cover',
-    }
+    },
   },
   errors: {
     tooLong: 'Il nome è inserito troppo lungo!',

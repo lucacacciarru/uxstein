@@ -20,6 +20,7 @@ export const RateGridItem: React.FC<Props> = ({ attributes, id, style }) => {
           </Text>
           <RateItemList
             value={item.value}
+            icon={attributes.rate?.style.icon as string}
             color={attributes.rate?.style.colorRateIcon as string}
           />
         </Box>

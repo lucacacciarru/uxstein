@@ -30,6 +30,7 @@ import {
   Accordion,
   Textarea,
   NumberInput,
+  Select,
 } from './components';
 
 const config = {
@@ -66,6 +67,7 @@ const config = {
     Spinner,
     Textarea,
     NumberInput,
+    Select,
   },
 };
 export const customTheme = extendTheme(config);

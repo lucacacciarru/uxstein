@@ -3,6 +3,6 @@ import { RateItemList } from './RateItemList';
 
 describe('RateItemList', () => {
   test('should be rendered', () => {
-    render(<RateItemList color="#fafafa" value="3" />);
+    render(<RateItemList icon="Star" color="#fafafa" value="3" />);
   });
 });
