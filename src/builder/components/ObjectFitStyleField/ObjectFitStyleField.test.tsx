@@ -1,0 +1,48 @@
+import {
+  render,
+  screen,
+  fireEvent,
+} from '../../../_shared/testConfig/customRender';
+import { BuilderState } from '../../store/types';
+import { ObjectFitStyleField } from './ObjectFitStyleField';
+
+const MOCK_BUILDER_STATE: BuilderState = {
+  allIds: ['existingId'],
+  byId: {
+    existingId: {
+      attributes: {
+        image: {
+          label: 'builder.toolBar.attributes.image.label',
+          placeholder: 'builder.toolBar.attributes.image.placeholder',
+          items: [{ id: 'existingId', value: '' }],
+          initialValue: [{ id: 'existingId', value: '' }],
+          style: {},
+        },
+      },
+      style: {
+        objectFit: 'contain',
+      },
+      type: 'image',
+    },
+  },
+  pageSettings: [],
+};
+
+describe('ObjectFitStyleField', () => {
+  test('should render correctly', () => {
+    render(
+      <ObjectFitStyleField
+        attributeName="image"
+        blockItemId="existingId"
+        styleKey="objectFit"
+        styleValue="cover"
+      />,
+      { mocks: { builder: MOCK_BUILDER_STATE } },
+    );
+    const buttonCover = screen.getByTestId('buttonCover');
+    const buttonContain = screen.getByTestId('buttonContain');
+
+    fireEvent.click(buttonContain);
+    fireEvent.click(buttonCover);
+  });
+});

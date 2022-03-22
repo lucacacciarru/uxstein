@@ -3,6 +3,7 @@ import { AttributeName } from '../../store/types';
 import { ProgressBorderField } from '../ProgressBorderField';
 import { AttributeColorField } from '../AttributeColorField/AttributeColorField';
 import { FontSizeField } from '../FontSizeField/FontSizeField';
+import { ObjectFitStyleField } from '../ObjectFitStyleField/ObjectFitStyleField';
 
 // TODO: remove partial, all AttributeName have to be mapped
 const map: Record<string, React.FC<Props>> = {
@@ -16,6 +17,7 @@ const map: Record<string, React.FC<Props>> = {
   checkboxBorderColor: AttributeColorField,
   checkboxCheckColor: AttributeColorField,
   colorRateIcon: AttributeColorField,
+  objectFit: ObjectFitStyleField,
 };
 
 type Props = {

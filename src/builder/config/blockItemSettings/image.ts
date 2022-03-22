@@ -11,7 +11,9 @@ export const image: BlockSetup = {
         placeholder: 'builder.toolBar.attributes.image.placeholder',
         items: [],
         initialValue: [{ id: '', value: '' }],
-        style: {}
+        style: {
+          objectFit: 'contain'
+        }
       }
     },
     style: {

@@ -22,7 +22,7 @@ export const ImageGridItem: FC<Props> = ({ style, id, attributes }) => {
         src={attributes.image?.items[0].value}
         boxSize="full"
         fallbackSrc="logo192.png"
-        objectFit="contain"
+        objectFit={attributes.image?.style.objectFit as 'cover' | 'contain'}
       />
       <Handles id={id} bg={style.backgroundColor} />
     </Box>

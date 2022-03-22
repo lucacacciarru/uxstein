@@ -46,7 +46,12 @@ export const toolBar = {
       checkboxBorderColor: 'Colore bordo casella',
       checkboxCheckColor: 'Colore spunta',
       colorRateIcon: 'Colore icone valutazione',
+      objectFit: 'Adatta immagine'
     },
+    buttons: {
+      contain: 'Contain',
+      cover: 'Cover',
+    }
   },
   errors: {
     tooLong: 'Il nome è inserito troppo lungo!',
