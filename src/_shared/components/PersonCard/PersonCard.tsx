@@ -22,7 +22,6 @@ const cardContainerProps: ChakraProps = {
   flexGrow: '0',
   flexShrink: '0',
   scrollSnapAlign: 'start',
-  ml: '32',
   _last: { scrollSnapAlign: 'end' },
   _first: { ml: '0' },
 };

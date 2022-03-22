@@ -11,7 +11,6 @@ const containerProps: SimpleGridProps = {
   spacingX: '7',
   spacingY: '10',
   minChildWidth: '350px',
-  columns: 4,
   w: '100%',
   mt: '8',
 };
