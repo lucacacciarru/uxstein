@@ -36,7 +36,7 @@ export const useIconField = ({
   );
 
   const [selected, setSelected] = useState<keyof IconComponentModel>(
-    iconSettings.selected || 'Add',
+    iconSettings.selected || 'Heart',
   );
 
   const debouncedUpdateValue = useDebouncedCallback(value => {
@@ -48,7 +48,7 @@ export const useIconField = ({
     const newStyle = {
       [styleKey]: iconSettings.icons
         ? iconSettings.icons[e.target.value]
-        : 'Add',
+        : 'Heart',
     };
     const payload = {
       attributeToUpdate: attributeName,
