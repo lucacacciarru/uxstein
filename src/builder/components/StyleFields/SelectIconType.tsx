@@ -30,6 +30,7 @@ export const SelectIconType: React.FC<Props> = ({
     <>
       <FormLabel>{label}</FormLabel>
       <Select
+        data-testid="select"
         mt="0"
         textTransform={'capitalize'}
         value={selected}
