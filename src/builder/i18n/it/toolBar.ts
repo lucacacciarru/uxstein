@@ -20,6 +20,14 @@ export const toolBar = {
       label: 'Nome',
       placeholder: 'Nome del nuovo elemento...',
     },
+    image: {
+      label: 'Immagine',
+      placeholder: 'Carica la tua immagine',
+      modalHeader: 'Carica immagine',
+      modalButton: 'Fatto !',
+      modalUploadTab: 'Carica',
+      modalUrlTab: 'Url',
+    }
   },
   style: {
     labels: {
@@ -38,7 +46,12 @@ export const toolBar = {
       checkboxBorderColor: 'Colore bordo casella',
       checkboxCheckColor: 'Colore spunta',
       colorRateIcon: 'Colore icone valutazione',
+      objectFit: 'Adatta immagine'
     },
+    buttons: {
+      contain: 'Contain',
+      cover: 'Cover',
+    }
   },
   errors: {
     tooLong: 'Il nome è inserito troppo lungo!',
