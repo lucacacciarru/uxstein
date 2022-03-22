@@ -1,12 +1,12 @@
-import { ButtonProps, IconButton } from '@chakra-ui/react';
+import { Button, ButtonProps } from '@chakra-ui/react';
 import { useMemo } from 'react';
-import { Icon } from '../../../_shared/components';
 
 const buttonProps: ButtonProps = {
-  minW: '30px',
-  h: '30px',
+  minW: '6',
+  h: '6',
   p: '0',
   borderRadius: '100%',
+  border: 'dark.s',
 };
 
 type Props = {
@@ -21,11 +21,11 @@ export const RateButton: React.FC<Props> = ({ index, onClick, valueRate }) => {
     [index, valueRate],
   );
   return (
-    <IconButton
-      variant="ghost"
+    <Button
+      variant="unstyled"
       aria-label="rateButton"
       onClick={onClick}
-      icon={<Icon name="Star" color={fillColor} />}
+      bg={fillColor}
       {...buttonProps}
     />
   );

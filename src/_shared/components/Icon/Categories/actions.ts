@@ -15,6 +15,11 @@ import { ReactComponent as Help } from '../SVG/Help.svg';
 import { ReactComponent as Heart } from '../SVG/Heart.svg';
 import { ReactComponent as Star } from '../SVG/Star.svg';
 import { ReactComponent as ThreeDots } from '../SVG/ThreeDots.svg';
+import { ReactComponent as Ellipse } from '../SVG/Ellipse.svg';
+import { ReactComponent as Hexagon } from '../SVG/Hexagon.svg';
+import { ReactComponent as Like } from '../SVG/Like.svg';
+import { ReactComponent as Smile } from '../SVG/Smile.svg';
+import { ReactComponent as Square } from '../SVG/Square.svg';
 
 export const actions = {
   Add,
@@ -34,4 +39,9 @@ export const actions = {
   Heart,
   Star,
   ThreeDots,
+  Ellipse,
+  Hexagon,
+  Like,
+  Smile,
+  Square,
 };

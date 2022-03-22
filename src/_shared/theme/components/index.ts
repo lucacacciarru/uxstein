@@ -18,3 +18,4 @@ export * from './Spinner';
 export * from './Accordion';
 export * from './Textarea';
 export * from './NumberInput';
+export * from './Select';

@@ -1,15 +1,15 @@
 import { HStack } from '@chakra-ui/react';
 import { useMemo } from 'react';
-import { Icon } from '../../../_shared/components';
+import { Icon, IconComponentModel } from '../../../_shared/components';
 
 type Props = {
   value: string;
   color: string;
+  icon: string;
 };
 
-export const RateItemList: React.FC<Props> = ({ color, value }) => {
+export const RateItemList: React.FC<Props> = ({ color, value, icon }) => {
   const numberOfItems = Array.from(Array(5).keys());
-
   const renderItemList = useMemo(
     () =>
       numberOfItems.map(item => {
@@ -21,11 +21,11 @@ export const RateItemList: React.FC<Props> = ({ color, value }) => {
             key={item}
             color={color}
             opacity={selectedOpacity}
-            name="Star"
+            name={icon as keyof IconComponentModel}
           />
         );
       }),
-    [color, numberOfItems, value],
+    [color, icon, numberOfItems, value],
   );
   return <HStack>{renderItemList}</HStack>;
 };

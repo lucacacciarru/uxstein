@@ -7,7 +7,7 @@ import iconLibrary from './iconLibrary';
 export const DEFAULT_SIZE = 'full';
 export const DEFAULT_COLOR = 'black.0';
 
-type IconComponentModel = typeof iconLibrary;
+export type IconComponentModel = typeof iconLibrary;
 type Props = {
   name: keyof IconComponentModel;
   size?: string;

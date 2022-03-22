@@ -2,6 +2,7 @@ import { BlockSetup } from '../../hooks/useBlockSetup';
 import { getSelectedSizeValue } from '../../utils/getSelectedSizeValue';
 import { blockSizeSettings } from '../styleSettings/block';
 import { textSizeSettings } from '../styleSettings/text';
+import { icon } from '../styleSettings/icon';
 
 export const rate: BlockSetup = {
   gridItemSettings: {
@@ -26,9 +27,11 @@ export const rate: BlockSetup = {
           { id: '4984', label: 'Rate 2', value: '4' },
         ],
         style: {
-          fontSize: getSelectedSizeValue(textSizeSettings.rate),
           color: '#ffffff',
+          fontSize: getSelectedSizeValue(textSizeSettings.rate),
+
           colorRateIcon: '#ffffff',
+          icon: icon.rate.selected || '',
         },
       },
     },

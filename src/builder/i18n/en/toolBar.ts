@@ -27,7 +27,7 @@ export const toolBar = {
       modalButton: 'Done !',
       modalUploadTab: 'Upload',
       modalUrlTab: 'Url',
-    }
+    },
   },
   style: {
     labels: {
@@ -45,12 +45,13 @@ export const toolBar = {
       checkboxBorderColor: 'Border-color box',
       checkboxCheckColor: 'Check color',
       colorRateIcon: 'Rate icon color',
-      objectFit: 'Image fit'
+      objectFit: 'Image fit',
+      icon: 'Type Icon',
     },
     buttons: {
       contain: 'Contain',
       cover: 'Cover',
-    }
+    },
   },
   errors: {
     tooLong: 'Il nome è inserito troppo lungo!',
