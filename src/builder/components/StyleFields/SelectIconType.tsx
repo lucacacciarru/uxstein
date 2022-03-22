@@ -19,7 +19,7 @@ export const SelectIconType: React.FC<Props> = ({
 }) => {
   const renderOptionSelect = useMemo(
     () =>
-      Object.keys(icons || '').map(icon => (
+      Object.keys(icons || {}).map(icon => (
         <option style={{ textTransform: 'capitalize' }} key={icon} value={icon}>
           {icon}
         </option>
