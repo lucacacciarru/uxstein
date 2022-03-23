@@ -27,6 +27,7 @@ export const toolBar = {
       modalButton: 'Done !',
       modalUploadTab: 'Upload',
       modalUrlTab: 'Url',
+      addOnePlaceholder: 'Add a new item'
     },
   },
   style: {

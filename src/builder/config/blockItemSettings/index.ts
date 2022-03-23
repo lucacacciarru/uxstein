@@ -6,6 +6,7 @@ import { checkbox } from './checkbox';
 import { textList } from './textList';
 import { rate } from './rate';
 import { image } from './image';
+import { imageList } from './imageList';
 import { AttributeName, AttributesModel } from '../../store/types';
 
 export const blockItemSettings: Record<DraggableBlockType, BlockSetup> = {
@@ -15,18 +16,7 @@ export const blockItemSettings: Record<DraggableBlockType, BlockSetup> = {
   rate,
   'text-list': textList,
   image,
-  'image-list': {
-    gridItemSettings: {
-      type: 'image-list',
-      attributes: {},
-      style: { background: 'red', color: 'white' },
-    },
-    layoutSettings: {
-      h: 1,
-      w: 2,
-      i: '',
-    },
-  },
+  'image-list': imageList
 };
 
 export const getBlockItemSettings = (type: DraggableBlockType) => ({

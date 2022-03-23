@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { useAttributeFieldByIdAndName } from '../../hooks/useAttributeFieldByIdAndName';
 import { AttributeName } from '../../store/types';
 import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
+import { ClickableBoxWithDelete } from '../ClickableBoxWithDelete/ClickableBoxWithDelete';
 import { ModalUploadImage } from '../ModalUploadImage/ModalUploadImage';
 import { UploadImageBox } from './UploadImageBox';
 
@@ -20,20 +21,14 @@ export const ImageFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
   return (
     <Box>
       <FormLabel>{label}</FormLabel>
-      <Box
-        h="32"
-        border={'dark.s'}
-        _hover={{ border: 'green.s' }}
-        onClick={onOpen}
-        data-testid="openModal"
-      >
+      <ClickableBoxWithDelete clickCallback={onOpen}>
         <Image
           src={value}
           boxSize="full"
           objectFit={'contain'}
           fallback={<UploadImageBox />}
         />
-      </Box>
+      </ClickableBoxWithDelete>
       <AttributeStyleFields {...attributeStyleFieldsProp} />
       <ModalUploadImage
         inputValue={value}
