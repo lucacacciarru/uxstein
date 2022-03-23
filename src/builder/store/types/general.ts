@@ -30,6 +30,7 @@ export type AttributeName =
   | 'subtitle'
   | 'body'
   | 'image'
+  | 'image-list'
   | 'progress'
   | 'checkbox'
   | 'text-list'

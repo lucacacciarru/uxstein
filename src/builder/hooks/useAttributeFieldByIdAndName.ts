@@ -49,7 +49,7 @@ export const useAttributeFieldByIdAndName = (
     setValue(attributeValue);
   }, [attributeValue]);
 
-  const attributeStyleFieldsProp = {
+  const attributeStyleFieldsProps = {
     name: attributeName,
     blockItemId: blockId,
     style: attribute?.style,
@@ -61,6 +61,6 @@ export const useAttributeFieldByIdAndName = (
     placeholder,
     value,
     onChange,
-    attributeStyleFieldsProp,
+    attributeStyleFieldsProps,
   };
 };

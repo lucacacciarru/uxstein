@@ -31,7 +31,7 @@ describe('ImageFieldAttribute', () => {
     render(<ImageFieldAttribute blockItemId="existingId" name="image" />, {
       mocks: { builder: MOCK_BUILDER_STATE },
     });
-    const openModal = screen.getByTestId('openModal');
+    const openModal = screen.getByTestId('clickableBox');
     fireEvent.click(openModal);
   });
 });

@@ -7,15 +7,16 @@ import { CheckboxFieldAttribute } from '../CheckboxFieldAttribute/CheckboxFieldA
 import { TextListFieldAttribute } from '../TextListFieldAttribute';
 import { RateFieldAttribute } from '../RateFieldAttribute';
 import { ImageFieldAttribute } from '../ImageFieldAttribute/ImageFieldAttribute';
+import { ImageListFieldAttribute } from '../ImageListFieldAttribute/ImageListFieldAttribute';
 
-// TODO: remove partial, all AttributeName have to be mapped
-const map: Partial<Record<AttributeName, React.FC<Props>>> = {
+const map: Record<AttributeName, React.FC<Props>> = {
   title: TextFieldAttribute,
   subtitle: TextFieldAttribute,
   progress: ProgressFieldAttribute,
   body: TextAreaFieldAttribute,
   checkbox: CheckboxFieldAttribute,
   'text-list': TextListFieldAttribute,
+  'image-list': ImageListFieldAttribute,
   rate: RateFieldAttribute,
   image: ImageFieldAttribute,
 };

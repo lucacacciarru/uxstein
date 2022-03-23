@@ -52,6 +52,7 @@ export const ModalUploadImage: React.FC<Props> = ({
               onChange={onChange}
               placeholder={placeholder}
               ref={initialFocusInput}
+              data-testid="input"
             />
           </ModalUploadImageBody>
         </ModalBody>

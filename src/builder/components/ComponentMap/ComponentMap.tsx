@@ -2,20 +2,23 @@ import { Box } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { getGridItemById } from '../../store/selectors/getGridItemById';
+import { DraggableBlockType } from '../AddTab/DraggableBlock';
 import { CheckboxGridItem } from '../CheckboxGridItem/CheckboxGridItem';
 import { ImageGridItem } from '../ImageGridItem/ImageGridItem';
+import { ImageListGridItem } from '../ImageListGridItem/ImageListGridItem';
 import { ProgressbarGridItem } from '../ProgressBarGridItem/ProgressBarGridItem';
 import { RateGridItem } from '../RateGridItem';
 import { TextGridItem } from '../TextGridItem/TextGridItem';
 import { TextListGridItem } from '../TextListGridItem';
 
-const map: Record<string, React.FC<any>> = {
+const map: Record<DraggableBlockType, React.FC<any>> = {
   text: TextGridItem,
   progress: ProgressbarGridItem,
   checkbox: CheckboxGridItem,
   'text-list': TextListGridItem,
   rate: RateGridItem,
   image: ImageGridItem,
+  'image-list': ImageListGridItem,
 };
 
 type Props = {
