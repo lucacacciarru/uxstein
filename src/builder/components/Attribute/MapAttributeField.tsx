@@ -7,7 +7,7 @@ import { CheckboxFieldAttribute } from '../CheckboxFieldAttribute/CheckboxFieldA
 import { TextListFieldAttribute } from '../TextListFieldAttribute';
 import { RateFieldAttribute } from '../RateFieldAttribute';
 import { ImageFieldAttribute } from '../ImageFieldAttribute/ImageFieldAttribute';
-import { ImageListFieldAttribute } from '../ImageListFieldAttribute/ImageListeFieldAttribute';
+import { ImageListFieldAttribute } from '../ImageListFieldAttribute/ImageListFieldAttribute';
 
 const map: Record<AttributeName, React.FC<Props>> = {
   title: TextFieldAttribute,

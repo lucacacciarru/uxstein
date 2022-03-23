@@ -19,7 +19,7 @@ export const ProgressFieldAttribute: React.FC<Props> = ({
     attributeItems,
     placeholder,
     addItem,
-    attributeStyleFieldsProp,
+    attributeStyleFieldsProps,
     ...rest
   } = useMultipleAttributeField(blockItemId, name);
 
@@ -50,7 +50,7 @@ export const ProgressFieldAttribute: React.FC<Props> = ({
       <Stack gap="2" mt="8">
         {renderAllProgressField}
       </Stack>
-      <AttributeStyleFields {...attributeStyleFieldsProp} />
+      <AttributeStyleFields {...attributeStyleFieldsProps} />
     </Box>
   );
 };

@@ -16,7 +16,7 @@ export const CheckboxFieldAttribute: FC<Props> = ({ blockItemId, name }) => {
     label,
     placeholder,
     attributeItems,
-    attributeStyleFieldsProp,
+    attributeStyleFieldsProps,
     ...restCallbacks
   } = useMultipleAttributeField(blockItemId, name);
 
@@ -37,7 +37,7 @@ export const CheckboxFieldAttribute: FC<Props> = ({ blockItemId, name }) => {
       <Stack gap="2" mt="8">
         {renderAttributeItems}
       </Stack>
-      <AttributeStyleFields {...attributeStyleFieldsProp} />
+      <AttributeStyleFields {...attributeStyleFieldsProps} />
     </Box>
   );
 };

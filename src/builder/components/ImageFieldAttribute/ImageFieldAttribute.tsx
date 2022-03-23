@@ -13,7 +13,7 @@ type Props = {
 };
 
 export const ImageFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
-  const { value, onChange, label, placeholder, attributeStyleFieldsProp } =
+  const { value, onChange, label, placeholder, attributeStyleFieldsProps } =
     useAttributeFieldByIdAndName(blockItemId, name);
 
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -29,7 +29,7 @@ export const ImageFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
           fallback={<UploadImageBox />}
         />
       </ClickableBoxWithDelete>
-      <AttributeStyleFields {...attributeStyleFieldsProp} />
+      <AttributeStyleFields {...attributeStyleFieldsProps} />
       <ModalUploadImage
         inputValue={value}
         placeholder={placeholder}

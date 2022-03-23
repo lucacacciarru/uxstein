@@ -17,7 +17,7 @@ export const ImageListFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
     attributeItems,
     placeholder,
     addItem,
-    attributeStyleFieldsProp,
+    attributeStyleFieldsProps,
     label,
     onChangeValue,
     deleteItem,
@@ -39,7 +39,7 @@ export const ImageListFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
       <ClickableBoxWithDelete clickCallback={() => addItem('', '')}>
         <AddItemBox />
       </ClickableBoxWithDelete>
-      <AttributeStyleFields {...attributeStyleFieldsProp} />
+      <AttributeStyleFields {...attributeStyleFieldsProps} />
     </Box>
   );
 };

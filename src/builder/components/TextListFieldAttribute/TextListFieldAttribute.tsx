@@ -20,7 +20,7 @@ export const TextListFieldAttribute: React.FC<Props> = ({
     label,
     placeholder,
     attributeItems,
-    attributeStyleFieldsProp,
+    attributeStyleFieldsProps,
     ...rest
   } = useMultipleAttributeField(blockItemId, name);
 
@@ -43,7 +43,7 @@ export const TextListFieldAttribute: React.FC<Props> = ({
       <Stack gap="2" mt="8">
         {renderAttributeItems}
       </Stack>
-      <AttributeStyleFields {...attributeStyleFieldsProp} />
+      <AttributeStyleFields {...attributeStyleFieldsProps} />
     </Box>
   );
 };

@@ -4,7 +4,7 @@ import {
   fireEvent,
 } from '../../../_shared/testConfig/customRender';
 import { BuilderState } from '../../store/types';
-import { ImageListFieldAttribute } from './ImageListeFieldAttribute';
+import { ImageListFieldAttribute } from './ImageListFieldAttribute';
 
 const MOCK_BUILDER_STATE: BuilderState = {
   allIds: ['existingId'],
