@@ -55,7 +55,8 @@ export const toolBar = {
     },
   },
   errors: {
-    tooLong: 'Il nome è inserito troppo lungo!',
-    noText: 'Nessun testo inserito!',
+    textualContentTooLong: 'The entered text is too long',
+    itemNameTooLong: 'The name entered is too long',
+    noText: 'No text entered',
   },
 };

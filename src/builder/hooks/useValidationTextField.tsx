@@ -19,7 +19,7 @@ export const useValidationTextField = (attributeName: AttributeName) => {
     if (selectedMaxLength) {
       if (currentText.length > selectedMaxLength) {
         setErrorInput(true);
-        setErrorMessage(t('builder.toolBar.errors.tooLong'));
+        setErrorMessage(t('builder.toolBar.errors.textualContentTooLong'));
         return true;
       }
       setErrorInput(false);
