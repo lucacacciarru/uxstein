@@ -1,25 +1,20 @@
-import { Box, FormLabel, Input, InputGroup } from '@chakra-ui/react';
-import { FC } from 'react';
+import { Input } from '@chakra-ui/react';
 import { useSingleAttributeField } from '../../hooks/useSingleAttributeField';
 import { AttributeName } from '../../store/types';
-import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
+import { TextFieldWrapper } from '../TextFieldWrapper';
 
 type Props = {
   blockItemId: string;
   name: AttributeName;
 };
 
-export const TextFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
-  const { value, onChange, label, placeholder, attributeStyleFieldsProps } =
+export const TextFieldAttribute: React.FC<Props> = ({ name, blockItemId }) => {
+  const { value, onChange, placeholder, label, ...rest } =
     useSingleAttributeField(blockItemId, name);
 
   return (
-    <Box>
-      <FormLabel>{label}</FormLabel>
-      <InputGroup>
-        <Input placeholder={placeholder} value={value} onChange={onChange} />
-      </InputGroup>
-      <AttributeStyleFields {...attributeStyleFieldsProps} />
-    </Box>
+    <TextFieldWrapper value={value} label={label} {...rest}>
+      <Input placeholder={placeholder} value={value} onChange={onChange} />
+    </TextFieldWrapper>
   );
 };

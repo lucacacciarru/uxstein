@@ -7,14 +7,14 @@ import {
 import { AttributeName } from '../../store/types';
 import { MapStyleField } from '../StyleFields/MapStyleField';
 
-type Props = {
+export type AttributeStyleFieldsProps = {
   blockItemId: string;
   name: AttributeName;
   styleKeys: string[];
   style?: Record<string, string>;
 };
 
-export const AttributeStyleFields: FC<Props> = ({
+export const AttributeStyleFields: FC<AttributeStyleFieldsProps> = ({
   name,
   styleKeys,
   blockItemId,

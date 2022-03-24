@@ -4,9 +4,12 @@ import { useTranslation } from 'react-i18next';
 type Options = {
   placeholder?: string;
   initValue?: string;
-}
+};
 
-export function useAddItem(addCallback: (label: string, value: string) => void, options: Options) {
+export function useAddItem(
+  addCallback: (label: string, value: string) => void,
+  options: Options,
+) {
   const { t } = useTranslation();
 
   const [textLabel, setTextLabel] = useState<string>('');
@@ -21,7 +24,7 @@ export function useAddItem(addCallback: (label: string, value: string) => void, 
     e.preventDefault();
     if (textLabel.length > 15) {
       setInputError(true);
-      setErrorMessage(t('builder.toolBar.errors.tooLong'));
+      setErrorMessage(t('builder.toolBar.errors.itemNameTooLong'));
       return;
     }
     if (textLabel.trim().length === 0) {
@@ -35,7 +38,8 @@ export function useAddItem(addCallback: (label: string, value: string) => void, 
     setTextLabel('');
   };
 
-  const placeholder = options.placeholder || t('builder.toolBar.attributes.items.placeholder');
+  const placeholder =
+    options.placeholder || t('builder.toolBar.attributes.items.placeholder');
 
   return {
     textLabel,
