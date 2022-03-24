@@ -1,6 +1,6 @@
 import { Box, FormLabel, Image, useDisclosure } from '@chakra-ui/react';
 import { FC } from 'react';
-import { useAttributeFieldByIdAndName } from '../../hooks/useAttributeFieldByIdAndName';
+import { useSingleAttributeField } from '../../hooks/useSingleAttributeField';
 import { AttributeName } from '../../store/types';
 import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
 import { ClickableBoxWithDelete } from '../ClickableBoxWithDelete/ClickableBoxWithDelete';
@@ -14,7 +14,7 @@ type Props = {
 
 export const ImageFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
   const { value, onChange, label, placeholder, attributeStyleFieldsProps } =
-    useAttributeFieldByIdAndName(blockItemId, name);
+    useSingleAttributeField(blockItemId, name);
 
   const { isOpen, onClose, onOpen } = useDisclosure();
 
