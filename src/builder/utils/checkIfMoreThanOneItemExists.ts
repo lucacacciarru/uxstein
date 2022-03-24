@@ -5,7 +5,7 @@ export function checkIfMoreThanOneItemExists(
 ) {
   if (attributeItems) {
     const itemsLength = attributeItems.length;
-    if (itemsLength <= 1) {
+    if (itemsLength > 1) {
       return true;
     }
   }

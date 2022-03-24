@@ -58,7 +58,7 @@ export function useMultipleAttributeField(
   };
 
   const deleteItem = (id: string) => {
-    if (!checkIfMoreThanOneItemExists(attribute?.items)) {
+    if (checkIfMoreThanOneItemExists(attribute?.items)) {
       const filteredItems = attributeItems?.filter(item => item.id !== id);
       setAttributeItems(filteredItems);
       debouncedUpdateValue(filteredItems || []);
