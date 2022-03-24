@@ -5,7 +5,7 @@ import {
 } from '../../_shared/testConfig/customRender';
 import { renderHook } from '../../_shared/testConfig/customRenderHook';
 import { AttributeName, AttributesModel, BuilderState } from '../store/types';
-import { useAttributeFieldByIdAndName } from './useAttributeFieldByIdAndName';
+import { useSingleAttributeField } from './useSingleAttributeField';
 
 const EXAMPLE_ID = 'existingId';
 const EXAMPLE_ATTRIBUTE_NAME: AttributeName = 'title';
@@ -14,9 +14,9 @@ const MOCK_ATTRIBUTES: AttributesModel = {
   [EXAMPLE_ATTRIBUTE_NAME]: {
     label: 'builder.toolBar.attributes.default.label',
     placeholder: 'builder.toolBar.attributes.default.placeholder',
-    style: {},
     items: [{ id: 'anyId', value: 'anyValue' }],
     initialValue: [{ id: 'anyId', value: 'anyValue' }],
+    style: {},
   },
 };
 
@@ -32,7 +32,7 @@ const MOCK_BUILDER_STATE: BuilderState = {
 describe('useAttributeField', () => {
   test('should return defined values', () => {
     const { result } = renderHook(
-      () => useAttributeFieldByIdAndName(EXAMPLE_ID, EXAMPLE_ATTRIBUTE_NAME),
+      () => useSingleAttributeField(EXAMPLE_ID, EXAMPLE_ATTRIBUTE_NAME),
       { mocks: { builder: MOCK_BUILDER_STATE } },
     );
 
@@ -42,7 +42,7 @@ describe('useAttributeField', () => {
 
   test('should return matching value if change it', () => {
     const { result } = renderHook(
-      () => useAttributeFieldByIdAndName(EXAMPLE_ID, EXAMPLE_ATTRIBUTE_NAME),
+      () => useSingleAttributeField(EXAMPLE_ID, EXAMPLE_ATTRIBUTE_NAME),
       { mocks: { builder: MOCK_BUILDER_STATE } },
     );
 
