@@ -27,7 +27,7 @@ describe('ComponentMap', () => {
     expect(item).toBeInTheDocument();
   });
 
-  test('should render DefaultGridItem if the block with corrispondent id have unmatched type', () => {
+  test('should not break even if the block with corrispondent id have unmatched type', () => {
     render(<ComponentMap id={EXISTING_ID} />, {
       mocks: {
         builder: {
@@ -40,8 +40,6 @@ describe('ComponentMap', () => {
         },
       },
     });
-    const item = screen.getByTestId('default-grid-item');
-    expect(item).toBeInTheDocument();
   });
 });
 
