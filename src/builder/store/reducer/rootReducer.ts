@@ -14,6 +14,8 @@ import { updateAttributeStyle } from '../actions/updateAttributeStyle';
 import { updateAttributeStyleCase } from './updateAttributeStyle';
 import { updateBlockStyleCase } from './updateBlockStyle';
 import { updateBlockStyle } from '../actions/updateBlockStyle';
+import { updatePageSettingsCase } from './updatePageSettings';
+import { updatePageSettings } from '../actions/updatePageSettings';
 
 const INITIAL_STATE: BuilderState = {
   allIds: ['a'],
@@ -28,6 +30,7 @@ export const builderRooorReducer = createReducer(INITIAL_STATE, builder => {
     .addCase(addItem, addItemCase)
     .addCase(selectItem, selectItemCase)
     .addCase(clearSelected, clearSelectedCase)
+    .addCase(updatePageSettings, updatePageSettingsCase)
     .addCase(updateAttributeValue, updateAttributeValueCase)
     .addCase(updateAttributeStyle, updateAttributeStyleCase)
     .addCase(updateBlockStyle, updateBlockStyleCase)

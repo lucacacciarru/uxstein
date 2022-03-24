@@ -19,6 +19,7 @@ export enum BUILDER_ACTION_TYPES {
   ADD = 'builder/add',
   SELECT_ITEM = 'builder/select-item',
   CLEAR_SELECTED = 'builder/clear-selected',
+  UPDATE_PAGE_SETTINGS = 'builder/update/page-settings',
   UPDATE_ATTRIBUTE_VALUE = 'builder/update/attribute-value',
   UPDATE_ATTRIBUTE_STYLE = 'builder/update/attribute-style',
   UPDATE_BLOCK_STYLE = 'builder/update/block-style',
