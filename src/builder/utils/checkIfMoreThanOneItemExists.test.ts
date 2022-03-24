@@ -16,16 +16,16 @@ describe('checkIfMoreThanOneItemExists function', () => {
     const returnValue = checkIfMoreThanOneItemExists(undefined);
     expect(returnValue).toBeFalsy();
   });
-  test('if parameter is contains only one item, should return true', () => {
+  test('if parameter is contains only one item, should return false', () => {
     const returnValue = checkIfMoreThanOneItemExists(
       MOCK_ATTRIBUTE_ITEMS_ONE_ELEMENT,
     );
-    expect(returnValue).toBeTruthy();
+    expect(returnValue).toBeFalsy();
   });
-  test('if parameter is contains multiple item, should return false', () => {
+  test('if parameter is contains multiple item, should return true', () => {
     const returnValue = checkIfMoreThanOneItemExists(
       MOCK_ATTRIBUTE_ITEMS_MULTIPLE_ELEMENT,
     );
-    expect(returnValue).toBeFalsy();
+    expect(returnValue).toBeTruthy();
   });
 });
