@@ -2,6 +2,7 @@ import { Layout, ReactGridLayoutProps } from 'react-grid-layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { BlockSetup } from '../../hooks/useBlockSetup';
 import { addItem } from '../../store/actions/addItem';
+import { updatePageSettings } from '../../store/actions/updatePageSettings';
 import { selectItem } from '../../store/actions/selected';
 import { getPageSettings } from '../../store/selectors/getPageSettings';
 
@@ -9,7 +10,7 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
     const dispatch = useDispatch();
     const layout = useSelector(getPageSettings);
 
-    const onDrop = (newLayout: Layout[], newBlock: Layout, _event: Event) => {
+    const onDropHandler = (newLayout: Layout[], newBlock: Layout, _event: Event) => {
         const itemWithSettings = { ...newBlock, ...blockSetup.layoutSettings, ...blockSetup.optionalSettings };
         const pageLayoutWithSettedItem = newLayout.map(item => {
             if (item.i === newBlock.i) {
@@ -32,6 +33,10 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
         dispatch(selectItem({ itemId: newItem.layoutSettings.i }));
     };
 
+    const onLayoutChangeHandler = (newLayout: Layout[]) => {
+        dispatch(updatePageSettings({ pageSettings: newLayout }))
+    }
+
     const gridLayoutProps: ReactGridLayoutProps = {
         style: {
             height: '800px',
@@ -49,7 +54,8 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
         maxRows: 5,
         containerPadding: [60, 60],
         droppingItem: blockSetup.layoutSettings,
-        onDrop: onDrop,
+        onDrop: onDropHandler,
+        onLayoutChange: onLayoutChangeHandler,
     }
 
     return {
