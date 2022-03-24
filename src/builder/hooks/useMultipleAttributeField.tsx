@@ -1,12 +1,24 @@
+import { Alert, AlertIcon, AlertTitle, useToast } from '@chakra-ui/react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { AttributeName, ItemAttribute } from '../store/types';
 import { useAttributeField } from './useAttributeField';
+import { checkIfMoreThanOneItemExists } from '../utils/checkIfMoreThanOneItemExists';
 
 export function useMultipleAttributeField(
   blockId: string,
   attributeName: AttributeName,
 ) {
-  const { label, placeholder, attribute, attributeStyleFieldsProps, debouncedUpdateValue } = useAttributeField(blockId, attributeName);
+  const {
+    label,
+    placeholder,
+    attribute,
+    attributeStyleFieldsProps,
+    debouncedUpdateValue,
+  } = useAttributeField(blockId, attributeName);
+
+  const { t } = useTranslation();
+  const toast = useToast();
 
   const [attributeItems, setAttributeItems] = useState<
     ItemAttribute['items'] | undefined
@@ -46,9 +58,23 @@ export function useMultipleAttributeField(
   };
 
   const deleteItem = (id: string) => {
-    const filteredItems = attributeItems?.filter(item => item.id !== id);
-    setAttributeItems(filteredItems);
-    debouncedUpdateValue(filteredItems || []);
+    if (!checkIfMoreThanOneItemExists(attribute?.items)) {
+      const filteredItems = attributeItems?.filter(item => item.id !== id);
+      setAttributeItems(filteredItems);
+      debouncedUpdateValue(filteredItems || []);
+      return;
+    }
+    toast({
+      isClosable: true,
+      render: () => (
+        <Alert status="error">
+          <AlertIcon />
+          <AlertTitle mr={2}>
+            {t('builder.toolBar.errors.impossibleToDeleteItem')}
+          </AlertTitle>
+        </Alert>
+      ),
+    });
   };
 
   return {
