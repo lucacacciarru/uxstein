@@ -26,7 +26,7 @@ type Props = {
 
 export const ComponentMap: FC<Props> = ({ id }) => {
   const gridItem = useSelector(getGridItemById(id));
-  const Component = map[gridItem.type];
+  const Component = gridItem ? map[gridItem.type] : undefined;
   if (!Component) {
     return <></>;
   }

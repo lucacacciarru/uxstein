@@ -27,24 +27,7 @@ describe('ComponentMap', () => {
     expect(item).toBeInTheDocument();
   });
 
-  test('should not break even if the block with corrispondent id have unmatched type', () => {
-    render(<ComponentMap id={EXISTING_ID} />, {
-      mocks: {
-        builder: {
-          allIds: ['existingId'],
-          byId: {
-            existingId: unMatchedGridItemType,
-          },
-          pageSettings: [{ i: 'existingId', x: 0, y: 0, w: 2, h: 2, maxW: 3 }],
-          selectedBlockId: undefined,
-        },
-      },
-    });
+  test('should not break even if the id does not exists in the store', () => {
+    render(<ComponentMap id={'unmatched id'} />);
   });
 });
-
-const unMatchedGridItemType: any = {
-  attributes: {},
-  style: {},
-  type: 'unmatched',
-};
