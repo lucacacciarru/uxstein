@@ -55,7 +55,8 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
         containerPadding: [60, 60],
         droppingItem: blockSetup.layoutSettings,
         onDrop: onDropHandler,
-        onLayoutChange: onLayoutChangeHandler,
+        onDragStop: onLayoutChangeHandler,
+        onResizeStop: onLayoutChangeHandler,
     }
 
     return {
