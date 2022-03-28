@@ -29,7 +29,9 @@ export const PersonCardContainerInfo: React.FC<Props> = ({
   return (
     <HStack {...containerStyles}>
       <Box px="4" py="1" w="70%">
-        <h4 className={styles.cutText}>{title}</h4>
+        <Text as="h4" textStyle="h4" className={styles.cutText}>
+          {title}
+        </Text>
         <Text as="small">
           {timeSinceLastUpdate <= 30
             ? t('personCard.timeEdit', { count: timeSinceLastUpdate })

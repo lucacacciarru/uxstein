@@ -24,6 +24,7 @@ const cardContainerProps: ChakraProps = {
   scrollSnapAlign: 'start',
   _last: { scrollSnapAlign: 'end' },
   _first: { ml: '0' },
+  position: 'relative',
 };
 
 export const PersonCard: React.FC<Props> = ({

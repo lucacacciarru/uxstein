@@ -24,7 +24,8 @@ export const OptionPersonCard: React.FC<Props> = ({ personaId }) => {
     <>
       <Menu>
         <MenuButton
-          boxSize="2rem"
+          boxSize="8"
+          zIndex="modal"
           position="absolute"
           top="3%"
           right="0"
