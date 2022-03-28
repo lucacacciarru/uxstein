@@ -28,8 +28,10 @@ function App() {
         <Route path="signup" element={<Signup />} />
         <Route element={<LayoutApp />}>
           <Route element={<PrivateRoutes />}>
-            <Route path="app" element={<Builder />} />
-            <Route path="my-personas" element={<MyPersona />} />
+            <Route path="my-personas">
+              <Route index element={<MyPersona />} />
+              <Route path=":id/edit" element={<Builder />} />
+            </Route>
             <Route path="my-templates" element={<MyTemplates />} />
             <Route path="profile" element={<>Profile</>} />
           </Route>
