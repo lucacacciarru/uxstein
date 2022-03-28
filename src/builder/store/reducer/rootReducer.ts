@@ -23,6 +23,7 @@ const INITIAL_STATE: BuilderState = {
     a: getBlockItemSettings('text').gridItemSettings,
   },
   pageSettings: [{ i: 'a', x: 0, y: 0, w: 2, h: 2, maxW: 3 }],
+  personaId: Date.now().toString(),
 };
 
 export const builderRooorReducer = createReducer(INITIAL_STATE, builder => {

@@ -12,6 +12,10 @@ const MOCK_INITIAL_STATE: PersonaState = {
         id: '1',
         src: 'anySrc',
         title: 'anyTitle',
+        builderData: {
+          pageSettings: [],
+          gridItems: {},
+        },
       },
     },
   },

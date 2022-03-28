@@ -81,6 +81,10 @@ describe('useFormRename', () => {
                 title: 'anyTitle',
                 createdAt: 0,
                 updatedAt: 0,
+                builderData: {
+                  pageSettings: [],
+                  gridItems: {},
+                },
               },
             },
           },

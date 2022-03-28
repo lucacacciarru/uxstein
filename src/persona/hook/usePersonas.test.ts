@@ -24,6 +24,10 @@ describe('usePersona', () => {
                 title: 'Test',
                 createdAt: 0,
                 updatedAt: 0,
+                builderData: {
+                  pageSettings: [],
+                  gridItems: {}
+                }
               },
             },
           },
@@ -37,6 +41,10 @@ describe('usePersona', () => {
         title: 'Test',
         createdAt: 0,
         updatedAt: 0,
+        builderData: {
+          pageSettings: [],
+          gridItems: {}
+        }
       },
     ];
     expect(result.current.personas).toEqual(expectById);
@@ -55,7 +63,14 @@ describe('usePersona', () => {
         persona: {
           data: {
             allIds: ['1'],
-            byId: { '1': { ...personaDetails } },
+            byId: {
+              '1': {
+                ...personaDetails, builderData: {
+                  pageSettings: [],
+                  gridItems: {}
+                }
+              }
+            },
           },
         },
       },
@@ -82,6 +97,10 @@ describe('usePersona', () => {
             byId: {
               '1': {
                 ...personaDetails,
+                builderData: {
+                  pageSettings: [],
+                  gridItems: {}
+                }
               },
             },
           },

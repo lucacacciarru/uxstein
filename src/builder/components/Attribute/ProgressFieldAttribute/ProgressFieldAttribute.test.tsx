@@ -23,6 +23,7 @@ describe('ProgressFieldAttribute component', () => {
             },
           },
           pageSettings: [],
+          personaId: 'any id',
         },
       },
     });

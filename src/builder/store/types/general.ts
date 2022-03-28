@@ -13,6 +13,7 @@ export type BuilderState = {
   byId: Record<string, GridItem>;
   pageSettings: Layout[];
   selectedBlockId?: string;
+  personaId: string;
 };
 
 export enum BUILDER_ACTION_TYPES {
