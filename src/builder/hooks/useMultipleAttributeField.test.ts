@@ -133,6 +133,7 @@ describe('useMultipleAttributeField hook', () => {
               },
             },
             pageSettings: [],
+            personaId: 'any id',
           },
         },
       },
