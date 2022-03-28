@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AttributeName, ItemAttribute } from '../store/types';
 import { useAttributeField } from './useAttributeField';
-import { checkIfMoreThanOneItemExists } from '../utils/checkIfMoreThanOneItemExists';
+import { checkIfListHasMoreThanOneItem } from '../utils/checkIfListHasMoreThanOneItem';
 
 export function useMultipleAttributeField(
   blockId: string,
@@ -58,7 +58,7 @@ export function useMultipleAttributeField(
   };
 
   const deleteItem = (id: string) => {
-    if (checkIfMoreThanOneItemExists(attribute?.items)) {
+    if (checkIfListHasMoreThanOneItem(attribute?.items)) {
       const filteredItems = attributeItems?.filter(item => item.id !== id);
       setAttributeItems(filteredItems);
       debouncedUpdateValue(filteredItems || []);
