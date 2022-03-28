@@ -5,18 +5,12 @@ import {
   fetchPersonaSuccess,
 } from '../actions/fetchPersona';
 import { fetchPersonaApi } from '../api';
-import {
-  FetchPersonaAction,
-  FetchPersonaResponse,
-} from '../types/fetchPersona';
+import { FetchPersonaResponse } from '../types/fetchPersona';
 
-export function* fetchPersonaSaga(action: FetchPersonaAction) {
-  yield put(fetchPersonaRequest(action.payload));
+export function* fetchPersonaSaga() {
+  yield put(fetchPersonaRequest());
   try {
-    const response: FetchPersonaResponse = yield call(
-      fetchPersonaApi,
-      action.payload.username,
-    );
+    const response: FetchPersonaResponse = yield call(fetchPersonaApi);
     yield put(fetchPersonaSuccess(response.data));
   } catch (error) {
     yield put(fetchPersonaFailure({}));

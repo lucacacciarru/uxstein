@@ -22,8 +22,8 @@ const mockPersona: Persona[] = [
     createdAt: 0,
     builderData: {
       pageSettings: [],
-      gridItems: {}
-    }
+      gridItems: {},
+    },
   },
 ];
 
@@ -36,7 +36,7 @@ describe('FETCHPERSONA REDUCER', () => {
   test('rollbackData should be equal to initialState data', () => {
     const returnValue = personaRootReducer(
       PERSONA_INITIAL_STATE,
-      fetchPersonaRequest({ username: '' }),
+      fetchPersonaRequest(),
     );
     expect(returnValue.rollbackData).toEqual(PERSONA_INITIAL_STATE.data);
   });
@@ -58,8 +58,8 @@ describe('FETCHPERSONA REDUCER', () => {
           createdAt: 0,
           builderData: {
             pageSettings: [],
-            gridItems: {}
-          }
+            gridItems: {},
+          },
         },
       },
     };
