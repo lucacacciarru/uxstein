@@ -31,6 +31,7 @@ const MOCK_BUILDER_STATE: BuilderState = {
     },
   },
   pageSettings: [],
+  personaId: 'any id',
 };
 
 describe('useMultipleAttributeField hook', () => {
@@ -132,6 +133,7 @@ describe('useMultipleAttributeField hook', () => {
               },
             },
             pageSettings: [],
+            personaId: 'any id',
           },
         },
       },

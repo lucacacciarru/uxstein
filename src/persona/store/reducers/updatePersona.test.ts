@@ -16,6 +16,10 @@ const PERSONA_INITIAL_STATE: PersonaState = {
         title: 'anyTitle',
         updatedAt: 0,
         createdAt: 0,
+        builderData: {
+          pageSettings: [],
+          gridItems: {}
+        }
       },
     },
   },

@@ -42,6 +42,7 @@ const MOCK_BUILDER_STATE: BuilderState = {
     },
   },
   pageSettings: [],
+  personaId: 'any id',
 };
 
 const useTestProgressBorderField = () => {

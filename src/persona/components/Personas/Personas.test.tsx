@@ -18,6 +18,10 @@ describe('Personas component', () => {
                 title: 'Test',
                 createdAt: 0,
                 updatedAt: 0,
+                builderData: {
+                  pageSettings: [],
+                  gridItems: {},
+                },
               },
             },
           },

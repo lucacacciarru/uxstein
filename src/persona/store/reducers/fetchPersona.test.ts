@@ -20,6 +20,10 @@ const mockPersona: Persona[] = [
     title: 'anyTitle',
     updatedAt: 0,
     createdAt: 0,
+    builderData: {
+      pageSettings: [],
+      gridItems: {}
+    }
   },
 ];
 
@@ -52,6 +56,10 @@ describe('FETCHPERSONA REDUCER', () => {
           title: 'anyTitle',
           updatedAt: 0,
           createdAt: 0,
+          builderData: {
+            pageSettings: [],
+            gridItems: {}
+          }
         },
       },
     };

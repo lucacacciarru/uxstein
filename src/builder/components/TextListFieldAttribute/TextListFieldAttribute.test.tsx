@@ -30,6 +30,7 @@ describe('TextListFieldAttribute component', () => {
             },
           },
           pageSettings: [],
+          personaId: 'any id',
         },
       },
     });
