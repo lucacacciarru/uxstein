@@ -13,8 +13,8 @@ describe('LayoutApp', () => {
     expect(screen.queryByRole('sidenav')).toBeInTheDocument();
   });
 
-  test('shoud not display navigations if in /app', () => {
-    render(<LayoutApp />, { initialRoutes: ['/app'] });
+  test('shoud not display navigations if in .../edit', () => {
+    render(<LayoutApp />, { initialRoutes: ['/anyId/edit'] });
 
     expect(screen.queryByRole('top-nav')).not.toBeInTheDocument();
     expect(screen.queryByRole('sidenav')).not.toBeInTheDocument();

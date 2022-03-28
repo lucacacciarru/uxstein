@@ -12,7 +12,7 @@ const MOCK_AUTH_LOGGED_STATE: AuthState = {
 };
 
 describe('useLayoutApp', () => {
-  test('showNavigation should return true if the path is NOT /app', () => {
+  test('showNavigation should return true if the path is NOT .../edit', () => {
     const { result } = renderHook(() => useLayoutApp(), {
       initialRoutes: ['/login'],
     });
@@ -20,9 +20,9 @@ describe('useLayoutApp', () => {
     expect(result.current.showNavigation).toBeTruthy();
   });
 
-  test('showNavigation should return false if the path IS /app', () => {
+  test('showNavigation should return false if the path IS .../edit', () => {
     const { result } = renderHook(() => useLayoutApp(), {
-      initialRoutes: ['/app'],
+      initialRoutes: ['/anyId/edit'],
       mocks: {
         auth: MOCK_AUTH_LOGGED_STATE,
       },
