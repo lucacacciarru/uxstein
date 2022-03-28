@@ -9,7 +9,7 @@ export const SaveButton: React.FC = () => {
       aria-label="save"
       h="10"
       minW="20"
-      variant="outline"
+      variant="outlineBlack"
       icon={<Icon name="Save" size="8" />}
       onClick={savePersona}
     />

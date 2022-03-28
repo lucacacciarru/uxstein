@@ -11,14 +11,14 @@ export const HeaderButtons: FC = () => {
         aria-label="save-layout"
         h="10"
         minW="20"
-        variant="outline"
+        variant="outlineBlack"
         icon={<Icon name="Layout1" size="8" />}
       />
       <IconButton
         aria-label="download"
         h="10"
         minW="20"
-        variant="outline"
+        variant="outlineBlack"
         icon={<Icon name="Download" size="8" />}
       />
     </HStack>
