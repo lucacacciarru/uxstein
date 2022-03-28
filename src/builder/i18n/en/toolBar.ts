@@ -27,7 +27,7 @@ export const toolBar = {
       modalButton: 'Done !',
       modalUploadTab: 'Upload',
       modalUrlTab: 'Url',
-      addOnePlaceholder: 'Add a new item'
+      addOnePlaceholder: 'Add a new item',
     },
   },
   style: {
@@ -58,5 +58,6 @@ export const toolBar = {
     textualContentTooLong: 'The entered text is too long',
     itemNameTooLong: 'The name entered is too long',
     noText: 'No text entered',
+    impossibleToDeleteItem: 'There must be at least one element',
   },
 };

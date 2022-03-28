@@ -1,4 +1,8 @@
-import { renderHook, act, waitFor } from '../../_shared/testConfig/customRenderHook';
+import {
+  renderHook,
+  act,
+  waitFor,
+} from '../../_shared/testConfig/customRenderHook';
 import { BuilderState } from '../store/types';
 import { useMultipleAttributeField } from './useMultipleAttributeField';
 
@@ -13,7 +17,10 @@ const MOCK_BUILDER_STATE: BuilderState = {
       attributes: {
         [ATTRIBUTE_NAME]: {
           initialValue: [{ id: ITEM_ID, value: 'anyValue', label: 'anyLabel' }],
-          items: [{ id: ITEM_ID, value: 'anyValue', label: 'anyLabel' }],
+          items: [
+            { id: ITEM_ID, value: 'anyValue', label: 'anyLabel' },
+            { id: '2', value: 'anyValue', label: 'anyLabel' },
+          ],
           label: 'builder.toolBar.attributes.items.label',
           placeholder: 'builder.toolBar.attributes.items.placeholder',
           style: {},
@@ -36,7 +43,7 @@ describe('useMultipleAttributeField hook', () => {
     act(() => result.current.onChangeLabel(ITEM_ID, 'any new label'));
     await waitFor(() => {
       expect(result.current.attributeItems?.[0].label).toBe('any new label');
-    })
+    });
   });
 
   test('if onChangeLabel is called and item does not exist, label of select item should be equal', () => {
@@ -60,7 +67,7 @@ describe('useMultipleAttributeField hook', () => {
 
     await waitFor(() => {
       expect(result.current.attributeItems?.[0].value).toBe('any new value');
-    })
+    });
   });
 
   test('if onChangeValue is called and item does not exist, value of select item should be equal', () => {
@@ -82,11 +89,11 @@ describe('useMultipleAttributeField hook', () => {
 
     act(() => result.current.addItem('new item label', '30'));
     await waitFor(() => {
-      expect(result.current.attributeItems?.[1].label).toBe('new item label');
-    })
+      expect(result.current.attributeItems?.[2].label).toBe('new item label');
+    });
   });
 
-  test('if deleteItem is called, item should be deleted', async () => {
+  test('if deleteItem is called and more than one item exists, item should be deleted', async () => {
     const { result } = renderHook(
       () => useMultipleAttributeField(BLOCK_ID, ATTRIBUTE_NAME),
       { mocks: { builder: MOCK_BUILDER_STATE } },
@@ -95,8 +102,46 @@ describe('useMultipleAttributeField hook', () => {
     act(() => result.current.deleteItem(ITEM_ID));
 
     await waitFor(() => {
-      expect(result.current.attributeItems?.[0]).toBeUndefined();
-    })
+      expect(result.current.attributeItems?.[1]).toBeUndefined();
+    });
+  });
+  test('if deleteItem is called and only one item exists, item should be deleted', async () => {
+    const { result } = renderHook(
+      () => useMultipleAttributeField(BLOCK_ID, ATTRIBUTE_NAME),
+      {
+        mocks: {
+          builder: {
+            allIds: [BLOCK_ID],
+            byId: {
+              [BLOCK_ID]: {
+                attributes: {
+                  [ATTRIBUTE_NAME]: {
+                    initialValue: [
+                      { id: ITEM_ID, value: 'anyValue', label: 'anyLabel' },
+                    ],
+                    items: [
+                      { id: ITEM_ID, value: 'anyValue', label: 'anyLabel' },
+                    ],
+                    label: 'builder.toolBar.attributes.items.label',
+                    placeholder: 'builder.toolBar.attributes.items.placeholder',
+                    style: {},
+                  },
+                },
+                style: {},
+                type: ATTRIBUTE_NAME,
+              },
+            },
+            pageSettings: [],
+          },
+        },
+      },
+    );
+
+    act(() => result.current.deleteItem(ITEM_ID));
+
+    await waitFor(() => {
+      expect(result.current.attributeItems?.[0]).not.toBeUndefined();
+    });
   });
 
   test('if store attribute is undefined should return defined label and placeholder values', async () => {
@@ -105,19 +150,19 @@ describe('useMultipleAttributeField hook', () => {
       {
         mocks: {
           builder: {
-            ...MOCK_BUILDER_STATE, byId: {
+            ...MOCK_BUILDER_STATE,
+            byId: {
               [BLOCK_ID]: {
                 ...MOCK_BUILDER_STATE.byId[BLOCK_ID],
-                attributes: {}
-              }
-            }
-          }
-        }
+                attributes: {},
+              },
+            },
+          },
+        },
       },
     );
 
     expect(result.current.label).toBeDefined();
     expect(result.current.placeholder).toBeDefined();
   });
-
 });
