@@ -11,6 +11,7 @@ describe('Card component', () => {
         src="test"
         title="test"
         type="persona"
+        builderData={{ gridItems: {}, pageSettings: [] }}
       />,
     );
     const card = screen.getByRole('card');
@@ -25,6 +26,7 @@ describe('Card component', () => {
         src="test"
         title="test"
         type="template"
+        builderData={{ gridItems: {}, pageSettings: [] }}
       />,
     );
     const avatar = screen.getByTestId('avatar');

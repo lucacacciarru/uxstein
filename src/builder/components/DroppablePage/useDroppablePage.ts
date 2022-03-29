@@ -5,9 +5,13 @@ import { addItem } from '../../store/actions/addItem';
 import { updatePageSettings } from '../../store/actions/updatePageSettings';
 import { selectItem } from '../../store/actions/selected';
 import { getPageSettings } from '../../store/selectors/getPageSettings';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { populateBuilderTrigger } from '../../store/actions/populate';
 
 export const useDroppablePage = (blockSetup: BlockSetup) => {
     const dispatch = useDispatch();
+    const { personaId } = useParams();
     const layout = useSelector(getPageSettings);
 
     const onDropHandler = (newLayout: Layout[], newBlock: Layout, _event: Event) => {
@@ -58,6 +62,10 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
         onDragStop: onLayoutChangeHandler,
         onResizeStop: onLayoutChangeHandler,
     }
+
+    useEffect(() => {
+        dispatch(populateBuilderTrigger({ personaId: personaId || '' }));
+    }, [dispatch, personaId]);
 
     return {
         layout,

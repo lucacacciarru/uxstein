@@ -1,20 +1,16 @@
 import { Box, ChakraProps, Image } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
+import { Persona } from '../../../persona/store/types/general';
 import { CardContainer } from '../CardContainer';
 import { OptionPersonCard } from '../OptionPersonCard';
 import { PersonCardContainerInfo } from './PersonCardContainerInfo';
 import { timeBetweenTwoDays } from './timeBetweenTwoDays';
 
 type Props = {
-  id: string;
-  src: string;
-  title: string;
-  createdAt: number;
-  updatedAt: number;
-  type: 'persona' | 'template';
   author?: string;
+  type: 'persona' | 'template';
   cardRef?: React.RefObject<HTMLDivElement>;
-};
+} & Persona;
 
 const cardContainerProps: ChakraProps = {
   cursor: 'pointer',

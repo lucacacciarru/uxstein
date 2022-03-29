@@ -20,72 +20,144 @@
         {
           "id": "0144ab8e-9ae3-11ec-b909-0242ac120002",
           "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-11.png",
-          "title": "Test",
+          "title": "Popolato",
           "createdAt": "0",
-          "updatedAt": "0"
+          "updatedAt": "0",
+          "builderData": {
+            "gridItems": {
+              "a": {
+                "type": "text",
+                "attributes": {
+                  "title": {
+                    "label": "builder.toolBar.attributes.title.label",
+                    "placeholder": "builder.toolBar.attributes.title.placeholder",
+                    "items": [{ "id": "1", "value": "Prova" }],
+                    "initialValue": [],
+                    "style": {
+                      "fontSize": "40px",
+                      "color": "#ffffff"
+                    }
+                  },
+                  "subtitle": {
+                    "label": "builder.toolBar.attributes.subtitle.label",
+                    "placeholder": "builder.toolBar.attributes.subtitle.placeholder",
+                    "items": [{ "id": "1", "value": "Subtitle" }],
+                    "initialValue": [],
+                    "style": {
+                      "fontSize": "18px",
+                      "color": "#ffffff",
+                      "fontStyle": "italic"
+                    }
+                  },
+                  "body": {
+                    "label": "builder.toolBar.attributes.body.label",
+                    "placeholder": "builder.toolBar.attributes.body.placeholder",
+                    "items": [
+                      {
+                        "id": "1",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et morbi adipiscing leo nibh porttitor diam in nibh malesuada. Sed velit lobortis volutpat, eget."
+                      }
+                    ],
+                    "initialValue": [],
+                    "style": {
+                      "fontSize": "13px",
+                      "color": "#44ca6c"
+                    }
+                  }
+                },
+                "style": {
+                  "backgroundColor": "#000000",
+                  "borderColor": "",
+                  "borderWidth": "3px",
+                  "borderRadius": "10px"
+                }
+              }
+            },
+            "pageSettings": [
+              { "i": "a", "x": 0, "y": 0, "w": 2, "h": 2, "maxW": 3 }
+            ]
+          }
         },
         {
           "id": "0121ab8e-9ae3-11ec-b909-0242ac120002",
           "src": "https://assets.justinmind.com/wp-content/uploads/2020/07/young-working-student-user-persona.png",
           "title": "Test",
           "createdAt": "0",
-          "updatedAt": "0"
+          "updatedAt": "0",
+          "gridItems": {},
+          "pageSettings": []
         },
         {
           "id": "0121ab8e-23ha-11ec-bab09-0242ac120002",
           "src": "https://assets.justinmind.com/wp-content/uploads/2020/07/young-working-student-user-persona.png",
           "title": "Test",
           "createdAt": "0",
-          "updatedAt": "0"
+          "updatedAt": "0",
+          "gridItems": {},
+          "pageSettings": []
         },
         {
           "id": "0121ab8e-23ha-aaec-22909-0242ac120002",
           "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
           "title": "Test",
           "createdAt": "0",
-          "updatedAt": "0"
+          "updatedAt": "0",
+          "gridItems": {},
+          "pageSettings": []
         },
         {
           "id": "0121ab8e-23ha-ryaec-b909-0242ac120042",
           "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
           "title": "Test",
           "createdAt": "0",
-          "updatedAt": "0"
+          "updatedAt": "0",
+          "gridItems": {},
+          "pageSettings": []
         },
         {
           "id": "012112b8e-23ha-aaec-b909-0242ac120042",
           "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
           "title": "Test",
           "createdAt": "0",
-          "updatedAt": "0"
+          "updatedAt": "0",
+          "gridItems": {},
+          "pageSettings": []
         },
         {
           "id": "0121sb8e-23ha-aaec-b909-03322ac120042",
           "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
           "title": "Test",
           "createdAt": "0",
-          "updatedAt": "0"
+          "updatedAt": "0",
+          "gridItems": {},
+          "pageSettings": []
         },
         {
           "id": "0121sb8e-23ha-aaec-b909-02dfd2ac120042",
           "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
           "title": "Test",
           "createdAt": "0",
-          "updatedAt": "0"
+          "updatedAt": "0",
+          "gridItems": {},
+          "pageSettings": []
         },
         {
           "id": "0121sb8e-23ha-aaec-b909-02kkac120042",
           "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
           "title": "Test",
           "createdAt": "0",
-          "updatedAt": "0"
+          "updatedAt": "0",
+          "gridItems": {},
+          "pageSettings": []
         },
         {
           "id": "0121sb8e-23ha-aaec-b909-0242ac1dmnd042",
           "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
           "title": "Test",
           "createdAt": "0",
-          "updatedAt": "0"
+          "updatedAt": "0",
+          "gridItems": {},
+          "pageSettings": []
         }
       ]
     }
