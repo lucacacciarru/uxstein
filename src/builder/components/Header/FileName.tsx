@@ -7,12 +7,8 @@ import {
 import { FC } from 'react';
 import { useCustomEditable } from './useCustomEditable';
 
-type Props = {
-  id?: string;
-};
-
-export const FileName: FC<Props> = ({ id }) => {
-  const { editableProps } = useCustomEditable(id);
+export const FileName: FC = () => {
+  const { editableProps } = useCustomEditable();
   return (
     <Center w="full">
       <Editable {...editableProps} textAlign={'center'}>

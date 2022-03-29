@@ -1,6 +1,11 @@
 import { useToast, UseToastOptions } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { updatePersonaTrigger } from '../../../persona/store/actions/updatePersona';
+import { getPersonaById } from '../../../persona/store/selectors/getPersonaById';
+import { Persona } from '../../../persona/store/types/general';
 
 const DEFAULT_NAME = 'untilted';
 const MAX_NAME_CHARS = 20;
@@ -15,9 +20,15 @@ const ERROR_TOAST: UseToastOptions = {
   duration: 2000,
 };
 
-export const useCustomEditable = (id?: string) => {
-  const name = getNameById(id) || DEFAULT_NAME;
-  const [fileName, setFileName] = useState(name);
+export const useCustomEditable = () => {
+  const dispatch = useDispatch();
+  const { personaId } = useParams();
+
+  const persona: Persona | undefined = useSelector(
+    getPersonaById(personaId || ''),
+  );
+  const title = persona?.title || DEFAULT_NAME;
+  const [fileName, setFileName] = useState(title);
 
   const { t } = useTranslation();
   const errorToast = useToast({
@@ -42,7 +53,12 @@ export const useCustomEditable = (id?: string) => {
       submittedFileName.length === 0 ? 'untilted' : submittedFileName;
 
     setFileName(newFileName);
-    // dispatch to store {newFileName} for preventing undefined dispatch
+    dispatch(
+      updatePersonaTrigger({
+        id: personaId || '',
+        properties: { title: newFileName },
+      }),
+    );
   };
 
   return {
@@ -54,6 +70,3 @@ export const useCustomEditable = (id?: string) => {
     },
   };
 };
-
-// this function  return file name (if exist) or undefined (if not)
-const getNameById = (id?: string) => undefined;
