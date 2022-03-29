@@ -1,10 +1,7 @@
 import { useSelector } from 'react-redux';
 import { getPersonaById } from '../../../persona/store/selectors/getPersonaById';
 import { PersonaState } from '../../../persona/store/types/general';
-import {
-  customRenderHook,
-  act,
-} from '../../../_shared/testConfig/customRenderHook';
+import { renderHook, act } from '../../../_shared/testConfig/customRenderHook';
 import { getBlockItemSettings } from '../../config/blockItemSettings';
 import { BuilderState } from '../../store/types';
 import { useSaveButton } from './useSaveButton';
@@ -48,7 +45,7 @@ function useCustomHook() {
 
 describe('useSaveButton hook', () => {
   test('pageSettings inside single Persona should change if savePersona function is called', () => {
-    const { result } = customRenderHook(() => useCustomHook(), {
+    const { result } = renderHook(() => useCustomHook(), {
       mocks: { builder: MOCK_BUILDER_STATE, persona: MOCK_PERSONA_STATE },
     });
     act(() => result.current.savePersona());
