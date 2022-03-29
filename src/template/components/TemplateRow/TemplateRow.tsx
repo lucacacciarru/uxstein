@@ -34,6 +34,7 @@ export const TemplateRow: React.FC<Props> = ({ category }) => {
           {...template}
           cardRef={ref}
           key={template.createdAt}
+          builderData={{ gridItems: {}, pageSettings: [] }}
         />
       );
     });

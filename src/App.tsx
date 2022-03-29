@@ -30,7 +30,7 @@ function App() {
           <Route element={<PrivateRoutes />}>
             <Route path="my-personas">
               <Route index element={<MyPersona />} />
-              <Route path=":id/edit" element={<Builder />} />
+              <Route path=":personaId/edit" element={<Builder />} />
             </Route>
             <Route path="my-templates" element={<MyTemplates />} />
             <Route path="profile" element={<>Profile</>} />

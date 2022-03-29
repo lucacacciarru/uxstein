@@ -2,7 +2,6 @@ import { createReducer } from '@reduxjs/toolkit';
 import { BuilderState } from '../types';
 import { addItem } from '../actions/addItem';
 import { addItemCase } from './addItem';
-import { getBlockItemSettings } from '../../config/blockItemSettings';
 import { clearSelected, selectItem } from '../actions/selected';
 import { selectItemCase } from './selectItem';
 import { clearSelectedCase } from './clearSelected';
@@ -16,14 +15,14 @@ import { updateBlockStyleCase } from './updateBlockStyle';
 import { updateBlockStyle } from '../actions/updateBlockStyle';
 import { updatePageSettingsCase } from './updatePageSettings';
 import { updatePageSettings } from '../actions/updatePageSettings';
+import { setBuilder } from '../actions/set';
+import { setCase } from './set';
 
 const INITIAL_STATE: BuilderState = {
-  allIds: ['a'],
-  byId: {
-    a: getBlockItemSettings('text').gridItemSettings,
-  },
-  pageSettings: [{ i: 'a', x: 0, y: 0, w: 2, h: 2, maxW: 3 }],
-  personaId: Date.now().toString(),
+  allIds: [],
+  byId: {},
+  pageSettings: [],
+  personaId: '',
 };
 
 export const builderRooorReducer = createReducer(INITIAL_STATE, builder => {
@@ -36,5 +35,6 @@ export const builderRooorReducer = createReducer(INITIAL_STATE, builder => {
     .addCase(updateAttributeStyle, updateAttributeStyleCase)
     .addCase(updateBlockStyle, updateBlockStyleCase)
     .addCase(deleteItem, deleteItemCase)
+    .addCase(setBuilder, setCase)
     .addDefaultCase(state => state);
 });

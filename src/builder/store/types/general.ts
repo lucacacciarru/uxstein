@@ -25,6 +25,8 @@ export enum BUILDER_ACTION_TYPES {
   UPDATE_ATTRIBUTE_STYLE = 'builder/update/attribute-style',
   UPDATE_BLOCK_STYLE = 'builder/update/block-style',
   DELETE = 'builder/delete',
+  SET = 'builder/set',
+  POPULATE = 'builder/populate/trigger',
 }
 
 export type AttributeName =
