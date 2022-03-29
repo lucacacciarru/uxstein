@@ -42,7 +42,7 @@ export const useCustomEditable = () => {
 
   const onSubmit = (submittedFileName: string) => {
     const newFileName =
-      submittedFileName.length === 0 ? 'untilted' : submittedFileName;
+      submittedFileName.length === 0 ? 'untitled' : submittedFileName;
 
     setFileName(newFileName);
     dispatch(
