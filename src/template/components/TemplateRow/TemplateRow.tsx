@@ -1,8 +1,8 @@
 //TODO: change "Frank" to username of User
 import { Box, HStack, Text } from '@chakra-ui/react';
 import { useMemo } from 'react';
-import { PersonCard } from '../../../_shared/components';
 import { ControlButtons } from '../ControlButtons/ControlButtons';
+import { TemplateCard } from '../TemplateCard';
 import { useTemplateRow } from './useTemplateRow';
 
 type Props = {
@@ -21,6 +21,7 @@ export const TemplateRow: React.FC<Props> = ({ category }) => {
   } = useTemplateRow(category);
 
   const renderTemplateByAuthor = useMemo(() => {
+    const showOption = category === 'mine' ? true : false;
     return filteredByCategory.map((template, index, list) => {
       const ref =
         index === 0
@@ -29,11 +30,7 @@ export const TemplateRow: React.FC<Props> = ({ category }) => {
           ? lastCardRef
           : undefined;
       return (
-        <PersonCard
-          key={template.id}
-          title={template.name}
-          createdAt={0}
-          updatedAt={0}
+        <TemplateCard
           {...template}
           id={Date.now().toString()}
           cardRef={ref}
@@ -41,7 +38,7 @@ export const TemplateRow: React.FC<Props> = ({ category }) => {
         />
       );
     });
-  }, [filteredByCategory, firstCardRef, lastCardRef]);
+  }, [category, filteredByCategory, firstCardRef, lastCardRef]);
 
   return (
     <Box overflow="hidden" py="4">

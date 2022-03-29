@@ -1,11 +1,9 @@
 import { useMemo } from 'react';
-import {
-  PersonCard,
-  SkeletonPersonCardList,
-} from '../../../_shared/components';
+import { SkeletonPersonCardList } from '../../../_shared/components';
 import { SimpleGrid, SimpleGridProps } from '@chakra-ui/react';
 import { usePersonas } from '../../hook/usePersonas';
 import { useLoading } from '../../../_shared/store/loading';
+import { PersonaCard } from '../PersonaCard';
 
 const containerProps: SimpleGridProps = {
   spacingX: '7',
@@ -24,7 +22,7 @@ export const Personas: React.FC = () => {
       <SkeletonPersonCardList numberOfItems={10} />
     ) : (
       personas.map(persona => (
-        <PersonCard type="persona" key={persona.id} {...persona} />
+        <PersonaCard type="persona" key={persona.id} {...persona} />
       ))
     );
   }, [isLoading, personas]);

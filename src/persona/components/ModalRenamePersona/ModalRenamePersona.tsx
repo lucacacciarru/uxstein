@@ -14,8 +14,9 @@ import {
 } from '@chakra-ui/react';
 import { useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MaxLengthMessage } from '../MaxLengthMessage';
-import { useFormRename } from './useFormRename';
+import { usePersonas } from '../../../persona/hook/usePersonas';
+import { MaxLengthMessage } from '../../../_shared/components/MaxLengthMessage';
+import { usePersonaTemplateRename } from '../../../_shared/hooks/usePersonaTemplateRename';
 
 type Props = {
   isOpen: boolean;
@@ -23,18 +24,19 @@ type Props = {
   personaId: string;
 };
 
-export const ModalRenamePerson: React.FC<Props> = ({
+export const ModalRenamePersona: React.FC<Props> = ({
   isOpen,
   onClose,
   personaId,
 }) => {
+  const { updatePersona } = usePersonas();
   const {
     nameValue,
     onChangeInputRename,
     checkAndConfirmRename,
     inputError,
     errorMessage,
-  } = useFormRename();
+  } = usePersonaTemplateRename(updatePersona);
 
   const initialFocus = useRef(null);
   const { t } = useTranslation();

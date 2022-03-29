@@ -1,10 +1,10 @@
-import { render, screen } from '../../testConfig/customRender';
-import { PersonCard } from './PersonCard';
+import { render, screen } from '../../../_shared/testConfig/customRender';
+import { PersonaCard } from './PersonaCard';
 
 describe('Card component', () => {
   test('should be rendered', () => {
     render(
-      <PersonCard
+      <PersonaCard
         id="anyid"
         updatedAt={0}
         createdAt={0}
@@ -19,7 +19,7 @@ describe('Card component', () => {
   });
   test('should show avatar with icon if type is "template"', () => {
     render(
-      <PersonCard
+      <PersonaCard
         id="anyid"
         updatedAt={0}
         createdAt={0}

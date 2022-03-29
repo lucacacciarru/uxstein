@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { usePersonas } from '../../../persona/hook/usePersonas';
-export function useFormRename() {
-  const { updatePersona } = usePersonas();
+import { Persona } from '../../persona/store/types/general';
+
+export function usePersonaTemplateRename(
+  rename: (id: string, properties: Omit<Partial<Persona>, 'id'>) => void,
+) {
   const { t } = useTranslation();
 
   const mapErrorMessage: Record<string, string> = {
     tooLong: t('renamePersonaModal.errors.tooLong'),
-    emty: t('renamePersonaModal.errors.empty'),
+    empty: t('renamePersonaModal.errors.empty'),
   };
 
   const [nameValue, setNameValue] = useState<string>('');
@@ -26,11 +28,11 @@ export function useFormRename() {
     }
     if (nameValue.trim().length === 0) {
       setInputError(true);
-      setErrorMessage(mapErrorMessage.emty);
+      setErrorMessage(mapErrorMessage.empty);
       return;
     }
     setInputError(false);
-    updatePersona(personaId, { title: nameValue });
+    rename(personaId, { title: nameValue });
     closeModal();
   };
 

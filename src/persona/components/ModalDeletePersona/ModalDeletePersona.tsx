@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { usePersonas } from '../../../persona/hook/usePersonas';
-import { Icon } from '../Icon';
+import { Icon } from '../../../_shared/components';
 
 type Props = {
   isOpen: boolean;
