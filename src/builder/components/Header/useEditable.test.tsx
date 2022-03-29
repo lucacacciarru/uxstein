@@ -54,7 +54,7 @@ describe('useEditable', () => {
 const EditableMock: FC = () => {
   const { editableProps } = useCustomEditable();
   return (
-    <Editable {...editableProps} data-testid="test">
+    <Editable {...editableProps}>
       <EditablePreview />
       <EditableInput />
     </Editable>
