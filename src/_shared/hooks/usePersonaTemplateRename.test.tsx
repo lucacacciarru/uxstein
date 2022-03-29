@@ -1,11 +1,31 @@
-import { render, screen, fireEvent } from '../../testConfig/customRender';
-import { renderHook } from '../../testConfig/customRenderHook';
-import { useFormRename } from './useFormRename';
+import { render, screen, fireEvent } from '../testConfig/customRender';
+import { renderHook } from '../testConfig/customRenderHook';
+import { usePersonaTemplateRename } from './usePersonaTemplateRename';
 import { Input } from '@chakra-ui/react';
+import { usePersonas } from '../../persona/hook/usePersonas';
+
+function useCustomHook() {
+  const { updatePersona } = usePersonas();
+  const {
+    checkAndConfirmRename,
+    nameValue,
+    onChangeInputRename,
+    errorMessage,
+    inputError,
+  } = usePersonaTemplateRename(updatePersona);
+
+  return {
+    checkAndConfirmRename,
+    nameValue,
+    onChangeInputRename,
+    errorMessage,
+    inputError,
+  };
+}
 
 describe('useFormRename', () => {
   test('onChange should be called if write in input', () => {
-    const { result } = renderHook(() => useFormRename());
+    const { result } = renderHook(() => useCustomHook());
     render(
       <Input
         value={result.current.nameValue}
@@ -18,8 +38,8 @@ describe('useFormRename', () => {
     fireEvent.change(input, { target: { value: testValue } });
     expect(result.current.nameValue).toBe(testValue);
   });
-  test('if the text is longer than 20 characters, inputRrror shuld be true', () => {
-    const { result } = renderHook(() => useFormRename());
+  test('if the text is longer than 20 characters, inputError should be true', () => {
+    const { result } = renderHook(() => useCustomHook());
     render(
       <>
         <Input
@@ -43,8 +63,8 @@ describe('useFormRename', () => {
     fireEvent.click(button);
     expect(result.current.inputError).toBeTruthy();
   });
-  test('if the text is empty, inputRrror shuld be true', () => {
-    const { result } = renderHook(() => useFormRename());
+  test('if the text is empty, inputError should be true', () => {
+    const { result } = renderHook(() => useCustomHook());
     render(
       <>
         <Input
@@ -69,7 +89,7 @@ describe('useFormRename', () => {
   });
   test('if inputError it is false, checkAndConfirm should put inputError on false and fire callback', () => {
     const fn = jest.fn();
-    const { result } = renderHook(() => useFormRename(), {
+    const { result } = renderHook(() => useCustomHook(), {
       mocks: {
         persona: {
           data: {

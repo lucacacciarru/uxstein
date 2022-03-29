@@ -1,13 +1,12 @@
 import { Box, HStack, Text } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { AvatarPerson } from '../AvatarPerson';
-import styles from './PersonCard.module.css';
 
 type Props = {
   title: string;
   timeSinceLastUpdate: number;
   type: 'persona' | 'template';
-  author: string;
+  author?: string;
 };
 
 const containerStyles = {
@@ -18,7 +17,7 @@ const containerStyles = {
   borderTop: 'dark.s',
 };
 
-export const PersonCardContainerInfo: React.FC<Props> = ({
+export const PersonaCardContainerInfo: React.FC<Props> = ({
   title,
   timeSinceLastUpdate,
   author,
@@ -29,7 +28,16 @@ export const PersonCardContainerInfo: React.FC<Props> = ({
   return (
     <HStack {...containerStyles}>
       <Box px="4" py="1" w="70%">
-        <Text as="h4" textStyle="h4" className={styles.cutText}>
+        <Text
+          as="h4"
+          textStyle="h4"
+          __css={{
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            width: '100%',
+          }}
+        >
           {title}
         </Text>
         <Text as="small">

@@ -1,15 +1,16 @@
 import { Box, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { Icon } from '../../../_shared/components';
-import { ModalDeletePersona } from '../ModalDeletePerson';
-import { ModalRenamePerson } from '../ModalRenamePerson';
-import { usePersonaModal } from '../../hooks/usePersonaModal';
+import { ModalRenameTemplate } from '../ModalRenameTemplate';
+import { usePersonaModal } from '../../../_shared/hooks/useOptionModal';
+import { ModalDeleteTemplate } from '../ModalDeleteTemplate';
 
 type Props = {
-  personaId: string;
+  templateId: string;
 };
 
-export const OptionPersonCard: React.FC<Props> = ({ personaId }) => {
+export const OptionTemplateCard: React.FC<Props> = ({ templateId }) => {
+  const { t } = useTranslation();
   const {
     isOpenRename,
     onCloseRename,
@@ -18,8 +19,6 @@ export const OptionPersonCard: React.FC<Props> = ({ personaId }) => {
     onCloseDelete,
     onOpenDelete,
   } = usePersonaModal();
-
-  const { t } = useTranslation();
   return (
     <>
       <Menu>
@@ -48,15 +47,15 @@ export const OptionPersonCard: React.FC<Props> = ({ personaId }) => {
           </MenuItem>
         </MenuList>
       </Menu>
-      <ModalDeletePersona
-        isOpen={isOpenDelete}
-        onClose={onCloseDelete}
-        personaId={personaId}
-      />
-      <ModalRenamePerson
+      <ModalRenameTemplate
         isOpen={isOpenRename}
         onClose={onCloseRename}
-        personaId={personaId}
+        templateId={templateId}
+      />
+      <ModalDeleteTemplate
+        isOpen={isOpenDelete}
+        onClose={onCloseDelete}
+        templateId={templateId}
       />
     </>
   );

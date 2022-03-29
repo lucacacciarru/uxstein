@@ -4,7 +4,7 @@ import { Icon } from '../Icon';
 
 type Props = {
   type: 'persona' | 'template';
-  author: string;
+  author?: string;
 };
 
 export const AvatarPerson: React.FC<Props> = ({ author, type }) => {
