@@ -34,20 +34,22 @@ export const ModalDeleteTemplate: React.FC<Props> = ({
           <Stack alignItems="center" justifyContent="center">
             <Icon name="Deleted" size="9rem" />
             <Text as="h3" textStyle="h3">
-              {t('deletePersonaModal.title')}
+              {t('template.modal.deleteTitle')}
             </Text>
           </Stack>
         </ModalHeader>
         <ModalCloseButton />
-        <ModalBody textAlign="center">{t('deletePersonaModal.body')}</ModalBody>
+        <ModalBody textAlign="center">
+          {t('template.modal.deleteBody')}
+        </ModalBody>
 
         <ModalFooter>
           <HStack alignItems="center" justifyContent="center" w="full">
             <Button data-testid="confirmButton" variant="error" mr={3}>
-              {t('deletePersonaModal.confirmButton')}
+              {t('template.modal.confirmButton')}
             </Button>
             <Button variant="ghost" onClick={onClose}>
-              {t('deletePersonaModal.deleteButton')}
+              {t('template.modal.cancelButton')}
             </Button>
           </HStack>
         </ModalFooter>

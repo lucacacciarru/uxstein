@@ -8,8 +8,8 @@ export function usePersonaTemplateRename(
   const { t } = useTranslation();
 
   const mapErrorMessage: Record<string, string> = {
-    tooLong: t('renamePersonaModal.errors.tooLong'),
-    empty: t('renamePersonaModal.errors.empty'),
+    tooLong: t('persona.modal.errors.renameTextTooLong'),
+    empty: t('persona.modal.errors.renameEmptyText'),
   };
 
   const [nameValue, setNameValue] = useState<string>('');

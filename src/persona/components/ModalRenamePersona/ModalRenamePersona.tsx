@@ -54,7 +54,7 @@ export const ModalRenamePersona: React.FC<Props> = ({
     >
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>{t('renamePersonaModal.title')}</ModalHeader>
+        <ModalHeader>{t('persona.modal.renameTitle')}</ModalHeader>
         <ModalCloseButton />
         <ModalBody pb={6}>
           <FormControl isInvalid={inputError}>
@@ -62,7 +62,7 @@ export const ModalRenamePersona: React.FC<Props> = ({
               value={nameValue}
               onChange={onChangeInputRename}
               ref={initialFocus}
-              placeholder={t('renamePersonaModal.placeholder')}
+              placeholder={t('persona.modal.renamePlaceholder')}
             />
             <MaxLengthMessage maxLength={20}>{nameValue}</MaxLengthMessage>
             <FormErrorMessage>{errorMessage}</FormErrorMessage>
@@ -72,10 +72,10 @@ export const ModalRenamePersona: React.FC<Props> = ({
         <ModalFooter>
           <HStack alignItems="center" justifyContent="center" w="full">
             <Button onClick={handlerConfirm} mr={3}>
-              {t('renamePersonaModal.confirmButton')}
+              {t('persona.modal.confirmButton')}
             </Button>
             <Button variant="ghost" onClick={onClose}>
-              {t('renamePersonaModal.cancelButton')}
+              {t('persona.modal.cancelButton')}
             </Button>
           </HStack>
         </ModalFooter>

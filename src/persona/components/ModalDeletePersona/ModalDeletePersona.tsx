@@ -36,12 +36,14 @@ export const ModalDeletePersona: React.FC<Props> = ({
           <Stack alignItems="center" justifyContent="center">
             <Icon name="Deleted" size="9rem" />
             <Text as="h3" textStyle="h3">
-              {t('deletePersonaModal.title')}
+              {t('persona.modal.deleteTitle')}
             </Text>
           </Stack>
         </ModalHeader>
         <ModalCloseButton />
-        <ModalBody textAlign="center">{t('deletePersonaModal.body')}</ModalBody>
+        <ModalBody textAlign="center">
+          {t('persona.modal.deleteBody')}
+        </ModalBody>
 
         <ModalFooter>
           <HStack alignItems="center" justifyContent="center" w="full">
@@ -51,10 +53,10 @@ export const ModalDeletePersona: React.FC<Props> = ({
               mr={3}
               onClick={() => deletePersona(personaId)}
             >
-              {t('deletePersonaModal.confirmButton')}
+              {t('persona.modal.confirmButton')}
             </Button>
             <Button variant="ghost" onClick={onClose}>
-              {t('deletePersonaModal.deleteButton')}
+              {t('persona.modal.cancelButton')}
             </Button>
           </HStack>
         </ModalFooter>
