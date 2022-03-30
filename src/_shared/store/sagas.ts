@@ -2,6 +2,7 @@ import { all, fork, ForkEffect } from 'redux-saga/effects';
 import { createAuthRootSaga, PostAuthOptions } from '../../auth/store';
 import { builderRootSaga } from '../../builder/store/sagas/rootSaga';
 import { personaRootSaga } from '../../persona/store/saga';
+import { templateRootSaga } from '../../template/store/saga';
 
 const DEFAULT_POST_AUTH_OPTIONS = {
   /**
@@ -35,7 +36,7 @@ export function createRootSaga({
       ...(postAuthOptions?.postLogout || []),
     ],
   });
-  const allSagas = [authRootSaga, personaRootSaga, builderRootSaga, ...(additionalSagas || [])];
+  const allSagas = [authRootSaga, personaRootSaga, builderRootSaga, templateRootSaga, ...(additionalSagas || [])];
 
   return function* rootSaga() {
     yield all(allSagas.map(saga => fork(saga)));

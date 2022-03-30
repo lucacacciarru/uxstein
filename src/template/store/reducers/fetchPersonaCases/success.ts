@@ -1,11 +1,11 @@
 import { CaseReducer } from '@reduxjs/toolkit';
-import { PersonaState } from '../../types/general';
-import { FetchPersonaSuccesssAction } from '../../types/fetchPersona';
+import { TemplateState } from '../../types/general';
+import { FetchTemplatesSuccesssAction } from '../../types/fetchTemplates';
 import { createAllIdsList, formatListToByIdObject } from '../../../../_shared/utils';
 
 export const successCase: CaseReducer<
-  PersonaState,
-  FetchPersonaSuccesssAction
+  TemplateState,
+  FetchTemplatesSuccesssAction
 > = (state, action) => {
   return {
     ...state,

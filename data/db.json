@@ -84,8 +84,10 @@
           "title": "Test",
           "createdAt": "0",
           "updatedAt": "0",
-          "gridItems": {},
-          "pageSettings": []
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
         },
         {
           "id": "0121ab8e-23ha-11ec-bab09-0242ac120002",
@@ -93,8 +95,10 @@
           "title": "Test",
           "createdAt": "0",
           "updatedAt": "0",
-          "gridItems": {},
-          "pageSettings": []
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
         },
         {
           "id": "0121ab8e-23ha-aaec-22909-0242ac120002",
@@ -102,8 +106,10 @@
           "title": "Test",
           "createdAt": "0",
           "updatedAt": "0",
-          "gridItems": {},
-          "pageSettings": []
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
         },
         {
           "id": "0121ab8e-23ha-ryaec-b909-0242ac120042",
@@ -111,8 +117,10 @@
           "title": "Test",
           "createdAt": "0",
           "updatedAt": "0",
-          "gridItems": {},
-          "pageSettings": []
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
         },
         {
           "id": "012112b8e-23ha-aaec-b909-0242ac120042",
@@ -120,8 +128,10 @@
           "title": "Test",
           "createdAt": "0",
           "updatedAt": "0",
-          "gridItems": {},
-          "pageSettings": []
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
         },
         {
           "id": "0121sb8e-23ha-aaec-b909-03322ac120042",
@@ -129,8 +139,10 @@
           "title": "Test",
           "createdAt": "0",
           "updatedAt": "0",
-          "gridItems": {},
-          "pageSettings": []
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
         },
         {
           "id": "0121sb8e-23ha-aaec-b909-02dfd2ac120042",
@@ -138,8 +150,10 @@
           "title": "Test",
           "createdAt": "0",
           "updatedAt": "0",
-          "gridItems": {},
-          "pageSettings": []
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
         },
         {
           "id": "0121sb8e-23ha-aaec-b909-02kkac120042",
@@ -147,8 +161,10 @@
           "title": "Test",
           "createdAt": "0",
           "updatedAt": "0",
-          "gridItems": {},
-          "pageSettings": []
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
         },
         {
           "id": "0121sb8e-23ha-aaec-b909-0242ac1dmnd042",
@@ -156,8 +172,43 @@
           "title": "Test",
           "createdAt": "0",
           "updatedAt": "0",
-          "gridItems": {},
-          "pageSettings": []
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
+        }
+      ]
+    }
+  ],
+  "templates": [
+    {
+      "username": "test",
+      "default": false,
+      "data": [
+        {
+          "id": "AAA-BBB-CCC",
+          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-9.png",
+          "name": "Personal Template",
+          "default": false,
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
+        }
+      ]
+    },
+    {
+      "default": true,
+      "data": [
+        {
+          "id": "DDD-EEE-FFF",
+          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
+          "name": "Template Default 1",
+          "default": true,
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
         }
       ]
     }
