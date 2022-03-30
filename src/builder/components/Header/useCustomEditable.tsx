@@ -8,14 +8,16 @@ import { getPersonaById } from '../../../persona/store/selectors/getPersonaById'
 import { Persona } from '../../../persona/store/types/general';
 import { GenericToast } from '../../../_shared/components/GenericToast';
 
-const DEFAULT_NAME = 'untitled';
 const MAX_NAME_CHARS = 20;
 const TOAST_ID = '1';
 const TOAST_TITLE = 'builder.toast.maxCharacters';
 
 export const useCustomEditable = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { personaId } = useParams();
+
+  const DEFAULT_NAME = t('builder.header.defaultFileName');
 
   const persona: Persona | undefined = useSelector(
     getPersonaById(personaId || ''),
@@ -42,7 +44,7 @@ export const useCustomEditable = () => {
 
   const onSubmit = (submittedFileName: string) => {
     const newFileName =
-      submittedFileName.length === 0 ? 'untitled' : submittedFileName;
+      submittedFileName.length === 0 ? DEFAULT_NAME : submittedFileName;
 
     setFileName(newFileName);
     dispatch(
