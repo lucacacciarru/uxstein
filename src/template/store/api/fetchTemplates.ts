@@ -3,7 +3,6 @@ import { FetchTemplatesResponse } from '../types/fetchTemplates';
 
 export async function fetchTemplatesApi(username: string) {
   const [personalTemplates, defaultTemplates] = await Promise.all([fetchPesonalTemplatesApi(username), fetchDefaultTemplates()]);
-
   const templates: FetchTemplatesResponse = { data: [...personalTemplates.data, ...defaultTemplates.data] };
 
   return templates;

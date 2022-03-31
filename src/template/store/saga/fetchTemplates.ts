@@ -14,7 +14,7 @@ import {
 export function* fetchTemplatesSaga() {
   const { username }: User = yield select(getUserProfile);
 
-  yield put(fetchTemplatesRequest({ username: '' }));
+  yield put(fetchTemplatesRequest({ username }));
   try {
     const response: FetchTemplatesResponse = yield call(
       fetchTemplatesApi,
