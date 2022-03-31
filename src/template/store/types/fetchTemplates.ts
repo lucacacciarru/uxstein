@@ -1,4 +1,4 @@
-import { PayloadAction } from '@reduxjs/toolkit';
+import { PayloadAction, Action } from '@reduxjs/toolkit';
 import { ApiError, Template } from './general';
 
 export enum FETCH_TEMPLATES_ACTION_TYPES {
@@ -19,8 +19,7 @@ export type FetchTemplatesPayload = {
 export type FetchTemplatesSuccessPayload = Template[];
 export type FetchTemplatesFailurePayload = ApiError;
 
-export type FetchTemplatesAction = PayloadAction<
-  FetchTemplatesPayload,
+export type FetchTemplatesAction = Action<
   FETCH_TEMPLATES_ACTION_TYPES.TRIGGER
 >;
 

@@ -30,11 +30,14 @@ export const TemplateRow: React.FC<Props> = ({ category }) => {
           : undefined;
       return (
         <PersonCard
-          id={Date.now().toString()}
+          key={template.id}
+          title={template.name}
+          createdAt={0}
+          updatedAt={0}
           {...template}
+          id={Date.now().toString()}
           cardRef={ref}
-          key={template.createdAt}
-          builderData={{ gridItems: {}, pageSettings: [] }}
+          type={'template'}
         />
       );
     });

@@ -13,7 +13,7 @@ const INITIAL_STATE: TemplateState = {
     byId: {},
   },
 };
-export const personaRootReducer = createReducer(INITIAL_STATE, builder => {
+export const templateRootReducer = createReducer(INITIAL_STATE, builder => {
   builder
     .addCase(fetchTemplatesRequest, fetchTemplatesCase.requestCase)
     .addCase(fetchTemplatesSuccess, fetchTemplatesCase.successCase)

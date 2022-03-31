@@ -1,9 +1,10 @@
 import { StackProps } from '@chakra-ui/react';
 import { useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { useThrottledCallback } from 'use-debounce';
 import { isElementInViewport } from '../../../_shared/utils/isElementInViewport';
-import { mockTemplate } from '../../utils';
+import { getTemplates } from '../../store/selectors/getTemplates';
 
 export const useTemplateRow = (category: 'mine' | 'default') => {
     const { t } = useTranslation();
@@ -12,11 +13,12 @@ export const useTemplateRow = (category: 'mine' | 'default') => {
     const lastCardRef = useRef<HTMLDivElement>(null);
 
     const title = t(`template.container.category.${category}`);
+    const templates = useSelector(getTemplates);
 
-    const author = category === 'mine' ? 'Frank' : category;
+    const isDefault = category === 'default';
     const filteredByCategory = useMemo(() => {
-        return mockTemplate.filter(template => template.author === author);
-    }, [author]);
+        return templates.filter(template => template.isDefault === isDefault)
+    }, [isDefault, templates]);
 
     const [disabled, setDisabled] = useState<'left' | 'right' | undefined>(
         'left',

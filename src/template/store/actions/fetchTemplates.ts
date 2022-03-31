@@ -6,10 +6,7 @@ import {
   FETCH_TEMPLATES_ACTION_TYPES,
 } from '../types/fetchTemplates';
 
-export const fetchTemplatesTrigger = createAction<
-  FetchTemplatesPayload,
-  FETCH_TEMPLATES_ACTION_TYPES.TRIGGER
->(FETCH_TEMPLATES_ACTION_TYPES.TRIGGER);
+export const fetchTemplatesTrigger = createAction(FETCH_TEMPLATES_ACTION_TYPES.TRIGGER);
 
 export const fetchTemplatesRequest = createAction<
   FetchTemplatesPayload,

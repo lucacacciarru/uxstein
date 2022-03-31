@@ -1,10 +1,10 @@
 import { HStack } from '@chakra-ui/react';
-import { renderHook } from '@testing-library/react-hooks';
 import {
   render,
   screen,
   fireEvent,
 } from '../../../_shared/testConfig/customRender';
+import { renderHook } from '../../../_shared/testConfig/customRenderHook';
 import { useTemplateRow } from './useTemplateRow';
 
 describe('useTemplateRow', () => {
