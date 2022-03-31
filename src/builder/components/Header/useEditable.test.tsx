@@ -25,6 +25,17 @@ describe('useEditable', () => {
     expect(result.current.editableProps.value).toBe('untilted');
   });
 
+  test('shoud set value if change with a valid value', () => {
+    render(<EditableMock />);
+
+    const editable = screen.getByDisplayValue('untilted');
+    fireEvent.change(editable, {
+      target: { value: 'valid' },
+    });
+
+    expect(editable).toHaveValue('valid');
+  });
+
   test('shoud show modal if write more than 20 char', () => {
     render(<EditableMock />);
     const { result } = renderHook(() => useTranslation());
