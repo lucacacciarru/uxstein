@@ -1,12 +1,10 @@
 import { useToast } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { getPersonaById } from '../../../persona/store/selectors/getPersonaById';
-import { Persona } from '../../../persona/store/types/general';
 import { GenericToast } from '../../../_shared/components/GenericToast';
 import { updateBuilder } from '../../store/actions/update';
+import { baseSelector } from '../../store/selectors/baseSelector';
 
 const MAX_NAME_CHARS = 20;
 const TOAST_ID = '1';
@@ -15,14 +13,10 @@ const TOAST_TITLE = 'builder.toast.maxCharacters';
 export const useCustomEditable = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { personaId } = useParams();
 
   const DEFAULT_NAME = t('builder.header.defaultFileName');
 
-  const persona: Persona | undefined = useSelector(
-    getPersonaById(personaId || ''),
-  );
-  const title = persona?.title || DEFAULT_NAME;
+  const title = useSelector(baseSelector).title || DEFAULT_NAME;
   const [fileName, setFileName] = useState(title);
 
   const errorToast = useToast({
@@ -49,6 +43,10 @@ export const useCustomEditable = () => {
     setFileName(newFileName);
     dispatch(updateBuilder({ title: newFileName }));
   };
+
+  useEffect(() => {
+    setFileName(title);
+  }, [title]);
 
   return {
     editableProps: {
