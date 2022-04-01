@@ -1,9 +1,8 @@
 import { ActionCreator, AnyAction } from 'redux';
 import { all, fork, takeLatest } from 'redux-saga/effects';
-import { logoutSuccess } from '../actions/logout';
-import { loginSuccess } from '../actions/login';
 import { PostAuthOptions, WorkerSaga } from '../types';
 import { removeAuthTokenSaga, setAuthTokenSaga } from './authToken';
+import { postLogin, postLogout } from '../actions/init';
 
 const DEFAULT_POST_LOGIN_SAGAS = [setAuthTokenSaga];
 
@@ -32,7 +31,7 @@ export function* postAuth(options: PostAuthOptions) {
    * Triggers login/logout watchers
    */
   yield all([
-    ...postLoginSagas.map(saga => wrapSagaWithWatcher(loginSuccess, saga)),
-    ...postLogoutSagas.map(saga => wrapSagaWithWatcher(logoutSuccess, saga)),
+    ...postLoginSagas.map(saga => wrapSagaWithWatcher(postLogin, saga)),
+    ...postLogoutSagas.map(saga => wrapSagaWithWatcher(postLogout, saga)),
   ]);
 }

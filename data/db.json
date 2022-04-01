@@ -186,10 +186,90 @@
       "default": false,
       "data": [
         {
-          "id": "AAA-BBB-CCC",
+          "id": "AAA",
+          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-2.png",
+          "name": "Personal Template",
+          "isDefault": false,
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
+        },
+        {
+          "id": "BBB",
+          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-3.png",
+          "name": "Personal Template",
+          "isDefault": false,
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
+        },
+        {
+          "id": "CCC",
+          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-1.png",
+          "name": "Personal Template",
+          "isDefault": false,
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
+        },
+        {
+          "id": "DDD",
+          "src": "https://i1.wp.com/assets.productschool.com/wp-content/uploads/2019/05/14083916/persona-24-24_2x.png",
+          "name": "Personal Template",
+          "isDefault": false,
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
+        },
+        {
+          "id": "EEE",
+          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-7.png",
+          "name": "Personal Template",
+          "isDefault": false,
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
+        },
+        {
+          "id": "FFF",
+          "src": "https://i1.wp.com/assets.productschool.com/wp-content/uploads/2019/05/14083916/persona-24-24_2x.png",
+          "name": "Personal Template",
+          "isDefault": false,
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
+        },
+        {
+          "id": "GGG",
+          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-8.png",
+          "name": "Personal Template",
+          "isDefault": false,
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
+        },
+        {
+          "id": "HHH",
           "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-9.png",
           "name": "Personal Template",
-          "default": false,
+          "isDefault": false,
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
+        },
+        {
+          "id": "III",
+          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-11.png",
+          "name": "Personal Template",
+          "isDefault": false,
           "builderData": {
             "gridItems": {},
             "pageSettings": []
@@ -201,10 +281,60 @@
       "default": true,
       "data": [
         {
-          "id": "DDD-EEE-FFF",
+          "id": "123",
           "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
           "name": "Template Default 1",
-          "default": true,
+          "isDefault": true,
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
+        },
+        {
+          "id": "456",
+          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-12.png",
+          "name": "Template Default 1",
+          "isDefault": true,
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
+        },
+        {
+          "id": "789",
+          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
+          "name": "Template Default 1",
+          "isDefault": true,
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
+        },
+        {
+          "id": "XYZ",
+          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
+          "name": "Template Default 1",
+          "isDefault": true,
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
+        },
+        {
+          "id": "UVW",
+          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
+          "name": "Template Default 1",
+          "isDefault": true,
+          "builderData": {
+            "gridItems": {},
+            "pageSettings": []
+          }
+        },
+        {
+          "id": "LLL",
+          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
+          "name": "Template Default 1",
+          "isDefault": true,
           "builderData": {
             "gridItems": {},
             "pageSettings": []

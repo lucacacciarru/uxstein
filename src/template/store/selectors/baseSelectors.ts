@@ -1,5 +1,5 @@
 import { TemplateState } from '../types/general';
 
-type State = { persona: TemplateState };
+type State = { template: TemplateState };
 
-export const baseSelector = (state: State) => state.persona;
+export const baseSelector = (state: State) => state.template;

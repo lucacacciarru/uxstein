@@ -4,12 +4,13 @@ import { builderRootSaga } from '../../builder/store/sagas/rootSaga';
 import { personaRootSaga } from '../../persona/store/saga';
 import { templateRootSaga } from '../../template/store/saga';
 import { fetchPersonaSaga } from '../../persona/store/saga/fetchPersona';
+import { fetchTemplatesSaga } from '../../template/store/saga/fetchTemplates';
 
 const DEFAULT_POST_AUTH_OPTIONS = {
   /**
    * Array of sagas that should be executed right after login.
    */
-  postLogin: [fetchPersonaSaga],
+  postLogin: [fetchPersonaSaga, fetchTemplatesSaga],
   /**
    * Array of sagas that should be executed right after logout.
    */

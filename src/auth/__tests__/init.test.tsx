@@ -1,9 +1,7 @@
 import { waitFor } from '@testing-library/react';
 import fetchMock from 'jest-fetch-mock';
 import { getStoreForTesting } from '../../_shared/testConfig/getStoreForTesting';
-import { initAuth } from '../store/actions/init';
-import { loginSuccess } from '../store/actions/login';
-import { logoutSuccess } from '../store/actions/logout';
+import { initAuth, postLogin, postLogout } from '../store/actions/init';
 import * as storageUtils from '../utils/authToken';
 
 const AUTH_TOKEN = 'authentication token';
@@ -55,8 +53,11 @@ describe('Authentication', () => {
   describe('init', () => {
     it('should check inside the session storage if the token is stored', () => {
       const getItemSpy = jest.spyOn(window.localStorage, 'getItem');
-      const store = getStoreForTesting({});
-
+      const store = getStoreForTesting({
+        mocks: {
+          auth: { profile: FAKE_USER },
+        },
+      });
       store.dispatch(initAuth());
 
       expect(getItemSpy).toHaveBeenCalled();
@@ -83,24 +84,30 @@ describe('Authentication', () => {
   describe('login', () => {
     it('should set the token inside the storage after login', () => {
       const setAuthTokenSpy = jest.spyOn(storageUtils, 'setAuthToken');
-      const store = getStoreForTesting({});
+      const store = getStoreForTesting({
+        mocks: {
+          auth: { profile: FAKE_USER },
+        },
+      });
 
-      store.dispatch(loginSuccess(FAKE_USER));
+      store.dispatch(postLogin(FAKE_USER));
 
       expect(setAuthTokenSpy).toHaveBeenCalled();
       expect(storageUtils.getAuthToken()).toBe(AUTH_TOKEN);
     });
 
-    it('should call the additional postLogin sagas after a successful login', async () => {
+    it('should call the additional postLogin sagas after a successful login', () => {
       const postLoginSaga = jest.fn();
       const store = getStoreForTesting({
+        mocks: {
+          auth: { profile: FAKE_USER },
+        },
         postAuthOptions: {
           postLogin: [postLoginSaga],
         },
       });
 
-      store.dispatch(loginSuccess(FAKE_USER));
-
+      store.dispatch(postLogin(FAKE_USER));
       expect(postLoginSaga).toHaveBeenCalled();
     });
   });
@@ -119,7 +126,7 @@ describe('Authentication', () => {
 
       storageUtils.setAuthToken(AUTH_TOKEN);
 
-      store.dispatch(logoutSuccess());
+      store.dispatch(postLogout());
 
       expect(removeAuthTokenSpy).toHaveBeenCalled();
       expect(storageUtils.getAuthToken()).toBe(null);
@@ -128,12 +135,15 @@ describe('Authentication', () => {
     it('should call the additional postLogout sagas after a successful logout', async () => {
       const postLogoutSaga = jest.fn();
       const store = getStoreForTesting({
+        mocks: {
+          auth: { profile: FAKE_USER },
+        },
         postAuthOptions: {
           postLogout: [postLogoutSaga],
         },
       });
 
-      store.dispatch(logoutSuccess());
+      store.dispatch(postLogout());
 
       expect(postLogoutSaga).toHaveBeenCalled();
     });

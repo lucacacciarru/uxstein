@@ -13,6 +13,12 @@ const INITIAL_STATE: DefaultRootState = {
       byId: {},
     },
   },
+  template: {
+    data: {
+      allIds: [],
+      byId: {},
+    },
+  },
   builder: {
     allIds: [],
     byId: {},
