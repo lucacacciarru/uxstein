@@ -1,4 +1,4 @@
-import { PayloadAction } from '@reduxjs/toolkit';
+import { PayloadAction, Action } from '@reduxjs/toolkit';
 import { ApiError, Persona } from './general';
 
 export enum FETCHPERSONA_ACTION_TYPES {
@@ -12,22 +12,13 @@ export type FetchPersonaResponse = {
   data: Persona[];
 };
 
-export type FetchPersonaPayload = {
-  username: string;
-};
-
 export type FetchPersonaSuccessPayload = Persona[];
 export type FetchPersonaFailurePayload = ApiError;
 
-export type FetchPersonaAction = PayloadAction<
-  FetchPersonaPayload,
-  FETCHPERSONA_ACTION_TYPES.TRIGGER
->;
+export type FetchPersonaAction = Action<FETCHPERSONA_ACTION_TYPES.TRIGGER>;
 
-export type FetchPersonaRequestAction = PayloadAction<
-  FetchPersonaPayload,
-  FETCHPERSONA_ACTION_TYPES.REQUEST
->;
+export type FetchPersonaRequestAction =
+  Action<FETCHPERSONA_ACTION_TYPES.REQUEST>;
 
 export type FetchPersonaSuccesssAction = PayloadAction<
   FetchPersonaSuccessPayload,

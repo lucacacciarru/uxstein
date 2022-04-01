@@ -1,9 +1,9 @@
-import { Alert, AlertIcon, AlertTitle, useToast } from '@chakra-ui/react';
+import { useToast } from '@chakra-ui/react';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { AttributeName, ItemAttribute } from '../store/types';
 import { useAttributeField } from './useAttributeField';
 import { checkIfListHasMoreThanOneItem } from '../utils/checkIfListHasMoreThanOneItem';
+import { GenericToast } from '../../_shared/components/GenericToast';
 
 export function useMultipleAttributeField(
   blockId: string,
@@ -17,7 +17,6 @@ export function useMultipleAttributeField(
     debouncedUpdateValue,
   } = useAttributeField(blockId, attributeName);
 
-  const { t } = useTranslation();
   const toast = useToast();
 
   const [attributeItems, setAttributeItems] = useState<
@@ -65,14 +64,11 @@ export function useMultipleAttributeField(
       return;
     }
     toast({
-      isClosable: true,
       render: () => (
-        <Alert status="error">
-          <AlertIcon />
-          <AlertTitle mr={2}>
-            {t('builder.toolBar.errors.impossibleToDeleteItem')}
-          </AlertTitle>
-        </Alert>
+        <GenericToast
+          status="error"
+          translationKey="builder.toolBar.errors.impossibleToDeleteItem"
+        />
       ),
     });
   };

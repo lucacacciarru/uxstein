@@ -1,4 +1,4 @@
-import { useToast, UseToastOptions } from '@chakra-ui/react';
+import { useToast } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,23 +6,18 @@ import { useParams } from 'react-router-dom';
 import { updatePersonaTrigger } from '../../../persona/store/actions/updatePersona';
 import { getPersonaById } from '../../../persona/store/selectors/getPersonaById';
 import { Persona } from '../../../persona/store/types/general';
+import { GenericToast } from '../../../_shared/components/GenericToast';
 
-const DEFAULT_NAME = 'untilted';
 const MAX_NAME_CHARS = 20;
 const TOAST_ID = '1';
 const TOAST_TITLE = 'builder.toast.maxCharacters';
-const ERROR_TOAST: UseToastOptions = {
-  id: TOAST_ID,
-  title: '',
-  status: 'error',
-  variant: 'left-accent',
-  position: 'bottom',
-  duration: 2000,
-};
 
 export const useCustomEditable = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { personaId } = useParams();
+
+  const DEFAULT_NAME = t('builder.header.defaultFileName');
 
   const persona: Persona | undefined = useSelector(
     getPersonaById(personaId || ''),
@@ -30,10 +25,9 @@ export const useCustomEditable = () => {
   const title = persona?.title || DEFAULT_NAME;
   const [fileName, setFileName] = useState(title);
 
-  const { t } = useTranslation();
   const errorToast = useToast({
-    ...ERROR_TOAST,
-    title: t(TOAST_TITLE),
+    duration: 2000,
+    render: () => <GenericToast status="error" translationKey={TOAST_TITLE} />,
   });
 
   const onChange = (newFileName: string) => {
@@ -50,7 +44,7 @@ export const useCustomEditable = () => {
 
   const onSubmit = (submittedFileName: string) => {
     const newFileName =
-      submittedFileName.length === 0 ? 'untilted' : submittedFileName;
+      submittedFileName.length === 0 ? DEFAULT_NAME : submittedFileName;
 
     setFileName(newFileName);
     dispatch(

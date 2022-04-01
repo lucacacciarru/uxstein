@@ -1,4 +1,5 @@
 import { outline } from './variants/outline';
+import { outlineBlack } from './variants/outlineBlack';
 import { solid } from './variants/solid';
 import { link } from './variants/link';
 import { error } from './variants/error';
@@ -17,7 +18,8 @@ export const Button: ComponentStyleConfig = {
     link,
     unstyled,
     error,
-    toggle
+    toggle,
+    outlineBlack,
   },
   defaultProps: {
     variant: 'solid',
