@@ -1,7 +1,6 @@
 import { call, put, select } from 'redux-saga/effects';
 import { User } from '../../../auth/store';
 import { getUserProfile } from '../../../auth/store/selectors';
-import { getAuthToken } from '../../../auth/utils';
 import { createSagaWithLoadingManagement } from '../../../_shared/store/loading';
 import {
   fetchTemplatesFailure,

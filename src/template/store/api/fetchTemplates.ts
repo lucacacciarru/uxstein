@@ -15,8 +15,7 @@ export async function fetchTemplatesApi(username: string) {
 
 async function fetchTemplates(username?: string) {
   const resData = await wretch(
-    `${process.env.REACT_APP_API_URL}/templates?default=true${
-      username ? `username=${username}` : ''
+    `${process.env.REACT_APP_API_URL}/templates?default=${username ? `false&username=${username}` : 'true'
     }`,
   )
     .get()
