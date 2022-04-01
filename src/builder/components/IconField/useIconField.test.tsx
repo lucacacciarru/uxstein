@@ -50,6 +50,7 @@ describe('useIconField', () => {
           },
           pageSettings: [],
           personaId: 'any id',
+          title: 'any title',
         },
       },
     });

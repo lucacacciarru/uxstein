@@ -12,10 +12,11 @@ const MOCK_BUILDER_STATE: BuilderState = {
   },
   pageSettings: [{ i: EXISTING_ID, h: 1, w: 1, x: 1, y: 1 }],
   personaId: 'any id',
+  title: 'any title',
 };
 
 describe('DroppablePage', () => {
-  test('shoud render correctly', () => {
+  test('should render correctly', () => {
     const { result } = renderHook(() => useBlockSetup());
     render(<DroppablePage blockSetup={result.current.blockSetup} />, {
       mocks: { builder: MOCK_BUILDER_STATE },

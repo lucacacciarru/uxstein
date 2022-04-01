@@ -24,6 +24,7 @@ const INITIAL_STATE: DefaultRootState = {
     byId: {},
     pageSettings: [],
     personaId: '',
+    title: ''
   },
   loading: {},
 };

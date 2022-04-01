@@ -28,6 +28,7 @@ const MOCK_BUILDER_STATE: BuilderState = {
   pageSettings: [],
   selectedBlockId: undefined,
   personaId: 'any id',
+  title: 'any title',
 };
 
 describe('useAttributeField', () => {

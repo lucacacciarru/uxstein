@@ -31,6 +31,7 @@ describe('IconField component', () => {
           },
           pageSettings: [],
           personaId: 'any id',
+          title: 'any title',
         },
       },
     });

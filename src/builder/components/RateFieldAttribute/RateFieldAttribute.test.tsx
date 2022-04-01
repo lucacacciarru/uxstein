@@ -31,6 +31,7 @@ describe('RateFieldAttribute component', () => {
           },
           pageSettings: [],
           personaId: 'any id',
+          title: 'any title',
         },
       },
     });

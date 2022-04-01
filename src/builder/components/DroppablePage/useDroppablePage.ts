@@ -8,11 +8,13 @@ import { getPageSettings } from '../../store/selectors/getPageSettings';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { populateBuilderTrigger } from '../../store/actions/populate';
+import { useLoading } from '../../../_shared/store/loading';
 
 export const useDroppablePage = (blockSetup: BlockSetup) => {
     const dispatch = useDispatch();
     const { personaId } = useParams();
     const layout = useSelector(getPageSettings);
+    const { isLoading } = useLoading('personas');
 
     const onDropHandler = (newLayout: Layout[], newBlock: Layout, _event: Event) => {
         const itemWithSettings = { ...newBlock, ...blockSetup.layoutSettings, ...blockSetup.optionalSettings };
@@ -64,8 +66,10 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
     }
 
     useEffect(() => {
-        dispatch(populateBuilderTrigger({ personaId: personaId || '' }));
-    }, [dispatch, personaId]);
+        if (!isLoading) {
+            dispatch(populateBuilderTrigger({ personaId: personaId || '' }));
+        }
+    }, [dispatch, personaId, isLoading]);
 
     return {
         layout,

@@ -19,6 +19,7 @@ const MOCK_BUILDER_STATE: BuilderState = {
   },
   pageSettings: MOCK_PAGE_SETTINGS,
   personaId: ANY_ID,
+  title: 'any title',
 };
 
 const MOCK_PERSONA_STATE: PersonaState = {

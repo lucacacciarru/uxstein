@@ -1,6 +1,6 @@
 import { renderHook, act } from '../../_shared/testConfig/customRenderHook';
 import { BuilderState } from '../store/types';
-import { useSeletedBlock } from './useSelectedBlock';
+import { useSelectedBlock } from './useSelectedBlock';
 
 const MOCK_BUILDER_STATE: BuilderState = {
   allIds: ['existingId'],
@@ -8,17 +8,18 @@ const MOCK_BUILDER_STATE: BuilderState = {
   pageSettings: [],
   selectedBlockId: undefined,
   personaId: 'any id',
+  title: 'any title',
 };
 
 describe('useSelectedBlock', () => {
-  test('shoud return selectedBlockId = undefined if dont select a block', () => {
-    const { result } = renderHook(() => useSeletedBlock());
+  test('should return selectedBlockId = undefined if dont select a block', () => {
+    const { result } = renderHook(() => useSelectedBlock());
 
     expect(result.current.selectedBlockId).toBeUndefined();
   });
 
-  test('shoud return selectedBlockId = "existingId" if call selectBlock("existingId")', () => {
-    const { result } = renderHook(() => useSeletedBlock(), {
+  test('should return selectedBlockId = "existingId" if call selectBlock("existingId")', () => {
+    const { result } = renderHook(() => useSelectedBlock(), {
       mocks: { builder: MOCK_BUILDER_STATE },
     });
 
@@ -27,8 +28,8 @@ describe('useSelectedBlock', () => {
     expect(result.current.selectedBlockId).toBe('existingId');
   });
 
-  test('shoud return selectedBlockId = undefined if call clearSelection()', () => {
-    const { result } = renderHook(() => useSeletedBlock(), {
+  test('should return selectedBlockId = undefined if call clearSelection()', () => {
+    const { result } = renderHook(() => useSelectedBlock(), {
       mocks: { builder: MOCK_BUILDER_STATE },
     });
 

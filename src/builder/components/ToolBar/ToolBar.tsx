@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react';
 import { FC } from 'react';
 import { BlockSetup } from '../../hooks/useBlockSetup';
-import { useSeletedBlock } from '../../hooks/useSelectedBlock';
+import { useSelectedBlock } from '../../hooks/useSelectedBlock';
 import { AddTab } from '../AddTab/AddTab';
 import { EditTab } from '../EditTab/EditTab';
 import { stackContainerBaseProps } from './toolBarStylingProps';
@@ -18,7 +18,7 @@ type Props = {
 };
 
 export const ToolBar: FC<Props> = ({ setBlockSetup }) => {
-  const { clearSelection, selectedBlockId } = useSeletedBlock();
+  const { clearSelection, selectedBlockId } = useSelectedBlock();
   const selectedIndex = selectedBlockId ? 1 : 0;
 
   return (

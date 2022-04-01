@@ -17,12 +17,15 @@ import { updatePageSettingsCase } from './updatePageSettings';
 import { updatePageSettings } from '../actions/updatePageSettings';
 import { setBuilder } from '../actions/set';
 import { setCase } from './set';
+import { updateBuilder } from '../actions/update';
+import { updateCase } from './update';
 
 const INITIAL_STATE: BuilderState = {
   allIds: [],
   byId: {},
   pageSettings: [],
   personaId: '',
+  title: ''
 };
 
 export const builderRooorReducer = createReducer(INITIAL_STATE, builder => {
@@ -36,5 +39,6 @@ export const builderRooorReducer = createReducer(INITIAL_STATE, builder => {
     .addCase(updateBlockStyle, updateBlockStyleCase)
     .addCase(deleteItem, deleteItemCase)
     .addCase(setBuilder, setCase)
+    .addCase(updateBuilder, updateCase)
     .addDefaultCase(state => state);
 });

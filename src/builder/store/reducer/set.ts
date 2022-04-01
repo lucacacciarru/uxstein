@@ -8,5 +8,6 @@ export const setCase: CaseReducer<BuilderState, SetAction> = (_, action) => {
         byId: action.payload.gridItems,
         pageSettings: action.payload.pageSettings,
         personaId: action.payload.personaId,
+        title: action.payload.title,
     }
 }

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearSelected, selectItem } from '../store/actions/selected';
 import { getSelectedBlockId } from '../store/selectors/getSelectedBlockId';
 
-export const useSeletedBlock = () => {
+export const useSelectedBlock = () => {
     const dispatch = useDispatch();
     const selectedBlockId = useSelector(getSelectedBlockId);
 
