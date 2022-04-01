@@ -15,7 +15,7 @@ export function* init() {
   try {
     const response: LoginResponse = yield call(loginWithToken, token);
     yield put(loginSuccess(response.data));
-    yield put(postLogin(response.data))
+    yield put(postLogin(response.data));
   } catch (e) {
     yield put(loginFailure({}));
   }

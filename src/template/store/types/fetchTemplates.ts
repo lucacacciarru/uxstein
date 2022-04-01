@@ -4,7 +4,7 @@ import { ApiError, Template } from './general';
 export enum FETCH_TEMPLATES_ACTION_TYPES {
   TRIGGER = 'template/fetchTemplate/trigger',
   REQUEST = 'template/fetchTemplate/request',
-  SUCCESS = 'template/fetchTemplate/successs',
+  SUCCESS = 'template/fetchTemplate/success',
   FAILURE = 'template/fetchTemplate/failure',
 }
 
@@ -19,9 +19,7 @@ export type FetchTemplatesPayload = {
 export type FetchTemplatesSuccessPayload = Template[];
 export type FetchTemplatesFailurePayload = ApiError;
 
-export type FetchTemplatesAction = Action<
-  FETCH_TEMPLATES_ACTION_TYPES.TRIGGER
->;
+export type FetchTemplatesAction = Action<FETCH_TEMPLATES_ACTION_TYPES.TRIGGER>;
 
 export type FetchTemplatesRequestAction = PayloadAction<
   FetchTemplatesPayload,
