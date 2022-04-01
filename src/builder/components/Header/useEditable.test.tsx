@@ -28,10 +28,10 @@ describe('useEditable', () => {
     expect(result.current.editableProps.value).toBe(DEFAULT_NAME);
   });
 
-  test('shoud set value if change with a valid value', () => {
+  test('should set value if change with a valid value', () => {
     render(<EditableMock />);
 
-    const editable = screen.getByDisplayValue('untilted');
+    const editable = screen.getByDisplayValue(DEFAULT_NAME);
     fireEvent.change(editable, {
       target: { value: 'valid' },
     });
