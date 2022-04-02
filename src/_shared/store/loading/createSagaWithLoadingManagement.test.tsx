@@ -1,7 +1,7 @@
-import { put, select } from 'redux-saga/effects';
+import { fork, put, select } from 'redux-saga/effects';
 import { createCustomSagaRunner } from '../../testConfig/customSagaRunner';
 import { getIsLoading } from './selectors';
-import { setLoading } from './actions';
+import { setLoading, unsetLoading } from './actions';
 import { createSagaWithLoadingManagement } from './utils';
 import { LOADING_REDUCER_KEY } from './reducer';
 
@@ -115,5 +115,51 @@ describe('createSagaWithLoadingManagement', () => {
 
     await runSaga(withResetCase).toPromise();
     await runSaga(withoutResetCase).toPromise();
+  });
+
+  it('should not call the saga until all the dependencies inside `dependsOn` are `idle`', async () => {
+    const DEPENDENT_KEY = 'DEPENDENT_KEY';
+
+    function* testSaga() {
+      const loadingState: boolean = yield select(getIsLoading, TEST_KEY);
+      expect(loadingState).toBeFalsy();
+    }
+
+    const spySaga = jest.fn().mockImplementation(testSaga);
+
+    function* shouldNotHaveBeenCalledTest() {
+      const saga = createSagaWithLoadingManagement(spySaga, {
+        key: DEPENDENT_KEY,
+        dependsOn: [TEST_KEY],
+      });
+
+      fork(saga);
+    }
+
+    function* shouldHaveBeenCalledTest() {
+      const saga = createSagaWithLoadingManagement(spySaga, {
+        key: DEPENDENT_KEY,
+        dependsOn: [TEST_KEY],
+      });
+
+      yield put(unsetLoading({ key: TEST_KEY }));
+
+      yield saga();
+    }
+
+    const runSaga = createCustomSagaRunner({
+      mocks: {
+        loading: {
+          [TEST_KEY]: {
+            loading: 1,
+          },
+        },
+      },
+    });
+
+    await runSaga(shouldNotHaveBeenCalledTest).toPromise();
+    expect(spySaga).not.toHaveBeenCalled();
+    await runSaga(shouldHaveBeenCalledTest).toPromise();
+    expect(spySaga).toHaveBeenCalled();
   });
 });
