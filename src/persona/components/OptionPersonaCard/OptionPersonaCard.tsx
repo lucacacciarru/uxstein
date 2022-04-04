@@ -1,6 +1,7 @@
 import { Box, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { Icon } from '../../../_shared/components';
+
 import { ActionModal } from '../../../_shared/components/ActionModal';
 import { TextInputModal } from '../../../_shared/components/TextInputModal';
 import { useOptionPersonaCard } from './useOptionPersonaCard';
@@ -11,6 +12,10 @@ type Props = {
 
 export const OptionPersonaCard: React.FC<Props> = ({ personaId }) => {
   const { t } = useTranslation();
+
+  type Props = {
+    templateId: string;
+  };
 
   const {
     isOpenRename,
@@ -59,8 +64,8 @@ export const OptionPersonaCard: React.FC<Props> = ({ personaId }) => {
         onClose={onCloseRename}
         onSubmit={renamePersonaTitle}
         textContent={{
-          header: 'persona.modal.renameTitle',
-          inputPlaceholder: 'persona.modal.renamePlaceholder',
+          inputPlaceholder: 'auth',
+          header: 'auth',
           toast: 'auth',
         }}
       />

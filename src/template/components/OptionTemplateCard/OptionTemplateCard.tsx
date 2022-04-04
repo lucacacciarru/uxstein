@@ -1,6 +1,7 @@
 import { Box, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { Icon } from '../../../_shared/components';
+
 import { TextInputModal } from '../../../_shared/components/TextInputModal';
 import { ActionModal } from '../../../_shared/components/ActionModal';
 import { useOptionTemplateCard } from './useOptionTemplateCard';
@@ -11,6 +12,7 @@ type Props = {
 
 export const OptionTemplateCard: React.FC<Props> = ({ templateId }) => {
   const { t } = useTranslation();
+
   const {
     isOpenRename,
     onCloseRename,
@@ -50,6 +52,7 @@ export const OptionTemplateCard: React.FC<Props> = ({ templateId }) => {
           </MenuItem>
         </MenuList>
       </Menu>
+
       <TextInputModal
         isOpen={isOpenRename}
         onClose={onCloseRename}
