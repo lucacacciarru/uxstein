@@ -16,18 +16,4 @@ describe('Card component', () => {
     const card = screen.getByRole('card');
     expect(card).toBeInTheDocument();
   });
-  test('should show avatar with icon if type is "template"', () => {
-    render(
-      <PersonaCard
-        id="anyid"
-        updatedAt={0}
-        createdAt={0}
-        src="test"
-        title="test"
-        builderData={{ gridItems: {}, pageSettings: [] }}
-      />,
-    );
-    const avatar = screen.getByTestId('avatar');
-    expect(avatar).toBeInTheDocument();
-  });
 });
