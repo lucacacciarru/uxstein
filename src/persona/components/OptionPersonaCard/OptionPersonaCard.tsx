@@ -1,15 +1,17 @@
 import { Box, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { Icon } from '../../../_shared/components';
-import { ModalDeletePersona } from '../ModalDeletePersona';
-import { ModalRenamePersona } from '../ModalRenamePersona';
-import { usePersonaModal } from '../../../_shared/hooks/useOptionModal';
+import { ActionModal } from '../../../_shared/components/ActionModal';
+import { TextInputModal } from '../../../_shared/components/TextInputModal';
+import { useOptionPersonaCard } from './useOptionPersonaCard';
 
 type Props = {
   personaId: string;
 };
 
 export const OptionPersonaCard: React.FC<Props> = ({ personaId }) => {
+  const { t } = useTranslation();
+
   const {
     isOpenRename,
     onCloseRename,
@@ -17,9 +19,10 @@ export const OptionPersonaCard: React.FC<Props> = ({ personaId }) => {
     isOpenDelete,
     onCloseDelete,
     onOpenDelete,
-  } = usePersonaModal();
+    deleteSelectedPersona,
+    renamePersonaTitle,
+  } = useOptionPersonaCard(personaId);
 
-  const { t } = useTranslation();
   return (
     <>
       <Menu>
@@ -35,12 +38,14 @@ export const OptionPersonaCard: React.FC<Props> = ({ personaId }) => {
         </MenuButton>
         <MenuList>
           <MenuItem
+            data-testid="buttonRenameModal"
             onClick={onOpenRename}
             icon={<Icon name="Edit" color="black20" />}
           >
             {t('optionsCard.rename')}
           </MenuItem>
           <MenuItem
+            data-testid="buttonDeleteModal"
             onClick={onOpenDelete}
             icon={<Icon name="Delete" color="black20" />}
           >
@@ -48,15 +53,26 @@ export const OptionPersonaCard: React.FC<Props> = ({ personaId }) => {
           </MenuItem>
         </MenuList>
       </Menu>
-      <ModalDeletePersona
-        isOpen={isOpenDelete}
-        onClose={onCloseDelete}
-        personaId={personaId}
-      />
-      <ModalRenamePersona
+
+      <TextInputModal
         isOpen={isOpenRename}
         onClose={onCloseRename}
-        personaId={personaId}
+        onSubmit={renamePersonaTitle}
+        textContent={{
+          header: 'persona.modal.renameTitle',
+          inputPlaceholder: 'persona.modal.renamePlaceholder',
+          toast: 'auth',
+        }}
+      />
+      <ActionModal
+        isOpen={isOpenDelete}
+        onClose={onCloseDelete}
+        onSubmit={deleteSelectedPersona}
+        textContent={{
+          header: 'persona.modal.deleteTitle',
+          body: 'persona.modal.deleteBody',
+          toast: 'auth',
+        }}
       />
     </>
   );

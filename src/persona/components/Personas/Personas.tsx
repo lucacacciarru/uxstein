@@ -21,9 +21,7 @@ export const Personas: React.FC = () => {
     return isLoading ? (
       <SkeletonPersonCardList numberOfItems={10} />
     ) : (
-      personas.map(persona => (
-        <PersonaCard type="persona" key={persona.id} {...persona} />
-      ))
+      personas.map(persona => <PersonaCard key={persona.id} {...persona} />)
     );
   }, [isLoading, personas]);
   return <SimpleGrid {...containerProps}>{renderPersona}</SimpleGrid>;

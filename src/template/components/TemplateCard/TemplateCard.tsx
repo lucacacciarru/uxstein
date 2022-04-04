@@ -1,25 +1,28 @@
-import { Persona } from '../../../persona/store/types/general';
+import { Template } from '../../../template/store/types/general';
+import { AvatarTemplate } from '../AvatarTemplate';
 import { CardContainer } from '../../../_shared/components/CardContainer';
-import { PersonaTemplateContentCard } from '../../../_shared/components/PersonaTemplateContentCard';
+import { ContentCard } from '../../../_shared/components/ContentCard';
 import { OptionTemplateCard } from '../OptionTemplateCard';
 
 type Props = {
-  author?: string;
-  type: 'persona' | 'template';
   cardRef?: React.RefObject<HTMLDivElement>;
-  option: boolean;
-} & Persona;
+} & Template;
 
 export const TemplateCard: React.FC<Props> = ({
   cardRef,
   id,
-  option,
+  isDefault,
+  name,
   ...rest
 }) => {
   return (
     <CardContainer role="card" ref={cardRef}>
-      {option && <OptionTemplateCard templateId={id} />}
-      <PersonaTemplateContentCard {...rest} />
+      {!isDefault && <OptionTemplateCard templateId={id} />}
+      <ContentCard
+        title={name}
+        Avatar={<AvatarTemplate isDefault={isDefault} />}
+        {...rest}
+      />
     </CardContainer>
   );
 };

@@ -1,6 +1,7 @@
 import { errorPage } from './errorPage';
 import { navigation } from './navigation';
 import { optionsCard } from './optionsCard';
+import { modal } from './modal';
 import { auth } from '../../../auth/i18n/it';
 import { persona } from '../../../persona/i18n/it';
 import { template } from '../../../template/i18n/it';
@@ -17,5 +18,6 @@ export const it = {
     template,
     builder,
     optionsCard,
+    modal,
   },
 };

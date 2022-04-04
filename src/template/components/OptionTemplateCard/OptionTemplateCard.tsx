@@ -1,9 +1,9 @@
 import { Box, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { Icon } from '../../../_shared/components';
-import { ModalRenameTemplate } from '../ModalRenameTemplate';
-import { usePersonaModal } from '../../../_shared/hooks/useOptionModal';
-import { ModalDeleteTemplate } from '../ModalDeleteTemplate';
+import { TextInputModal } from '../../../_shared/components/TextInputModal';
+import { ActionModal } from '../../../_shared/components/ActionModal';
+import { useOptionTemplateCard } from './useOptionTemplateCard';
 
 type Props = {
   templateId: string;
@@ -18,7 +18,10 @@ export const OptionTemplateCard: React.FC<Props> = ({ templateId }) => {
     isOpenDelete,
     onCloseDelete,
     onOpenDelete,
-  } = usePersonaModal();
+    deleteSelectedTemplate,
+    renameTemplateTitle,
+  } = useOptionTemplateCard(templateId);
+
   return (
     <>
       <Menu>
@@ -47,15 +50,21 @@ export const OptionTemplateCard: React.FC<Props> = ({ templateId }) => {
           </MenuItem>
         </MenuList>
       </Menu>
-      <ModalRenameTemplate
+      <TextInputModal
         isOpen={isOpenRename}
         onClose={onCloseRename}
-        templateId={templateId}
+        onSubmit={renameTemplateTitle}
+        textContent={{
+          inputPlaceholder: 'auth',
+          header: 'auth',
+          toast: 'auth',
+        }}
       />
-      <ModalDeleteTemplate
+      <ActionModal
         isOpen={isOpenDelete}
         onClose={onCloseDelete}
-        templateId={templateId}
+        onSubmit={deleteSelectedTemplate}
+        textContent={{ body: 'auth', header: 'auth', toast: 'auth' }}
       />
     </>
   );

@@ -12,44 +12,57 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
-import { Icon } from '../../../_shared/components';
+import { TranslationKey } from '../../types/i18n';
+import { Icon } from '../Icon';
+import { useActionModal } from './useActionModal';
 
 type Props = {
   isOpen: boolean;
   onClose: () => void;
-  templateId: string;
+  onSubmit: Function;
+  textContent: {
+    header: TranslationKey;
+    body: TranslationKey;
+    toast: TranslationKey;
+  };
 };
 
-export const ModalDeleteTemplate: React.FC<Props> = ({
+export const ActionModal: React.FC<Props> = ({
   isOpen,
   onClose,
-  templateId,
+  textContent,
+  onSubmit,
 }) => {
   const { t } = useTranslation();
+  const { onClick } = useActionModal(onSubmit, textContent.toast);
+
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>
           <Stack alignItems="center" justifyContent="center">
-            <Icon name="Deleted" size="9rem" />
+            <Icon name="Deleted" size="28" />
             <Text as="h3" textStyle="h3">
-              {t('template.modal.deleteTitle')}
+              {t(textContent.header)}
             </Text>
           </Stack>
         </ModalHeader>
         <ModalCloseButton />
-        <ModalBody textAlign="center">
-          {t('template.modal.deleteBody')}
-        </ModalBody>
+        <ModalBody textAlign="center">{t(textContent.body)}</ModalBody>
 
         <ModalFooter>
           <HStack alignItems="center" justifyContent="center" w="full">
-            <Button data-testid="confirmButton" variant="error" mr={3}>
-              {t('template.modal.confirmButton')}
+            <Button
+              data-testid="confirmButton"
+              variant="error"
+              mr={3}
+              onClick={onClick}
+            >
+              {t('modal.textInputModal.confirmButton')}
             </Button>
             <Button variant="ghost" onClick={onClose}>
-              {t('template.modal.cancelButton')}
+              {t('modal.textInputModal.cancelButton')}
             </Button>
           </HStack>
         </ModalFooter>

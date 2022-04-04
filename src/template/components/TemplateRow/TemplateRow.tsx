@@ -20,25 +20,19 @@ export const TemplateRow: React.FC<Props> = ({ category }) => {
     lastCardRef,
   } = useTemplateRow(category);
 
-  const renderTemplateByAuthor = useMemo(() => {
-    const showOption = category === 'mine' ? true : false;
-    return filteredByCategory.map((template, index, list) => {
-      const ref =
-        index === 0
-          ? firstCardRef
-          : index === list.length - 1
-          ? lastCardRef
-          : undefined;
-      return (
-        <TemplateCard
-          {...template}
-          id={Date.now().toString()}
-          cardRef={ref}
-          type={'template'}
-        />
-      );
-    });
-  }, [category, filteredByCategory, firstCardRef, lastCardRef]);
+  const renderTemplateByAuthor = useMemo(
+    () =>
+      filteredByCategory.map((template, index, list) => {
+        const ref =
+          index === 0
+            ? firstCardRef
+            : index === list.length - 1
+            ? lastCardRef
+            : undefined;
+        return <TemplateCard {...template} key={template.id} cardRef={ref} />;
+      }),
+    [filteredByCategory, firstCardRef, lastCardRef],
+  );
 
   return (
     <Box overflow="hidden" py="4">

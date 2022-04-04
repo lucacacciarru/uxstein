@@ -1,12 +1,8 @@
 import { Box, HStack, Text } from '@chakra-ui/react';
-import { useTranslation } from 'react-i18next';
-import { AvatarPerson } from '../AvatarPerson';
 
 type Props = {
   title: string;
-  timeSinceLastUpdate: number;
-  type: 'persona' | 'template';
-  author?: string;
+  Avatar?: React.ReactNode;
 };
 
 const containerStyles = {
@@ -17,14 +13,11 @@ const containerStyles = {
   borderTop: 'dark.s',
 };
 
-export const PersonaCardContainerInfo: React.FC<Props> = ({
+export const CardContainerInfo: React.FC<Props> = ({
   title,
-  timeSinceLastUpdate,
-  author,
-  type,
+  Avatar,
+  children,
 }) => {
-  const { t } = useTranslation();
-
   return (
     <HStack {...containerStyles}>
       <Box px="4" py="1" w="70%">
@@ -40,13 +33,9 @@ export const PersonaCardContainerInfo: React.FC<Props> = ({
         >
           {title}
         </Text>
-        <Text as="small">
-          {timeSinceLastUpdate <= 30
-            ? t('personCard.timeEdit', { count: timeSinceLastUpdate })
-            : t('personCard.timeEdit_more')}
-        </Text>
+        {children}
       </Box>
-      <AvatarPerson author={author} type={type} />
+      {Avatar}
     </HStack>
   );
 };

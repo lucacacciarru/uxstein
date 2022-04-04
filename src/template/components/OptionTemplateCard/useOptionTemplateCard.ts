@@ -1,6 +1,7 @@
+//TODO: Add updateTemplate and deleteTemplate
 import { useDisclosure } from '@chakra-ui/react';
 
-export function usePersonaModal() {
+export function useOptionTemplateCard(id: string) {
   const {
     isOpen: isOpenRename,
     onClose: onCloseRename,
@@ -13,6 +14,10 @@ export function usePersonaModal() {
     onOpen: onOpenDelete,
   } = useDisclosure();
 
+  const renameTemplateTitle = (name: string) => {};
+
+  const deleteSelectedTemplate = () => {};
+
   return {
     isOpenRename,
     onCloseRename,
@@ -20,5 +25,7 @@ export function usePersonaModal() {
     isOpenDelete,
     onCloseDelete,
     onOpenDelete,
+    renameTemplateTitle,
+    deleteSelectedTemplate,
   };
 }

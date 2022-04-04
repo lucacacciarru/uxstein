@@ -1,11 +1,16 @@
+import { useToast } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Persona } from '../../persona/store/types/general';
+import { TranslationKey } from '../../types/i18n';
+import { GenericToast } from '../GenericToast';
 
-export function usePersonaTemplateRename(
-  rename: (id: string, properties: Omit<Partial<Persona>, 'id'>) => void,
+export function useTextInputModal(
+  onSubmit: (value: string) => void,
+  onClose: Function,
+  toastTranslation: TranslationKey,
 ) {
   const { t } = useTranslation();
+  const toast = useToast();
 
   const mapErrorMessage: Record<string, string> = {
     tooLong: t('persona.modal.errors.renameTextTooLong'),
@@ -20,7 +25,7 @@ export function usePersonaTemplateRename(
     setNameValue(e.target.value);
   };
 
-  const checkAndConfirmRename = (personaId: string, closeModal: () => void) => {
+  const checkAndConfirm = () => {
     if (nameValue.length > 20) {
       setInputError(true);
       setErrorMessage(mapErrorMessage.tooLong);
@@ -32,8 +37,17 @@ export function usePersonaTemplateRename(
       return;
     }
     setInputError(false);
-    rename(personaId, { title: nameValue });
-    closeModal();
+    onSubmit(nameValue);
+    onClose();
+    toast({
+      render: () => (
+        <GenericToast
+          status="success"
+          translationKey={toastTranslation}
+          data-testid="role"
+        />
+      ),
+    });
   };
 
   return {
@@ -41,6 +55,6 @@ export function usePersonaTemplateRename(
     onChangeInputRename,
     inputError,
     errorMessage,
-    checkAndConfirmRename,
+    checkAndConfirm,
   };
 }

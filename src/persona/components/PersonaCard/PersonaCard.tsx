@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Persona } from '../../store/types/general';
 import { CardContainer } from '../../../_shared/components/CardContainer';
-import { PersonaTemplateContentCard } from '../../../_shared/components/PersonaTemplateContentCard';
+import { ContentCard } from '../../../_shared/components/ContentCard';
 import { OptionPersonaCard } from '../OptionPersonaCard';
+import { LastUpdatePersona } from '../LastUpdatePersona';
 
 type Props = {
-  author?: string;
-  type: 'persona' | 'template';
   cardRef?: React.RefObject<HTMLDivElement>;
 } & Persona;
 
@@ -15,7 +14,9 @@ export const PersonaCard: React.FC<Props> = ({ id, cardRef, ...rest }) => {
     <CardContainer role="card" ref={cardRef}>
       <OptionPersonaCard personaId={id} />
       <Link to={`${id}/edit`}>
-        <PersonaTemplateContentCard {...rest} />
+        <ContentCard {...rest}>
+          <LastUpdatePersona lastUpdate={rest.updatedAt} />
+        </ContentCard>
       </Link>
     </CardContainer>
   );
