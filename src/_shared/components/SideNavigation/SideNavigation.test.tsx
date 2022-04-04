@@ -2,6 +2,7 @@ import { SideNavigation } from './SideNavigation';
 import { render, screen } from '../../testConfig/customRender';
 import { CustomLink } from './Partials';
 import { AuthState } from '../../../auth/store';
+import { PATHS } from '../../types/paths';
 
 const MOCK_AUTH_LOGGED_STATE: AuthState = {
   status: 'logged',
@@ -23,11 +24,11 @@ describe('Side Navigation', () => {
 
   describe('-CustomLink', () => {
     test('should be active if the actual location match the destination one', () => {
-      render(<CustomLink to="/my-personas" />, {
+      render(<CustomLink to={PATHS.PERSONAS} />, {
         mocks: {
           auth: MOCK_AUTH_LOGGED_STATE,
         },
-        initialRoutes: ['/my-personas'],
+        initialRoutes: [`/${PATHS.PERSONAS}`],
       });
 
       const customLink = screen.getByTestId('sidenav-link');
@@ -35,11 +36,11 @@ describe('Side Navigation', () => {
     });
 
     test('should NOT be active if the actual location DOES NOT match the destination one', async () => {
-      render(<CustomLink to="/my-personas" />, {
+      render(<CustomLink to={PATHS.TEMPLATES} />, {
         mocks: {
           auth: MOCK_AUTH_LOGGED_STATE,
         },
-        initialRoutes: ['/my-templates'],
+        initialRoutes: [PATHS.PERSONAS],
       });
 
       const customLink = screen.getByTestId('sidenav-link');

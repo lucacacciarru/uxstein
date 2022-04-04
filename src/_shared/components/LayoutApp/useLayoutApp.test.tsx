@@ -1,5 +1,6 @@
 import { AuthState } from '../../../auth/store';
 import { renderHook } from '../../testConfig/customRenderHook';
+import { PATHS } from '../../types/paths';
 import { useLayoutApp } from './useLayoutApp';
 
 const MOCK_AUTH_LOGGED_STATE: AuthState = {
@@ -14,7 +15,7 @@ const MOCK_AUTH_LOGGED_STATE: AuthState = {
 describe('useLayoutApp', () => {
   test('showNavigation should return true if the path is NOT .../edit', () => {
     const { result } = renderHook(() => useLayoutApp(), {
-      initialRoutes: ['/login'],
+      initialRoutes: [PATHS.LOGIN],
     });
 
     expect(result.current.showNavigation).toBeTruthy();
@@ -22,7 +23,7 @@ describe('useLayoutApp', () => {
 
   test('showNavigation should return false if the path IS .../edit', () => {
     const { result } = renderHook(() => useLayoutApp(), {
-      initialRoutes: ['/anyId/edit'],
+      initialRoutes: [PATHS.EDIT_PERSONA],
       mocks: {
         auth: MOCK_AUTH_LOGGED_STATE,
       },

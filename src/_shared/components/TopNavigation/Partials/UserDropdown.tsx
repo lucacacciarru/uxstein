@@ -10,6 +10,7 @@ import { FC, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../../../auth/hooks';
+import { PATHS } from '../../../types/paths';
 import { Icon } from '../../Icon/Icon';
 
 export const UserDropdown: FC = () => {
@@ -29,7 +30,7 @@ export const UserDropdown: FC = () => {
       );
     }
     return (
-      <MenuItem as={Link} to="login" data-testid="login-link">
+      <MenuItem as={Link} to={PATHS.LOGIN} data-testid="login-link">
         {t('navigation.userDropdown.login')}
       </MenuItem>
     );
@@ -41,7 +42,7 @@ export const UserDropdown: FC = () => {
       </MenuButton>
 
       <MenuList data-testid="menu-list">
-        <MenuItem as={Link} to="profile" data-testid="profile-link">
+        <MenuItem as={Link} to={PATHS.PROFILE} data-testid="profile-link">
           {t('navigation.userDropdown.profile')}
         </MenuItem>
         {LoginOrLogout}

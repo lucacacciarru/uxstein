@@ -13,6 +13,7 @@ import {
 import { useLogin } from '../../hooks/useLogin';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { PATHS } from '../../../_shared/types/paths';
 
 export const LoginForm: React.FC = () => {
   const { t } = useTranslation();
@@ -63,7 +64,7 @@ export const LoginForm: React.FC = () => {
           <Text as="p">
             {t('auth.form.textForSignup')}{' '}
             <Text color="status.link" cursor="pointer" as="span">
-              <Link to="/signup">{t('auth.form.linkForSignup')}</Link>
+              <Link to={PATHS.SIGNUP}>{t('auth.form.linkForSignup')}</Link>
             </Text>
           </Text>
           <Button type="submit">{t('auth.form.buttonLogin')}</Button>

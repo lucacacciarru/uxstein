@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import { PATHS } from '../../types/paths';
 
 export const LandingLayout = () => {
   return (
@@ -6,7 +7,7 @@ export const LandingLayout = () => {
       {
         // <nav></nav> Navigation component
       }
-      <NavLink to="login"> LOGIN </NavLink>
+      <NavLink to={PATHS.LOGIN}> LOGIN </NavLink>
       <Outlet />
       {
         // Footer
