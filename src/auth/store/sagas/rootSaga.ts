@@ -1,5 +1,6 @@
 import { put, fork, takeLatest } from 'redux-saga/effects';
 import { createSagaWithLoadingManagement } from '../../../_shared/store/loading';
+import { LoadingKeys } from '../../../_shared/store/loading/types';
 import { initAuth } from '../actions/init';
 import { loginTrigger } from '../actions/login';
 import { logoutTrigger } from '../actions/logout';
@@ -13,15 +14,15 @@ export function createAuthRootSaga(options: PostAuthOptions) {
   return function* authRootSaga() {
     yield takeLatest(
       initAuth,
-      createSagaWithLoadingManagement(init, { key: 'auth' }),
+      createSagaWithLoadingManagement(init, { key: LoadingKeys.auth }),
     );
     yield takeLatest(
       loginTrigger,
-      createSagaWithLoadingManagement(loginSaga, { key: 'auth' }),
+      createSagaWithLoadingManagement(loginSaga, { key: LoadingKeys.auth }),
     );
     yield takeLatest(
       logoutTrigger,
-      createSagaWithLoadingManagement(logoutSaga, { key: 'auth' }),
+      createSagaWithLoadingManagement(logoutSaga, { key: LoadingKeys.auth }),
     );
 
     /**

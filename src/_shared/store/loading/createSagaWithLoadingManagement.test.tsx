@@ -5,7 +5,7 @@ import { setLoading, unsetLoading } from './actions';
 import { createSagaWithLoadingManagement } from './utils';
 import { LOADING_REDUCER_KEY } from './reducer';
 
-const TEST_KEY = 'testKey';
+const TEST_KEY = 'testKey' as any;
 
 describe('createSagaWithLoadingManagement', () => {
   it('should automatically handle the loading state', async () => {
@@ -118,7 +118,7 @@ describe('createSagaWithLoadingManagement', () => {
   });
 
   it('should not call the saga until all the dependencies inside `dependsOn` are `idle`', async () => {
-    const DEPENDENT_KEY = 'DEPENDENT_KEY';
+    const DEPENDENT_KEY = 'DEPENDENT_KEY' as any;
 
     function* testSaga() {
       const loadingState: boolean = yield select(getIsLoading, TEST_KEY);

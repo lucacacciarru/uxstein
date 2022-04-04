@@ -23,3 +23,9 @@ export type TemplateState = {
   data: TemplatesData;
   rollbackData?: TemplatesData;
 };
+
+declare module '../../../_shared/store/loading/types' {
+  enum LoadingKeys {
+    template = 'templates'
+  }
+}

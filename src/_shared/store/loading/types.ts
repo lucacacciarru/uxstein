@@ -1,11 +1,13 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 
+export enum LoadingKeys { };
+
 export type LoadingSliceConfig = {
   loading: number;
 };
 
 export type SetLoadingPayload = {
-  key: string;
+  key: LoadingKeys;
 };
 
 export enum LOADING_ACTION_TYPES {

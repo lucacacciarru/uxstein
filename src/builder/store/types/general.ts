@@ -50,3 +50,9 @@ export type ItemAttribute = {
   initialValue: { id: string; label?: string; value: string }[];
   style: Record<string, string>;
 };
+
+declare module '../../../_shared/store/loading/types' {
+  enum LoadingKeys {
+    builder = 'builder'
+  }
+}
