@@ -1,6 +1,8 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 
-export enum LoadingKeys { };
+export enum LoadingKeys {
+  global = 'global'
+};
 
 export type LoadingSliceConfig = {
   loading: number;
