@@ -13,6 +13,7 @@ const MOCK_BUILDER_STATE: BuilderState = {
   },
   pageSettings: [INITIAL_ITEM],
   personaId: 'any id',
+  title: 'any title',
 };
 
 const MOCK_BLOCK_SETUP: BlockSetup = {

@@ -11,6 +11,7 @@ const MOCK_BUILDER_STATE: BuilderState = {
   },
   pageSettings: [{ i: EXISTING_ID, h: 1, w: 1, x: 1, y: 1 }],
   personaId: 'any id',
+  title: 'any title',
 };
 
 describe('ComponentMap', () => {
@@ -20,7 +21,7 @@ describe('ComponentMap', () => {
     });
   });
 
-  test('should render TextGridItem if the block with corrispondent id have text type', () => {
+  test('should render TextGridItem if the block with correspondent id have text type', () => {
     render(<ComponentMap id={EXISTING_ID} />, {
       mocks: { builder: MOCK_BUILDER_STATE },
     });

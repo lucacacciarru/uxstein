@@ -11,6 +11,7 @@ const MOCK_BUILDER_STATE: BuilderState = {
   pageSettings: [],
   selectedBlockId: EXISTING_ID,
   personaId: 'any id',
+  title: 'any title',
 };
 describe('EditTab', () => {
   test('should render correctly', () => {

@@ -9,8 +9,7 @@ import { SetPayload } from '../types/set';
 export function* populateBuilderSaga(action: PopulateBuilderAction) {
     const persona: Persona | undefined = yield select(getPersonaById(action.payload.personaId));
     if (persona) {
-        const setPayload: SetPayload = { personaId: persona.id, ...persona.builderData };
+        const setPayload: SetPayload = { personaId: persona.id, title: persona.title, ...persona.builderData };
         yield put(setBuilder(setPayload));
     }
-
 }

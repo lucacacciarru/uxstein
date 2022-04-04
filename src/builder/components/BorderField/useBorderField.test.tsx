@@ -26,6 +26,7 @@ const MOCK_BUILDER_STATE: BuilderState = {
   },
   pageSettings: [{ i: EXISTING_ID, h: 1, w: 1, x: 1, y: 1 }],
   personaId: 'any id',
+  title: 'any title',
 };
 
 const useTestBorderField = () => {

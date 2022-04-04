@@ -6,7 +6,7 @@ import RGL, { WidthProvider } from 'react-grid-layout';
 import { ComponentMap } from '../ComponentMap/ComponentMap';
 import { useDroppablePage } from './useDroppablePage';
 import { BlockSetup } from '../../hooks/useBlockSetup';
-import { useSeletedBlock } from '../../hooks/useSelectedBlock';
+import { useSelectedBlock } from '../../hooks/useSelectedBlock';
 import { Box } from '@chakra-ui/react';
 
 const ReactGridLayout = WidthProvider(RGL);
@@ -15,7 +15,7 @@ export const DroppablePage: FC<{ blockSetup: BlockSetup }> = ({
   blockSetup,
 }) => {
   const { layout, gridLayoutProps } = useDroppablePage(blockSetup);
-  const { selectBlock } = useSeletedBlock();
+  const { selectBlock } = useSelectedBlock();
 
   return (
     <>

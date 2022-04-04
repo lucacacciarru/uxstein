@@ -14,6 +14,7 @@ export type BuilderState = {
   pageSettings: Layout[];
   selectedBlockId?: string;
   personaId: string;
+  title: string;
 };
 
 export enum BUILDER_ACTION_TYPES {
@@ -27,6 +28,7 @@ export enum BUILDER_ACTION_TYPES {
   DELETE = 'builder/delete',
   SET = 'builder/set',
   POPULATE = 'builder/populate/trigger',
+  UPDATE = 'builder/update'
 }
 
 export type AttributeName =

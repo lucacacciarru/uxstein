@@ -8,6 +8,7 @@ export type SetPayload = {
     gridItems: Record<string, GridItem>;
     pageSettings: Layout[];
     personaId: string;
+    title: string;
 }
 
 export type SetAction = PayloadAction<
