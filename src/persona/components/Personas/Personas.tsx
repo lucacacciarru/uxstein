@@ -4,6 +4,7 @@ import { SimpleGrid, SimpleGridProps } from '@chakra-ui/react';
 import { usePersonas } from '../../hook/usePersonas';
 import { useLoading } from '../../../_shared/store/loading';
 import { PersonaCard } from '../PersonaCard';
+import { LoadingKeys } from '../../../_shared/store/loading/types';
 
 const containerProps: SimpleGridProps = {
   spacingX: '7',
@@ -15,7 +16,7 @@ const containerProps: SimpleGridProps = {
 
 export const Personas: React.FC = () => {
   const { personas } = usePersonas();
-  const { isLoading } = useLoading('persona');
+  const { isLoading } = useLoading(LoadingKeys.persona);
 
   const renderPersona = useMemo(() => {
     return isLoading ? (
