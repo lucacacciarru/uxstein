@@ -1,8 +1,6 @@
 export const modal = {
-  renameTitle: 'Rinomina questo template',
-  renamePlaceholder: 'Nuovo nome template',
-  deleteTitle: 'Vuoi eliminare questo template?',
-  deleteBody: 'Se verrà cancellato non potrai più tornare indietro',
-  confirmButton: 'Conferma',
-  cancelButton: 'Annulla',
+  renameTitle: 'Rinomina questo Template',
+  renamePlaceholder: 'Nuovo nome Template',
+  deleteTitle: 'Cancellare questo Template?',
+  deleteBody: 'Se cancelli questo Tenplate non potrai più riaverla',
 };

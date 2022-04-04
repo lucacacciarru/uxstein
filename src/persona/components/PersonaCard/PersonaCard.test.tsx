@@ -10,7 +10,6 @@ describe('Card component', () => {
         createdAt={0}
         src="test"
         title="test"
-        type="persona"
         builderData={{ gridItems: {}, pageSettings: [] }}
       />,
     );
@@ -25,7 +24,6 @@ describe('Card component', () => {
         createdAt={0}
         src="test"
         title="test"
-        type="template"
         builderData={{ gridItems: {}, pageSettings: [] }}
       />,
     );

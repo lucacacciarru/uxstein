@@ -13,10 +13,6 @@ type Props = {
 export const OptionPersonaCard: React.FC<Props> = ({ personaId }) => {
   const { t } = useTranslation();
 
-  type Props = {
-    templateId: string;
-  };
-
   const {
     isOpenRename,
     onCloseRename,
@@ -64,9 +60,9 @@ export const OptionPersonaCard: React.FC<Props> = ({ personaId }) => {
         onClose={onCloseRename}
         onSubmit={renamePersonaTitle}
         textContent={{
-          inputPlaceholder: 'auth',
-          header: 'auth',
-          toast: 'auth',
+          header: 'persona.modal.renameTitle',
+          inputPlaceholder: 'persona.modal.renamePlaceholder',
+          toast: 'persona.toast.renamePersona',
         }}
       />
       <ActionModal
@@ -76,7 +72,7 @@ export const OptionPersonaCard: React.FC<Props> = ({ personaId }) => {
         textContent={{
           header: 'persona.modal.deleteTitle',
           body: 'persona.modal.deleteBody',
-          toast: 'auth',
+          toast: 'persona.toast.deletePersona',
         }}
       />
     </>

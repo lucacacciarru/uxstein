@@ -58,16 +58,20 @@ export const OptionTemplateCard: React.FC<Props> = ({ templateId }) => {
         onClose={onCloseRename}
         onSubmit={renameTemplateTitle}
         textContent={{
-          inputPlaceholder: 'auth',
-          header: 'auth',
-          toast: 'auth',
+          inputPlaceholder: 'template.modal.renamePlaceholder',
+          header: 'template.modal.renameTitle',
+          toast: 'template.toast.renameTemplate',
         }}
       />
       <ActionModal
         isOpen={isOpenDelete}
         onClose={onCloseDelete}
         onSubmit={deleteSelectedTemplate}
-        textContent={{ body: 'auth', header: 'auth', toast: 'auth' }}
+        textContent={{
+          body: 'template.modal.deleteBody',
+          header: 'template.modal.deleteTitle',
+          toast: 'template.toast.deleteTemplate',
+        }}
       />
     </>
   );

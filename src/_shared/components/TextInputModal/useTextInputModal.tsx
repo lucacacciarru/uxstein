@@ -13,8 +13,8 @@ export function useTextInputModal(
   const toast = useToast();
 
   const mapErrorMessage: Record<string, string> = {
-    tooLong: t('persona.modal.errors.renameTextTooLong'),
-    empty: t('persona.modal.errors.renameEmptyText'),
+    tooLong: t('modal.textInputModal.errors.textTooLong'),
+    empty: t('modal.textInputModal.errors.renameEmptyText'),
   };
 
   const [nameValue, setNameValue] = useState<string>('');
