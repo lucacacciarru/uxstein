@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Icon } from '../components';
+import { PATHS } from '../types/paths';
 
 export const ErrorPage: FC = () => {
   const { t } = useTranslation();
@@ -16,7 +17,7 @@ export const ErrorPage: FC = () => {
         <Text as="h3" textStyle="h3">
           {t('errorPage.subtitle')}
         </Text>
-        <Link to="/">
+        <Link to={PATHS.INDEX}>
           <Button mt="4">{t('errorPage.cta')}</Button>
         </Link>
       </Box>

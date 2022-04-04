@@ -1,4 +1,3 @@
-//TODO: "/app" dont't have same layout, so it shouldn't be wrapped in <LayoutApp /> or maybe LayoutApp can have his exception
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { PrivateRoutes } from './auth/components/PrivateRoutes';
@@ -13,6 +12,7 @@ import { Signup } from './auth/pages/Signup';
 import { Builder } from './builder/pages/Builder';
 import { MyPersona } from './persona/pages/MyPersona';
 import { MyTemplates } from './template/pages/MyTemplates';
+import { PATHS } from './_shared/types/paths';
 
 i18n.use(initReactI18next).init(initI18n);
 
@@ -20,21 +20,21 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<LandingLayout />}>
+        <Route path={PATHS.INDEX} element={<LandingLayout />}>
           <Route index element={<>Landing</>} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
-        <Route path="login" element={<Login />} />
-        <Route path="signup" element={<Signup />} />
+        <Route path={PATHS.LOGIN} element={<Login />} />
+        <Route path={PATHS.SIGNUP} element={<Signup />} />
         <Route element={<LayoutApp />}>
           <Route element={<PrivateRoutes />}>
-            <Route path="my-personas">
+            <Route path={PATHS.PERSONAS}>
               <Route index element={<MyPersona />} />
-              <Route path=":personaId/edit" element={<Builder />} />
-              <Route path="create" element={<Builder />} />
+              <Route path={PATHS.EDIT_PERSONA} element={<Builder />} />
+              <Route path={PATHS.CREATE_PERSONA} element={<Builder />} />
             </Route>
-            <Route path="my-templates" element={<MyTemplates />} />
-            <Route path="profile" element={<>Profile</>} />
+            <Route path={PATHS.TEMPLATES} element={<MyTemplates />} />
+            <Route path={PATHS.PROFILE} element={<>Profile</>} />
           </Route>
         </Route>
       </Routes>

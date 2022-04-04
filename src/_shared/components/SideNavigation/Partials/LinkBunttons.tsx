@@ -2,6 +2,7 @@ import { Spacer, Text, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CustomLink } from '.';
+import { PATHS } from '../../../types/paths';
 import { Icon } from '../../Icon';
 import styles from '../styles/SideNavigation.module.css';
 
@@ -17,11 +18,11 @@ export const LinkButtons: FC<Props> = ({ isExtended }) => {
       className={isExtended ? styles.isExtended : ''}
       data-testid="linkButton"
     >
-      <CustomLink to="my-personas">
+      <CustomLink to={PATHS.PERSONAS}>
         <Icon name="UserGroup" size="12" />
         <Text>{t('navigation.personas')}</Text>
       </CustomLink>
-      <CustomLink to="my-templates">
+      <CustomLink to={PATHS.TEMPLATES}>
         <Icon name="Layout10" size="12" />
         <Text>{t('navigation.templates')}</Text>
       </CustomLink>

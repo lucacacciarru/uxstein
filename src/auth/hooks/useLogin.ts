@@ -6,6 +6,7 @@ import { getAuthStatus } from '../store/selectors';
 import { LoginFormData } from '../components';
 import { validateAllField, checkLoginMap } from '../utils';
 import { TranslationKey } from '../../_shared/types/i18n';
+import { PATHS } from '../../_shared/types/paths';
 
 export const useLogin = () => {
   const dispatch = useDispatch();
@@ -40,7 +41,7 @@ export const useLogin = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const from = (location.state as string) || '/my-personas';
+  const from = (location.state as string) || PATHS.PERSONAS;
   const authStatus = useSelector(getAuthStatus);
   const isLogged = authStatus === 'logged';
 

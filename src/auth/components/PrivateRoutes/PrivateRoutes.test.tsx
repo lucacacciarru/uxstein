@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { PrivateRoutes } from '../PrivateRoutes';
 import { render, screen } from '../../../_shared/testConfig/customRender';
+import { PATHS } from '../../../_shared/types/paths';
 
 const MockPrivatePage: FC = () => {
   return <div data-testid="private-page">Private page content</div>;
@@ -15,7 +16,7 @@ const MockLoginPage: FC = () => {
 const MockRoutes: FC = () => {
   return (
     <Routes>
-      <Route path="login" element={<MockLoginPage />} />
+      <Route path={PATHS.LOGIN} element={<MockLoginPage />} />
       <Route element={<PrivateRoutes />}>
         <Route path="private" element={<MockPrivatePage />} />
       </Route>

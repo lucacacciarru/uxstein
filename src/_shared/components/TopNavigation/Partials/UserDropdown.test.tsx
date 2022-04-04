@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from '../../../testConfig/customRender';
 import userEvent from '@testing-library/user-event';
 import { UserDropdown } from './UserDropdown';
+import { PATHS } from '../../../types/paths';
 
 describe('UserDropdown', () => {
   test('menu list should be NOT visible by default', () => {
@@ -51,8 +52,8 @@ describe('UserDropdown', () => {
     const loginLink = screen.queryByTestId('login-link');
     const logoutButton = screen.queryByTestId('logout-button');
 
-    expect(profileLink).toHaveAttribute('href', '/profile');
-    expect(loginLink).toHaveAttribute('href', '/login');
+    expect(profileLink).toHaveAttribute('href', `/${PATHS.PROFILE}`);
+    expect(loginLink).toHaveAttribute('href', `/${PATHS.LOGIN}`);
     expect(logoutButton).toBeNull();
   });
 
@@ -80,7 +81,7 @@ describe('UserDropdown', () => {
     const loginLink = screen.queryByTestId('login-link');
     const logoutButton = screen.queryByTestId('logout-button');
 
-    expect(profileLink).toHaveAttribute('href', '/profile');
+    expect(profileLink).toHaveAttribute('href', `/${PATHS.PROFILE}`);
     expect(logoutButton).not.toBeNull();
     expect(loginLink).toBeNull();
   });
