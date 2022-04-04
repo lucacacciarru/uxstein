@@ -3,12 +3,14 @@ import { TranslationKey } from '../../types/i18n';
 import { GenericToast } from '../GenericToast';
 
 export function useActionModal(
-  callback: Function,
+  onSubmit: Function,
+  onClose: () => void,
   toastTranslation: TranslationKey,
 ) {
   const toast = useToast();
   const onClick = () => {
-    callback();
+    onSubmit();
+    onClose();
     toast({
       render: () => (
         <GenericToast

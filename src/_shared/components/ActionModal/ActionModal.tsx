@@ -34,7 +34,7 @@ export const ActionModal: React.FC<Props> = ({
   onSubmit,
 }) => {
   const { t } = useTranslation();
-  const { onClick } = useActionModal(onSubmit, textContent.toast);
+  const { onClick } = useActionModal(onSubmit, onClose, textContent.toast);
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered>
