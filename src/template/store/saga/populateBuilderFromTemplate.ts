@@ -9,7 +9,11 @@ import { PopulateBuilderFromTemplateAction } from '../types/populateBuilderFromT
 export function* populateBuilderFromTemplateSaga(action: PopulateBuilderFromTemplateAction) {
     const template: Template | undefined = yield select(getTemplateById(action.payload.templateId));
     if (template) {
-        const updatePayload: UpdatePayload = { ...template.builderData };
+        const updatePayload: UpdatePayload = {
+            pageSettings: template.builderData.pageSettings,
+            byId: template.builderData.gridItems,
+            allIds: Object.keys(template.builderData.gridItems)
+        };
         yield put(updateBuilder(updatePayload));
     }
 }

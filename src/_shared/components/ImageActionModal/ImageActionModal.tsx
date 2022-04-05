@@ -33,7 +33,7 @@ export const ImageActionModal: FC<Props> = ({
   ...imageProps
 }) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="2xl">
+    <Modal isOpen={isOpen} onClose={onClose} size="2xl" isCentered>
       <ModalOverlay />
       <ModalContent py="4" px="8">
         <ModalHeader>{children}</ModalHeader>
