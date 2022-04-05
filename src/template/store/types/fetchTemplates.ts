@@ -2,10 +2,10 @@ import { PayloadAction, Action } from '@reduxjs/toolkit';
 import { ApiError, Template } from './general';
 
 export enum FETCH_TEMPLATES_ACTION_TYPES {
-  TRIGGER = 'template/fetchTemplate/trigger',
-  REQUEST = 'template/fetchTemplate/request',
-  SUCCESS = 'template/fetchTemplate/success',
-  FAILURE = 'template/fetchTemplate/failure',
+  TRIGGER = 'template/fetchTemplates/trigger',
+  REQUEST = 'template/fetchTemplates/request',
+  SUCCESS = 'template/fetchTemplates/success',
+  FAILURE = 'template/fetchTemplates/failure',
 }
 
 export type FetchTemplatesResponse = {

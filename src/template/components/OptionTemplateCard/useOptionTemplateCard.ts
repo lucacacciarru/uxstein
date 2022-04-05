@@ -1,5 +1,6 @@
 //TODO: Add updateTemplate and deleteTemplate
 import { useDisclosure } from '@chakra-ui/react';
+import { useTemplate } from '../../hook/useTemplate';
 
 export function useOptionTemplateCard(id: string) {
   const {
@@ -14,9 +15,15 @@ export function useOptionTemplateCard(id: string) {
     onOpen: onOpenDelete,
   } = useDisclosure();
 
-  const renameTemplateTitle = (name: string) => {};
+  const { deleteTemplate, updateTemplate } = useTemplate();
 
-  const deleteSelectedTemplate = () => {};
+  const renameTemplateTitle = (name: string) => {
+    updateTemplate(id, { name });
+  };
+
+  const deleteSelectedTemplate = () => {
+    deleteTemplate(id);
+  };
 
   return {
     isOpenRename,
