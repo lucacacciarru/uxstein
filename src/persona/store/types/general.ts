@@ -24,3 +24,9 @@ export type PersonaState = {
   data: PersonasData;
   rollbackData?: PersonasData;
 };
+
+declare module '../../../_shared/store/loading/types' {
+  enum LoadingKeys {
+    persona = 'personas'
+  }
+}

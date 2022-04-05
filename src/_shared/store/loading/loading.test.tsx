@@ -1,7 +1,7 @@
 import { renderHook, act } from '../../testConfig/customRenderHook';
 import { useLoading } from './hooks';
 
-const TEST_KEY = 'testKey';
+const TEST_KEY = 'testKey' as any;
 
 describe('useLoading', () => {
   it('should be idle by default', () => {

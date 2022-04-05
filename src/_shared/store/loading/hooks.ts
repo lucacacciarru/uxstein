@@ -2,8 +2,9 @@ import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as actions from './actions';
 import { getIsIdle, getIsLoading } from './selectors';
+import { LoadingKeys } from './types';
 
-export function useLoading(key: string) {
+export function useLoading(key: LoadingKeys) {
   const dispatch = useDispatch();
 
   const isIdle = useSelector(state => getIsIdle(state, key));

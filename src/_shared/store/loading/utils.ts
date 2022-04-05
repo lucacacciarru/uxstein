@@ -1,16 +1,17 @@
 import { all, put, select, take, fork } from 'redux-saga/effects';
 import { resetLoading, setLoading, unsetLoading } from './actions';
 import { getIsLoading } from './selectors';
+import { LoadingKeys } from './types';
 
 type LoadingManagementOptions = {
-  key: string;
-  dependsOn?: string[];
+  key: LoadingKeys;
+  dependsOn?: LoadingKeys[];
   forceReset?: boolean;
 };
 
-function* waitForSagasByKeys(keys: string[]) {
+function* waitForSagasByKeys(keys: LoadingKeys[]) {
   yield all(
-    keys.map(function* (key: string) {
+    keys.map(function* (key: LoadingKeys) {
       yield fork(function* () {
         while (true) {
           const isLoading: boolean = yield select(getIsLoading, key);
@@ -26,7 +27,7 @@ function* waitForSagasByKeys(keys: string[]) {
 
 export function createSagaWithLoadingManagement<
   Saga extends (...args: any[]) => Generator<any, any, any> = () => any,
->(saga: Saga, { key, forceReset, dependsOn }: LoadingManagementOptions) {
+  >(saga: Saga, { key, forceReset, dependsOn }: LoadingManagementOptions) {
   return function* sagaWithLoadingManagement(...args: unknown[]) {
     yield put(setLoading({ key }));
     try {

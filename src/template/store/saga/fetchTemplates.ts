@@ -2,6 +2,7 @@ import { call, put, select } from 'redux-saga/effects';
 import { User } from '../../../auth/store';
 import { getUserProfile } from '../../../auth/store/selectors';
 import { createSagaWithLoadingManagement } from '../../../_shared/store/loading';
+import { LoadingKeys } from '../../../_shared/store/loading/types';
 import {
   fetchTemplatesFailure,
   fetchTemplatesRequest,
@@ -28,6 +29,6 @@ function* fetchTemplatesSagaWorker() {
 export const fetchTemplatesSaga = createSagaWithLoadingManagement(
   fetchTemplatesSagaWorker,
   {
-    key: 'templates',
+    key: LoadingKeys.template,
   },
 );

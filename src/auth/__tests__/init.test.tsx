@@ -1,5 +1,6 @@
 import { waitFor } from '@testing-library/react';
 import fetchMock from 'jest-fetch-mock';
+import { LoadingKeys } from '../../_shared/store/loading/types';
 import { getStoreForTesting } from '../../_shared/testConfig/getStoreForTesting';
 import { initAuth, postLogin, postLogout } from '../store/actions/init';
 import * as storageUtils from '../utils/authToken';
@@ -73,7 +74,7 @@ describe('Authentication', () => {
       store.dispatch(initAuth());
 
       await waitFor(() => {
-        return store.getState().loading['auth'].loading === 0;
+        return store.getState().loading[LoadingKeys.auth].loading === 0;
       });
 
       expect(getItemSpy).toHaveBeenCalled();
