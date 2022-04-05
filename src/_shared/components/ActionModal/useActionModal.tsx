@@ -2,11 +2,17 @@ import { useToast } from '@chakra-ui/react';
 import { TranslationKey } from '../../types/i18n';
 import { GenericToast } from '../GenericToast';
 
-export function useActionModal(
-  onSubmit: Function,
-  onClose: () => void,
-  toastTranslation: TranslationKey,
-) {
+type Params = {
+  onSubmit: Function;
+  onClose: () => void;
+  toastTranslation: TranslationKey;
+};
+
+export function useActionModal({
+  onSubmit,
+  onClose,
+  toastTranslation,
+}: Params) {
   const toast = useToast();
   const onClick = () => {
     onSubmit();
