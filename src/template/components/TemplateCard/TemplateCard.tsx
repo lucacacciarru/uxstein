@@ -3,8 +3,8 @@ import { AvatarTemplate } from '../AvatarTemplate';
 import { CardContainer } from '../../../_shared/components/CardContainer';
 import { ContentCard } from '../../../_shared/components/ContentCard';
 import { OptionTemplateCard } from '../OptionTemplateCard';
-import { Link } from 'react-router-dom';
-import { useTemplateCard } from './useTemplateCard';
+import { TemplatePreviewModal } from '../TemplatePreviewModal/TemplatePreviewModal';
+import { useDisclosure } from '@chakra-ui/react';
 
 type Props = {
   cardRef?: React.RefObject<HTMLDivElement>;
@@ -17,17 +17,23 @@ export const TemplateCard: React.FC<Props> = ({
   name,
   ...rest
 }) => {
-  const { handleCreatePersona, pathLink } = useTemplateCard(id);
+  const { isOpen, onClose, onOpen } = useDisclosure();
   return (
-    <CardContainer role="card" ref={cardRef} onClick={handleCreatePersona}>
+    <CardContainer role="card" ref={cardRef} onClick={onOpen}>
       {!isDefault && <OptionTemplateCard templateId={id} />}
-      <Link to={pathLink}>
-        <ContentCard
-          title={name}
-          Avatar={<AvatarTemplate isDefault={isDefault} />}
-          {...rest}
-        />
-      </Link>
+      <ContentCard
+        title={name}
+        Avatar={<AvatarTemplate isDefault={isDefault} />}
+        {...rest}
+      />
+      <TemplatePreviewModal
+        isOpen={isOpen}
+        onClose={onClose}
+        title={name}
+        id={id}
+        isDefault={isDefault}
+        src={rest.src}
+      />
     </CardContainer>
   );
 };
