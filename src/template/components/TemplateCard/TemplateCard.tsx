@@ -3,6 +3,8 @@ import { AvatarTemplate } from '../AvatarTemplate';
 import { CardContainer } from '../../../_shared/components/CardContainer';
 import { ContentCard } from '../../../_shared/components/ContentCard';
 import { OptionTemplateCard } from '../OptionTemplateCard';
+import { Link } from 'react-router-dom';
+import { useTemplateCard } from './useTemplateCard';
 
 type Props = {
   cardRef?: React.RefObject<HTMLDivElement>;
@@ -15,14 +17,17 @@ export const TemplateCard: React.FC<Props> = ({
   name,
   ...rest
 }) => {
+  const { handleCreatePersona, pathLink } = useTemplateCard(id);
   return (
-    <CardContainer role="card" ref={cardRef}>
+    <CardContainer role="card" ref={cardRef} onClick={handleCreatePersona}>
       {!isDefault && <OptionTemplateCard templateId={id} />}
-      <ContentCard
-        title={name}
-        Avatar={<AvatarTemplate isDefault={isDefault} />}
-        {...rest}
-      />
+      <Link to={pathLink}>
+        <ContentCard
+          title={name}
+          Avatar={<AvatarTemplate isDefault={isDefault} />}
+          {...rest}
+        />
+      </Link>
     </CardContainer>
   );
 };

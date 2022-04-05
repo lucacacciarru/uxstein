@@ -41,7 +41,7 @@ export const useLogin = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const from = (location.state as string) || PATHS.PERSONAS;
+  const from = (location.state as string) || `/${PATHS.PERSONAS}`;
   const authStatus = useSelector(getAuthStatus);
   const isLogged = authStatus === 'logged';
 
