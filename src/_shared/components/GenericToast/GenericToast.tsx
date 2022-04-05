@@ -10,7 +10,7 @@ type Props = {
 export const GenericToast: React.FC<Props> = ({ status, translationKey }) => {
   const { t } = useTranslation();
   return (
-    <Alert status={status}>
+    <Alert data-testid="toast" status={status}>
       <AlertIcon />
       <AlertTitle mr={2}>{t(translationKey)}</AlertTitle>
     </Alert>
