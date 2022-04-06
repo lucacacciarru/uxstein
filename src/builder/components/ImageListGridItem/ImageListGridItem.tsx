@@ -35,7 +35,6 @@ export const ImageListGridItem: FC<Props> = ({ style, id, attributes }) => {
           <Image
             key={item.id}
             src={item.value}
-            fallbackSrc="logo192.png"
             fallback={<ImageFallback />}
             objectFit="cover"
           />
