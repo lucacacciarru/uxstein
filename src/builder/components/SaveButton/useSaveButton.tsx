@@ -1,7 +1,7 @@
-//TODO: create a saga for create a new Persona (update doesn't add the new id to allIds)
 import { useToast } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { createPersonaTrigger } from '../../../persona/store/actions/createPersona';
 import { updatePersonaTrigger } from '../../../persona/store/actions/updatePersona';
 import { Persona } from '../../../persona/store/types/general';
 import { GenericToast } from '../../../_shared/components/GenericToast';
@@ -33,9 +33,7 @@ export function useSaveButton() {
     };
 
     if (isCreating) {
-      dispatch(
-        updatePersonaTrigger({ id: newPersona.id, properties: newPersona }),
-      );
+      dispatch(createPersonaTrigger(newPersona));
       navigate(`/${PATHS.PERSONAS}/${newPersona.id}/edit`);
     } else {
       dispatch(
