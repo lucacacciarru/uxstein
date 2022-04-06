@@ -8,6 +8,7 @@ import {
   context,
   avatar,
   illustrations,
+  fallbacks,
 } from './Categories';
 
 const iconLibrary = {
@@ -20,6 +21,7 @@ const iconLibrary = {
   ...context,
   ...avatar,
   ...illustrations,
+  ...fallbacks,
 };
 
 export default iconLibrary;
