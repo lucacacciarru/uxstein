@@ -18,6 +18,12 @@ import {
   updatePersonaRequest,
   updatePersonaSuccess,
 } from '../actions/updatePersona';
+import * as createPersonaCase from './createPersonaCases';
+import {
+  createPersonaFailure,
+  createPersonaRequest,
+  createPersonaSuccess,
+} from '../actions/createPersona';
 
 const INITIAL_STATE: PersonaState = {
   data: {
@@ -36,5 +42,8 @@ export const personaRootReducer = createReducer(INITIAL_STATE, builder => {
     .addCase(updatePersonaRequest, updatePersonaCase.requestCase)
     .addCase(updatePersonaFailure, updatePersonaCase.failureCase)
     .addCase(updatePersonaSuccess, updatePersonaCase.successCase)
+    .addCase(createPersonaRequest, createPersonaCase.requestCase)
+    .addCase(createPersonaFailure, createPersonaCase.failureCase)
+    .addCase(createPersonaSuccess, createPersonaCase.successCase)
     .addDefaultCase(state => state);
 });
