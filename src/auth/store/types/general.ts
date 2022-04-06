@@ -10,9 +10,3 @@ export type AuthState = {
   status?: 'idle' | 'logged' | 'logging';
   profile?: User;
 };
-
-declare module '../../../_shared/store/loading/types' {
-  enum LoadingKeys {
-    auth = 'auth'
-  }
-}

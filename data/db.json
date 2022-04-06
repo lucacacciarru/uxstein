@@ -191,8 +191,58 @@
           "name": "Personal Template",
           "isDefault": false,
           "builderData": {
-            "gridItems": {},
-            "pageSettings": []
+            "gridItems": {
+              "a": {
+                "type": "text",
+                "attributes": {
+                  "title": {
+                    "label": "builder.toolBar.attributes.title.label",
+                    "placeholder": "builder.toolBar.attributes.title.placeholder",
+                    "items": [{ "id": "1", "value": "Prova" }],
+                    "initialValue": [],
+                    "style": {
+                      "fontSize": "40px",
+                      "color": "#ffffff"
+                    }
+                  },
+                  "subtitle": {
+                    "label": "builder.toolBar.attributes.subtitle.label",
+                    "placeholder": "builder.toolBar.attributes.subtitle.placeholder",
+                    "items": [{ "id": "1", "value": "Subtitle" }],
+                    "initialValue": [],
+                    "style": {
+                      "fontSize": "18px",
+                      "color": "#ffffff",
+                      "fontStyle": "italic"
+                    }
+                  },
+                  "body": {
+                    "label": "builder.toolBar.attributes.body.label",
+                    "placeholder": "builder.toolBar.attributes.body.placeholder",
+                    "items": [
+                      {
+                        "id": "1",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et morbi adipiscing leo nibh porttitor diam in nibh malesuada. Sed velit lobortis volutpat, eget."
+                      }
+                    ],
+                    "initialValue": [],
+                    "style": {
+                      "fontSize": "13px",
+                      "color": "#44ca6c"
+                    }
+                  }
+                },
+                "style": {
+                  "backgroundColor": "#000000",
+                  "borderColor": "",
+                  "borderWidth": "3px",
+                  "borderRadius": "10px"
+                }
+              }
+            },
+            "pageSettings": [
+              { "i": "a", "x": 0, "y": 0, "w": 2, "h": 2, "maxW": 3 }
+            ]
           }
         },
         {

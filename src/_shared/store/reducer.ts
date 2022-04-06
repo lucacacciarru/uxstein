@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { builderRooorReducer } from '../../builder/store';
+import { builderRootReducer } from '../../builder/store';
 import { authRootReducer } from '../../auth/store';
 import { personaRootReducer } from '../../persona/store/reducers';
 import { LOADING_REDUCER_KEY, loadingRootReducer } from './loading/reducer';
@@ -8,7 +8,7 @@ import { templateRootReducer } from '../../template/store/reducers';
 const reducers = {
   auth: authRootReducer,
   persona: personaRootReducer,
-  builder: builderRooorReducer,
+  builder: builderRootReducer,
   template: templateRootReducer,
   [LOADING_REDUCER_KEY]: loadingRootReducer,
 };

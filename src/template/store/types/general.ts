@@ -27,9 +27,3 @@ export type TemplateState = {
 export enum TEMPLATE_ACTION_TYPES {
   POPULATE_BUILDER = 'template/populate-builder'
 }
-
-declare module '../../../_shared/store/loading/types' {
-  enum LoadingKeys {
-    template = 'templates'
-  }
-}

@@ -28,7 +28,8 @@ export enum BUILDER_ACTION_TYPES {
   DELETE = 'builder/delete',
   SET = 'builder/set',
   POPULATE = 'builder/populate/trigger',
-  UPDATE = 'builder/update'
+  UPDATE = 'builder/update',
+  RESET = 'builder/reset',
 }
 
 export type AttributeName =
@@ -50,9 +51,3 @@ export type ItemAttribute = {
   initialValue: { id: string; label?: string; value: string }[];
   style: Record<string, string>;
 };
-
-declare module '../../../_shared/store/loading/types' {
-  enum LoadingKeys {
-    builder = 'builder'
-  }
-}

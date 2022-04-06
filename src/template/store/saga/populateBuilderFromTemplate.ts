@@ -12,7 +12,7 @@ export function* populateBuilderFromTemplateSaga(action: PopulateBuilderFromTemp
         const updatePayload: UpdatePayload = {
             pageSettings: template.builderData.pageSettings,
             byId: template.builderData.gridItems,
-            allIds: Object.keys(template.builderData.gridItems)
+            allIds: Object.keys(template.builderData.gridItems),
         };
         yield put(updateBuilder(updatePayload));
     }
