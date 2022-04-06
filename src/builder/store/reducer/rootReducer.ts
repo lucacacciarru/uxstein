@@ -19,6 +19,8 @@ import { setBuilder } from '../actions/set';
 import { setCase } from './set';
 import { updateBuilder } from '../actions/update';
 import { updateCase } from './update';
+import { resetBuilder } from '../actions/reset';
+import { resetCase } from './reset';
 
 const INITIAL_STATE: BuilderState = {
   allIds: [],
@@ -28,7 +30,7 @@ const INITIAL_STATE: BuilderState = {
   title: ''
 };
 
-export const builderRooorReducer = createReducer(INITIAL_STATE, builder => {
+export const builderRootReducer = createReducer(INITIAL_STATE, builder => {
   builder
     .addCase(addItem, addItemCase)
     .addCase(selectItem, selectItemCase)
@@ -40,5 +42,6 @@ export const builderRooorReducer = createReducer(INITIAL_STATE, builder => {
     .addCase(deleteItem, deleteItemCase)
     .addCase(setBuilder, setCase)
     .addCase(updateBuilder, updateCase)
+    .addCase(resetBuilder, resetCase)
     .addDefaultCase(state => state);
 });

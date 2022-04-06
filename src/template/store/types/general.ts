@@ -24,8 +24,6 @@ export type TemplateState = {
   rollbackData?: TemplatesData;
 };
 
-declare module '../../../_shared/store/loading/types' {
-  enum LoadingKeys {
-    template = 'templates'
-  }
+export enum TEMPLATE_ACTION_TYPES {
+  POPULATE_BUILDER = 'template/populate-builder'
 }

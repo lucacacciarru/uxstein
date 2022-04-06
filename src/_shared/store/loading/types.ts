@@ -1,7 +1,11 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 
 export enum LoadingKeys {
-  global = 'global'
+  global = 'global',
+  auth = 'auth',
+  builder = 'builder',
+  persona = 'personas',
+  template = 'templates'
 };
 
 export type LoadingSliceConfig = {
