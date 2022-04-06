@@ -2,6 +2,7 @@ import { Box, Image } from '@chakra-ui/react';
 import { FC } from 'react';
 import { AttributesModel } from '../../store/types';
 import { Handles } from '../Handles/Handles';
+import { ImageFallback } from '../ImageFallback/ImageFallback';
 
 type Props = {
   style: Record<string, string>;
@@ -22,6 +23,7 @@ export const ImageGridItem: FC<Props> = ({ style, id, attributes }) => {
         src={attributes.image?.items[0].value}
         boxSize="full"
         fallbackSrc="logo192.png"
+        fallback={<ImageFallback />}
         objectFit={attributes.image?.style.objectFit as 'cover' | 'contain'}
       />
       <Handles id={id} bg={style.backgroundColor} />
