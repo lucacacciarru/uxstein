@@ -7,3 +7,4 @@ export * from './edit';
 export * from './context';
 export * from './avatar';
 export * from './illustrations';
+export * from './fallbacks';
