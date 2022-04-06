@@ -21,7 +21,7 @@ const iconLibrary = {
   ...context,
   ...avatar,
   ...illustrations,
-  ...fallbacks
+  ...fallbacks,
 };
 
 export default iconLibrary;

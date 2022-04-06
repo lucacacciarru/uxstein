@@ -7,6 +7,6 @@ describe('ImageFallback', () => {
   });
 
   test('should render correctly with a custom icon override', () => {
-    render(<ImageFallback iconName="AddCircle"/>);
+    render(<ImageFallback iconName="AddCircle" />);
   });
 });
