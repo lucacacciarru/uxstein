@@ -22,7 +22,6 @@ export const ImageGridItem: FC<Props> = ({ style, id, attributes }) => {
       <Image
         src={attributes.image?.items[0].value}
         boxSize="full"
-        fallbackSrc="logo192.png"
         fallback={<ImageFallback />}
         objectFit={attributes.image?.style.objectFit as 'cover' | 'contain'}
       />
