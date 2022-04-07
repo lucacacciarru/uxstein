@@ -4,10 +4,7 @@ import { PATHS } from '../../../_shared/types/paths';
 
 export const NewPersonaFloatingActionButton: React.FC = () => {
   return (
-    <Link
-      to={`${PATHS.CREATE_PERSONA}`}
-      data-testid="new-persona-link"
-    >
+    <Link to={`${PATHS.CREATE_PERSONA}`} data-testid="new-persona-link">
       <FloatingActionButton iconName="Add" />
     </Link>
   );

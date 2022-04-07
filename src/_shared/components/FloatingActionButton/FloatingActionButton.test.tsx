@@ -5,6 +5,4 @@ describe('FloatingActionButton component', () => {
   test('should be rendered', () => {
     render(<FloatingActionButton iconName="Add" />);
   });
-
-
 });
