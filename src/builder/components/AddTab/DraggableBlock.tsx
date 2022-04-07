@@ -4,6 +4,7 @@ import { Icon } from '../../../_shared/components';
 import iconLibrary from '../../../_shared/components/Icon/iconLibrary';
 import { BlockSetup } from '../../hooks/useBlockSetup';
 import { getBlockItemSettings } from '../../config/blockItemSettings';
+import { useTranslation } from 'react-i18next';
 
 export type DraggableBlockProps = {
   type: DraggableBlockType;
@@ -28,6 +29,7 @@ export const DraggableBlock: FC<Props> = ({
   iconName,
   setBlockSetup,
 }) => {
+  const { t } = useTranslation();
   const onDragStart = (e: React.DragEvent<HTMLDivElement>) => {
     e.dataTransfer.setData('text/plain', '');
     setBlockSetup(getBlockItemSettings(type));
@@ -48,8 +50,8 @@ export const DraggableBlock: FC<Props> = ({
       data-testid="draggable"
     >
       <Icon name={iconName} size="8" />
-      <Text as="h5" textStyle="h5" textTransform="capitalize">
-        {type}
+      <Text as="h5" textStyle="h5" fontSize="sm">
+        {t(`builder.toolBar.draggableBlocksLabels.${type}`)}
       </Text>
     </Box>
   );

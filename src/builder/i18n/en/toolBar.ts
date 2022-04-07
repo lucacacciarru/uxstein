@@ -60,4 +60,17 @@ export const toolBar = {
     noText: 'No text entered',
     impossibleToDeleteItem: 'There must be at least one element',
   },
+  draggableBlocksLabels: {
+    text: 'Text',
+    image: 'Image',
+    "image-list": 'Image-list',
+    "text-list": 'Text-list',
+    checkbox: 'Checkbox',
+    progress: 'Progress',
+    rate: 'Rate'
+  },
+  tabLabels: {
+    add: 'Add',
+    edit: 'Edit'
+  }
 };

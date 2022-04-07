@@ -61,4 +61,17 @@ export const toolBar = {
     noText: 'Nessun testo inserito!',
     impossibleToDeleteItem: 'Deve esistere almeno un elemento',
   },
+  draggableBlocksLabels: {
+    text: 'Testo',
+    image: 'Immagine',
+    "image-list": 'Galleria',
+    "text-list": 'Elenco',
+    checkbox: 'Checkbox',
+    progress: 'Progressivo',
+    rate: 'Valutazione'
+  },
+  tabLabels: {
+    add: 'Aggiungi',
+    edit: 'Modifica'
+  }
 };
