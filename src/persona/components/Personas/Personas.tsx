@@ -5,6 +5,7 @@ import { usePersonas } from '../../hook/usePersonas';
 import { useLoading } from '../../../_shared/store/loading';
 import { PersonaCard } from '../PersonaCard';
 import { LoadingKeys } from '../../../_shared/store/loading/types';
+import { NewPersonaFloatingActionButton } from '../NewPersonaFloatingActionButton';
 
 const containerProps: SimpleGridProps = {
   spacingX: '7',
@@ -25,5 +26,10 @@ export const Personas: React.FC = () => {
       personas.map(persona => <PersonaCard key={persona.id} {...persona} />)
     );
   }, [isLoading, personas]);
-  return <SimpleGrid {...containerProps}>{renderPersona}</SimpleGrid>;
+  return (
+    <SimpleGrid {...containerProps}>
+      {renderPersona}
+      <NewPersonaFloatingActionButton />
+    </SimpleGrid>
+  );
 };
