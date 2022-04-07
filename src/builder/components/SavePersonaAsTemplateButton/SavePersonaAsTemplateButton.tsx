@@ -1,9 +1,11 @@
 import { IconButton, useDisclosure } from '@chakra-ui/react';
 import { Icon } from '../../../_shared/components';
 import { TextInputModal } from '../../../_shared/components/TextInputModal';
+import { useSavePersonaAsTemplateButton } from './useSavePersonaAsTemplateButton';
 
-export const SaveAsTemplateButton: React.FC = () => {
+export const SavePersonaAsTemplateButton: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { savePersonaAsTemplate } = useSavePersonaAsTemplateButton();
 
   return (
     <>
@@ -18,7 +20,7 @@ export const SaveAsTemplateButton: React.FC = () => {
       <TextInputModal
         isOpen={isOpen}
         onClose={onClose}
-        onSubmit={d => console.log('submit', d)}
+        onSubmit={templateName => savePersonaAsTemplate(templateName)}
         textContent={{
           header: 'persona.modal.saveAsTemplateTitle',
           inputPlaceholder: 'persona.modal.saveAsTemplatePlaceholder',
