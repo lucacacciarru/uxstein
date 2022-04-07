@@ -10,7 +10,7 @@ describe('NewPersonaFloatingActionButton component', () => {
 
     expect(newPersonaLink).toHaveAttribute(
       'href',
-      `/${PATHS.PERSONAS}/${PATHS.CREATE_PERSONA}`,
+      `/${PATHS.CREATE_PERSONA}`,
     );
   });
 });
