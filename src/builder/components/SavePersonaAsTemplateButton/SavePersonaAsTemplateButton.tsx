@@ -10,7 +10,7 @@ export const SavePersonaAsTemplateButton: React.FC = () => {
   return (
     <>
       <IconButton
-        aria-label="save-layout"
+        aria-label="save-template"
         h="10"
         minW="20"
         variant="outlineBlack"

@@ -35,7 +35,9 @@ const MOCK_PERSONA_STATE: PersonaState = {
         updatedAt: 0,
         builderData: {
           pageSettings: MOCK_PAGE_SETTINGS,
-          gridItems: {},
+          gridItems: {
+            [BUILDER_ITEM_ID]: MOCK_ITEMS
+          },
         },
       },
     },
@@ -44,8 +46,10 @@ const MOCK_PERSONA_STATE: PersonaState = {
 
 function useCustomHook() {
   const { savePersonaAsTemplate } = useSavePersonaAsTemplateButton();
-  const createdTemplate = useSelector(getTemplates);
-  console.log('CREATED TEMPLATE', createdTemplate);
+  const createdTemplate = useSelector(getTemplates).find(
+    template => template.name === TEMPLATE_NAME,
+  );
+
   return { savePersonaAsTemplate, createdTemplate };
 }
 
@@ -55,8 +59,13 @@ describe('useSavePersonaAsTemplateButton hook', () => {
       mocks: { builder: MOCK_BUILDER_STATE, persona: MOCK_PERSONA_STATE },
     });
     act(() => result.current.savePersonaAsTemplate(TEMPLATE_NAME));
-console.log(result.current)
-    expect(result).toBeDefined();
 
+    expect(result.current.createdTemplate).toBeDefined();
+    expect(result.current.createdTemplate?.builderData.pageSettings).toEqual(
+      MOCK_PAGE_SETTINGS,
+    );
+    expect(result.current.createdTemplate?.builderData.gridItems).toEqual({
+      [BUILDER_ITEM_ID]: MOCK_ITEMS,
+    });
   });
 });
