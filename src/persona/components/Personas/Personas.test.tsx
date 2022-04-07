@@ -28,7 +28,11 @@ describe('Personas component', () => {
         },
       },
     });
+
     const card = screen.getByRole('card');
     expect(card).toBeInTheDocument();
+
+    const newPersonaLink = screen.getByTestId('new-persona-link');
+    expect(newPersonaLink).toBeInTheDocument();
   });
 });
