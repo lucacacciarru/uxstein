@@ -1,14 +1,14 @@
 import { HStack, IconButton } from '@chakra-ui/react';
 import { FC } from 'react';
 import { Icon } from '../../../_shared/components';
-import { SaveButton } from '../SaveButton';
+import { SavePersonaButton } from '../SavePersonaButton';
 
 export const HeaderButtons: FC = () => {
   return (
     <HStack spacing="6">
-      <SaveButton />
+      <SavePersonaButton />
       <IconButton
-        aria-label="save-layout"
+        aria-label="save-template"
         h="10"
         minW="20"
         variant="outlineBlack"

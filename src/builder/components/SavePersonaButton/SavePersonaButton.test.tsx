@@ -1,8 +1,8 @@
 import { render } from '../../../_shared/testConfig/customRender';
-import { SaveButton } from './SaveButton';
+import { SavePersonaButton } from './SavePersonaButton';
 
 describe('SaveButton component', () => {
   test('should be rendered', () => {
-    render(<SaveButton />);
+    render(<SavePersonaButton />);
   });
 });
