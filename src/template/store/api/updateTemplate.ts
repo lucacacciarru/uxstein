@@ -1,5 +1,5 @@
-import { UpdatePersonaPayload } from '../../../persona/store/types/updatePersonaCases';
+import { UpdateTemplatePayload } from '../types/updateTemplate';
 
-export async function updateTemplateApi(_update: UpdatePersonaPayload) {
+export async function updateTemplateApi(_update: UpdateTemplatePayload) {
   return Promise.resolve({});
 }
