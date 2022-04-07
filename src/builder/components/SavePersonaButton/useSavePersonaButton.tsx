@@ -8,7 +8,7 @@ import { GenericToast } from '../../../_shared/components/GenericToast';
 import { PATHS } from '../../../_shared/types/paths';
 import { baseSelector } from '../../store/selectors/baseSelector';
 
-export function useSaveButton() {
+export function useSavePersonaButton() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const toast = useToast();

@@ -4,7 +4,7 @@ import { PersonaState } from '../../../persona/store/types/general';
 import { renderHook, act } from '../../../_shared/testConfig/customRenderHook';
 import { getBlockItemSettings } from '../../config/blockItemSettings';
 import { BuilderState } from '../../store/types';
-import { useSaveButton } from './useSaveButton';
+import { useSavePersonaButton } from './useSavePersonaButton';
 
 const EXISTING_ID = 'existingId';
 const ANY_ID = 'anyId';
@@ -39,7 +39,7 @@ const MOCK_PERSONA_STATE: PersonaState = {
 };
 
 function useCustomHook() {
-  const { savePersona } = useSaveButton();
+  const { savePersona } = useSavePersonaButton();
   const selectedPersona = useSelector(getPersonaById(ANY_ID));
   return { savePersona, selectedPersona };
 }

@@ -1,9 +1,9 @@
 import { IconButton } from '@chakra-ui/react';
 import { Icon } from '../../../_shared/components';
-import { useSaveButton } from './useSaveButton';
+import { useSavePersonaButton } from './useSavePersonaButton';
 
-export const SaveButton: React.FC = () => {
-  const { savePersona } = useSaveButton();
+export const SavePersonaButton: React.FC = () => {
+  const { savePersona } = useSavePersonaButton();
   return (
     <IconButton
       aria-label="save"
