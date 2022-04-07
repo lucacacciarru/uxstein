@@ -1,5 +1,5 @@
 import { CreateTemplatePayload } from '../types/createTemplate';
 
-export async function createTemplateApi(_update: CreateTemplatePayload) {
+export async function createTemplateApi(_template: CreateTemplatePayload) {
   return Promise.resolve({});
 }
