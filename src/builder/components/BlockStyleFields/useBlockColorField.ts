@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { useDebouncedCallback } from 'use-debounce';
-import { colorFieldsLabels } from '../../config/styleSettings/colorFieldsLabels';
+import { fieldLabelsMap } from '../../config/translationsMaps/fieldLabels';
 import { updateBlockStyle } from '../../store/actions/updateBlockStyle';
 
 type Params = {
@@ -14,7 +14,7 @@ export const useBlockColorField = ({ styleValue, blockItemId, styleKey }: Params
     const dispatch = useDispatch();
     const { t } = useTranslation();
 
-    const label = t(colorFieldsLabels[styleKey]) as string;
+    const label = t(fieldLabelsMap[styleKey]) as string;
 
     const debouncedUpdateValue = useDebouncedCallback(value => {
         dispatch(updateBlockStyle(value));

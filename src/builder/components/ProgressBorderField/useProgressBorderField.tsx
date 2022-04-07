@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { useDebouncedCallback } from 'use-debounce';
 import { borderItemSettings } from '../../config/styleSettings/borderItem';
-import { colorFieldsLabels } from '../../config/styleSettings/colorFieldsLabels';
+import { fieldLabelsMap } from '../../config/translationsMaps/fieldLabels';
 import { updateAttributeStyle } from '../../store/actions/updateAttributeStyle';
 import { AttributeName } from '../../store/types';
 import { SizesModel } from '../StyleFields/SelectOneSize';
@@ -21,7 +21,7 @@ export function useProgressBorderField({
 }: Params) {
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const label = t(colorFieldsLabels[styleKey]) as string;
+  const label = t(fieldLabelsMap[styleKey]) as string;
 
   const sizeSettings = borderItemSettings[styleKey];
 

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useDebouncedCallback } from 'use-debounce';
 import { IconComponentModel } from '../../../_shared/components';
-import { colorFieldsLabels } from '../../config/styleSettings/colorFieldsLabels';
+import { fieldLabelsMap } from '../../config/translationsMaps/fieldLabels';
 import { icon } from '../../config/styleSettings/icon';
 import { updateAttributeStyle } from '../../store/actions/updateAttributeStyle';
 import { getAttributeByNameAndId } from '../../store/selectors/getAttributeByNameAndId';
@@ -23,7 +23,7 @@ export const useIconField = ({
 }: Params) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const label = t(colorFieldsLabels[styleKey]) as string;
+  const label = t(fieldLabelsMap[styleKey]) as string;
 
   const iconSettings = icon[attributeName];
   const selectedValue =
