@@ -33,7 +33,9 @@ function App() {
               <Route path={PATHS.EDIT_PERSONA} element={<Builder />} />
               <Route path={PATHS.CREATE_PERSONA} element={<Builder />} />
             </Route>
-            <Route path={PATHS.TEMPLATES} element={<MyTemplates />} />
+            <Route path={PATHS.TEMPLATES} element={<MyTemplates />}>
+              <Route path={PATHS.EDIT_TEMPLATE} element={<Builder />} />
+            </Route>
             <Route path={PATHS.PROFILE} element={<>Profile</>} />
           </Route>
         </Route>
