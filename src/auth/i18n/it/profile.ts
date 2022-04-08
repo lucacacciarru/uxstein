@@ -1,4 +1,8 @@
 export const profile = {
+  page: {
+    title: 'Gestisci il tuo profile',
+    subtitle: 'Cambia le tue informazioni',
+  },
   label: {
     username: 'Username',
     email: 'Indirizzo email',
