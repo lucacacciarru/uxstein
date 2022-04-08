@@ -23,7 +23,7 @@ export const LinkButtons: FC<Props> = ({ isExtended }) => {
         <Text>{t('navigation.personas')}</Text>
       </CustomLink>
       <CustomLink to={PATHS.TEMPLATES}>
-        <Icon name="Layout10" size="12" />
+        <Icon name="Template" size="12" />
         <Text>{t('navigation.templates')}</Text>
       </CustomLink>
       <Spacer />

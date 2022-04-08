@@ -18,6 +18,7 @@ import { ReactComponent as TwoColumn } from '../SVG/TwoColumn.svg';
 import { ReactComponent as TwoRow } from '../SVG/TwoRow.svg';
 import { ReactComponent as ThreeColumn } from '../SVG/ThreeColumn.svg';
 import { ReactComponent as ThreeRow } from '../SVG/ThreeRow.svg';
+import { ReactComponent as Template } from '../SVG/Template.svg';
 
 export const layout = {
   Layout1,
@@ -40,4 +41,5 @@ export const layout = {
   TwoRow,
   ThreeColumn,
   ThreeRow,
+  Template,
 };
