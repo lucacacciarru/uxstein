@@ -20,6 +20,7 @@ import { ReactComponent as Hexagon } from '../SVG/Hexagon.svg';
 import { ReactComponent as Like } from '../SVG/Like.svg';
 import { ReactComponent as Smile } from '../SVG/Smile.svg';
 import { ReactComponent as Square } from '../SVG/Square.svg';
+import { ReactComponent as SaveTemplate } from '../SVG/SaveTemplate.svg';
 
 export const actions = {
   Add,
@@ -44,4 +45,5 @@ export const actions = {
   Like,
   Smile,
   Square,
+  SaveTemplate,
 };
