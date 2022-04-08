@@ -6,7 +6,7 @@ export const UsernameProfileInput: React.FC = () => {
   const { onChange, text, ...rest } = useUsernameProfileInput();
   return (
     <ProfileInputWrapper {...rest}>
-      <TextInput onChange={onChange} text={text} />
+      <TextInput onChange={onChange} text={text} name="username" />
     </ProfileInputWrapper>
   );
 };

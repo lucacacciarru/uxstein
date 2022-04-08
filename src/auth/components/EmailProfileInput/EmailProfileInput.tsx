@@ -6,7 +6,7 @@ export const EmailProfileInput: React.FC = () => {
   const { text, onChange, ...rest } = useEmailProfileInput();
   return (
     <ProfileInputWrapper {...rest}>
-      <TextInput text={text} onChange={onChange} type="email" />
+      <TextInput text={text} onChange={onChange} type="email" name="email" />
     </ProfileInputWrapper>
   );
 };

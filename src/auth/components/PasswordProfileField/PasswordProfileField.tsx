@@ -10,7 +10,7 @@ export const PasswordProfileField = () => {
     <Box w="full">
       <Text as="h2" textStyle="h2">
         Password
-      </Text>{' '}
+      </Text>
       <ProfileInputWrapper {...rest}>
         <Stack gap="3" mt="3">
           <PasswordInput

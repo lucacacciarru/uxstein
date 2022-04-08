@@ -8,11 +8,12 @@ import { ErrorPage } from './_shared/pages';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { initI18n } from './_shared/i18n';
-import { Signup } from './auth/pages/Signup';
+import { Signup } from './auth/pages';
 import { Builder } from './builder/pages/Builder';
 import { MyPersona } from './persona/pages/MyPersona';
 import { MyTemplates } from './template/pages/MyTemplates';
 import { PATHS } from './_shared/types/paths';
+import { Profile } from './auth/pages';
 
 i18n.use(initReactI18next).init(initI18n);
 
@@ -37,7 +38,7 @@ function App() {
               <Route index element={<MyTemplates />} />
               <Route path={PATHS.EDIT_ENTITY} element={<Builder />} />
             </Route>
-            <Route path={PATHS.PROFILE} element={<>Profile</>} />
+            <Route path={PATHS.PROFILE} element={<Profile />} />
           </Route>
         </Route>
       </Routes>

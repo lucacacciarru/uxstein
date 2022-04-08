@@ -1,53 +1,47 @@
-import { useToast } from '@chakra-ui/react';
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { GenericToast } from '../../../_shared/components/GenericToast';
+import { useProfileInput } from '../../hooks';
 import { getUserProfile } from '../../store/selectors';
 import { checkEmail } from '../../utils/checkEmail';
 
 export function useEmailProfileInput() {
   const { t } = useTranslation();
-  const toast = useToast();
+  const {
+    errorMessage,
+    inputError,
+    inputValue,
+    onChange,
+    setErrorMessage,
+    setInputError,
+    showToast,
+  } = useProfileInput({ toastText: 'auth.profile.toast.email' });
 
   const email = useSelector(getUserProfile)?.email as string;
-
-  const mapErrorMessage: Record<string, string> = {};
-
-  const [inputValue, setInputValue] = useState<string>('');
-  const [inputError, setInputError] = useState<boolean>(false);
-  const [errorMessage, setErrorMessage] = useState<string>('');
+  const mapErrorMessage: Record<string, string> = {
+    isNotEmail: t('auth.profile.errors.email.isNotEmail'),
+    equalEmail: t('auth.profile.errors.email.equalEmail'),
+  };
 
   const text = {
     placeholder: email,
     title: t('auth.profile.label.email'),
   };
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-  };
-
-  const onClick = () => {
-    if (!checkEmail(inputValue)) {
+  const onSubmit = (e: React.FormEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const selectedValue = inputValue.email || '';
+    if (selectedValue === email) {
       setInputError(true);
-      setErrorMessage(mapErrorMessage.tooShort);
+      setErrorMessage(mapErrorMessage.equalEmail);
       return;
     }
-    if (inputValue === email) {
+    if (!checkEmail(selectedValue)) {
       setInputError(true);
-      setErrorMessage(mapErrorMessage.empty);
+      setErrorMessage(mapErrorMessage.isNotEmail);
       return;
     }
     setInputError(false);
-    toast({
-      render: () => (
-        <GenericToast
-          status="success"
-          translationKey={'auth.form.buttonLogin'}
-          data-testid="role"
-        />
-      ),
-    });
+    showToast();
   };
 
   return {
@@ -56,6 +50,6 @@ export function useEmailProfileInput() {
     errorMessage,
     text,
     onChange,
-    onClick,
+    onSubmit,
   };
 }
