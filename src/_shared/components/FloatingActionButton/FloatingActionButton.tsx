@@ -19,6 +19,7 @@ export const FloatingActionButton: React.FC<Props> = ({ iconName }) => {
       borderRadius="50%"
       borderWidth="3px"
       borderColor="black.0"
+      zIndex="popover"
     >
       <Icon name={iconName} height="6" width="6" color="white" />
     </Box>
