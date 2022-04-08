@@ -6,7 +6,7 @@ export const SavePersonaButton: React.FC = () => {
   const { savePersona } = useSavePersonaButton();
   return (
     <IconButton
-      aria-label="save"
+      aria-label="save-persona"
       h="10"
       minW="20"
       variant="outlineBlack"

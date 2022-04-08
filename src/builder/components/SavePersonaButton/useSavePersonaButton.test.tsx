@@ -44,7 +44,7 @@ function useCustomHook() {
   return { savePersona, selectedPersona };
 }
 
-describe('useSaveButton hook', () => {
+describe('useSavePersonaButton hook', () => {
   test('pageSettings inside single Persona should change if savePersona function is called', () => {
     const { result } = renderHook(() => useCustomHook(), {
       mocks: { builder: MOCK_BUILDER_STATE, persona: MOCK_PERSONA_STATE },

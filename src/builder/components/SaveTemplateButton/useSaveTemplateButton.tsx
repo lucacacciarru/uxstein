@@ -4,13 +4,13 @@ import { baseSelector } from '../../store/selectors/baseSelector';
 import { createTemplateTrigger } from '../../../template/store/actions/createTemplate';
 import { getPersonaById } from '../../../persona/store/selectors/getPersonaById';
 
-export function useSavePersonaAsTemplateButton() {
+export function useSaveTemplateButton() {
   const dispatch = useDispatch();
   const builder = useSelector(baseSelector);
   const personaId = builder.personaId;
   const persona = useSelector(getPersonaById(personaId));
 
-  const savePersonaAsTemplate = (templateName: string) => {
+  const saveTemplate = (templateName: string) => {
     const newTemplate: Template = {
       id: Date.now().toString(),
       src: persona.src,
@@ -24,5 +24,5 @@ export function useSavePersonaAsTemplateButton() {
     dispatch(createTemplateTrigger(newTemplate));
   };
 
-  return { savePersonaAsTemplate };
+  return { saveTemplate };
 }

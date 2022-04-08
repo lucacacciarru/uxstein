@@ -3,7 +3,7 @@ import { PersonaState } from '../../../persona/store/types/general';
 import { renderHook, act } from '../../../_shared/testConfig/customRenderHook';
 import { getBlockItemSettings } from '../../config/blockItemSettings';
 import { BuilderState } from '../../store/types';
-import { useSavePersonaAsTemplateButton } from './useSavePersonaAsTemplateButton';
+import { useSaveTemplateButton } from './useSaveTemplateButton';
 import { getTemplates } from '../../../template/store/selectors/getTemplates';
 
 const BUILDER_ITEM_ID = 'builderItemId';
@@ -45,20 +45,20 @@ const MOCK_PERSONA_STATE: PersonaState = {
 };
 
 function useCustomHook() {
-  const { savePersonaAsTemplate } = useSavePersonaAsTemplateButton();
+  const { saveTemplate } = useSaveTemplateButton();
   const createdTemplate = useSelector(getTemplates).find(
     template => template.name === TEMPLATE_NAME,
   );
 
-  return { savePersonaAsTemplate, createdTemplate };
+  return { saveTemplate, createdTemplate };
 }
 
-describe('useSavePersonaAsTemplateButton hook', () => {
-  test('ddd', () => {
+describe('useSaveTemplateButton hook', () => {
+  test('should create a Template with the passed name and the starting Persona builderData', () => {
     const { result } = renderHook(() => useCustomHook(), {
       mocks: { builder: MOCK_BUILDER_STATE, persona: MOCK_PERSONA_STATE },
     });
-    act(() => result.current.savePersonaAsTemplate(TEMPLATE_NAME));
+    act(() => result.current.saveTemplate(TEMPLATE_NAME));
 
     expect(result.current.createdTemplate).toBeDefined();
     expect(result.current.createdTemplate?.builderData.pageSettings).toEqual(
