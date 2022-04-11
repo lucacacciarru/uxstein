@@ -1,8 +1,11 @@
+import { header } from './header';
+import { modal } from './modal';
 import { toast } from './toast';
 import { toolBar } from './toolBar';
-import { header } from './header';
+
 export const builder = {
+  header,
+  modal,
   toast,
   toolBar,
-  header,
 };

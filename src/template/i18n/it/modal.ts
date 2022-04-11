@@ -6,5 +6,6 @@ export const modal = {
   createPersona: 'Inizia a creare!',
   close: 'Chiudi',
   defaultTemplate: 'template predefinito',
-  createdBy: 'creato da '
+  createdBy: 'creato da ',
+  edit: 'Modifica',
 };
