@@ -16,9 +16,10 @@ export function* populateBuilderSaga(action: PopulateBuilderAction) {
   const persona: Persona | undefined = yield select(getPersonaById(action.payload.entityId));
   if (persona) {
     const setPayload: SetPayload = {
-      entityId: persona.id,
+      entityId: entityType === 'persona' ? persona.id : '',
       entityType,
-      title: persona.title, ...persona.builderData,
+      title: entityType === 'persona' ? persona.title : '',
+      ...persona.builderData,
     };
     yield put(setBuilder(setPayload));
   }
@@ -26,9 +27,10 @@ export function* populateBuilderSaga(action: PopulateBuilderAction) {
   const template: Template | undefined = yield select(getTemplateById(action.payload.entityId));
   if (template) {
     const setPayload: SetPayload = {
-      entityId: template.id,
+      entityId: entityType === 'template' ? template.id : '',
       entityType,
-      title: template.name, ...template.builderData,
+      title: entityType === 'template' ? template.name : '',
+      ...template.builderData,
     };
     yield  put(setBuilder(setPayload));
   }
