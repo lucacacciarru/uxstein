@@ -23,7 +23,3 @@ export type TemplateState = {
   data: TemplatesData;
   rollbackData?: TemplatesData;
 };
-
-export enum TEMPLATE_ACTION_TYPES {
-  POPULATE_BUILDER = 'template/populate-builder'
-}
