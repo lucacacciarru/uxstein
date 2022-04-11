@@ -5,12 +5,11 @@ export enum PATHS {
     PROFILE = 'profile',
     PERSONAS = 'my-personas',
     TEMPLATES = 'my-templates',
-    EDIT_PERSONA = ':personaId/edit',
-    CREATE_PERSONA = 'create',
-    EDIT_TEMPLATE = ':templateId/edit'
+    EDIT_ENTITY = ':entityId/edit',
+    CREATE_PERSONA = 'create'
 }
 
 export const pathsWithHidedNavigation = [
-    PATHS.EDIT_PERSONA,
+    PATHS.EDIT_ENTITY,
     PATHS.CREATE_PERSONA
 ]
