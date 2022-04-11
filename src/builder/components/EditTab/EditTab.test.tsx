@@ -10,7 +10,8 @@ const MOCK_BUILDER_STATE: BuilderState = {
   byId: { [EXISTING_ID]: getBlockItemSettings('text').gridItemSettings },
   pageSettings: [],
   selectedBlockId: EXISTING_ID,
-  personaId: 'any id',
+  entityId: 'any id',
+  entityType: 'persona',
   title: 'any title',
 };
 describe('EditTab', () => {

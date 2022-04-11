@@ -27,7 +27,8 @@ const MOCK_BUILDER_STATE: BuilderState = {
   },
   pageSettings: [],
   selectedBlockId: undefined,
-  personaId: 'any id',
+  entityId: 'any id',
+  entityType: 'persona',
   title: 'any title',
 };
 

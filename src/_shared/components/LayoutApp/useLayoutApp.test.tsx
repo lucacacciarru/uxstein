@@ -23,7 +23,7 @@ describe('useLayoutApp', () => {
 
   test('showNavigation should return false if the path IS .../edit', () => {
     const { result } = renderHook(() => useLayoutApp(), {
-      initialRoutes: [PATHS.EDIT_PERSONA],
+      initialRoutes: [PATHS.EDIT_ENTITY],
       mocks: {
         auth: MOCK_AUTH_LOGGED_STATE,
       },

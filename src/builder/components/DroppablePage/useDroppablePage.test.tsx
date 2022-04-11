@@ -12,7 +12,8 @@ const MOCK_BUILDER_STATE: BuilderState = {
     existingId: { attributes: {}, style: {}, type: 'text' },
   },
   pageSettings: [INITIAL_ITEM],
-  personaId: 'any id',
+  entityId: 'any id',
+  entityType: 'persona',
   title: 'any title',
 };
 

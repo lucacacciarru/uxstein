@@ -7,7 +7,8 @@ export const resetCase: CaseReducer<BuilderState, ResetAction> = () => {
         allIds: [],
         byId: {},
         pageSettings: [],
-        personaId: '',
+        entityId: '',
+        entityType: '',
         title: '',
     }
 }

@@ -26,7 +26,8 @@ const INITIAL_STATE: BuilderState = {
   allIds: [],
   byId: {},
   pageSettings: [],
-  personaId: '',
+  entityId: '',
+  entityType: '',
   title: ''
 };
 
