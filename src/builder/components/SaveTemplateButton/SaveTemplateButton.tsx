@@ -1,10 +1,8 @@
-import { IconButton, useDisclosure } from '@chakra-ui/react';
+import { IconButton } from '@chakra-ui/react';
 import { Icon } from '../../../_shared/components';
-import { TextInputModal } from '../../../_shared/components/TextInputModal';
 import { useSaveTemplateButton } from './useSaveTemplateButton';
 
 export const SaveTemplateButton: React.FC = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const { saveTemplate } = useSaveTemplateButton();
 
   return (
@@ -15,17 +13,7 @@ export const SaveTemplateButton: React.FC = () => {
         minW="20"
         variant="outlineBlack"
         icon={<Icon name="Layout1" size="8" />}
-        onClick={onOpen}
-      />
-      <TextInputModal
-        isOpen={isOpen}
-        onClose={onClose}
-        onSubmit={templateName => saveTemplate(templateName)}
-        textContent={{
-          header: 'persona.modal.saveAsTemplateTitle',
-          inputPlaceholder: 'persona.modal.saveAsTemplatePlaceholder',
-          toast: 'persona.toast.saveAsTemplate',
-        }}
+        onClick={saveTemplate}
       />
     </>
   );

@@ -1,37 +1,38 @@
 import { useSelector } from 'react-redux';
-import { getPersonaById } from '../../../persona/store/selectors/getPersonaById';
-import { PersonaState } from '../../../persona/store/types/general';
 import { renderHook, act } from '../../../_shared/testConfig/customRenderHook';
 import { getBlockItemSettings } from '../../config/blockItemSettings';
+import { PersonaState } from '../../../persona/store/types/general';
+import { getPersonaById } from '../../../persona/store/selectors/getPersonaById';
 import { BuilderState } from '../../store/types';
 import { useSavePersonaButton } from './useSavePersonaButton';
 
 const EXISTING_ID = 'existingId';
-const ANY_ID = 'anyId';
+const ENTITY_ID = 'anyEntityId';
 
 const MOCK_PAGE_SETTINGS = [{ i: EXISTING_ID, h: 1, w: 1, x: 1, y: 1 }];
 const MOCK_ITEMS = getBlockItemSettings('text').gridItemSettings;
 
 const MOCK_BUILDER_STATE: BuilderState = {
-  allIds: ['existingId'],
+  allIds: [EXISTING_ID],
   byId: {
     [EXISTING_ID]: MOCK_ITEMS,
   },
   pageSettings: MOCK_PAGE_SETTINGS,
-  personaId: ANY_ID,
+  entityId: ENTITY_ID,
+  entityType: 'persona',
   title: 'any title',
 };
 
 const MOCK_PERSONA_STATE: PersonaState = {
   data: {
-    allIds: [ANY_ID],
+    allIds: [ENTITY_ID],
     byId: {
-      anyId: {
-        builderData: { gridItems: {}, pageSettings: [] },
-        createdAt: 0,
-        id: ANY_ID,
+      [ENTITY_ID]: {
+        id: ENTITY_ID,
         src: 'anySrc',
+        builderData: { gridItems: {}, pageSettings: [] },
         title: 'anyTitle',
+        createdAt: 0,
         updatedAt: 0,
       },
     },
@@ -40,7 +41,7 @@ const MOCK_PERSONA_STATE: PersonaState = {
 
 function useCustomHook() {
   const { savePersona } = useSavePersonaButton();
-  const selectedPersona = useSelector(getPersonaById(ANY_ID));
+  const selectedPersona = useSelector(getPersonaById(ENTITY_ID));
   return { savePersona, selectedPersona };
 }
 
