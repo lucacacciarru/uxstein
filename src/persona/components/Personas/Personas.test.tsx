@@ -32,7 +32,7 @@ describe('Personas component', () => {
     const card = screen.getByRole('card');
     expect(card).toBeInTheDocument();
 
-    const newPersonaLink = screen.getByTestId('new-persona-link');
+    const newPersonaLink = screen.getByTestId('new-entity-link');
     expect(newPersonaLink).toBeInTheDocument();
   });
 });

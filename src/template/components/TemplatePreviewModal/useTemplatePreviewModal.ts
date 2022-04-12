@@ -18,7 +18,7 @@ export const useTemplatePreviewModal = (templateId: string) => {
     navigate(navigationPath, { replace: false });
   };
 
-  const createPersonaPath = `/${PATHS.PERSONAS}/${PATHS.CREATE_PERSONA}`;
+  const createPersonaPath = `/${PATHS.PERSONAS}/${PATHS.CREATE_ENTITY}`;
   const editTemplatePath = `/${PATHS.TEMPLATES}/${templateId}/edit`;
 
   const handleCreatePersona = () => handleAction(createPersonaPath, 'persona');
