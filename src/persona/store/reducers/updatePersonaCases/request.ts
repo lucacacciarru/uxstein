@@ -16,6 +16,7 @@ export const requestCase: CaseReducer<
       ...state.data.byId,
       [action.payload.id]: {
         ...state.data.byId[action.payload.id],
+        updatedAt: Date.now(),
         ...action.payload.properties,
       },
     },

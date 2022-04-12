@@ -14,7 +14,7 @@ export const SavePersonaAsTemplateButton: React.FC = () => {
         h="10"
         minW="20"
         variant="outlineBlack"
-        icon={<Icon name="Layout1" size="8" />}
+        icon={<Icon name="SaveTemplate" size="8" />}
         onClick={onOpen}
       />
       <TextInputModal
