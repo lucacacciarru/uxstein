@@ -31,11 +31,9 @@ export function useSavePersonaButton() {
     };
 
     if (isCreating) {
-      console.log('CREATE NEW PERSONA');
       dispatch(createPersonaTrigger(newPersona));
       navigate(`/${PATHS.PERSONAS}/${newPersona.id}/edit`);
     } else {
-      console.log('UPDATE EXISTING PERSONA');
       dispatch(
         updatePersonaTrigger({
           id: entityId,

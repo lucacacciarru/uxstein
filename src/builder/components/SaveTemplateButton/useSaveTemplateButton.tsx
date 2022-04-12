@@ -30,11 +30,9 @@ export function useSaveTemplateButton() {
     };
 
     if (isCreating) {
-      console.log('CREATE NEW TEMPLATE');
       dispatch(createTemplateTrigger(newTemplate));
       navigate(`/${PATHS.TEMPLATES}/${newTemplate.id}/edit`);
     } else {
-      console.log('UPDATING EXISTING TEMPLATE');
       dispatch(
         updateTemplateTrigger({
           id: entityId,

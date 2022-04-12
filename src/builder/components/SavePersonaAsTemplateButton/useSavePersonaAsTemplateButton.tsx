@@ -13,7 +13,6 @@ export function useSavePersonaAsTemplateButton() {
   const gridItems = builder.byId;
 
   const savePersonaAsTemplate = (templateName: string) => {
-    console.log('SAVE PERSONA AS TEMPLATE');
     const newTemplateId = Date.now().toString();
 
     const newTemplate: Template = {
