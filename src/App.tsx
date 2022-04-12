@@ -31,11 +31,12 @@ function App() {
             <Route path={PATHS.PERSONAS}>
               <Route index element={<MyPersona />} />
               <Route path={PATHS.EDIT_ENTITY} element={<Builder />} />
-              <Route path={PATHS.CREATE_PERSONA} element={<Builder />} />
+              <Route path={PATHS.CREATE_ENTITY} element={<Builder />} />
             </Route>
             <Route path={PATHS.TEMPLATES}>
               <Route index element={<MyTemplates />} />
               <Route path={PATHS.EDIT_ENTITY} element={<Builder />} />
+              <Route path={PATHS.CREATE_ENTITY} element={<Builder />} />
             </Route>
             <Route path={PATHS.PROFILE} element={<>Profile</>} />
           </Route>

@@ -5,7 +5,8 @@ import { usePersonas } from '../../hook/usePersonas';
 import { useLoading } from '../../../_shared/store/loading';
 import { PersonaCard } from '../PersonaCard';
 import { LoadingKeys } from '../../../_shared/store/loading/types';
-import { NewPersonaFloatingActionButton } from '../NewPersonaFloatingActionButton';
+import { NewEntityFloatingActionButton } from '../../../builder/components/NewEntityFloatingActionButton';
+import { PATHS } from '../../../_shared/types/paths';
 
 const containerProps: SimpleGridProps = {
   spacingX: '7',
@@ -29,7 +30,7 @@ export const Personas: React.FC = () => {
   return (
     <SimpleGrid {...containerProps}>
       {renderPersona}
-      <NewPersonaFloatingActionButton />
+      <NewEntityFloatingActionButton destinationPath={PATHS.CREATE_ENTITY}/>
     </SimpleGrid>
   );
 };
