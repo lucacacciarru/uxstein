@@ -1,6 +1,6 @@
 export const profile = {
   page: {
-    title: 'Gestisci il tuo profile',
+    title: 'Gestisci il tuo profilo',
     subtitle: 'Cambia le tue informazioni',
   },
   label: {
