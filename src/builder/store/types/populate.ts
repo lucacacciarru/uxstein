@@ -1,8 +1,9 @@
 import { PayloadAction } from '@reduxjs/toolkit';
-import { BUILDER_ACTION_TYPES } from './general';
+import { BUILDER_ACTION_TYPES, BuilderEntityType } from './general';
 
 export type PopulateBuilderPayload = {
-    personaId: string;
+    entityId: string;
+    entityType: BuilderEntityType;
 }
 
 export type PopulateBuilderAction = PayloadAction<

@@ -7,7 +7,8 @@ const MOCK_BUILDER_STATE: BuilderState = {
   byId: { existingId: { attributes: {}, style: {}, type: 'text' } },
   pageSettings: [],
   selectedBlockId: undefined,
-  personaId: 'any id',
+  entityId: 'any id',
+  entityType: 'persona',
   title: 'any title',
 };
 

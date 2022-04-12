@@ -1,13 +1,14 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { Layout } from 'react-grid-layout';
-import { BUILDER_ACTION_TYPES } from '.';
+import { BUILDER_ACTION_TYPES, BuilderEntityType } from '.';
 import { GridItem } from './general';
 
 
 export type SetPayload = {
     gridItems: Record<string, GridItem>;
     pageSettings: Layout[];
-    personaId: string;
+    entityId: string;
+    entityType: BuilderEntityType;
     title: string;
 }
 

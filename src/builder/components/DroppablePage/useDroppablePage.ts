@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import { Layout, ReactGridLayoutProps } from 'react-grid-layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { BlockSetup } from '../../hooks/useBlockSetup';
@@ -8,10 +7,11 @@ import { updatePageSettings } from '../../store/actions/updatePageSettings';
 import { selectItem } from '../../store/actions/selected';
 import { getPageSettings } from '../../store/selectors/getPageSettings';
 import { populateBuilderTrigger } from '../../store/actions/populate';
+import { useBuilderEntity } from '../../hooks/useBuilderEntity';
 
 export const useDroppablePage = (blockSetup: BlockSetup) => {
   const dispatch = useDispatch();
-  const { personaId } = useParams();
+  const { entityId, entityType } = useBuilderEntity();
   const layout = useSelector(getPageSettings);
 
   const onDropHandler = (
@@ -72,8 +72,8 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
   };
 
   useEffect(() => {
-    dispatch(populateBuilderTrigger({ personaId: personaId || '' }));
-  }, [dispatch, personaId]);
+    dispatch(populateBuilderTrigger({ entityId: entityId || '', entityType }));
+  }, [dispatch, entityId]);
 
   return {
     layout,

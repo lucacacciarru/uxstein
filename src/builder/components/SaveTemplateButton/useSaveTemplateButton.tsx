@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@chakra-ui/react';
-import { createPersonaTrigger } from '../../../persona/store/actions/createPersona';
-import { updatePersonaTrigger } from '../../../persona/store/actions/updatePersona';
+import { createTemplateTrigger } from '../../../template/store/actions/createTemplate';
+import { updateTemplateTrigger } from '../../../template/store/actions/updateTemplate';
 import { baseSelector } from '../../store/selectors/baseSelector';
-import { Persona } from '../../../persona/store/types/general';
+import { Template } from '../../../template/store/types/general';
 import { PATHS } from '../../../_shared/types/paths';
 import { GenericToast } from '../../../_shared/components/GenericToast';
 
-export function useSavePersonaButton() {
+export function useSaveTemplateButton() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const toast = useToast();
@@ -16,30 +16,32 @@ export function useSavePersonaButton() {
   const { entityId, pageSettings, title } = builder;
   const gridItems = builder.byId;
 
-  const savePersona = () => {
+  const saveTemplate = () => {
     const isCreating = entityId === '';
-    const newPersona: Persona = {
+    const newTemplate: Template = {
       id: Date.now().toString(),
-      src: 'New Persona',
+      src: 'New Template',
       builderData: {
         gridItems,
         pageSettings,
       },
-      title,
-      createdAt: Date.now(),
-      updatedAt: Date.now(),
+      name: title,
+      isDefault: false,
     };
 
     if (isCreating) {
-      console.log('CREATE NEW PERSONA');
-      dispatch(createPersonaTrigger(newPersona));
-      navigate(`/${PATHS.PERSONAS}/${newPersona.id}/edit`);
+      console.log('CREATE NEW TEMPLATE');
+      dispatch(createTemplateTrigger(newTemplate));
+      navigate(`/${PATHS.TEMPLATES}/${newTemplate.id}/edit`);
     } else {
-      console.log('UPDATE EXISTING PERSONA');
+      console.log('UPDATING EXISTING TEMPLATE');
       dispatch(
-        updatePersonaTrigger({
+        updateTemplateTrigger({
           id: entityId,
-          properties: { builderData: { gridItems, pageSettings }, title },
+          properties: {
+            builderData: { gridItems, pageSettings },
+            name: title,
+          },
         }),
       );
     }
@@ -48,11 +50,10 @@ export function useSavePersonaButton() {
       render: () => (
         <GenericToast
           status="success"
-          translationKey="builder.toast.personaSaved"
+          translationKey="builder.toast.templateSaved"
         />
       ),
     });
   };
-
-  return { savePersona };
+  return { saveTemplate };
 }

@@ -5,8 +5,8 @@ import { updateTemplateTrigger } from '../actions/updateTemplate';
 import { deleteTemplateSaga } from './deleteTemplate';
 import { fetchTemplatesSaga } from './fetchTemplates';
 import { updateTemplateSaga } from './updateTemplate';
-import { populateBuilderFromTemplateTrigger } from '../actions/populateBuilderFromTemplate';
-import { populateBuilderFromTemplateSaga } from './populateBuilderFromTemplate';
+import { populateBuilderTrigger } from '../../../builder/store/actions/populate';
+import { populateBuilderSaga } from '../../../builder/store/sagas/populateBuilder';
 import { createTemplateTrigger } from '../actions/createTemplate';
 import { createTemplateSaga } from './createTemplate';
 
@@ -15,5 +15,5 @@ export function* templateRootSaga() {
   yield takeLatest(updateTemplateTrigger, updateTemplateSaga);
   yield takeLatest(deleteTemplateTrigger, deleteTemplateSaga);
   yield takeLatest(createTemplateTrigger, createTemplateSaga);
-  yield takeLatest(populateBuilderFromTemplateTrigger, populateBuilderFromTemplateSaga);
+  yield takeLatest(populateBuilderTrigger, populateBuilderSaga);
 }

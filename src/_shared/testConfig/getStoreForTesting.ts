@@ -23,7 +23,8 @@ const INITIAL_STATE: DefaultRootState = {
     allIds: [],
     byId: {},
     pageSettings: [],
-    personaId: '',
+    entityId: '',
+    entityType: '',
     title: ''
   },
   loading: {},

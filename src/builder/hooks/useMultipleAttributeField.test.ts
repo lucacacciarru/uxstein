@@ -31,7 +31,8 @@ const MOCK_BUILDER_STATE: BuilderState = {
     },
   },
   pageSettings: [],
-  personaId: 'any id',
+  entityId: 'any id',
+  entityType: 'persona',
   title: 'any title'
 };
 
@@ -134,7 +135,8 @@ describe('useMultipleAttributeField hook', () => {
               },
             },
             pageSettings: [],
-            personaId: 'any id',
+            entityId: 'any id',
+            entityType: 'persona',
             title: 'any title'
           },
         },

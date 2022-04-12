@@ -22,9 +22,9 @@ export const SavePersonaAsTemplateButton: React.FC = () => {
         onClose={onClose}
         onSubmit={templateName => savePersonaAsTemplate(templateName)}
         textContent={{
-          header: 'persona.modal.saveAsTemplateTitle',
-          inputPlaceholder: 'persona.modal.saveAsTemplatePlaceholder',
-          toast: 'persona.toast.saveAsTemplate',
+          header: 'builder.modal.savePersonaAsTemplateTitle',
+          inputPlaceholder: 'builder.modal.savePersonaAsTemplatePlaceholder',
+          toast: 'builder.toast.personaSavedAsTemplate',
         }}
       />
     </>

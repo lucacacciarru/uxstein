@@ -1,25 +1,26 @@
 import { useSelector } from 'react-redux';
-import { PersonaState } from '../../../persona/store/types/general';
 import { renderHook, act } from '../../../_shared/testConfig/customRenderHook';
 import { getBlockItemSettings } from '../../config/blockItemSettings';
+import { PersonaState } from '../../../persona/store/types/general';
 import { BuilderState } from '../../store/types';
 import { useSavePersonaAsTemplateButton } from './useSavePersonaAsTemplateButton';
 import { getTemplates } from '../../../template/store/selectors/getTemplates';
 
-const BUILDER_ITEM_ID = 'builderItemId';
+const ENTITY_ID = 'entityId';
 const PERSONA_ID = 'personaId';
 const TEMPLATE_NAME = 'templateName';
 
-const MOCK_PAGE_SETTINGS = [{ i: BUILDER_ITEM_ID, h: 1, w: 1, x: 1, y: 1 }];
+const MOCK_PAGE_SETTINGS = [{ i: ENTITY_ID, h: 1, w: 1, x: 1, y: 1 }];
 const MOCK_ITEMS = getBlockItemSettings('text').gridItemSettings;
 
 const MOCK_BUILDER_STATE: BuilderState = {
-  allIds: [BUILDER_ITEM_ID],
+  allIds: [ENTITY_ID],
   byId: {
-    [BUILDER_ITEM_ID]: MOCK_ITEMS,
+    [ENTITY_ID]: MOCK_ITEMS,
   },
   pageSettings: MOCK_PAGE_SETTINGS,
-  personaId: PERSONA_ID,
+  entityId: PERSONA_ID,
+  entityType: 'persona',
   title: 'anyTitle',
 };
 
@@ -28,17 +29,17 @@ const MOCK_PERSONA_STATE: PersonaState = {
     allIds: [PERSONA_ID],
     byId: {
       [PERSONA_ID]: {
-        createdAt: 0,
         id: PERSONA_ID,
         src: 'anySrc',
-        title: 'anyTitle',
-        updatedAt: 0,
         builderData: {
           pageSettings: MOCK_PAGE_SETTINGS,
           gridItems: {
-            [BUILDER_ITEM_ID]: MOCK_ITEMS
+            [ENTITY_ID]: MOCK_ITEMS,
           },
         },
+        title: 'anyTitle',
+        createdAt: 0,
+        updatedAt: 0,
       },
     },
   },
@@ -54,7 +55,7 @@ function useCustomHook() {
 }
 
 describe('useSavePersonaAsTemplateButton hook', () => {
-  test('ddd', () => {
+  test('should create a Template with the passed name and the starting Persona builderData', () => {
     const { result } = renderHook(() => useCustomHook(), {
       mocks: { builder: MOCK_BUILDER_STATE, persona: MOCK_PERSONA_STATE },
     });
@@ -65,7 +66,7 @@ describe('useSavePersonaAsTemplateButton hook', () => {
       MOCK_PAGE_SETTINGS,
     );
     expect(result.current.createdTemplate?.builderData.gridItems).toEqual({
-      [BUILDER_ITEM_ID]: MOCK_ITEMS,
+      [ENTITY_ID]: MOCK_ITEMS,
     });
   });
 });

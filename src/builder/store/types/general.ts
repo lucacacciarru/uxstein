@@ -8,12 +8,15 @@ export type GridItem = {
   style: Record<string, string>;
 };
 
+export type BuilderEntityType = '' | 'persona' | 'template';
+
 export type BuilderState = {
   allIds: string[];
   byId: Record<string, GridItem>;
   pageSettings: Layout[];
   selectedBlockId?: string;
-  personaId: string;
+  entityId: string;
+  entityType: BuilderEntityType;
   title: string;
 };
 

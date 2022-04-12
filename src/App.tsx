@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { PrivateRoutes } from './auth/components/PrivateRoutes';
+import { PrivateRoutes } from './auth/components';
 import { Login } from './auth/pages';
 import { LandingLayout } from './_shared/components';
 import { LayoutApp } from './_shared/components/LayoutApp';
@@ -30,10 +30,13 @@ function App() {
           <Route element={<PrivateRoutes />}>
             <Route path={PATHS.PERSONAS}>
               <Route index element={<MyPersona />} />
-              <Route path={PATHS.EDIT_PERSONA} element={<Builder />} />
+              <Route path={PATHS.EDIT_ENTITY} element={<Builder />} />
               <Route path={PATHS.CREATE_PERSONA} element={<Builder />} />
             </Route>
-            <Route path={PATHS.TEMPLATES} element={<MyTemplates />} />
+            <Route path={PATHS.TEMPLATES}>
+              <Route index element={<MyTemplates />} />
+              <Route path={PATHS.EDIT_ENTITY} element={<Builder />} />
+            </Route>
             <Route path={PATHS.PROFILE} element={<>Profile</>} />
           </Route>
         </Route>
