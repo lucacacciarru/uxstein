@@ -21,4 +21,18 @@ export const textStyles = {
   h6: {
     fontWeight: 'bold',
   },
+  'body-M': {
+    fontSize: { xl: '1.5rem', lg: '1.4rem', base: '1.3rem' },
+  },
+  'body-S': {
+    fontSize: '1.2rem',
+  },
+  'body-XS': {
+    fontSize: '1rem',
+  },
+  main: {
+    fontWeight: 'bold',
+    fontSize: ['2.5rem', '3rem', '4.5rem', '5rem'],
+    lineHeight: '120%',
+  },
 };

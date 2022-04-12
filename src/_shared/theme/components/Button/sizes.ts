@@ -1,4 +1,8 @@
 export const sizes = {
+  xl: {
+    paddingX: '24',
+    h: 12,
+  },
   lg: {
     minW: 40,
   },
