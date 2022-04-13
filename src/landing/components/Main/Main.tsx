@@ -13,7 +13,7 @@ export const Main: React.FC = () => {
           as="h1"
           dangerouslySetInnerHTML={{ __html: t('landing.main.title') }}
         />
-        <Text textStyle="body-M" mt="4" color="black.80">
+        <Text textStyle="body-md" mt="4" color="black.80">
           {t('landing.main.body')}
         </Text>
         <Button

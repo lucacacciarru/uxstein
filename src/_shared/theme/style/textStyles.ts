@@ -21,13 +21,13 @@ export const textStyles = {
   h6: {
     fontWeight: 'bold',
   },
-  'body-M': {
+  'body-md': {
     fontSize: { xl: '1.5rem', lg: '1.4rem', base: '1.3rem' },
   },
-  'body-S': {
+  'body-sm': {
     fontSize: '1.2rem',
   },
-  'body-XS': {
+  'body-xs': {
     fontSize: '1rem',
   },
   main: {
