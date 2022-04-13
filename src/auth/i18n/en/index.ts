@@ -1,7 +1,9 @@
 import { hero } from './hero';
 import { form } from './form';
+import { profile } from './profile';
 
 export const auth = {
-  hero: hero,
-  form: form,
+  hero,
+  form,
+  profile,
 };

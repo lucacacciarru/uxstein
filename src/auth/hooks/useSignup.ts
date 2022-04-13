@@ -22,7 +22,6 @@ export const useSignup = () => {
     const currentError = validateAllField(dataFormSignup, checkSignupMap);
     setErrorDataFormSignup(prev => ({ ...prev, ...currentError }));
     const checkError = Object.values(currentError);
-    console.log(currentError);
     if (checkError.every(dataForm => dataForm.length === 0)) {
       //TODO: ADD REGISTER
     }

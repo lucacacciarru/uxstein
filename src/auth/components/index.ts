@@ -6,4 +6,5 @@ export * from './LoginForm';
 export * from './PrivateRoutes';
 export * from './SignupForm';
 export * from './TemplateForm';
+export * from './ProfileForm';
 export * from './types';
