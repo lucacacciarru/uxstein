@@ -20,6 +20,6 @@ export const it = {
     builder,
     optionsCard,
     modal,
-    landing,
+    landing
   },
 };
