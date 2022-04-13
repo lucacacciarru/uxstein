@@ -1,15 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { useToast } from '@chakra-ui/react';
 import { createTemplateTrigger } from '../../../template/store/actions/createTemplate';
 import { updateTemplateTrigger } from '../../../template/store/actions/updateTemplate';
 import { baseSelector } from '../../store/selectors/baseSelector';
 import { Template } from '../../../template/store/types/general';
-import { PATHS } from '../../../_shared/types/paths';
 import { GenericToast } from '../../../_shared/components/GenericToast';
 
 export function useSaveTemplateButton() {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const toast = useToast();
   const builder = useSelector(baseSelector);
@@ -19,19 +16,18 @@ export function useSaveTemplateButton() {
   const saveTemplate = () => {
     const isCreating = entityId === '';
     const newTemplate: Template = {
-      id: Date.now().toString(),
-      src: 'New Template',
+      id: '',
+      src: '',
       builderData: {
         gridItems,
         pageSettings,
       },
-      name: title,
+      name: 'New Template',
       isDefault: false,
     };
 
     if (isCreating) {
       dispatch(createTemplateTrigger(newTemplate));
-      navigate(`/${PATHS.TEMPLATES}/${newTemplate.id}/edit`);
     } else {
       dispatch(
         updateTemplateTrigger({
