@@ -1,15 +1,14 @@
-import { Flex, Spacer } from '@chakra-ui/react';
+import { HStack, Spacer } from '@chakra-ui/react';
 import { FC } from 'react';
 import { SearchBar } from '../SearchBar';
-import { UserDropdown } from './Partials';
+import { UserDropdown } from './UserDropdown';
 
 export const TopNavigation: FC = () => {
   return (
-    <Flex px="8" py="4" role="top-nav">
+    <HStack p="8" role="top-nav" spacing="8">
       <Spacer />
       <SearchBar />
-      <Spacer />
       <UserDropdown />
-    </Flex>
+    </HStack>
   );
 };
