@@ -1,5 +1,5 @@
 import { Box, BoxProps, IconButton, Stack } from '@chakra-ui/react';
-import { FC } from 'react';
+import { FC, useMemo } from 'react';
 
 type Props = {
   onClick: () => void;
@@ -7,26 +7,34 @@ type Props = {
 };
 
 export const HamburgerButton: FC<Props> = ({ onClick, isOpen }) => {
+  const linesTransformProp = useMemo(() => {
+    if (isOpen) {
+      return {
+        first: 'rotate(45deg) translateY(8px) translateX(6px)',
+        second: 'scale(0)',
+        third: 'rotate(-45deg) translateY(-8px) translateX(6px)',
+      };
+    }
+    return {
+      first: '',
+      second: 'scale(1)',
+      third: '',
+    };
+  }, [isOpen]);
+
   return (
     <IconButton
-      aria-label="hamburger-button"
+      aria-label={isOpen ? 'hamburger-transformed-button' : 'hamburger-button'}
+      role="toggle-nav-button"
       variant="ghost"
       size="icon-lg"
       p="4"
       onClick={onClick}
     >
       <Stack spacing="1.5">
-        <Line
-          transform={
-            isOpen ? 'rotate(45deg) translateY(8px) translateX(6px)' : ''
-          }
-        />
-        <Line transform={isOpen ? 'scale(0)' : 'scale(1)'}></Line>
-        <Line
-          transform={
-            isOpen ? 'rotate(-45deg) translateY(-8px) translateX(6px)' : ''
-          }
-        ></Line>
+        <Line transform={linesTransformProp.first} />
+        <Line transform={linesTransformProp.second} />
+        <Line transform={linesTransformProp.third} />
       </Stack>
     </IconButton>
   );
@@ -42,6 +50,6 @@ const Line: FC<BoxProps> = props => {
       borderRadius="lg"
       transition="all .5s ease"
       {...props}
-    ></Box>
+    />
   );
 };

@@ -17,12 +17,9 @@ describe('UserDropdown', () => {
     const avatarButton = screen.getByRole('button');
     userEvent.click(avatarButton);
     const openedMenu = screen.getByTestId('menu-list');
-    await waitFor(
-      () => {
-        expect(openedMenu).toBeVisible();
-      },
-      { timeout: 1000 },
-    );
+    await waitFor(() => {
+      expect(openedMenu).toBeVisible();
+    });
   });
 
   test('menu list should be closed if user click TWICE on avatar', async () => {
@@ -30,20 +27,14 @@ describe('UserDropdown', () => {
     const avatarButton = screen.getByRole('button');
     userEvent.click(avatarButton);
     const openedMenu = screen.getByTestId('menu-list');
-    await waitFor(
-      () => {
-        expect(openedMenu).toBeVisible();
-      },
-      { timeout: 1000 },
-    );
+    await waitFor(() => {
+      expect(openedMenu).toBeVisible();
+    });
 
     userEvent.click(avatarButton);
-    await waitFor(
-      () => {
-        expect(openedMenu).not.toBeVisible();
-      },
-      { timeout: 1000 },
-    );
+    await waitFor(() => {
+      expect(openedMenu).not.toBeVisible();
+    });
   });
 
   test('by default, should render Profile and Login links', () => {

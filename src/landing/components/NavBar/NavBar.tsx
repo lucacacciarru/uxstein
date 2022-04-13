@@ -1,4 +1,10 @@
-import { BoxProps, Portal, PortalManager, Stack } from '@chakra-ui/react';
+import {
+  BoxProps,
+  Center,
+  Portal,
+  PortalManager,
+  Stack,
+} from '@chakra-ui/react';
 import { FC } from 'react';
 import { DesktopNavBar } from '../DesktopNavBar/DesktopNavBar';
 import { LogoButtonLink } from './LogoButtonLink';
@@ -17,8 +23,16 @@ export const NavBar: FC<Props> = ({ gutter }) => {
       <Portal>
         <Stack {...containerProps} h={gutter}>
           <LogoButtonLink />
-          {isMobile && <MobileNavBar gutter={gutter} />}
-          {!isMobile && <DesktopNavBar />}
+          {isMobile && (
+            <Center data-testid="mobile-nav">
+              <MobileNavBar gutter={gutter} />
+            </Center>
+          )}
+          {!isMobile && (
+            <Center data-testid="desktop-nav">
+              <DesktopNavBar />
+            </Center>
+          )}
         </Stack>
       </Portal>
     </PortalManager>
