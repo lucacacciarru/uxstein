@@ -7,6 +7,7 @@ import { persona } from '../../../persona/i18n/it';
 import { template } from '../../../template/i18n/it';
 import { personCard } from './personCard';
 import { builder } from '../../../builder/i18n/it';
+import { landing } from '../../../landing/i18n/it';
 
 export const it = {
   translation: {
@@ -19,5 +20,6 @@ export const it = {
     builder,
     optionsCard,
     modal,
+    landing,
   },
 };

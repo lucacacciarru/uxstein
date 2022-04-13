@@ -14,6 +14,7 @@ import { MyPersona } from './persona/pages/MyPersona';
 import { MyTemplates } from './template/pages/MyTemplates';
 import { PATHS } from './_shared/types/paths';
 import { Profile } from './auth/pages';
+import { Landing } from './landing/pages/Landing';
 
 i18n.use(initReactI18next).init(initI18n);
 
@@ -22,7 +23,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path={PATHS.INDEX} element={<LandingLayout />}>
-          <Route index element={<>Landing</>} />
+          <Route index element={<Landing />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
         <Route path={PATHS.LOGIN} element={<Login />} />
