@@ -9,7 +9,7 @@ export const textStyles = {
   },
   h3: {
     fontSize: '1.375rem',
-    fontWeight: 'semibold',
+    fontWeight: 'bold',
   },
   h4: {
     fontSize: '1.125rem',
