@@ -1,7 +1,7 @@
 import { main } from './main';
-import { navBar } from './navBar';
+import { navigation } from './navigation';
 
 export const landing = {
   main,
-  navBar,
+  navigation,
 }

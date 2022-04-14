@@ -1,23 +1,23 @@
 import { FC } from 'react';
 import { useNavLabels } from '../../hooks/useNavLabels';
-import { NavLinkButton } from '../NavButtonLink/NavButtonLink';
+import { NavButtonLink } from '../NavButtonLink/NavButtonLink';
 
 export const LandingLinks: FC = () => {
-  const { navBar } = useNavLabels();
+  const { navLabels } = useNavLabels();
   return (
     <>
-      <NavLinkButton
+      <NavButtonLink
         to="/examples"
         variant="link"
         color="black.0"
         mt="2"
         py="4"
       >
-        {navBar.examples}
-      </NavLinkButton>
-      <NavLinkButton to="/about" variant="link" color="black.0" mt="2" py="4">
-        {navBar.about}
-      </NavLinkButton>
+        {navLabels.examples}
+      </NavButtonLink>
+      <NavButtonLink to="/about" variant="link" color="black.0" mt="2" py="4">
+        {navLabels.about}
+      </NavButtonLink>
     </>
   );
 };

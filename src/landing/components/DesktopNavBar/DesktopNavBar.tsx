@@ -1,12 +1,12 @@
 import { Box, Stack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { PATHS } from '../../../_shared/types/paths';
-import { NavLinkButton } from '../NavButtonLink/NavButtonLink';
+import { NavButtonLink } from '../NavButtonLink/NavButtonLink';
 import { LandingLinks } from '../NavBar/LandingLinks';
 import { useNavLabels } from '../../hooks/useNavLabels';
 
 export const DesktopNavBar: FC = () => {
-  const { navBar } = useNavLabels();
+  const { navLabels } = useNavLabels();
   return (
     <>
       <Stack
@@ -20,10 +20,10 @@ export const DesktopNavBar: FC = () => {
       </Stack>
 
       <Box>
-        <NavLinkButton to={PATHS.LOGIN} variant="ghost" color="brand.primary">
-          {navBar.login}
-        </NavLinkButton>
-        <NavLinkButton to={PATHS.SIGNUP}>{navBar.signup}</NavLinkButton>
+        <NavButtonLink to={PATHS.LOGIN} variant="ghost" color="brand.primary">
+          {navLabels.login}
+        </NavButtonLink>
+        <NavButtonLink to={PATHS.SIGNUP}>{navLabels.signup}</NavButtonLink>
       </Box>
     </>
   );
