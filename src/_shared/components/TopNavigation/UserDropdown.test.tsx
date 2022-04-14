@@ -1,7 +1,7 @@
-import { render, screen, waitFor } from '../../../testConfig/customRender';
+import { render, screen, waitFor } from '../../testConfig/customRender';
 import userEvent from '@testing-library/user-event';
 import { UserDropdown } from './UserDropdown';
-import { PATHS } from '../../../types/paths';
+import { PATHS } from '../../types/paths';
 
 describe('UserDropdown', () => {
   test('menu list should be NOT visible by default', () => {
