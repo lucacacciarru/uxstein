@@ -9,9 +9,9 @@ import {
 import { FC, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../../../../auth/hooks';
-import { PATHS } from '../../../types/paths';
-import { Icon } from '../../Icon/Icon';
+import { useAuth } from '../../../auth/hooks';
+import { PATHS } from '../../types/paths';
+import { Icon } from '../Icon/Icon';
 
 export const UserDropdown: FC = () => {
   const { isLogged, logout, profile } = useAuth();
