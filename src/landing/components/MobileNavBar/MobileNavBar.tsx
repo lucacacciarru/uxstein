@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { FC } from 'react';
 import { PATHS } from '../../../_shared/types/paths';
-import { NavLinkButton } from '../NavButtonLink/NavButtonLink';
+import { NavButtonLink } from '../NavButtonLink/NavButtonLink';
 import { HamburgerButton } from '../NavBar/HamburgerButton';
 import { LandingLinks } from '../NavBar/LandingLinks';
 import { useMobileNavBar } from './useMobileNavBar';
@@ -20,7 +20,7 @@ type Props = {
 };
 
 export const MobileNavBar: FC<Props> = ({ gutter }) => {
-  const { isOpen, onClose, onToggle, navBarLabels } = useMobileNavBar();
+  const { isOpen, onClose, onToggle, navLabels } = useMobileNavBar();
   return (
     <>
       <HamburgerButton onClick={onToggle} isOpen={isOpen} />
@@ -36,12 +36,12 @@ export const MobileNavBar: FC<Props> = ({ gutter }) => {
 
               <Spacer />
               <Flex justifyContent="center" flexWrap="wrap">
-                <NavLinkButton to={PATHS.LOGIN} variant="ghost" color="black.0">
-                  {navBarLabels.login}
-                </NavLinkButton>
-                <NavLinkButton to={PATHS.SIGNUP}>
-                  {navBarLabels.signup}
-                </NavLinkButton>
+                <NavButtonLink to={PATHS.LOGIN} variant="ghost" color="black.0">
+                  {navLabels.login}
+                </NavButtonLink>
+                <NavButtonLink to={PATHS.SIGNUP}>
+                  {navLabels.signup}
+                </NavButtonLink>
               </Flex>
             </VStack>
           </DrawerContent>

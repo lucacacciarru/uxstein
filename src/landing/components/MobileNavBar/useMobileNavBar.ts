@@ -7,13 +7,13 @@ export const useMobileNavBar = () => {
     const { isOpen, onToggle, onClose } = useDisclosure();
     const { pathname } = useLocation();
 
-    const { navBar } = useNavLabels();
+    const { navLabels } = useNavLabels();
 
     useEffect(() => {
         pathname && onClose();
     }, [pathname, onClose]);
 
     return {
-        isOpen, onToggle, onClose, navBarLabels: navBar
+        isOpen, onToggle, onClose, navLabels
     }
 }

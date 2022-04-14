@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/react';
 import { FC } from 'react';
 import { DesktopNavBar } from '../DesktopNavBar/DesktopNavBar';
-import { LogoButtonLink } from './LogoButtonLink';
+import { LogoButtonLink } from '../LogoButtonLink/LogoButtonLink';
 import { MobileNavBar } from '../MobileNavBar/MobileNavBar';
 import { useNavBar } from './useNavBar';
 
