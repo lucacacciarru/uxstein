@@ -4,7 +4,7 @@ import {
   UpdatePersonaPayload,
   UpdatePersonaSuccessPayload,
   UPDATE_ACTION_TYPES,
-} from '../types/updatePersonaCases';
+} from '../types/updatePersona';
 
 export const updatePersonaTrigger = createAction<
   UpdatePersonaPayload,

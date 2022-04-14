@@ -5,6 +5,7 @@ import { updateTemplateTrigger } from '../../../template/store/actions/updateTem
 import { baseSelector } from '../../store/selectors/baseSelector';
 import { Template } from '../../../template/store/types/general';
 import { GenericToast } from '../../../_shared/components/GenericToast';
+import { TEMP_ID } from '../../../_shared/utils';
 
 export function useSaveTemplateButton() {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ export function useSaveTemplateButton() {
   const saveTemplate = () => {
     const isCreating = entityId === '';
     const newTemplate: Template = {
-      id: '',
+      id: TEMP_ID,
       src: '',
       builderData: {
         gridItems,

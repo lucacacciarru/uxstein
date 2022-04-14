@@ -1,5 +1,8 @@
+import { nanoid } from '@reduxjs/toolkit';
 import { CreatePersonaPayload } from '../types/createPersona';
 
 export async function createPersonaApi(_persona: CreatePersonaPayload) {
-  return Promise.resolve({});
+  const nowTimestamp = Date.now();
+  const createdPersona = { ..._persona, id: nanoid(), createdAt: nowTimestamp, updatedAt: nowTimestamp };
+  return Promise.resolve(createdPersona);
 }

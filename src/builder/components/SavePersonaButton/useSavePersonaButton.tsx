@@ -5,6 +5,7 @@ import { updatePersonaTrigger } from '../../../persona/store/actions/updatePerso
 import { baseSelector } from '../../store/selectors/baseSelector';
 import { Persona } from '../../../persona/store/types/general';
 import { GenericToast } from '../../../_shared/components/GenericToast';
+import { TEMP_ID } from '../../../_shared/utils';
 
 export function useSavePersonaButton() {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ export function useSavePersonaButton() {
   const savePersona = () => {
     const isCreating = entityId === '';
     const newPersona: Persona = {
-      id: '',
+      id: TEMP_ID,
       src: '',
       builderData: {
         gridItems,

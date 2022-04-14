@@ -1,14 +1,7 @@
 import { call, put } from 'redux-saga/effects';
-import {
-  deletePersonaRequest,
-  deletePersonaSuccess,
-} from '../actions/deletePersona';
-import { fetchPersonaFailure } from '../actions/fetchPersona';
+import { deletePersonaFailure, deletePersonaRequest, deletePersonaSuccess } from '../actions/deletePersona';
 import { deletePersonaApi } from '../api/deletePersona';
-import {
-  DeletePersonaAction,
-  DeletePersonaResponse,
-} from '../types/deletePersona';
+import { DeletePersonaAction, DeletePersonaResponse } from '../types/deletePersona';
 
 export function* deletePersonaSaga(action: DeletePersonaAction) {
   yield put(deletePersonaRequest(action.payload));
@@ -19,6 +12,6 @@ export function* deletePersonaSaga(action: DeletePersonaAction) {
     );
     yield put(deletePersonaSuccess(response.id));
   } catch (error) {
-    yield put(fetchPersonaFailure({}));
+    yield put(deletePersonaFailure({ error }));
   }
 }

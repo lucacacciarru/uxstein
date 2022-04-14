@@ -1,6 +1,6 @@
 import { CaseReducer } from '@reduxjs/toolkit';
 import { PersonaState } from '../../types/general';
-import { UpdatePersonaRequestAction } from '../../types/updatePersonaCases';
+import { UpdatePersonaRequestAction } from '../../types/updatePersona';
 
 export const requestCase: CaseReducer<
   PersonaState,

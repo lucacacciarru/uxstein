@@ -1,13 +1,9 @@
 import { call, put, select } from 'redux-saga/effects';
-import { User } from '../../../auth/store';
-import { getUserProfile } from '../../../auth/store/selectors';
 import { createSagaWithLoadingManagement } from '../../../_shared/store/loading';
 import { LoadingKeys } from '../../../_shared/store/loading/types';
-import {
-  fetchTemplatesFailure,
-  fetchTemplatesRequest,
-  fetchTemplatesSuccess,
-} from '../actions/fetchTemplates';
+import { getUserProfile } from '../../../auth/store/selectors';
+import { User } from '../../../auth/store';
+import { fetchTemplatesFailure, fetchTemplatesRequest, fetchTemplatesSuccess } from '../actions/fetchTemplates';
 import { fetchTemplatesApi } from '../api';
 import { FetchTemplatesResponse } from '../types/fetchTemplates';
 

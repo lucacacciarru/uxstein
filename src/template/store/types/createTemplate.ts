@@ -8,11 +8,9 @@ export enum CREATE_TEMPLATE_ACTION_TYPES {
   FAILURE = 'template/create/failure',
 }
 
-export type CreateTemplateResponse = {};
-
+export type CreateTemplateResponse = Template;
 export type CreateTemplatePayload = Template;
-
-export type CreateTemplateSuccessPayload = {};
+export type CreateTemplateSuccessPayload = Template;
 export type CreateTemplateFailurePayload = ApiError;
 
 export type CreateTemplateAction = PayloadAction<

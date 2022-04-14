@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { baseSelector } from '../../store/selectors/baseSelector';
 import { Template } from '../../../template/store/types/general';
 import { createTemplateTrigger } from '../../../template/store/actions/createTemplate';
+import { TEMP_ID } from '../../../_shared/utils';
 
 export function useSavePersonaAsTemplateButton() {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ export function useSavePersonaAsTemplateButton() {
 
   const savePersonaAsTemplate = (templateName: string) => {
     const newTemplate: Template = {
-      id: '',
+      id: TEMP_ID,
       src: '',
       name: templateName,
       isDefault: false,
