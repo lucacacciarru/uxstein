@@ -1,13 +1,13 @@
-//TODO: replace box with a general <Section/> wrapper (so padding ecc are same for every section)
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Heading, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FeaturesShowcase } from '../FeaturesShowcase/FeaturesShowcase';
+import { SectionWrapper } from '../SectionWrapper';
 
 export const FeaturesShowcaseSection: FC = () => {
   const { t } = useTranslation();
   return (
-    <Box p="16">
+    <SectionWrapper>
       <Heading as="h2" textStyle="h2" textAlign="center">
         {t('landing.featureShowcase.sectionTitle')}
         <Text as="span" color="brand.primary">
@@ -16,6 +16,6 @@ export const FeaturesShowcaseSection: FC = () => {
       </Heading>
 
       <FeaturesShowcase />
-    </Box>
+    </SectionWrapper>
   );
 };
