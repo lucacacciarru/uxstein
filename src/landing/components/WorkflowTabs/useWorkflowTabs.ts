@@ -5,6 +5,11 @@ import { useTranslation } from 'react-i18next';
 export const useWorkflowTabs = () => {
     const { t } = useTranslation();
 
+    const align = useBreakpointValue<'start' | 'center'>({
+        base: 'start',
+        sm: 'center',
+    });
+
     const tabButtonsRefs: Record<number, React.RefObject<HTMLButtonElement>> = {
         0: useRef<HTMLButtonElement>(null),
         1: useRef<HTMLButtonElement>(null),
@@ -15,18 +20,12 @@ export const useWorkflowTabs = () => {
 
     const handleOnChange = (i: number) => {
         const actualRef = tabButtonsRefs[i].current;
-        actualRef &&
-            actualRef.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest',
-                inline: 'center',
-            });
+        actualRef?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center',
+        });
     };
-
-    const align = useBreakpointValue<'start' | 'center'>({
-        base: 'start',
-        sm: 'center',
-    });
 
     const tabPanelProps = {
         dashboard: {
