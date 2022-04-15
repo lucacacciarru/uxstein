@@ -16,7 +16,7 @@ export const Builder: FC = () => {
 
   const { entityId, entityType } = useSelector(baseSelector);
   const route = useBuilderEntityRouteResolver(entityType, entityId, ['edit']);
-  useNavigationTrigger([entityType, entityId], route);
+  useNavigationTrigger(route, [entityType, entityId]);
 
   return (
     <Box w={'full'}>

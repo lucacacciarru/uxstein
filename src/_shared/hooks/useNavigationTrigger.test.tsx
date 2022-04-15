@@ -27,7 +27,7 @@ describe('useNavigationTrigger hook', () => {
         void>(({
                  triggers,
                  route,
-               }) => useNavigationTrigger(triggers, route), {
+               }) => useNavigationTrigger(route, triggers), {
           initialProps: {
             triggers: MOCK_INITIAL_TRIGGERS,
             route: MOCK_INITIAL_ROUTE,
@@ -54,7 +54,7 @@ describe('useNavigationTrigger hook', () => {
       void>(({
                triggers,
                route,
-             }) => useNavigationTrigger(triggers, route), {
+             }) => useNavigationTrigger(route, triggers), {
         initialProps: {
           triggers: MOCK_INITIAL_TRIGGERS,
           route: MOCK_INITIAL_ROUTE,
@@ -81,7 +81,7 @@ describe('useNavigationTrigger hook', () => {
         void>(({
                  triggers,
                  route,
-               }) => useNavigationTrigger(triggers, route), {
+               }) => useNavigationTrigger(route, triggers), {
           initialProps: {
             triggers: MOCK_INITIAL_TRIGGERS,
             route: MOCK_INITIAL_ROUTE,
@@ -107,7 +107,7 @@ describe('useNavigationTrigger hook', () => {
       void>(({
                triggers,
                route,
-             }) => useNavigationTrigger(triggers, route), {
+             }) => useNavigationTrigger(route, triggers), {
         initialProps: {
           triggers: MOCK_INITIAL_TRIGGERS,
           route: MOCK_INITIAL_ROUTE,

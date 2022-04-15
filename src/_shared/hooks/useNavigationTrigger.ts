@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { DependencyList, useEffect } from 'react';
 
-export function useNavigationTrigger(triggers: DependencyList, route?: string) {
+export function useNavigationTrigger(route: string | undefined, triggers: DependencyList) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
