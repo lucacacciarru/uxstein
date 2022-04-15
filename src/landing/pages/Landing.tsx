@@ -1,5 +1,10 @@
-import { Main } from '../components';
+import { Main, Features } from '../components';
 
 export const Landing = () => {
-  return <Main />;
+  return (
+    <>
+      <Main />
+      <Features />
+    </>
+  );
 };
