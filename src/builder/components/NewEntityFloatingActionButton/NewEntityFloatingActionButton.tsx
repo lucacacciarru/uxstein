@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FloatingActionButton } from '../../../_shared/components/FloatingActionButton';
 import { IconComponentModel } from '../../../_shared/components';
-import { useBuilderEntity } from '../../hooks/useBuilderEntity';
+import { useUrlBuilderEntity } from '../../hooks/useUrlBuilderEntity';
 import { useDispatch } from 'react-redux';
 import { updateBuilder } from '../../store/actions/update';
 
@@ -13,7 +13,7 @@ type Props = {
 
 export const NewEntityFloatingActionButton: React.FC<Props> = ({ destinationPath, iconName = 'Add' }) => {
   const dispatch = useDispatch();
-  const { entityType } = useBuilderEntity();
+  const { entityType } = useUrlBuilderEntity();
 
   React.useEffect(() => {
     dispatch(updateBuilder({ entityType }));

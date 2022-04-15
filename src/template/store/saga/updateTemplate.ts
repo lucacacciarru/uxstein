@@ -1,15 +1,7 @@
 import { call, put } from 'redux-saga/effects';
-
-import {
-  updateTemplateFailure,
-  updateTemplateRequest,
-  updateTemplateSuccess,
-} from '../actions/updateTemplate';
-import { updateTemplateApi } from '../api';
-import {
-  UpdateTemplateAction,
-  UpdateTemplateResponse,
-} from '../types/updateTemplate';
+import { updateTemplateFailure, updateTemplateRequest, updateTemplateSuccess } from '../actions/updateTemplate';
+import { updateTemplateApi } from '../api/updateTemplate';
+import { UpdateTemplateAction, UpdateTemplateResponse } from '../types/updateTemplate';
 
 export function* updateTemplateSaga(action: UpdateTemplateAction) {
   yield put(updateTemplateRequest(action.payload));

@@ -4,10 +4,10 @@ import { Icon } from '../../../_shared/components';
 import { SavePersonaButton } from '../SavePersonaButton';
 import { SaveTemplateButton } from '../SaveTemplateButton';
 import { SavePersonaAsTemplateButton } from '../SavePersonaAsTemplateButton';
-import { useBuilderEntity } from '../../hooks/useBuilderEntity';
+import { useUrlBuilderEntity } from '../../hooks/useUrlBuilderEntity';
 
 export const HeaderButtons: FC = () => {
-  const { entityType } = useBuilderEntity();
+  const { entityType } = useUrlBuilderEntity();
 
   const isPersonaRoute = entityType === 'persona';
   const isTemplateRoute = entityType === 'template';

@@ -8,11 +8,9 @@ export enum CREATE_ACTION_TYPES {
   FAILURE = 'persona/create/failure',
 }
 
-export type CreatePersonaResponse = {};
-
+export type CreatePersonaResponse = Persona;
 export type CreatePersonaPayload = Persona;
-
-export type CreatePersonaSuccessPayload = {};
+export type CreatePersonaSuccessPayload = Persona;
 export type CreatePersonaFailurePayload = ApiError;
 
 export type CreatePersonaAction = PayloadAction<

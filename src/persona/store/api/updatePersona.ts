@@ -1,5 +1,7 @@
-import { UpdatePersonaPayload } from '../types/updatePersonaCases';
+import { UpdatePersonaPayload } from '../types/updatePersona';
 
 export async function updatePersonaApi(_update: UpdatePersonaPayload) {
-  return Promise.resolve({});
+  const nowTimestamp = Date.now();
+  const updatedPersona = { ..._update, updatedAt: nowTimestamp };
+  return Promise.resolve(updatedPersona);
 }

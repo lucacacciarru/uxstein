@@ -1,14 +1,7 @@
 import { call, put } from 'redux-saga/effects';
-import {
-  deleteTemplateRequest,
-  deleteTemplateSuccess,
-} from '../actions/deleteTemplate';
-import { fetchTemplatesFailure } from '../actions/fetchTemplates';
+import { deleteTemplateFailure, deleteTemplateRequest, deleteTemplateSuccess } from '../actions/deleteTemplate';
 import { deleteTemplateApi } from '../api/deleteTemplate';
-import {
-  DeleteTemplateAction,
-  DeleteTemplateResponse,
-} from '../types/deleteTemplate';
+import { DeleteTemplateAction, DeleteTemplateResponse } from '../types/deleteTemplate';
 
 export function* deleteTemplateSaga(action: DeleteTemplateAction) {
   yield put(deleteTemplateRequest(action.payload));
@@ -19,6 +12,6 @@ export function* deleteTemplateSaga(action: DeleteTemplateAction) {
     );
     yield put(deleteTemplateSuccess(response.id));
   } catch (error) {
-    yield put(fetchTemplatesFailure({}));
+    yield put(deleteTemplateFailure({}));
   }
 }

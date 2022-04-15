@@ -7,11 +7,11 @@ import { updatePageSettings } from '../../store/actions/updatePageSettings';
 import { selectItem } from '../../store/actions/selected';
 import { getPageSettings } from '../../store/selectors/getPageSettings';
 import { populateBuilderTrigger } from '../../store/actions/populate';
-import { useBuilderEntity } from '../../hooks/useBuilderEntity';
+import { useUrlBuilderEntity } from '../../hooks/useUrlBuilderEntity';
 
 export const useDroppablePage = (blockSetup: BlockSetup) => {
   const dispatch = useDispatch();
-  const { entityId, entityType } = useBuilderEntity();
+  const { entityId, entityType } = useUrlBuilderEntity();
   const layout = useSelector(getPageSettings);
 
   const onDropHandler = (
