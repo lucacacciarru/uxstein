@@ -22,7 +22,7 @@ export const NavBar: FC<Props> = ({ gutter }) => {
     <PortalManager zIndex={999}>
       <Portal>
         <Stack {...containerProps} h={gutter}>
-          <LogoButtonLink />
+          <LogoButtonLink zIndex="popover" />
           {isMobile && (
             <Center data-testid="mobile-nav">
               <MobileNavBar gutter={gutter} />

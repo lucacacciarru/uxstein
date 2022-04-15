@@ -6,7 +6,7 @@ export const Features = () => {
   const { renderFeatures, title, sectionStyle, cardContainerStyle } =
     useFeatures();
   return (
-    <SectionWrapper>
+    <SectionWrapper bg={sectionStyle.background}>
       <Stack {...sectionStyle}>
         <Text
           as="h2"
