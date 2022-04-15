@@ -19,9 +19,27 @@ export const Accordion: ComponentStyleConfig = {
         },
         item: {
             border: 'none',
-            _last: {
-                borderBottom: '2px solid red',
-            }
         }
+    },
+    variants: {
+        greenHover: {
+            container: {
+                border: 'dark.s',
+                bg: 'white.0',
+                borderBottomColor: 'black.0',
+                borderRadius: 'md',
+                mb: { base: '2.5', sm: '4', md: '6', lg: '8' },
+                _last: {
+                    borderBottomColor: 'black.0',
+                },
+                _hover: {
+                    border: 'green.s',
+                    borderRadius: 'md',
+                    _last: {
+                        border: 'green.s',
+                    },
+                },
+            },
+        },
     },
 }
