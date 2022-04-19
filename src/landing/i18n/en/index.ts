@@ -3,6 +3,7 @@ import { main } from './main';
 import { navigation } from './navigation';
 import { features } from './features';
 import { workflow } from './workflow';
+import { shareInfo } from './shareInfo';
 
 export const landing = {
   main,
@@ -10,4 +11,5 @@ export const landing = {
   navigation,
   featureShowcase,
   workflow,
-}
+  shareInfo,
+};

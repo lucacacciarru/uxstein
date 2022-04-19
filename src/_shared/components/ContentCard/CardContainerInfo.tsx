@@ -1,4 +1,4 @@
-import { Box, HStack, Text } from '@chakra-ui/react';
+import { Box, Heading, HStack } from '@chakra-ui/react';
 
 type Props = {
   title: string;
@@ -21,9 +21,9 @@ export const CardContainerInfo: React.FC<Props> = ({
   return (
     <HStack {...containerStyles}>
       <Box px="4" py="1" w="70%">
-        <Text
+        <Heading
           as="h4"
-          textStyle="h4"
+          size="h4"
           __css={{
             textOverflow: 'ellipsis',
             whiteSpace: 'nowrap',
@@ -32,7 +32,7 @@ export const CardContainerInfo: React.FC<Props> = ({
           }}
         >
           {title}
-        </Text>
+        </Heading>
         {children}
       </Box>
       {Avatar}
