@@ -24,7 +24,7 @@ export const MobileNavBar: FC<Props> = ({ gutter }) => {
   return (
     <>
       <HamburgerButton onClick={onToggle} isOpen={isOpen} />
-      <PortalManager zIndex={1}>
+      <PortalManager zIndex={100}>
         <Drawer placement="left" isOpen={isOpen} onClose={onClose} size="md">
           <DrawerOverlay />
           <DrawerContent zIndex="1" pt={gutter}>

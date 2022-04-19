@@ -9,7 +9,7 @@ export const FeaturesShowcase: FC = () => {
     <Flex
       alignItems="center"
       gap="8"
-      py={{ base: '0.5', md: '10' }}
+      pt={{ base: '0.5', md: '10' }}
       flexDir={{ base: 'column-reverse', lg: 'row' }}
     >
       <FeaturesShowcasePanels setOpenedIndex={setOpenedIndex} />

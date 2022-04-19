@@ -1,4 +1,9 @@
-import { Main, FeaturesShowcaseSection, Features } from '../components';
+import {
+  Main,
+  FeaturesShowcaseSection,
+  Features,
+  WorkflowSection,
+} from '../components';
 
 export const Landing = () => {
   return (
@@ -6,6 +11,7 @@ export const Landing = () => {
       <Main />
       <Features />
       <FeaturesShowcaseSection />
+      <WorkflowSection />
     </>
   );
 };
