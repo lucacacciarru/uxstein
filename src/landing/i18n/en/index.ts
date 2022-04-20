@@ -4,6 +4,7 @@ import { navigation } from './navigation';
 import { features } from './features';
 import { workflow } from './workflow';
 import { shareInfo } from './shareInfo';
+import { mediaShowcase } from './mediaShowcase';
 
 export const landing = {
   main,
@@ -12,4 +13,5 @@ export const landing = {
   featureShowcase,
   workflow,
   shareInfo,
+  mediaShowcase,
 };
