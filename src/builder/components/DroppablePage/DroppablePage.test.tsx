@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { render } from '../../../_shared/testConfig/customRender';
 import { renderHook } from '../../../_shared/testConfig/customRenderHook';
 import { useBlockSetup } from '../../hooks/useBlockSetup';
@@ -16,11 +17,25 @@ const MOCK_BUILDER_STATE: BuilderState = {
   title: 'any title',
 };
 
+const useMockRef = () => {
+  const mockRef = useRef(null);
+  return {
+    mockRef,
+  };
+};
+
 describe('DroppablePage', () => {
   test('should render correctly', () => {
     const { result } = renderHook(() => useBlockSetup());
-    render(<DroppablePage blockSetup={result.current.blockSetup} />, {
-      mocks: { builder: MOCK_BUILDER_STATE },
-    });
+    const { result: mockRefResult } = renderHook(() => useMockRef());
+    render(
+      <DroppablePage
+        exportItemRef={mockRefResult.current.mockRef}
+        blockSetup={result.current.blockSetup}
+      />,
+      {
+        mocks: { builder: MOCK_BUILDER_STATE },
+      },
+    );
   });
 });

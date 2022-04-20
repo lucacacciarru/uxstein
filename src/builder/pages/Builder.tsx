@@ -1,5 +1,5 @@
 import { Box } from '@chakra-ui/react';
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 import { ToolBar } from '../components';
 import { DroppablePage } from '../components/DroppablePage/DroppablePage';
 import { Header } from '../components/Header/Header';
@@ -18,11 +18,13 @@ export const Builder: FC = () => {
   const route = useBuilderEntityRouteResolver(entityType, entityId, ['edit']);
   useNavigationTrigger(route, [entityType, entityId]);
 
+  const exportItemRef = useRef<HTMLElement>(null);
+
   return (
     <Box w={'full'}>
       <ToolBar setBlockSetup={setBlockSetup} />
-      <Header />
-      <DroppablePage blockSetup={blockSetup} />
+      <Header exportItemRef={exportItemRef} />
+      <DroppablePage exportItemRef={exportItemRef} blockSetup={blockSetup} />
     </Box>
   );
 };
