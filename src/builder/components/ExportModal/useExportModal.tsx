@@ -52,6 +52,7 @@ export function useExportModal(exportItemRef: React.RefObject<HTMLElement>) {
         />
       ),
     });
+    onClose();
   };
 
   return {
