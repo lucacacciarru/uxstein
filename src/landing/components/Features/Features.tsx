@@ -1,4 +1,4 @@
-import { HStack, Stack, Text } from '@chakra-ui/react';
+import { HStack, Stack, Heading } from '@chakra-ui/react';
 import { SectionWrapper } from '../SectionWrapper';
 import { useFeatures } from './useFeatures';
 
@@ -8,9 +8,9 @@ export const Features = () => {
   return (
     <SectionWrapper bg={sectionStyle.background}>
       <Stack {...sectionStyle}>
-        <Text
+        <Heading
           as="h2"
-          textStyle="h2"
+          size="h2"
           textAlign="center"
           dangerouslySetInnerHTML={{ __html: title }}
         />

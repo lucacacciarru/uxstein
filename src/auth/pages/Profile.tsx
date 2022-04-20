@@ -1,4 +1,4 @@
-import { Box, Stack, Text } from '@chakra-ui/react';
+import { Box, Stack, Heading, Text } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { ProfileForm } from '../components';
 
@@ -7,9 +7,9 @@ export const Profile = () => {
   return (
     <Stack w="full" alignItems="center">
       <Box w="full" textAlign="center">
-        <Text as="h1" textStyle="h1">
+        <Heading as="h1" size="h1">
           {t('auth.profile.page.title')}
-        </Text>
+        </Heading>
         <Text textStyle="p">{t('auth.profile.page.subtitle')}</Text>
       </Box>
       <ProfileForm />

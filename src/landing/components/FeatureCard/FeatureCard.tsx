@@ -1,4 +1,4 @@
-import { Box, Stack, Text } from '@chakra-ui/react';
+import { Box, Stack, Text, Heading } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { Icon, IconComponentModel } from '../../../_shared/components';
 import { TranslationKey } from '../../../_shared/types/i18n';
@@ -28,9 +28,9 @@ export const FeatureCard: React.FC<Props> = ({ body, iconName, title }) => {
       <Box h="10" w="10">
         <Icon name={iconName} />
       </Box>
-      <Text as="h3" textStyle="body-sm">
+      <Heading as="h3" size="body-sm">
         {t(title)}
-      </Text>
+      </Heading>
       <Text as="p" textStyle="body-xs">
         {t(body)}
       </Text>

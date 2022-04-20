@@ -8,7 +8,7 @@ import {
   fonts,
   textStyles,
 } from './style';
-import { Heading } from '@chakra-ui/react';
+import { Heading } from './components';
 import {
   Button,
   Link,

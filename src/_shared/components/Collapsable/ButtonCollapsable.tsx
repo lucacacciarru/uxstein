@@ -1,4 +1,4 @@
-import { AccordionButton, AccordionIcon, Box, Text } from '@chakra-ui/react';
+import { AccordionButton, AccordionIcon, Box, Heading } from '@chakra-ui/react';
 import { FC } from 'react';
 
 type Props = {
@@ -7,13 +7,13 @@ type Props = {
 
 export const ButtonCollapsable: FC<Props> = ({ name }) => {
   return (
-    <Text as="h2" textStyle="h2">
+    <Heading as="h2" size="h2">
       <AccordionButton role="collapsable-button">
         <Box flex="1" textAlign="left">
           <AccordionIcon mr="2" color="brand.primary" />
           {name}
         </Box>
       </AccordionButton>
-    </Text>
+    </Heading>
   );
 };
