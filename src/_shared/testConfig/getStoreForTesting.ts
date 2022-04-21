@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { reducer } from '../store/reducer';
-import { createRootSaga } from '../store/sagas';
+import { createRootSaga, reducer } from '../store';
 import { CustomOptions } from './types';
 import createSagaMiddleware from 'redux-saga';
 import { DefaultRootState } from 'react-redux';
@@ -28,6 +27,7 @@ const INITIAL_STATE: DefaultRootState = {
     title: ''
   },
   loading: {},
+  notifications: []
 };
 
 const sagaMiddleware = createSagaMiddleware();

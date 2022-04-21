@@ -4,12 +4,14 @@ import { authRootReducer } from '../../auth/store';
 import { personaRootReducer } from '../../persona/store/reducers';
 import { LOADING_REDUCER_KEY, loadingRootReducer } from './loading/reducer';
 import { templateRootReducer } from '../../template/store/reducers';
+import { notificationsRootReducer } from './notifications/reducer';
 
 const reducers = {
   auth: authRootReducer,
   persona: personaRootReducer,
   builder: builderRootReducer,
   template: templateRootReducer,
+  notifications: notificationsRootReducer,
   [LOADING_REDUCER_KEY]: loadingRootReducer,
 };
 

@@ -5,6 +5,7 @@ import { personaRootSaga } from '../../persona/store/saga';
 import { templateRootSaga } from '../../template/store/saga';
 import { fetchPersonaSaga } from '../../persona/store/saga/fetchPersona';
 import { fetchTemplatesSaga } from '../../template/store/saga/fetchTemplates';
+import { notificationsRootSaga } from './notifications/sagas';
 
 const DEFAULT_POST_AUTH_OPTIONS = {
   /**
@@ -43,6 +44,7 @@ export function createRootSaga({
     personaRootSaga,
     builderRootSaga,
     templateRootSaga,
+    notificationsRootSaga,
     ...(additionalSagas || []),
   ];
 
