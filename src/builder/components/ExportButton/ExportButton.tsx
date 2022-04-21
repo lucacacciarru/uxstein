@@ -1,13 +1,12 @@
 import { IconButton } from '@chakra-ui/react';
+import { useContext } from 'react';
 import { Icon } from '../../../_shared/components';
+import { BuilderContext } from '../BuilderContext';
 import { ExportModal } from '../ExportModal/ExportModal';
 import { useExportModal } from '../ExportModal/useExportModal';
 
-type Props = {
-  exportItemRef: React.RefObject<HTMLElement>;
-};
-
-export const ExportButton: React.FC<Props> = ({ exportItemRef }) => {
+export const ExportButton: React.FC = () => {
+  const { exportItemRef } = useContext(BuilderContext);
   const { isOpen, onClose, onOpenModal, exportSettings } =
     useExportModal(exportItemRef);
 

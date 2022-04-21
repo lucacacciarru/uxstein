@@ -6,9 +6,9 @@ type Params = {
   nameFile: string;
 };
 
-export function useExport(exportItemRef: React.RefObject<HTMLElement>) {
+export function useExport(exportItemRef: React.RefObject<HTMLElement> | null) {
   const getInitialCanvas = async ({ fileType }: Params) => {
-    const result = await html2canvas(exportItemRef.current as HTMLElement);
+    const result = await html2canvas(exportItemRef?.current as HTMLElement);
     const image = result.toDataURL(`image/${fileType}`, 1.0);
     return image;
   };
@@ -32,8 +32,8 @@ export function useExport(exportItemRef: React.RefObject<HTMLElement>) {
   };
 
   const exportPdf = async (nameFile: string) => {
-    const itemRefWidth = exportItemRef.current?.offsetWidth as number;
-    const itemRefHeight = exportItemRef.current?.offsetHeight as number;
+    const itemRefWidth = exportItemRef?.current?.offsetWidth as number;
+    const itemRefHeight = exportItemRef?.current?.offsetHeight as number;
     const image = await getPreviewImage();
     const doc = new jsPDF({
       orientation: 'landscape',

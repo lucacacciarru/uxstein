@@ -5,7 +5,9 @@ import { GenericToast } from '../../../_shared/components/GenericToast';
 import { useExport } from '../../hooks/useExport';
 import { baseSelector } from '../../store/selectors/baseSelector';
 
-export function useExportModal(exportItemRef: React.RefObject<HTMLElement>) {
+export function useExportModal(
+  exportItemRef: React.RefObject<HTMLElement> | null,
+) {
   const toast = useToast();
   const { isOpen, onClose, onOpen } = useDisclosure();
   const { exportPersona, getPreviewImage, exportPdf } =

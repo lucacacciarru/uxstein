@@ -5,11 +5,7 @@ import { SavePersonaAsTemplateButton } from '../SavePersonaAsTemplateButton';
 import { useUrlBuilderEntity } from '../../hooks/useUrlBuilderEntity';
 import { ExportButton } from '../ExportButton';
 
-type Props = {
-  exportItemRef: React.RefObject<HTMLElement>;
-};
-
-export const HeaderButtons: React.FC<Props> = ({ exportItemRef }) => {
+export const HeaderButtons: React.FC = () => {
   const { entityType } = useUrlBuilderEntity();
 
   const isPersonaRoute = entityType === 'persona';
@@ -21,7 +17,7 @@ export const HeaderButtons: React.FC<Props> = ({ exportItemRef }) => {
         <>
           <SavePersonaButton />
           <SavePersonaAsTemplateButton />
-          <ExportButton exportItemRef={exportItemRef} />
+          <ExportButton />
         </>
       )}
       {isTemplateRoute && <SaveTemplateButton />}
