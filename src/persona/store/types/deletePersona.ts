@@ -1,7 +1,7 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { ApiError } from './general';
 
-export enum DELETEPERSONA_ACTION_TYPES {
+export enum DELETE_PERSONA_ACTION_TYPES {
   TRIGGER = 'persona/deletePersona/trigger',
   REQUEST = 'persona/deletePersona/request',
   SUCCESS = 'persona/deletePersona/success',
@@ -21,20 +21,20 @@ export type DeletePersonaFailurePayload = ApiError;
 
 export type DeletePersonaAction = PayloadAction<
   DeletePersonaPayload,
-  DELETEPERSONA_ACTION_TYPES.TRIGGER
+  DELETE_PERSONA_ACTION_TYPES.TRIGGER
 >;
 
 export type DeletePersonaRequestAction = PayloadAction<
   DeletePersonaPayload,
-  DELETEPERSONA_ACTION_TYPES.REQUEST
+  DELETE_PERSONA_ACTION_TYPES.REQUEST
 >;
 
 export type DeletePersonaSuccessAction = PayloadAction<
   DeletePersonaSuccessPayload,
-  DELETEPERSONA_ACTION_TYPES.SUCCESS
+  DELETE_PERSONA_ACTION_TYPES.SUCCESS
 >;
 
 export type DeletePersonaFailureAction = PayloadAction<
   DeletePersonaFailurePayload,
-  DELETEPERSONA_ACTION_TYPES.FAILURE
+  DELETE_PERSONA_ACTION_TYPES.FAILURE
 >;

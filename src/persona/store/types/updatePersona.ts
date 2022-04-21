@@ -1,7 +1,7 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { ApiError, Persona } from './general';
 
-export enum UPDATE_ACTION_TYPES {
+export enum UPDATE_PERSONA_ACTION_TYPES {
   TRIGGER = 'persona/update/trigger',
   REQUEST = 'persona/update/request',
   SUCCESS = 'persona/update/success',
@@ -20,20 +20,20 @@ export type UpdatePersonaFailurePayload = ApiError;
 
 export type UpdatePersonaAction = PayloadAction<
   UpdatePersonaPayload,
-  UPDATE_ACTION_TYPES.TRIGGER
+  UPDATE_PERSONA_ACTION_TYPES.TRIGGER
 >;
 
 export type UpdatePersonaRequestAction = PayloadAction<
   UpdatePersonaPayload,
-  UPDATE_ACTION_TYPES.REQUEST
+  UPDATE_PERSONA_ACTION_TYPES.REQUEST
 >;
 
 export type UpdatePersonaSuccessAction = PayloadAction<
   UpdatePersonaSuccessPayload,
-  UPDATE_ACTION_TYPES.SUCCESS
+  UPDATE_PERSONA_ACTION_TYPES.SUCCESS
 >;
 
 export type UpdatePersonaFailureAction = PayloadAction<
   UpdatePersonaFailurePayload,
-  UPDATE_ACTION_TYPES.FAILURE
+  UPDATE_PERSONA_ACTION_TYPES.FAILURE
 >;

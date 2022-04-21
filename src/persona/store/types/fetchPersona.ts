@@ -1,10 +1,10 @@
 import { PayloadAction, Action } from '@reduxjs/toolkit';
 import { ApiError, Persona } from './general';
 
-export enum FETCHPERSONA_ACTION_TYPES {
+export enum FETCH_PERSONA_ACTION_TYPES {
   TRIGGER = 'persona/fetchPersona/trigger',
   REQUEST = 'persona/fetchPersona/request',
-  SUCCESS = 'persona/fetchPersona/successs',
+  SUCCESS = 'persona/fetchPersona/success',
   FAILURE = 'persona/fetchPersona/failure',
 }
 
@@ -15,17 +15,17 @@ export type FetchPersonaResponse = {
 export type FetchPersonaSuccessPayload = Persona[];
 export type FetchPersonaFailurePayload = ApiError;
 
-export type FetchPersonaAction = Action<FETCHPERSONA_ACTION_TYPES.TRIGGER>;
+export type FetchPersonaAction = Action<FETCH_PERSONA_ACTION_TYPES.TRIGGER>;
 
 export type FetchPersonaRequestAction =
-  Action<FETCHPERSONA_ACTION_TYPES.REQUEST>;
+  Action<FETCH_PERSONA_ACTION_TYPES.REQUEST>;
 
 export type FetchPersonaSuccesssAction = PayloadAction<
   FetchPersonaSuccessPayload,
-  FETCHPERSONA_ACTION_TYPES.SUCCESS
+  FETCH_PERSONA_ACTION_TYPES.SUCCESS
 >;
 
 export type FetchPersonaFailureAction = PayloadAction<
   FetchPersonaFailurePayload,
-  FETCHPERSONA_ACTION_TYPES.FAILURE
+  FETCH_PERSONA_ACTION_TYPES.FAILURE
 >;
