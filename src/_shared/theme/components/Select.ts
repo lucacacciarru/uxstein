@@ -9,6 +9,7 @@ export const Select: ComponentStyleConfig = {
       field: {
         borderWidth: '3px',
         borderColor: 'black.0',
+        borderRadius: 'sm',
       },
     },
   },

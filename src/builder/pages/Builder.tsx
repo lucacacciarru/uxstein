@@ -1,5 +1,4 @@
 import { Box } from '@chakra-ui/react';
-import { FC } from 'react';
 import { ToolBar } from '../components';
 import { DroppablePage } from '../components/DroppablePage/DroppablePage';
 import { Header } from '../components/Header/Header';
@@ -9,8 +8,9 @@ import { useNavigationTrigger } from '../../_shared/hooks';
 import { useSelector } from 'react-redux';
 import { baseSelector } from '../store/selectors/baseSelector';
 import { useBuilderEntityRouteResolver } from '../hooks/useBuilderEntityRouteResolver';
+import { BuilderProvider } from '../components/BuilderContext';
 
-export const Builder: FC = () => {
+export const Builder: React.FC = () => {
   const { blockSetup, setBlockSetup } = useBlockSetup();
   useResetBuilder();
 
@@ -19,10 +19,12 @@ export const Builder: FC = () => {
   useNavigationTrigger(route, [entityType, entityId]);
 
   return (
-    <Box w={'full'}>
-      <ToolBar setBlockSetup={setBlockSetup} />
-      <Header />
-      <DroppablePage blockSetup={blockSetup} />
-    </Box>
+    <BuilderProvider>
+      <Box w="full">
+        <ToolBar setBlockSetup={setBlockSetup} />
+        <Header />
+        <DroppablePage blockSetup={blockSetup} />
+      </Box>
+    </BuilderProvider>
   );
 };

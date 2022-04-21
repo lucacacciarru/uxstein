@@ -1,12 +1,11 @@
-import { FC } from 'react';
-import { HStack, IconButton } from '@chakra-ui/react';
-import { Icon } from '../../../_shared/components';
+import { HStack } from '@chakra-ui/react';
 import { SavePersonaButton } from '../SavePersonaButton';
 import { SaveTemplateButton } from '../SaveTemplateButton';
 import { SavePersonaAsTemplateButton } from '../SavePersonaAsTemplateButton';
 import { useUrlBuilderEntity } from '../../hooks/useUrlBuilderEntity';
+import { ExportButton } from '../ExportButton';
 
-export const HeaderButtons: FC = () => {
+export const HeaderButtons: React.FC = () => {
   const { entityType } = useUrlBuilderEntity();
 
   const isPersonaRoute = entityType === 'persona';
@@ -18,13 +17,7 @@ export const HeaderButtons: FC = () => {
         <>
           <SavePersonaButton />
           <SavePersonaAsTemplateButton />
-          <IconButton
-            aria-label="download"
-            h="10"
-            minW="20"
-            variant="outlineBlack"
-            icon={<Icon name="Download" size="8" />}
-          />
+          <ExportButton />
         </>
       )}
       {isTemplateRoute && <SaveTemplateButton />}
