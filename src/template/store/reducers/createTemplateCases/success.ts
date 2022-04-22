@@ -19,6 +19,7 @@ export const successCase: CaseReducer<
       ...removeTemplateById(state.data.byId, TEMP_ID),
       [action.payload.id]: {
         ...state.data.byId[TEMP_ID],
+        id: action.payload.id
       },
     },
   },
