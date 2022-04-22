@@ -7,7 +7,10 @@ import { SectionWrapper } from '../components/SectionWrapper';
 export const Faq: FC = () => {
   return (
     <>
-      <PageHeading title="We dont like doubts" pageName="FAQ" />
+      <PageHeading
+        title="landing.faqPage.title"
+        pageName="landing.navigation.faq"
+      />
       <FaqCategoryButtons />
       <SectionWrapper>
         <FaqItems />

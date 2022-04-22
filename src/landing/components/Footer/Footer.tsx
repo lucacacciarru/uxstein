@@ -15,7 +15,6 @@ export const Footer: FC = () => {
       alignItems={{ base: 'flex-start', md: 'center' }}
       justifyContent="flex-start"
       flexDir={{ base: 'column', sm: 'row' }}
-      mt="12"
     >
       <LogoButtonLink mr={{ base: '0', sm: '6', md: '16' }} size="sm" />
       <Flex
@@ -44,7 +43,9 @@ export const Footer: FC = () => {
           <FooterLinkWrapper to="/examples">
             {navLabels.examples}
           </FooterLinkWrapper>
-          <FooterLinkWrapper to="/about">{navLabels.about}</FooterLinkWrapper>
+          <FooterLinkWrapper to={PATHS.ABOUT}>
+            {navLabels.about}
+          </FooterLinkWrapper>
           <FooterLinkWrapper to={PATHS.FAQ}>{navLabels.faq}</FooterLinkWrapper>
         </Flex>
       </Flex>

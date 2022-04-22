@@ -6,7 +6,8 @@ import { workflow } from './workflow';
 import { shareInfo } from './shareInfo';
 import { mediaShowcase } from '../en/mediaShowcase';
 import { faq } from './faq';
-import { faqCatLabels } from './faqCatLabels';
+import { faqPage } from './faqPage';
+import { about } from './about';
 
 export const landing = {
   main,
@@ -17,5 +18,6 @@ export const landing = {
   shareInfo,
   mediaShowcase,
   faq,
-  faqCatLabels,
+  faqPage,
+  about,
 };
