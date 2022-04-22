@@ -5,6 +5,8 @@ import { features } from './features';
 import { workflow } from './workflow';
 import { shareInfo } from './shareInfo';
 import { mediaShowcase } from './mediaShowcase';
+import { faq } from './faq';
+import { faqCatLabels } from './faqCatLabels';
 
 export const landing = {
   main,
@@ -14,4 +16,6 @@ export const landing = {
   workflow,
   shareInfo,
   mediaShowcase,
+  faq,
+  faqCatLabels,
 };

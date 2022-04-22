@@ -15,6 +15,7 @@ import { MyTemplates } from './template/pages/MyTemplates';
 import { PATHS } from './_shared/types/paths';
 import { Profile } from './auth/pages';
 import { Landing } from './landing/pages/Landing';
+import { Faq } from './landing/pages/Faq';
 
 i18n.use(initReactI18next).init(initI18n);
 
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path={PATHS.INDEX} element={<LandingLayout />}>
           <Route index element={<Landing />} />
+          <Route path={PATHS.FAQ} element={<Faq />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
         <Route path={PATHS.LOGIN} element={<Login />} />
