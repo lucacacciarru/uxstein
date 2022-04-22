@@ -12,7 +12,7 @@ export const Handles: React.FC<Props> = ({ bg = '#fff', id }) => {
 
   return (
     <>
-      <ResizeHandle color={iconColor} />
+      <ResizeHandle color={containerBackgroundColor} />
       <OptionBlock
         id={id}
         backgroundColor={containerBackgroundColor}
