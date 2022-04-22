@@ -4,7 +4,10 @@ import {
   fireEvent,
   screen,
 } from '../../../_shared/testConfig/customRender';
-import { renderHook } from '../../../_shared/testConfig/customRenderHook';
+import {
+  renderHook,
+  waitFor,
+} from '../../../_shared/testConfig/customRenderHook';
 import { getBlockItemSettings } from '../../config/blockItemSettings';
 import { getPageSettings } from '../../store/selectors/getPageSettings';
 import { BuilderState } from '../../store/types';
@@ -34,7 +37,7 @@ const useCustomHook = () => {
 };
 
 describe('useDeleteBlockButton hook', () => {
-  test('if handlerDeleteButton is called, selected item should be delete', () => {
+  test('if handlerDeleteButton is called, selected item should be delete', async () => {
     const { result } = renderHook(() => useCustomHook(), {
       mocks: { builder: MOCK_BUILDER_STATE },
     });
@@ -42,6 +45,8 @@ describe('useDeleteBlockButton hook', () => {
     render(<button data-testid="button" onClick={handlerDeleteButton} />);
     const button = screen.getByTestId('button');
     fireEvent.click(button);
-    expect(pageSettings).not.toContain(EXISTING_LAYOUT);
+    waitFor(() => {
+      expect(pageSettings).not.toContain(EXISTING_LAYOUT);
+    });
   });
 });
