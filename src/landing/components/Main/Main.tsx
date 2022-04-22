@@ -1,4 +1,4 @@
-import { Box, Button, Image, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, Heading, Image, Stack, Text } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { Icon } from '../../../_shared/components';
 import { landingImgLibrary } from '../../assets/imgLibrary';
@@ -8,8 +8,8 @@ export const Main: React.FC = () => {
   return (
     <Stack as="main" alignItems="center" justify="center" gap="14">
       <Box textAlign="center">
-        <Text
-          textStyle="main"
+        <Heading
+          size="main"
           as="h1"
           dangerouslySetInnerHTML={{ __html: t('landing.main.title') }}
         />

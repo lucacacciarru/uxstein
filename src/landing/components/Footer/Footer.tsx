@@ -1,5 +1,6 @@
 import { Flex, HStack } from '@chakra-ui/react';
 import { FC } from 'react';
+import { PATHS } from '../../../_shared/types/paths';
 import { useNavLabels } from '../../hooks/useNavLabels';
 import { LogoButtonLink } from '../LogoButtonLink/LogoButtonLink';
 import { FooterLinkWrapper } from './FooterLinkWrapper';
@@ -44,7 +45,7 @@ export const Footer: FC = () => {
             {navLabels.examples}
           </FooterLinkWrapper>
           <FooterLinkWrapper to="/about">{navLabels.about}</FooterLinkWrapper>
-          <FooterLinkWrapper to="/faq">{navLabels.faq}</FooterLinkWrapper>
+          <FooterLinkWrapper to={PATHS.FAQ}>{navLabels.faq}</FooterLinkWrapper>
         </Flex>
       </Flex>
     </HStack>
