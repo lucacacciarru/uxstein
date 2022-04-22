@@ -1,23 +1,23 @@
-import { FC, useMemo } from 'react';
-import { DeleteButton } from './DeleteButton';
+import { OptionBlock } from './OptionBlock';
 import { ResizeHandle } from './ResizeHandle';
-import { getContrast } from 'polished';
+import { useHandles } from './useHandles';
 
 type Props = {
   id: string;
   bg?: string;
 };
 
-export const Handles: FC<Props> = ({ bg = '#fff', id }) => {
-  const iconColor = useMemo(() => {
-    const contrastRatio = getContrast(bg, '#fff');
-    return contrastRatio < 1.95 ? 'black.0' : 'white.pure';
-  }, [bg]);
+export const Handles: React.FC<Props> = ({ bg = '#fff', id }) => {
+  const { containerBackgroundColor, iconColor } = useHandles(bg);
 
   return (
     <>
       <ResizeHandle color={iconColor} />
-      <DeleteButton id={id} color={iconColor} />
+      <OptionBlock
+        id={id}
+        backgroundColor={containerBackgroundColor}
+        iconColor={iconColor}
+      />
     </>
   );
 };

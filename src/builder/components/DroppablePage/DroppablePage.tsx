@@ -1,6 +1,7 @@
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import './style.css';
+import { useMemo } from 'react';
 import RGL, { WidthProvider } from 'react-grid-layout';
 import { ComponentMap } from '../ComponentMap/ComponentMap';
 import { useDroppablePage } from './useDroppablePage';
@@ -21,21 +22,25 @@ export const DroppablePage: React.FC<Props> = ({ blockSetup }) => {
   const { selectBlock } = useSelectedBlock();
   const { exportItemRef } = useContext(BuilderContext);
 
+  const renderMapItem = useMemo(
+    () =>
+      layout.map(item => (
+        <Box
+          data-grid={item}
+          key={item.i}
+          onClick={() => {
+            selectBlock(item.i);
+          }}
+        >
+          <ComponentMap id={item.i} />
+        </Box>
+      )),
+    [layout, selectBlock],
+  );
+
   return (
     <Box id="test" ref={exportItemRef as React.LegacyRef<HTMLDivElement>}>
-      <ReactGridLayout {...gridLayoutProps}>
-        {layout.map(item => (
-          <Box
-            data-grid={item}
-            key={item.i}
-            onClick={() => {
-              selectBlock(item.i);
-            }}
-          >
-            <ComponentMap id={item.i} />
-          </Box>
-        ))}
-      </ReactGridLayout>
+      <ReactGridLayout {...gridLayoutProps}>{renderMapItem}</ReactGridLayout>
     </Box>
   );
 };
