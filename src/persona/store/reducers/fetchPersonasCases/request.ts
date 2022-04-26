@@ -1,10 +1,10 @@
 import { CaseReducer } from '@reduxjs/toolkit';
 import { PersonaState } from '../../types/general';
-import { FetchPersonaRequestAction } from '../../types/fetchPersona';
+import { FetchPersonasRequestAction } from '../../types/fetchPersonas';
 
 export const requestCase: CaseReducer<
   PersonaState,
-  FetchPersonaRequestAction
+  FetchPersonasRequestAction
 > = state => ({
   ...state,
   rollbackData: {

@@ -18,8 +18,8 @@ const PERSONA_INITIAL_STATE: PersonaState = {
         createdAt: 0,
         builderData: {
           pageSettings: [],
-          gridItems: {}
-        }
+          gridItems: {},
+        },
       },
     },
   },
@@ -38,19 +38,19 @@ describe('DELETEPERSONA REDUCER', () => {
   test('rollbackData should be undefined', () => {
     const returnValue = personaRootReducer(
       PERSONA_INITIAL_STATE,
-      deletePersonaSuccess(''),
+      deletePersonaSuccess({ id: '1' }),
     );
     expect(returnValue.rollbackData).toBeUndefined();
   });
 
-  test('should restore previus rollbackData to data state and actual rollbackData should be undefined', () => {
+  test('should restore previous rollbackData to data state and actual rollbackData should be undefined', () => {
     const initialValue = personaRootReducer(
       PERSONA_INITIAL_STATE,
       deletePersonaRequest({ id: '1' }),
     );
     const returnValue = personaRootReducer(
       initialValue,
-      deletePersonaFailure({}),
+      deletePersonaFailure({ id: '1' }),
     );
     expect(returnValue.rollbackData).toBeUndefined();
     expect(returnValue.data).toEqual(initialValue.rollbackData);

@@ -1,18 +1,18 @@
 import { takeLatest } from 'redux-saga/effects';
 import { LoadingKeys } from '../../../_shared/store/loading/types';
-import { createSagaWithLoadingManagement } from '../../../_shared/store/loading/utils';
+import { createSagaWithLoadingManagement } from '../../../_shared/store/loading';
 import { createPersonaTrigger } from '../actions/createPersona';
 import { deletePersonaTrigger } from '../actions/deletePersona';
-import { fetchPersonaTrigger } from '../actions/fetchPersona';
+import { fetchPersonasTrigger } from '../actions/fetchPersonas';
 import { updatePersonaTrigger } from '../actions/updatePersona';
 import { createPersonaSaga } from './createPersona';
 import { deletePersonaSaga } from './deletePersona';
-import { fetchPersonaSaga } from './fetchPersona';
+import { fetchPersonaSaga } from './fetchPersonas';
 import { updatePersonaSaga } from './updatePersona';
 
 export function* personaRootSaga() {
   yield takeLatest(
-    fetchPersonaTrigger,
+    fetchPersonasTrigger,
     fetchPersonaSaga,
   );
   yield takeLatest(

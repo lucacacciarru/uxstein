@@ -1,5 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit';
-import { ApiError, Persona } from './general';
+import { Persona } from './general';
 
 export enum CREATE_PERSONA_ACTION_TYPES {
   TRIGGER = 'persona/create/trigger',
@@ -11,24 +11,16 @@ export enum CREATE_PERSONA_ACTION_TYPES {
 export type CreatePersonaResponse = Persona;
 export type CreatePersonaPayload = Persona;
 export type CreatePersonaSuccessPayload = Persona;
-export type CreatePersonaFailurePayload = ApiError;
+export type CreatePersonaFailurePayload = { id: string };
 
-export type CreatePersonaAction = PayloadAction<
-  CreatePersonaPayload,
-  CREATE_PERSONA_ACTION_TYPES.TRIGGER
->;
+export type CreatePersonaAction = PayloadAction<CreatePersonaPayload,
+  CREATE_PERSONA_ACTION_TYPES.TRIGGER>;
 
-export type CreatePersonaRequestAction = PayloadAction<
-  CreatePersonaPayload,
-  CREATE_PERSONA_ACTION_TYPES.REQUEST
->;
+export type CreatePersonaRequestAction = PayloadAction<CreatePersonaPayload,
+  CREATE_PERSONA_ACTION_TYPES.REQUEST>;
 
-export type CreatePersonaSuccessAction = PayloadAction<
-  CreatePersonaSuccessPayload,
-  CREATE_PERSONA_ACTION_TYPES.SUCCESS
->;
+export type CreatePersonaSuccessAction = PayloadAction<CreatePersonaSuccessPayload,
+  CREATE_PERSONA_ACTION_TYPES.SUCCESS>;
 
-export type CreatePersonaFailureAction = PayloadAction<
-  CreatePersonaFailurePayload,
-  CREATE_PERSONA_ACTION_TYPES.FAILURE
->;
+export type CreatePersonaFailureAction = PayloadAction<CreatePersonaFailurePayload,
+  CREATE_PERSONA_ACTION_TYPES.FAILURE>;

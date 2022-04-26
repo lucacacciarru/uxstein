@@ -12,7 +12,6 @@ export async function updateTemplateApi(_update: UpdateTemplatePayload): Promise
     .data
     .find((template: any) => template.id === _update.id);
 
-
   return {
     ...templateToUpdate,
     ..._update,
