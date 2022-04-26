@@ -53,19 +53,19 @@ export const faqs: Faq[] = [
 
 export const faqButtons: Record<FaqCategories, FaqButton> = {
   auth: {
-    buttonLabel: 'landing.faqCatLabels.auth',
+    buttonLabel: 'landing.faqPage.faqCatLabels.auth',
     icon: 'Add',
   },
   builder: {
-    buttonLabel: 'landing.faqCatLabels.builder',
+    buttonLabel: 'landing.faqPage.faqCatLabels.builder',
     icon: 'Add',
   },
   share: {
-    buttonLabel: 'landing.faqCatLabels.share',
+    buttonLabel: 'landing.faqPage.faqCatLabels.share',
     icon: 'Add',
   },
   template: {
-    buttonLabel: 'landing.faqCatLabels.template',
+    buttonLabel: 'landing.faqPage.faqCatLabels.template',
     icon: 'Add',
   },
 };

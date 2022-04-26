@@ -1,6 +1,7 @@
 export enum PATHS {
   INDEX = '/',
   FAQ = 'faq',
+  ABOUT = 'about',
   LOGIN = 'login',
   SIGNUP = 'signup',
   PROFILE = 'profile',
