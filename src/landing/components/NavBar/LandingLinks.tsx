@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { PATHS } from '../../../_shared/types/paths';
 import { useNavLabels } from '../../hooks/useNavLabels';
 import { NavButtonLink } from '../NavButtonLink/NavButtonLink';
 
@@ -15,7 +16,13 @@ export const LandingLinks: FC = () => {
       >
         {navLabels.examples}
       </NavButtonLink>
-      <NavButtonLink to="/about" variant="link" color="black.0" mt="2" py="4">
+      <NavButtonLink
+        to={PATHS.ABOUT}
+        variant="link"
+        color="black.0"
+        mt="2"
+        py="4"
+      >
         {navLabels.about}
       </NavButtonLink>
     </>

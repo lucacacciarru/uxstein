@@ -3,6 +3,11 @@ import { main } from './main';
 import { navigation } from './navigation';
 import { features } from './features';
 import { workflow } from './workflow';
+import { shareInfo } from './shareInfo';
+import { mediaShowcase } from '../en/mediaShowcase';
+import { faq } from './faq';
+import { faqPage } from './faqPage';
+import { about } from './about';
 
 export const landing = {
   main,
@@ -10,4 +15,9 @@ export const landing = {
   navigation,
   featureShowcase,
   workflow,
-}
+  shareInfo,
+  mediaShowcase,
+  faq,
+  faqPage,
+  about,
+};

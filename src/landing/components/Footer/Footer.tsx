@@ -1,5 +1,6 @@
 import { Flex, HStack } from '@chakra-ui/react';
 import { FC } from 'react';
+import { PATHS } from '../../../_shared/types/paths';
 import { useNavLabels } from '../../hooks/useNavLabels';
 import { LogoButtonLink } from '../LogoButtonLink/LogoButtonLink';
 import { FooterLinkWrapper } from './FooterLinkWrapper';
@@ -14,7 +15,6 @@ export const Footer: FC = () => {
       alignItems={{ base: 'flex-start', md: 'center' }}
       justifyContent="flex-start"
       flexDir={{ base: 'column', sm: 'row' }}
-      mt="12"
     >
       <LogoButtonLink mr={{ base: '0', sm: '6', md: '16' }} size="sm" />
       <Flex
@@ -43,8 +43,10 @@ export const Footer: FC = () => {
           <FooterLinkWrapper to="/examples">
             {navLabels.examples}
           </FooterLinkWrapper>
-          <FooterLinkWrapper to="/about">{navLabels.about}</FooterLinkWrapper>
-          <FooterLinkWrapper to="/faq">{navLabels.faq}</FooterLinkWrapper>
+          <FooterLinkWrapper to={PATHS.ABOUT}>
+            {navLabels.about}
+          </FooterLinkWrapper>
+          <FooterLinkWrapper to={PATHS.FAQ}>{navLabels.faq}</FooterLinkWrapper>
         </Flex>
       </Flex>
     </HStack>

@@ -3,4 +3,5 @@ export const toast = {
   personaSaved: 'Persona has been saved',
   templateSaved: 'Template has been saved',
   personaSavedAsTemplate: 'Persona has been saved as a Template',
+  exportCompleted: 'Successful export',
 };

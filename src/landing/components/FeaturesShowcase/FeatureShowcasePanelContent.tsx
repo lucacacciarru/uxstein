@@ -2,7 +2,7 @@ import {
   AccordionButton,
   AccordionItem,
   AccordionPanel,
-  Text,
+  Heading,
 } from '@chakra-ui/react';
 import { FC } from 'react';
 import { Icon, IconComponentModel } from '../../../_shared/components';
@@ -30,9 +30,9 @@ export const FeatureShowcasePanelContent: FC<Props> = ({
         data-testid={`panel-button-${i}`}
       >
         <Icon name={icon} size="10" color="brand.primary" />
-        <Text as="h4" textStyle="h4">
+        <Heading as="h4" size="h4">
           {title}
-        </Text>
+        </Heading>
       </AccordionButton>
       <AccordionPanel>{description}</AccordionPanel>
     </AccordionItem>

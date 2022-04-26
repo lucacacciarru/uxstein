@@ -1,4 +1,4 @@
-import { Box, Stack, Text } from '@chakra-ui/react';
+import { Box, Stack, Heading } from '@chakra-ui/react';
 import { PasswordInput } from '../../../_shared/components/PasswordInput';
 import { ProfileInputWrapper } from '../ProfileInputWrapper';
 import { usePasswordProfileField } from './usePasswordProfileField';
@@ -8,9 +8,9 @@ export const PasswordProfileField = () => {
 
   return (
     <Box w="full">
-      <Text as="h2" textStyle="h2">
+      <Heading as="h2" size="h2">
         Password
-      </Text>
+      </Heading>
       <ProfileInputWrapper {...rest}>
         <Stack gap="3" mt="3">
           <PasswordInput

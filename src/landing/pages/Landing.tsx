@@ -3,6 +3,8 @@ import {
   FeaturesShowcaseSection,
   Features,
   WorkflowSection,
+  ShareInfoSection,
+  MediaShowcaseSection,
 } from '../components';
 
 export const Landing = () => {
@@ -12,6 +14,8 @@ export const Landing = () => {
       <Features />
       <FeaturesShowcaseSection />
       <WorkflowSection />
+      <ShareInfoSection />
+      <MediaShowcaseSection />
     </>
   );
 };

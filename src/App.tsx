@@ -15,6 +15,8 @@ import { MyTemplates } from './template/pages/MyTemplates';
 import { PATHS } from './_shared/types/paths';
 import { Profile } from './auth/pages';
 import { Landing } from './landing/pages/Landing';
+import { Faq } from './landing/pages/Faq';
+import { About } from './landing/pages/About';
 import { getLastNotification } from './_shared/store/notifications/selectors';
 import { useSelector } from 'react-redux';
 
@@ -30,11 +32,13 @@ function App() {
   }, [lastNotification]);
 
   return (
-    <div className='App'>
+    <div className="App">
       <Routes>
         <Route path={PATHS.INDEX} element={<LandingLayout />}>
           <Route index element={<Landing />} />
-          <Route path='*' element={<ErrorPage />} />
+          <Route path={PATHS.FAQ} element={<Faq />} />
+          <Route path={PATHS.ABOUT} element={<About />} />
+          <Route path="*" element={<ErrorPage />} />
         </Route>
         <Route path={PATHS.LOGIN} element={<Login />} />
         <Route path={PATHS.SIGNUP} element={<Signup />} />

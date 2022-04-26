@@ -1,37 +1,46 @@
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import './style.css';
-import { FC } from 'react';
+import { useMemo } from 'react';
 import RGL, { WidthProvider } from 'react-grid-layout';
 import { ComponentMap } from '../ComponentMap/ComponentMap';
 import { useDroppablePage } from './useDroppablePage';
 import { BlockSetup } from '../../hooks/useBlockSetup';
 import { useSelectedBlock } from '../../hooks/useSelectedBlock';
 import { Box } from '@chakra-ui/react';
+import { useContext } from 'react';
+import { BuilderContext } from '../BuilderContext';
 
 const ReactGridLayout = WidthProvider(RGL);
 
-export const DroppablePage: FC<{ blockSetup: BlockSetup }> = ({
-  blockSetup,
-}) => {
+type Props = {
+  blockSetup: BlockSetup;
+};
+
+export const DroppablePage: React.FC<Props> = ({ blockSetup }) => {
   const { layout, gridLayoutProps } = useDroppablePage(blockSetup);
   const { selectBlock } = useSelectedBlock();
+  const { exportItemRef } = useContext(BuilderContext);
+
+  const renderMapItem = useMemo(
+    () =>
+      layout.map(item => (
+        <Box
+          data-grid={item}
+          key={item.i}
+          onClick={() => {
+            selectBlock(item.i);
+          }}
+        >
+          <ComponentMap id={item.i} />
+        </Box>
+      )),
+    [layout, selectBlock],
+  );
 
   return (
-    <>
-      <ReactGridLayout {...gridLayoutProps}>
-        {layout.map(item => (
-          <Box
-            data-grid={item}
-            key={item.i}
-            onClick={() => {
-              selectBlock(item.i);
-            }}
-          >
-            <ComponentMap id={item.i} />
-          </Box>
-        ))}
-      </ReactGridLayout>
-    </>
+    <Box id="test" ref={exportItemRef as React.LegacyRef<HTMLDivElement>}>
+      <ReactGridLayout {...gridLayoutProps}>{renderMapItem}</ReactGridLayout>
+    </Box>
   );
 };

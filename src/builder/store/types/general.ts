@@ -33,6 +33,7 @@ export enum BUILDER_ACTION_TYPES {
   POPULATE = 'builder/populate/trigger',
   UPDATE = 'builder/update',
   RESET = 'builder/reset',
+  UPDATE_LAYOUT = 'builder/updateLayout',
 }
 
 export type AttributeName =

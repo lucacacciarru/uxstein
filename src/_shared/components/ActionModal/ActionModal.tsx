@@ -1,5 +1,6 @@
 import {
   Button,
+  Heading,
   HStack,
   Modal,
   ModalBody,
@@ -9,7 +10,6 @@ import {
   ModalHeader,
   ModalOverlay,
   Stack,
-  Text,
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { TranslationKey } from '../../types/i18n';
@@ -47,9 +47,9 @@ export const ActionModal: React.FC<Props> = ({
         <ModalHeader>
           <Stack alignItems="center" justifyContent="center">
             <Icon name="Deleted" size="28" />
-            <Text as="h3" textStyle="h3">
+            <Heading as="h3" size="h3">
               {t(textContent.header)}
-            </Text>
+            </Heading>
           </Stack>
         </ModalHeader>
         <ModalCloseButton />

@@ -1,8 +1,10 @@
 import { render } from '../../../_shared/testConfig/customRender';
-import { DeleteButton } from './DeleteButton';
+import { OptionBlock } from './OptionBlock';
 
 describe('DeleteButton component', () => {
   test('should be renderd', () => {
-    render(<DeleteButton color="anyColor" id="1" />);
+    render(
+      <OptionBlock backgroundColor="anyColor" iconColor="anyColor" id="1" />,
+    );
   });
 });
