@@ -13,7 +13,7 @@ import { updatePersonaSaga } from './updatePersona';
 export function* personaRootSaga() {
   yield takeLatest(
     fetchPersonaTrigger,
-    createSagaWithLoadingManagement(fetchPersonaSaga, { key: LoadingKeys.persona }),
+    fetchPersonaSaga,
   );
   yield takeLatest(
     deletePersonaTrigger,
