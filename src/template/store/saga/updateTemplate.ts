@@ -12,6 +12,6 @@ export function* updateTemplateSaga(action: UpdateTemplateAction) {
     );
     yield put(updateTemplateSuccess(response));
   } catch (error) {
-    yield put(updateTemplateFailure({}));
+    yield put(updateTemplateFailure({ id: action.payload.id }));
   }
 }

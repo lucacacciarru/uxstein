@@ -1,5 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit';
-import { ApiError, Template } from './general';
+import { Template } from './general';
 
 export enum CREATE_TEMPLATE_ACTION_TYPES {
   TRIGGER = 'template/create/trigger',
@@ -11,24 +11,16 @@ export enum CREATE_TEMPLATE_ACTION_TYPES {
 export type CreateTemplateResponse = Template;
 export type CreateTemplatePayload = Template;
 export type CreateTemplateSuccessPayload = Template;
-export type CreateTemplateFailurePayload = ApiError;
+export type CreateTemplateFailurePayload = { id: string };
 
-export type CreateTemplateAction = PayloadAction<
-  CreateTemplatePayload,
-  CREATE_TEMPLATE_ACTION_TYPES.TRIGGER
->;
+export type CreateTemplateAction = PayloadAction<CreateTemplatePayload,
+  CREATE_TEMPLATE_ACTION_TYPES.TRIGGER>;
 
-export type CreateTemplateRequestAction = PayloadAction<
-  CreateTemplatePayload,
-  CREATE_TEMPLATE_ACTION_TYPES.REQUEST
->;
+export type CreateTemplateRequestAction = PayloadAction<CreateTemplatePayload,
+  CREATE_TEMPLATE_ACTION_TYPES.REQUEST>;
 
-export type CreateTemplateSuccessAction = PayloadAction<
-  CreateTemplateSuccessPayload,
-  CREATE_TEMPLATE_ACTION_TYPES.SUCCESS
->;
+export type CreateTemplateSuccessAction = PayloadAction<CreateTemplateSuccessPayload,
+  CREATE_TEMPLATE_ACTION_TYPES.SUCCESS>;
 
-export type CreateTemplateFailureAction = PayloadAction<
-  CreateTemplateFailurePayload,
-  CREATE_TEMPLATE_ACTION_TYPES.FAILURE
->;
+export type CreateTemplateFailureAction = PayloadAction<CreateTemplateFailurePayload,
+  CREATE_TEMPLATE_ACTION_TYPES.FAILURE>;

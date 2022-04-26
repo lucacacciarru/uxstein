@@ -12,8 +12,8 @@ export function* createTemplateSaga(action: CreateTemplateAction) {
       action.payload,
     );
     yield put(createTemplateSuccess(response));
-    yield put(updateBuilder({ entityId: response.id, entityType: 'template' }))
+    yield put(updateBuilder({ entityId: response.id, entityType: 'template' }));
   } catch (error) {
-    yield put(createTemplateFailure({}));
+    yield put(createTemplateFailure({ id: action.payload.id }));
   }
 }
