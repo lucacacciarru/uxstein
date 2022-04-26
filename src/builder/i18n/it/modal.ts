@@ -9,4 +9,7 @@ export const modal = {
     png: '.png',
     pdf: '.pdf',
   },
+  deleteBlockTitle: 'Vuoi eliminare questo blocco?',
+  deleteBlockConfirm: 'Conferma',
+  deleteBlockCancel: 'Annulla',
 };

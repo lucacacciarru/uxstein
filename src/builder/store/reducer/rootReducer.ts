@@ -21,6 +21,8 @@ import { updateBuilder } from '../actions/update';
 import { updateCase } from './update';
 import { resetBuilder } from '../actions/reset';
 import { resetCase } from './reset';
+import { updateLayoutCase } from './updateLayout';
+import { updateLayout } from '../actions/updateLayout';
 
 const INITIAL_STATE: BuilderState = {
   allIds: [],
@@ -28,7 +30,7 @@ const INITIAL_STATE: BuilderState = {
   pageSettings: [],
   entityId: '',
   entityType: '',
-  title: ''
+  title: '',
 };
 
 export const builderRootReducer = createReducer(INITIAL_STATE, builder => {
@@ -44,5 +46,6 @@ export const builderRootReducer = createReducer(INITIAL_STATE, builder => {
     .addCase(setBuilder, setCase)
     .addCase(updateBuilder, updateCase)
     .addCase(resetBuilder, resetCase)
+    .addCase(updateLayout, updateLayoutCase)
     .addDefaultCase(state => state);
 });
