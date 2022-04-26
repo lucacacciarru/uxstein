@@ -8,13 +8,9 @@ export async function updatePersonaApi(_update: UpdatePersonaPayload): Promise<U
   const allPersonasByUser = await wretch(`${process.env.REACT_APP_API_URL}/personas`)
     .get().json();
 
-  console.log('j', allPersonasByUser)
-
   const personaToUpdate: UpdatePersonaResponse = allPersonasByUser.find((el: any) => el.username === 'test')
     .data
     .find((persona: any) => persona.id === _update.id);
-
-  console.log(personaToUpdate)
 
   const nowTimestamp = Date.now();
 
