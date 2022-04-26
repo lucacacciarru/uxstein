@@ -8,8 +8,6 @@ const resolveActionsToNotify = (action: Action) => {
 };
 
 export function* sendNotificationSaga(action: PayloadAction<any>) {
-  console.log('ACTION', action.type, action.payload);
-
   const notificationId = nanoid();
 
   const notification: SendNotificationPayload = {
