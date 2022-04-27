@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { FaqItems } from '../components/Faq/FaqItems';
 import { FaqCategoryButtons } from '../components/FaqCategoryButtons/FaqCategoryButtons';
-import { PageHeading } from '../components/PageHeading/PageHeading';
+import { PageHeading } from '../components/PageHeading';
 import { SectionWrapper } from '../components/SectionWrapper';
 
 export const Faq: FC = () => {

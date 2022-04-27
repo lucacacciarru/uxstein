@@ -4,3 +4,4 @@ export * from './LandingLayout';
 export * from './NumberInput';
 export * from './SkeletonPersonCardList';
 export * from './ImageActionModal';
+export * from './GenericSkeletonList';
