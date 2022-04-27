@@ -9,7 +9,7 @@ import { TemplateState } from '../../store/types/general';
 import { useTemplatePreviewModal } from './useTemplatePreviewModal';
 
 const TEMPLATE_ID = 'templateId';
-const TEMPLATE_NAME = 'any name'
+const TEMPLATE_NAME = 'any name';
 
 const TEMPLATE_MOCK: TemplateState = {
   data: {
@@ -36,6 +36,11 @@ const CREATE_PERSONA_EXPECTED_BUILDER_STATE: BuilderState = {
   entityId: '',
   entityType: 'persona',
   title: '',
+  globalStyle: {
+    backgroundColor: '',
+    columnGap: 0,
+    rowGap: 0,
+  },
 };
 
 const EDIT_TEMPLATE_EXPECTED_BUILDER_STATE: BuilderState = {
@@ -45,7 +50,12 @@ const EDIT_TEMPLATE_EXPECTED_BUILDER_STATE: BuilderState = {
   entityId: TEMPLATE_ID,
   entityType: 'template',
   title: TEMPLATE_NAME,
-}
+  globalStyle: {
+    backgroundColor: '',
+    columnGap: 0,
+    rowGap: 0,
+  },
+};
 
 const useTestHook = () => {
   const builderState = useSelector(state => state.builder);

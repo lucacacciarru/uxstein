@@ -30,6 +30,11 @@ const MOCK_BUILDER_STATE: BuilderState = {
   entityId: 'any id',
   entityType: 'persona',
   title: 'any title',
+  globalStyle: {
+    backgroundColor: '#00000',
+    columnGap: 0,
+    rowGap: 0,
+  },
 };
 
 describe('useAttributeField', () => {

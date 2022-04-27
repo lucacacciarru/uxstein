@@ -1,6 +1,6 @@
 import { CaseReducer } from '@reduxjs/toolkit';
-import { BuilderState } from '../types';
-import { UpdateLayoutAction } from '../types/updateLayout';
+import { BuilderState } from '../../types';
+import { UpdateLayoutAction } from '../../types/update';
 
 export const updateLayoutCase: CaseReducer<BuilderState, UpdateLayoutAction> = (
   state,

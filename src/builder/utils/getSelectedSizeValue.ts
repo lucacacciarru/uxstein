@@ -1,10 +1,15 @@
 import { SizesModel } from '../components/StyleFields/SelectOneSize';
 
-type SizeSettingsModel = {
-  sizes: SizesModel;
+type SizeSettingsModel<T = string> = {
+  sizes: SizesModel<T>;
   selected: keyof SizesModel;
 };
 
-export const getSelectedSizeValue = (sizeSettings?: SizeSettingsModel) => {
-  return sizeSettings?.sizes[sizeSettings.selected] || '';
+export const getSelectedSizeValue = <T>(
+  sizeSettings?: SizeSettingsModel<T>,
+  options?: { defaultReturnValue: any },
+): T => {
+  return (
+    sizeSettings?.sizes[sizeSettings.selected] || options?.defaultReturnValue
+  );
 };

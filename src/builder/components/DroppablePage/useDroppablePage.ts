@@ -3,16 +3,18 @@ import { Layout, ReactGridLayoutProps } from 'react-grid-layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { BlockSetup } from '../../hooks/useBlockSetup';
 import { addItem } from '../../store/actions/addItem';
-import { updatePageSettings } from '../../store/actions/updatePageSettings';
 import { selectItem } from '../../store/actions/selected';
 import { getPageSettings } from '../../store/selectors/getPageSettings';
 import { populateBuilderTrigger } from '../../store/actions/populate';
 import { useUrlBuilderEntity } from '../../hooks/useUrlBuilderEntity';
+import { getGlobalStyle } from '../../store/selectors/getGlobalStyle';
+import { updatePageSettings } from '../../store/actions/update';
 
 export const useDroppablePage = (blockSetup: BlockSetup) => {
   const dispatch = useDispatch();
   const { entityId, entityType } = useUrlBuilderEntity();
   const layout = useSelector(getPageSettings);
+  const globalStyle = useSelector(getGlobalStyle);
 
   const onDropHandler = (
     newLayout: Layout[],
@@ -52,7 +54,7 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
   const gridLayoutProps: ReactGridLayoutProps = {
     style: {
       height: '800px',
-      background: '#dadada',
+      background: globalStyle.backgroundColor,
     },
     draggableCancel: '.options-block',
     isResizable: true,
@@ -70,6 +72,7 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
     onDrop: onDropHandler,
     onDragStop: onLayoutChangeHandler,
     onResizeStop: onLayoutChangeHandler,
+    margin: [globalStyle.columnGap, globalStyle.rowGap],
   };
 
   useEffect(() => {

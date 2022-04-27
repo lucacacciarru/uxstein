@@ -21,6 +21,11 @@ const MOCK_BUILDER_STATE: BuilderState = {
   entityId: ENTITY_ID,
   entityType: 'template',
   title: 'any title',
+  globalStyle: {
+    backgroundColor: '',
+    columnGap: 0,
+    rowGap: 0,
+  },
 };
 
 const MOCK_TEMPLATE_STATE: TemplateState = {
