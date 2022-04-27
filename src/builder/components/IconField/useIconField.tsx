@@ -5,10 +5,10 @@ import { useDebouncedCallback } from 'use-debounce';
 import { IconComponentModel } from '../../../_shared/components';
 import { fieldLabelsMap } from '../../config/translationsMaps/fieldLabels';
 import { icon } from '../../config/styleSettings/icon';
-import { updateAttributeStyle } from '../../store/actions/updateAttributeStyle';
 import { getAttributeByNameAndId } from '../../store/selectors/getAttributeByNameAndId';
 import { AttributeName } from '../../store/types';
 import { getIconByValueAndIconSettings } from '../../utils/getIconByValueAndIconSettings';
+import { updateAttributeStyle } from '../../store/actions/update';
 
 type Params = {
   attributeName: AttributeName;

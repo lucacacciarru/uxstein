@@ -13,7 +13,9 @@ export const textList: BlockSetup = {
         items: [{ id: '', label: '', value: '' }],
         initialValue: [{ id: '134', label: 'Test', value: 'Title' }],
         style: {
-          fontSize: getSelectedSizeValue(textSizeSettings.title),
+          fontSize: getSelectedSizeValue(textSizeSettings.title, {
+            defaultReturnValue: '',
+          }),
           color: '#ffffff',
         },
       },
@@ -27,15 +29,21 @@ export const textList: BlockSetup = {
         ],
         style: {
           color: '#ffffff',
-          fontSize: getSelectedSizeValue(textSizeSettings['text-list']),
+          fontSize: getSelectedSizeValue(textSizeSettings['text-list'], {
+            defaultReturnValue: '',
+          }),
         },
       },
     },
     style: {
       backgroundColor: '#000000',
       borderColor: '#fafafa',
-      borderWidth: getSelectedSizeValue(blockSizeSettings.borderWidth),
-      borderRadius: getSelectedSizeValue(blockSizeSettings.borderRadius),
+      borderWidth: getSelectedSizeValue(blockSizeSettings.borderWidth, {
+        defaultReturnValue: '',
+      }),
+      borderRadius: getSelectedSizeValue(blockSizeSettings.borderRadius, {
+        defaultReturnValue: '',
+      }),
     },
   },
   layoutSettings: {

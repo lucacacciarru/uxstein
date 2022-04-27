@@ -45,6 +45,11 @@ const MOCK_BUILDER_STATE: BuilderState = {
   entityId: 'any id',
   entityType: 'persona',
   title: 'any title',
+  globalStyle: {
+    backgroundColor: '',
+    columnGap: 0,
+    rowGap: 0,
+  },
 };
 
 const useTestProgressBorderField = () => {

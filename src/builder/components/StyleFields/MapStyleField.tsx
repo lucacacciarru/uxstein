@@ -6,7 +6,6 @@ import { FontSizeField } from '../FontSizeField/FontSizeField';
 import { ObjectFitStyleField } from '../ObjectFitStyleField/ObjectFitStyleField';
 import { IconField } from '../IconField';
 
-// TODO: remove partial, all AttributeName have to be mapped
 const map: Record<string, React.FC<Props>> = {
   fontSize: FontSizeField,
   color: AttributeColorField,

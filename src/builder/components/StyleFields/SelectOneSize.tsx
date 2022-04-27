@@ -8,11 +8,11 @@ import {
 import { FC } from 'react';
 import { Icon } from '../../../_shared/components';
 
-export type SizesModel = {
-  s: string;
-  m: string;
-  l: string;
-  none?: string;
+export type SizesModel<T = string> = {
+  s: T;
+  m: T;
+  l: T;
+  none?: T;
 };
 
 type Props = {

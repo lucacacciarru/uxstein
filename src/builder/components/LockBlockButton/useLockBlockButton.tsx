@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { IconComponentModel } from '../../../_shared/components';
-import { updateLayout } from '../../store/actions/updateLayout';
+import { updateLayout } from '../../store/actions/update';
 import { getSingleLayout } from '../../store/selectors/getSingleLayout';
 
 type Params = {

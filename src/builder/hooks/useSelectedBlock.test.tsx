@@ -10,6 +10,11 @@ const MOCK_BUILDER_STATE: BuilderState = {
   entityId: 'any id',
   entityType: 'persona',
   title: 'any title',
+  globalStyle: {
+    backgroundColor: '#000000',
+    columnGap: 0,
+    rowGap: 0,
+  },
 };
 
 describe('useSelectedBlock', () => {

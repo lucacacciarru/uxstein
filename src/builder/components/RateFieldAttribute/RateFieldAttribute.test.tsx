@@ -33,6 +33,11 @@ describe('RateFieldAttribute component', () => {
           entityId: 'any id',
           entityType: 'persona',
           title: 'any title',
+          globalStyle: {
+            backgroundColor: '',
+            columnGap: 0,
+            rowGap: 0,
+          },
         },
       },
     });

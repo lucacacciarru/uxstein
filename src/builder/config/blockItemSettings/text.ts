@@ -13,7 +13,9 @@ export const text: BlockSetup = {
         items: [{ id: '1', value: '' }],
         initialValue: [{ id: '1', value: 'Title' }],
         style: {
-          fontSize: getSelectedSizeValue(textSizeSettings.title),
+          fontSize: getSelectedSizeValue(textSizeSettings.title, {
+            defaultReturnValue: '',
+          }),
           color: '#ffffff',
         },
       },
@@ -23,27 +25,41 @@ export const text: BlockSetup = {
         items: [{ id: '1', value: '' }],
         initialValue: [{ id: '1', value: 'Subtitle' }],
         style: {
-          fontSize: getSelectedSizeValue(textSizeSettings.subtitle),
+          fontSize: getSelectedSizeValue(textSizeSettings.subtitle, {
+            defaultReturnValue: '',
+          }),
           color: '#ffffff',
-          fontStyle: 'italic'
+          fontStyle: 'italic',
         },
       },
       body: {
         label: 'builder.toolBar.attributes.body.label',
         placeholder: 'builder.toolBar.attributes.body.placeholder',
         items: [{ id: '1', value: '' }],
-        initialValue: [{ id: '1', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et morbi adipiscing leo nibh porttitor diam in nibh malesuada. Sed velit lobortis volutpat, eget.' }],
+        initialValue: [
+          {
+            id: '1',
+            value:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et morbi adipiscing leo nibh porttitor diam in nibh malesuada. Sed velit lobortis volutpat, eget.',
+          },
+        ],
         style: {
-          fontSize: getSelectedSizeValue(textSizeSettings.body),
-          color: '#ffffff'
-        }
+          fontSize: getSelectedSizeValue(textSizeSettings.body, {
+            defaultReturnValue: '',
+          }),
+          color: '#ffffff',
+        },
       },
     },
     style: {
       backgroundColor: '#000000',
       borderColor: '#fafafa',
-      borderWidth: getSelectedSizeValue(blockSizeSettings.borderWidth),
-      borderRadius: getSelectedSizeValue(blockSizeSettings.borderRadius),
+      borderWidth: getSelectedSizeValue(blockSizeSettings.borderWidth, {
+        defaultReturnValue: '',
+      }),
+      borderRadius: getSelectedSizeValue(blockSizeSettings.borderRadius, {
+        defaultReturnValue: '',
+      }),
     },
   },
   layoutSettings: {

@@ -10,6 +10,12 @@ export type GridItem = {
 
 export type BuilderEntityType = '' | 'persona' | 'template';
 
+export type GlobalStyle = {
+  backgroundColor: string;
+  columnGap: number;
+  rowGap: number;
+};
+
 export type BuilderState = {
   allIds: string[];
   byId: Record<string, GridItem>;
@@ -18,22 +24,17 @@ export type BuilderState = {
   entityId: string;
   entityType: BuilderEntityType;
   title: string;
+  globalStyle: GlobalStyle;
 };
 
 export enum BUILDER_ACTION_TYPES {
   ADD = 'builder/add',
   SELECT_ITEM = 'builder/select-item',
   CLEAR_SELECTED = 'builder/clear-selected',
-  UPDATE_PAGE_SETTINGS = 'builder/update/page-settings',
-  UPDATE_ATTRIBUTE_VALUE = 'builder/update/attribute-value',
-  UPDATE_ATTRIBUTE_STYLE = 'builder/update/attribute-style',
-  UPDATE_BLOCK_STYLE = 'builder/update/block-style',
   DELETE = 'builder/delete',
   SET = 'builder/set',
   POPULATE = 'builder/populate/trigger',
-  UPDATE = 'builder/update',
   RESET = 'builder/reset',
-  UPDATE_LAYOUT = 'builder/updateLayout',
 }
 
 export type AttributeName =
