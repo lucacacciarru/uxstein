@@ -1,6 +1,6 @@
 import { BuilderEntityType } from '../store/types';
 import { useRouteEntityTypeMapper } from './useRouteEntityTypeMapper';
-import { TEMP_ID } from '../../_shared/utils';
+import { TEMP_ID } from '../../_shared/constants';
 
 export const useBuilderEntityRouteResolver = (entityType?: BuilderEntityType, entityId?: string, childSegments?: string[]): string | undefined => {
   const { mapEntityTypeToRouteSegment } = useRouteEntityTypeMapper();

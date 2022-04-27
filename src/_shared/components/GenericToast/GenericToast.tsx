@@ -2,9 +2,11 @@ import { Alert, AlertIcon, AlertTitle } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { TranslationKey } from '../../types/i18n';
 
+export type ToastStatus = 'info' | 'warning' | 'success' | 'error';
+
 type Props = {
   translationKey: TranslationKey;
-  status?: 'info' | 'warning' | 'success' | 'error';
+  status?: ToastStatus;
 };
 
 export const GenericToast: React.FC<Props> = ({ status, translationKey }) => {

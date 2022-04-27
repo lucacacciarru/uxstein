@@ -5,7 +5,7 @@ import { updateTemplateTrigger } from '../../../template/store/actions/updateTem
 import { baseSelector } from '../../store/selectors/baseSelector';
 import { Template } from '../../../template/store/types/general';
 import { GenericToast } from '../../../_shared/components/GenericToast';
-import { TEMP_ID } from '../../../_shared/utils';
+import { TEMP_ID } from '../../../_shared/constants';
 
 export function useSaveTemplateButton() {
   const dispatch = useDispatch();

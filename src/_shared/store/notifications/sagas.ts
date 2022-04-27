@@ -3,8 +3,12 @@ import { delay, put, takeEvery } from 'redux-saga/effects';
 import { SendNotificationPayload } from './types';
 import { removeNotification, sendNotification } from './actions';
 
+// const resolveActionsToNotify = (action: Action) => {
+//   return action.type.match(/(request)|(success)|(failure)/gi);
+// };
+
 const resolveActionsToNotify = (action: Action) => {
-  return action.type.match(/(success)|(failure)/gi);
+  return !action.type.match(/(notifications)|(loading)/gi);
 };
 
 export function* sendNotificationSaga(action: PayloadAction<any>) {

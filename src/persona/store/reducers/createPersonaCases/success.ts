@@ -1,5 +1,5 @@
 import { CaseReducer } from '@reduxjs/toolkit';
-import { TEMP_ID } from '../../../../_shared/utils';
+import { TEMP_ID } from '../../../../_shared/constants';
 import { PersonaState } from '../../types/general';
 import { CreatePersonaSuccessAction } from '../../types/createPersona';
 import { removePersonaById } from '../../utils';
