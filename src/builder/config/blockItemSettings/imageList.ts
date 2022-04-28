@@ -13,7 +13,9 @@ export const imageList: BlockSetup = {
         items: [{ id: '1', value: '' }],
         initialValue: [{ id: '1', value: 'Title' }],
         style: {
-          fontSize: getSelectedSizeValue(textSizeSettings.title),
+          fontSize: getSelectedSizeValue(textSizeSettings.title, {
+            defaultReturnValue: '',
+          }),
           color: '#ffffff',
         },
       },
@@ -23,15 +25,19 @@ export const imageList: BlockSetup = {
         items: [],
         initialValue: [{ id: '1', value: '' }],
         style: {
-          objectFit: 'contain'
-        }
-      }
+          objectFit: 'contain',
+        },
+      },
     },
     style: {
       backgroundColor: '#000000',
       borderColor: '#fafafa',
-      borderWidth: getSelectedSizeValue(blockSizeSettings.borderWidth),
-      borderRadius: getSelectedSizeValue(blockSizeSettings.borderRadius),
+      borderWidth: getSelectedSizeValue(blockSizeSettings.borderWidth, {
+        defaultReturnValue: '',
+      }),
+      borderRadius: getSelectedSizeValue(blockSizeSettings.borderRadius, {
+        defaultReturnValue: '',
+      }),
     },
   },
   layoutSettings: {

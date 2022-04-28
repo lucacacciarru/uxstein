@@ -24,7 +24,12 @@ const INITIAL_STATE: DefaultRootState = {
     pageSettings: [],
     entityId: '',
     entityType: '',
-    title: ''
+    title: '',
+    globalStyle: {
+      backgroundColor: '',
+      columnGap: 0,
+      rowGap: 0,
+    },
   },
   loading: {},
   notifications: []

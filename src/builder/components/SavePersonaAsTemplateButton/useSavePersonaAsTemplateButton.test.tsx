@@ -22,6 +22,11 @@ const MOCK_BUILDER_STATE: BuilderState = {
   entityId: PERSONA_ID,
   entityType: 'persona',
   title: 'anyTitle',
+  globalStyle: {
+    backgroundColor: '',
+    columnGap: 0,
+    rowGap: 0,
+  },
 };
 
 const MOCK_PERSONA_STATE: PersonaState = {

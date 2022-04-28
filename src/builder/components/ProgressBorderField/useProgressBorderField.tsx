@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useDebouncedCallback } from 'use-debounce';
 import { borderItemSettings } from '../../config/styleSettings/borderItem';
 import { fieldLabelsMap } from '../../config/translationsMaps/fieldLabels';
-import { updateAttributeStyle } from '../../store/actions/updateAttributeStyle';
+import { updateAttributeStyle } from '../../store/actions/update';
 import { AttributeName } from '../../store/types';
 import { SizesModel } from '../StyleFields/SelectOneSize';
 

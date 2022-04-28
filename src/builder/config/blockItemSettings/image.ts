@@ -12,15 +12,19 @@ export const image: BlockSetup = {
         items: [],
         initialValue: [{ id: '', value: '' }],
         style: {
-          objectFit: 'contain'
-        }
-      }
+          objectFit: 'contain',
+        },
+      },
     },
     style: {
       backgroundColor: '#000000',
       borderColor: '#fafafa',
-      borderWidth: getSelectedSizeValue(blockSizeSettings.borderWidth),
-      borderRadius: getSelectedSizeValue(blockSizeSettings.borderRadius),
+      borderWidth: getSelectedSizeValue(blockSizeSettings.borderWidth, {
+        defaultReturnValue: '',
+      }),
+      borderRadius: getSelectedSizeValue(blockSizeSettings.borderRadius, {
+        defaultReturnValue: '',
+      }),
     },
   },
   layoutSettings: {
