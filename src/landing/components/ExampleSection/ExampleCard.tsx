@@ -27,6 +27,7 @@ export const ExampleCard: React.FC<Props> = ({ src }) => {
       position="relative"
       border="dark.m"
       __css={{ '&:hover > div': { bottom: '0%' } }}
+      borderRadius="lg"
       overflow="hidden"
     >
       <Image src={src} w="full" h="full" objectFit="contain" />
