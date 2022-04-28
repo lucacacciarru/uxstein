@@ -1,16 +1,15 @@
 import wretch from 'wretch';
 import { FetchTemplatesResponse } from '../types/fetchTemplates';
 
-export async function fetchTemplatesApi(username: string) {
+export async function fetchTemplatesApi(username: string): Promise<FetchTemplatesResponse> {
   const [personalTemplates, defaultTemplates] = await Promise.all([
     fetchTemplates(username),
     fetchTemplates(),
   ]);
-  const templates: FetchTemplatesResponse = {
+
+  return {
     data: [...personalTemplates.data, ...defaultTemplates.data],
   };
-
-  return templates;
 }
 
 async function fetchTemplates(username?: string) {

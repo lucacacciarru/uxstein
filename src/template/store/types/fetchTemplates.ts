@@ -1,5 +1,5 @@
-import { PayloadAction, Action } from '@reduxjs/toolkit';
-import { ApiError, Template } from './general';
+import { PayloadAction } from '@reduxjs/toolkit';
+import { Template } from './general';
 
 export enum FETCH_TEMPLATES_ACTION_TYPES {
   TRIGGER = 'template/fetchTemplates/trigger',
@@ -8,30 +8,16 @@ export enum FETCH_TEMPLATES_ACTION_TYPES {
   FAILURE = 'template/fetchTemplates/failure',
 }
 
-export type FetchTemplatesResponse = {
-  data: Template[];
-};
-
-export type FetchTemplatesPayload = {
-  username: string;
-};
-
+export type FetchTemplatesPayload = { username: string };
+export type FetchTemplatesResponse = { data: Template[] };
 export type FetchTemplatesSuccessPayload = Template[];
-export type FetchTemplatesFailurePayload = ApiError;
+export type FetchTemplatesFailurePayload = [];
 
-export type FetchTemplatesAction = Action<FETCH_TEMPLATES_ACTION_TYPES.TRIGGER>;
+export type FetchTemplatesRequestAction = PayloadAction<FetchTemplatesPayload,
+  FETCH_TEMPLATES_ACTION_TYPES.REQUEST>;
 
-export type FetchTemplatesRequestAction = PayloadAction<
-  FetchTemplatesPayload,
-  FETCH_TEMPLATES_ACTION_TYPES.REQUEST
->;
+export type FetchTemplatesSuccessAction = PayloadAction<FetchTemplatesSuccessPayload,
+  FETCH_TEMPLATES_ACTION_TYPES.SUCCESS>;
 
-export type FetchTemplatesSuccesssAction = PayloadAction<
-  FetchTemplatesSuccessPayload,
-  FETCH_TEMPLATES_ACTION_TYPES.SUCCESS
->;
-
-export type FetchTemplatesFailureAction = PayloadAction<
-  FetchTemplatesFailurePayload,
-  FETCH_TEMPLATES_ACTION_TYPES.FAILURE
->;
+export type FetchTemplatesFailureAction = PayloadAction<FetchTemplatesFailurePayload,
+  FETCH_TEMPLATES_ACTION_TYPES.FAILURE>;

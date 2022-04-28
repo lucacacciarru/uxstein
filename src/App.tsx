@@ -17,10 +17,20 @@ import { Profile } from './auth/pages';
 import { Landing } from './landing/pages/Landing';
 import { Faq } from './landing/pages/Faq';
 import { About } from './landing/pages/About';
+import { getLastNotification } from './_shared/store/notifications/selectors';
+import { useSelector } from 'react-redux';
 
 i18n.use(initReactI18next).init(initI18n);
 
 function App() {
+
+  const lastNotification = useSelector((state) => getLastNotification(state));
+  React.useEffect(() => {
+    if (!lastNotification) return;
+
+    console.log('SAMPLE NOTIFICATION', lastNotification);
+  }, [lastNotification]);
+
   return (
     <div className="App">
       <Routes>

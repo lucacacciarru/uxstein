@@ -9,11 +9,23 @@ import { populateBuilderTrigger } from '../../../builder/store/actions/populate'
 import { populateBuilderSaga } from '../../../builder/store/sagas/populateBuilder';
 import { createTemplateTrigger } from '../actions/createTemplate';
 import { createTemplateSaga } from './createTemplate';
+import { createSagaWithLoadingManagement } from '../../../_shared/store/loading';
+import { LoadingKeys } from '../../../_shared/store/loading/types';
 
 export function* templateRootSaga() {
-  yield takeLatest(fetchTemplatesTrigger, fetchTemplatesSaga);
-  yield takeLatest(updateTemplateTrigger, updateTemplateSaga);
-  yield takeLatest(deleteTemplateTrigger, deleteTemplateSaga);
-  yield takeLatest(createTemplateTrigger, createTemplateSaga);
-  yield takeLatest(populateBuilderTrigger, populateBuilderSaga);
+  yield takeLatest(
+    fetchTemplatesTrigger,
+    fetchTemplatesSaga);
+  yield takeLatest(
+    updateTemplateTrigger,
+    createSagaWithLoadingManagement(updateTemplateSaga, { key: LoadingKeys.template }));
+  yield takeLatest(
+    deleteTemplateTrigger,
+    createSagaWithLoadingManagement(deleteTemplateSaga, { key: LoadingKeys.template }));
+  yield takeLatest(
+    createTemplateTrigger,
+    createSagaWithLoadingManagement(createTemplateSaga, { key: LoadingKeys.template }));
+  yield takeLatest(
+    populateBuilderTrigger,
+    populateBuilderSaga);
 }

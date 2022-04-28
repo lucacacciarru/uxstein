@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects';
 import { createPersonaFailure, createPersonaRequest, createPersonaSuccess } from '../actions/createPersona';
-import { createPersonaApi } from '../api/createPersona';
+import { createPersonaApi } from '../api';
 import { CreatePersonaAction, CreatePersonaResponse } from '../types/createPersona';
 import { updateBuilder } from '../../../builder/store/actions/update';
 
@@ -12,8 +12,8 @@ export function* createPersonaSaga(action: CreatePersonaAction) {
       action.payload,
     );
     yield put(createPersonaSuccess(response));
-    yield put(updateBuilder({ entityId: response.id, entityType: 'persona' }));
+    yield put(updateBuilder({ entityId: response?.id, entityType: 'persona' }));
   } catch (error) {
-    yield put(createPersonaFailure({}));
+    yield put(createPersonaFailure({ id: action.payload.id }));
   }
 }

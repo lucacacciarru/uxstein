@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects';
+import { updatePersonaApi } from '../api';
 import { updatePersonaFailure, updatePersonaRequest, updatePersonaSuccess } from '../actions/updatePersona';
-import { updatePersonaApi } from '../api/updatePersona';
 import { UpdatePersonaAction, UpdatePersonaResponse } from '../types/updatePersona';
 
 export function* updatePersonaSaga(action: UpdatePersonaAction) {
@@ -12,6 +12,6 @@ export function* updatePersonaSaga(action: UpdatePersonaAction) {
     );
     yield put(updatePersonaSuccess(response));
   } catch (error) {
-    yield put(updatePersonaFailure({ error }));
+    yield put(updatePersonaFailure({ id: action.payload.id }));
   }
 }

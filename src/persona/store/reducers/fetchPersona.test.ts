@@ -1,10 +1,10 @@
 import { personaRootReducer } from './rootReducer';
 import { Persona, PersonasData, PersonaState } from '../types/general';
 import {
-  fetchPersonaRequest,
-  fetchPersonaSuccess,
-  fetchPersonaFailure,
-} from '../actions/fetchPersona';
+  fetchPersonasRequest,
+  fetchPersonasSuccess,
+  fetchPersonasFailure,
+} from '../actions/fetchPersonas';
 
 const PERSONA_INITIAL_STATE: PersonaState = {
   data: {
@@ -36,15 +36,15 @@ describe('FETCHPERSONA REDUCER', () => {
   test('rollbackData should be equal to initialState data', () => {
     const returnValue = personaRootReducer(
       PERSONA_INITIAL_STATE,
-      fetchPersonaRequest(),
+      fetchPersonasRequest({ username: 'test' }),
     );
     expect(returnValue.rollbackData).toEqual(PERSONA_INITIAL_STATE.data);
   });
 
-  test('rollbackData should be undefined and Personas data shoul be populate', () => {
+  test('rollbackData should be undefined and Personas data should be populate', () => {
     const returnValue = personaRootReducer(
       PERSONA_INITIAL_STATE,
-      fetchPersonaSuccess(mockPersona),
+      fetchPersonasSuccess(mockPersona),
     );
 
     const expectData: PersonasData = {
@@ -67,10 +67,10 @@ describe('FETCHPERSONA REDUCER', () => {
     expect(returnValue.data).toEqual(expectData);
   });
 
-  test('rollbackData should be undefined and Personas data shoul be populate', () => {
+  test('rollbackData should be undefined and Personas data should be populate', () => {
     const returnValue = personaRootReducer(
       PERSONA_INITIAL_STATE,
-      fetchPersonaFailure({}),
+      fetchPersonasFailure([]),
     );
 
     expect(returnValue.rollbackData).toBeUndefined();

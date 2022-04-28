@@ -1,5 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit';
-import { ApiError, Template } from './general';
+import { Template } from './general';
 
 export enum UPDATE_TEMPLATE_ACTION_TYPES {
   TRIGGER = 'template/updateTemplate/trigger',
@@ -8,32 +8,19 @@ export enum UPDATE_TEMPLATE_ACTION_TYPES {
   FAILURE = 'template/updateTemplate/failure',
 }
 
-export type UpdateTemplateResponse = {};
+export type UpdateTemplateResponse = Template;
+export type UpdateTemplatePayload = { id: string; properties: Omit<Partial<Template>, 'id'> };
+export type UpdateTemplateSuccessPayload = Template;
+export type UpdateTemplateFailurePayload = { id: string };
 
-export type UpdateTemplatePayload = {
-  id: string;
-  properties: Omit<Partial<Template>, 'id'>;
-};
+export type UpdateTemplateAction = PayloadAction<UpdateTemplatePayload,
+  UPDATE_TEMPLATE_ACTION_TYPES.TRIGGER>;
 
-export type UpdateTemplateSuccessPayload = {};
-export type UpdateTemplateFailurePayload = ApiError;
+export type UpdateTemplateRequestAction = PayloadAction<UpdateTemplatePayload,
+  UPDATE_TEMPLATE_ACTION_TYPES.REQUEST>;
 
-export type UpdateTemplateAction = PayloadAction<
-  UpdateTemplatePayload,
-  UPDATE_TEMPLATE_ACTION_TYPES.TRIGGER
->;
+export type UpdateTemplateSuccessAction = PayloadAction<UpdateTemplateSuccessPayload,
+  UPDATE_TEMPLATE_ACTION_TYPES.SUCCESS>;
 
-export type UpdateTemplateRequestAction = PayloadAction<
-  UpdateTemplatePayload,
-  UPDATE_TEMPLATE_ACTION_TYPES.REQUEST
->;
-
-export type UpdateTemplateSuccessAction = PayloadAction<
-  UpdateTemplateSuccessPayload,
-  UPDATE_TEMPLATE_ACTION_TYPES.SUCCESS
->;
-
-export type UpdateTemplateFailureAction = PayloadAction<
-  UpdateTemplateFailurePayload,
-  UPDATE_TEMPLATE_ACTION_TYPES.FAILURE
->;
+export type UpdateTemplateFailureAction = PayloadAction<UpdateTemplateFailurePayload,
+  UPDATE_TEMPLATE_ACTION_TYPES.FAILURE>;

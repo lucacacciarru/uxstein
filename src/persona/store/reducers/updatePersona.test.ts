@@ -18,8 +18,8 @@ const PERSONA_INITIAL_STATE: PersonaState = {
         createdAt: 0,
         builderData: {
           pageSettings: [],
-          gridItems: {}
-        }
+          gridItems: {},
+        },
       },
     },
   },
@@ -39,25 +39,25 @@ describe('UPDATEPERSONA REDUCER', () => {
     expect(returnValue.data.byId['1'].title).toBe('test');
   });
 
-  test('Persona attributes should back to previus state and rollbackData should be undefined', () => {
-    const previusState = personaRootReducer(
+  test('Persona attributes should back to previous state and rollbackData should be undefined', () => {
+    const previousState = personaRootReducer(
       PERSONA_INITIAL_STATE,
       updatePersonaRequest({ id: '1', properties: { title: 'test' } }),
     );
 
     const returnValue = personaRootReducer(
-      previusState,
-      updatePersonaFailure({}),
+      previousState,
+      updatePersonaFailure({ id: '1' }),
     );
 
     expect(returnValue.rollbackData).toBeUndefined();
-    expect(returnValue.data).toEqual(previusState.rollbackData);
+    expect(returnValue.data).toEqual(previousState.rollbackData);
   });
 
   test('Persona attributes should be same and rollbackData should be undefined', () => {
     const returnValue = personaRootReducer(
       PERSONA_INITIAL_STATE,
-      updatePersonaSuccess({}),
+      updatePersonaSuccess(PERSONA_INITIAL_STATE.data.byId['1']),
     );
 
     expect(returnValue.rollbackData).toBeUndefined();

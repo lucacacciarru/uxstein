@@ -12,8 +12,6 @@ export type Template = {
   }
 };
 
-export type ApiError = {};
-
 export type TemplatesData = {
   allIds: string[];
   byId: Record<string, Template>;

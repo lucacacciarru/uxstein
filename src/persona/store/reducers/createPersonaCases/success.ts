@@ -17,6 +17,7 @@ export const successCase: CaseReducer<PersonaState,
       ...removePersonaById(state.data.byId, TEMP_ID),
       [action.payload.id]: {
         ...state.data.byId[TEMP_ID],
+        id: action.payload.id,
       },
     },
   },

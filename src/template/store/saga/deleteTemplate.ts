@@ -12,6 +12,6 @@ export function* deleteTemplateSaga(action: DeleteTemplateAction) {
     );
     yield put(deleteTemplateSuccess(response.id));
   } catch (error) {
-    yield put(deleteTemplateFailure({}));
+    yield put(deleteTemplateFailure({ id: action.payload.id }));
   }
 }

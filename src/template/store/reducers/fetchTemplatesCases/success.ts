@@ -1,11 +1,11 @@
 import { CaseReducer } from '@reduxjs/toolkit';
 import { TemplateState } from '../../types/general';
-import { FetchTemplatesSuccesssAction } from '../../types/fetchTemplates';
+import { FetchTemplatesSuccessAction } from '../../types/fetchTemplates';
 import { createAllIdsList, formatListToByIdObject } from '../../../../_shared/utils';
 
 export const successCase: CaseReducer<
   TemplateState,
-  FetchTemplatesSuccesssAction
+  FetchTemplatesSuccessAction
 > = (state, action) => {
   return {
     ...state,

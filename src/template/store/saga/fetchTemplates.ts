@@ -18,7 +18,7 @@ function* fetchTemplatesSagaWorker() {
     );
     yield put(fetchTemplatesSuccess(response.data));
   } catch (error) {
-    yield put(fetchTemplatesFailure({}));
+    yield put(fetchTemplatesFailure([]));
   }
 }
 
