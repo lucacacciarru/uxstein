@@ -48,6 +48,9 @@ export const toolBar = {
       colorRateIcon: 'Rate icon color',
       objectFit: 'Image fit',
       icon: 'Type Icon',
+      rowGap: 'Row gap',
+      columnGap: 'Column gap',
+      pageBackground: 'Page background',
     },
     buttons: {
       contain: 'Contain',
@@ -63,14 +66,15 @@ export const toolBar = {
   draggableBlocksLabels: {
     text: 'Text',
     image: 'Image',
-    "image-list": 'Image-list',
-    "text-list": 'Text-list',
+    'image-list': 'Image-list',
+    'text-list': 'Text-list',
     checkbox: 'Checkbox',
     progress: 'Progress',
-    rate: 'Rate'
+    rate: 'Rate',
   },
-  tabLabels: {
-    add: 'Add',
-    edit: 'Edit'
-  }
+  general: {
+    back: 'Back',
+    blocks: 'Blocks',
+    globalStyle: 'Global styles',
+  },
 };
