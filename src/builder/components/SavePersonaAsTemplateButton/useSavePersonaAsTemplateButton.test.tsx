@@ -41,6 +41,7 @@ const MOCK_PERSONA_STATE: PersonaState = {
           gridItems: {
             [ENTITY_ID]: MOCK_ITEMS,
           },
+          globalStyle: MOCK_BUILDER_STATE.globalStyle,
         },
         title: 'anyTitle',
         createdAt: 0,

@@ -26,8 +26,13 @@ describe('usePersona', () => {
                 updatedAt: 0,
                 builderData: {
                   pageSettings: [],
-                  gridItems: {}
-                }
+                  gridItems: {},
+                  globalStyle: {
+                    backgroundColor: '#000000',
+                    columnGap: 0,
+                    rowGap: 0,
+                  },
+                },
               },
             },
           },
@@ -43,8 +48,13 @@ describe('usePersona', () => {
         updatedAt: 0,
         builderData: {
           pageSettings: [],
-          gridItems: {}
-        }
+          gridItems: {},
+          globalStyle: {
+            backgroundColor: '#000000',
+            columnGap: 0,
+            rowGap: 0,
+          },
+        },
       },
     ];
     expect(result.current.personas).toEqual(expectById);
@@ -65,11 +75,17 @@ describe('usePersona', () => {
             allIds: ['1'],
             byId: {
               '1': {
-                ...personaDetails, builderData: {
+                ...personaDetails,
+                builderData: {
                   pageSettings: [],
-                  gridItems: {}
-                }
-              }
+                  gridItems: {},
+                  globalStyle: {
+                    backgroundColor: '#000000',
+                    columnGap: 0,
+                    rowGap: 0,
+                  },
+                },
+              },
             },
           },
         },
@@ -99,8 +115,13 @@ describe('usePersona', () => {
                 ...personaDetails,
                 builderData: {
                   pageSettings: [],
-                  gridItems: {}
-                }
+                  gridItems: {},
+                  globalStyle: {
+                    backgroundColor: '#000000',
+                    columnGap: 0,
+                    rowGap: 0,
+                  },
+                },
               },
             },
           },

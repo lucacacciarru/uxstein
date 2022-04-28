@@ -12,7 +12,15 @@ const MOCK_PERSONA_STATE: PersonaState = {
     allIds: [EXISTING_ID],
     byId: {
       anyId: {
-        builderData: { gridItems: {}, pageSettings: [] },
+        builderData: {
+          gridItems: {},
+          pageSettings: [],
+          globalStyle: {
+            backgroundColor: '#000000',
+            columnGap: 0,
+            rowGap: 0,
+          },
+        },
         createdAt: 0,
         id: EXISTING_ID,
         src: 'anySrc',

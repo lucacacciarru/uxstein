@@ -7,7 +7,15 @@ import {
 import { useExampleSection } from './useExampleSection';
 
 const MOCK_TEMPLATE: Template = {
-  builderData: { gridItems: {}, pageSettings: [] },
+  builderData: {
+    gridItems: {},
+    pageSettings: [],
+    globalStyle: {
+      backgroundColor: '#000000',
+      columnGap: 0,
+      rowGap: 0,
+    },
+  },
   id: 'anyString',
   isDefault: true,
   name: 'Test',

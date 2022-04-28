@@ -11,7 +11,7 @@ export function useSavePersonaButton() {
   const dispatch = useDispatch();
   const toast = useToast();
   const builder = useSelector(baseSelector);
-  const { entityId, pageSettings, title } = builder;
+  const { entityId, pageSettings, title, globalStyle } = builder;
   const gridItems = builder.byId;
 
   const savePersona = () => {
@@ -22,6 +22,7 @@ export function useSavePersonaButton() {
       builderData: {
         gridItems,
         pageSettings,
+        globalStyle,
       },
       title: 'New Persona',
       createdAt: 0,
@@ -34,7 +35,10 @@ export function useSavePersonaButton() {
       dispatch(
         updatePersonaTrigger({
           id: entityId,
-          properties: { builderData: { gridItems, pageSettings }, title },
+          properties: {
+            builderData: { gridItems, pageSettings, globalStyle },
+            title,
+          },
         }),
       );
     }

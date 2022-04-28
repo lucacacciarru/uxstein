@@ -10,7 +10,15 @@ describe('Card component', () => {
         createdAt={0}
         src="test"
         title="test"
-        builderData={{ gridItems: {}, pageSettings: [] }}
+        builderData={{
+          gridItems: {},
+          pageSettings: [],
+          globalStyle: {
+            backgroundColor: '#000000',
+            columnGap: 0,
+            rowGap: 0,
+          },
+        }}
       />,
     );
     const card = screen.getByRole('card');

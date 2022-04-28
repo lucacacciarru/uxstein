@@ -3,10 +3,10 @@ import {
   act,
   waitFor,
 } from '../../_shared/testConfig/customRenderHook';
-import { TemplateState } from '../store/types/general';
+import { Template, TemplateState } from '../store/types/general';
 import { useTemplate } from './useTemplate';
 
-const MOCK_SINGLE_TEMPLATE = {
+const MOCK_SINGLE_TEMPLATE: Record<string, Template> = {
   '1': {
     id: '1',
     src: 'anySrc',
@@ -15,6 +15,11 @@ const MOCK_SINGLE_TEMPLATE = {
     builderData: {
       pageSettings: [],
       gridItems: {},
+      globalStyle: {
+        backgroundColor: '#000000',
+        columnGap: 0,
+        rowGap: 0,
+      },
     },
   },
 };

@@ -1,5 +1,5 @@
 import { Layout } from 'react-grid-layout';
-import { GridItem } from '../../../builder/store/types';
+import { GlobalStyle, GridItem } from '../../../builder/store/types';
 
 export type Persona = {
   id: string;
@@ -10,7 +10,8 @@ export type Persona = {
   builderData: {
     gridItems: Record<string, GridItem>;
     pageSettings: Layout[];
-  }
+    globalStyle: GlobalStyle;
+  };
 };
 
 export type PersonasData = {

@@ -2,10 +2,7 @@ import { CaseReducer } from '@reduxjs/toolkit';
 import { BuilderState } from '../types';
 import { SetAction } from '../types/set';
 
-export const setCase: CaseReducer<BuilderState, SetAction> = (
-  state,
-  action,
-) => {
+export const setCase: CaseReducer<BuilderState, SetAction> = (_, action) => {
   return {
     allIds: Object.keys(action.payload.gridItems),
     byId: action.payload.gridItems,
@@ -13,6 +10,6 @@ export const setCase: CaseReducer<BuilderState, SetAction> = (
     entityId: action.payload.entityId,
     entityType: action.payload.entityType,
     title: action.payload.title,
-    globalStyle: state.globalStyle,
+    globalStyle: action.payload.globalStyle,
   };
 };

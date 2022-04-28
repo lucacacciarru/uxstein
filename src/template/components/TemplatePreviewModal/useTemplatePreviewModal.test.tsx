@@ -21,6 +21,11 @@ const TEMPLATE_MOCK: TemplateState = {
         builderData: {
           gridItems: {},
           pageSettings: [{ i: 'anyItemId', h: 1, w: 1, x: 0, y: 0 }],
+          globalStyle: {
+            backgroundColor: '#000000',
+            columnGap: 0,
+            rowGap: 0,
+          },
         },
         name: TEMPLATE_NAME,
         isDefault: false,
@@ -37,7 +42,7 @@ const CREATE_PERSONA_EXPECTED_BUILDER_STATE: BuilderState = {
   entityType: 'persona',
   title: '',
   globalStyle: {
-    backgroundColor: '',
+    backgroundColor: '#000000',
     columnGap: 0,
     rowGap: 0,
   },
@@ -51,7 +56,7 @@ const EDIT_TEMPLATE_EXPECTED_BUILDER_STATE: BuilderState = {
   entityType: 'template',
   title: TEMPLATE_NAME,
   globalStyle: {
-    backgroundColor: '',
+    backgroundColor: '#000000',
     columnGap: 0,
     rowGap: 0,
   },
