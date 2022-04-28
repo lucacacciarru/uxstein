@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+//Todo: Delete rowsNumber and colsNumber when we will implement the feature to change the number of them
+import { useContext, useEffect } from 'react';
 import { Layout, ReactGridLayoutProps } from 'react-grid-layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { BlockSetup } from '../../hooks/useBlockSetup';
@@ -9,12 +10,17 @@ import { populateBuilderTrigger } from '../../store/actions/populate';
 import { useUrlBuilderEntity } from '../../hooks/useUrlBuilderEntity';
 import { getGlobalStyle } from '../../store/selectors/getGlobalStyle';
 import { updatePageSettings } from '../../store/actions/update';
+import { BuilderContext } from '../BuilderContext';
+import { PlaceholderGridProps } from '../PlaceholderGrid';
 
 export const useDroppablePage = (blockSetup: BlockSetup) => {
   const dispatch = useDispatch();
   const { entityId, entityType } = useUrlBuilderEntity();
   const layout = useSelector(getPageSettings);
   const globalStyle = useSelector(getGlobalStyle);
+  const { setShowGridPlaceholder } = useContext(BuilderContext);
+  const rowsNumber = 5;
+  const colsNumber = 6;
 
   const onDropHandler = (
     newLayout: Layout[],
@@ -45,16 +51,22 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
       }),
     );
     dispatch(selectItem({ itemId: newItem.layoutSettings.i }));
+    setShowGridPlaceholder(false);
+  };
+
+  const showGridPlaceholder = () => {
+    setShowGridPlaceholder(true);
   };
 
   const onLayoutChangeHandler = (newLayout: Layout[]) => {
     dispatch(updatePageSettings({ pageSettings: newLayout }));
+    setShowGridPlaceholder(false);
   };
 
   const gridLayoutProps: ReactGridLayoutProps = {
     style: {
-      height: '800px',
-      background: globalStyle.backgroundColor,
+      height: '100%',
+      zIndex: '11',
     },
     draggableCancel: '.options-block',
     isResizable: true,
@@ -63,16 +75,32 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
     isDroppable: true,
     preventCollision: true,
     isBounded: true,
-    cols: 6,
-    rowHeight: 130,
-    maxRows: 5,
+    cols: colsNumber,
+    rowHeight: 135,
+    maxRows: rowsNumber,
     containerPadding: [60, 60],
     droppingItem: blockSetup.layoutSettings,
     layout,
     onDrop: onDropHandler,
+    onDrag: showGridPlaceholder,
+    onResize: showGridPlaceholder,
     onDragStop: onLayoutChangeHandler,
     onResizeStop: onLayoutChangeHandler,
     margin: [globalStyle.columnGap, globalStyle.rowGap],
+  };
+
+  const backgroundContainer = globalStyle.backgroundColor;
+
+  const placeholderGridProps: PlaceholderGridProps = {
+    columns: colsNumber,
+    row: rowsNumber,
+    p: '60px',
+    position: 'absolute',
+    top: '0',
+    h: '100%',
+    w: '100%',
+    gap: '1px',
+    zIndex: 'base',
   };
 
   useEffect(() => {
@@ -82,5 +110,7 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
   return {
     layout,
     gridLayoutProps,
+    placeholderGridProps,
+    backgroundContainer,
   };
 };

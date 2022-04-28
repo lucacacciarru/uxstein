@@ -7,9 +7,10 @@ import { ComponentMap } from '../ComponentMap/ComponentMap';
 import { useDroppablePage } from './useDroppablePage';
 import { BlockSetup } from '../../hooks/useBlockSetup';
 import { useSelectedBlock } from '../../hooks/useSelectedBlock';
-import { Box } from '@chakra-ui/react';
+import { Box, HStack } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { BuilderContext } from '../BuilderContext';
+import { PlaceholderGrid } from '../PlaceholderGrid';
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -18,7 +19,8 @@ type Props = {
 };
 
 export const DroppablePage: React.FC<Props> = ({ blockSetup }) => {
-  const { layout, gridLayoutProps } = useDroppablePage(blockSetup);
+  const { layout, gridLayoutProps, backgroundContainer, placeholderGridProps } =
+    useDroppablePage(blockSetup);
   const { selectBlock } = useSelectedBlock();
   const { exportItemRef } = useContext(BuilderContext);
 
@@ -26,6 +28,7 @@ export const DroppablePage: React.FC<Props> = ({ blockSetup }) => {
     () =>
       layout.map(item => (
         <Box
+          zIndex="docked"
           data-grid={item}
           key={item.i}
           onClick={() => {
@@ -39,8 +42,19 @@ export const DroppablePage: React.FC<Props> = ({ blockSetup }) => {
   );
 
   return (
-    <Box id="test" ref={exportItemRef as React.LegacyRef<HTMLDivElement>}>
-      <ReactGridLayout {...gridLayoutProps}>{renderMapItem}</ReactGridLayout>
-    </Box>
+    <HStack alignItems="center" justifyContent="center">
+      <Box
+        id="test"
+        ref={exportItemRef as React.LegacyRef<HTMLDivElement>}
+        w="70vw"
+        border="dark.s"
+        position="relative"
+        h="800px"
+        background={backgroundContainer}
+      >
+        <ReactGridLayout {...gridLayoutProps}>{renderMapItem}</ReactGridLayout>
+        <PlaceholderGrid {...placeholderGridProps} />
+      </Box>
+    </HStack>
   );
 };

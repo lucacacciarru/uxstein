@@ -13,7 +13,7 @@ export const gridGapSizes: GridGapSizes = {
 };
 
 export const globalStyles: GlobalStyle = {
-  backgroundColor: '#dadada',
+  backgroundColor: '#ffffff',
   columnGap: getSelectedSizeValue<number>(gridGapSizes, {
     defaultReturnValue: 0,
   }),
