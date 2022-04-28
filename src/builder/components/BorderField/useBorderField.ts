@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useDebouncedCallback } from 'use-debounce';
 import { blockSizeSettings } from '../../config/styleSettings/block';
 import { fieldLabelsMap } from '../../config/translationsMaps/fieldLabels';
-import { updateBlockStyle } from '../../store/actions/updateBlockStyle';
+import { updateBlockStyle } from '../../store/actions/update';
 import { getGridItemById } from '../../store/selectors/getGridItemById';
 import { getSizeByValueAndSizeSettings } from '../../utils/getSizeByValueAndSizeSettings';
 import { SizesModel } from '../StyleFields/SelectOneSize';

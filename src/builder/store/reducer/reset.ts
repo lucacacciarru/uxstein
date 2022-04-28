@@ -1,14 +1,8 @@
 import { CaseReducer } from '@reduxjs/toolkit';
 import { BuilderState } from '../types';
 import { ResetAction } from '../types/reset';
+import { INITIAL_STATE } from './rootReducer';
 
 export const resetCase: CaseReducer<BuilderState, ResetAction> = () => {
-    return {
-        allIds: [],
-        byId: {},
-        pageSettings: [],
-        entityId: '',
-        entityType: '',
-        title: '',
-    }
-}
+  return INITIAL_STATE;
+};

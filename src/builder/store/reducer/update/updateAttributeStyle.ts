@@ -1,10 +1,10 @@
 import { CaseReducer } from '@reduxjs/toolkit';
-import { BuilderState } from '../types';
-import { UpdateAttributeValueAction } from '../types/updateAttributeValue';
+import { BuilderState } from '../../types';
+import { UpdateAttributeStyleAction } from '../../types/update';
 
-export const updateAttributeValueCase: CaseReducer<
+export const updateAttributeStyleCase: CaseReducer<
   BuilderState,
-  UpdateAttributeValueAction
+  UpdateAttributeStyleAction
 > = (state, action) => {
   const id = action.payload.blockId;
   const attribute = action.payload.attributeToUpdate;
@@ -18,7 +18,10 @@ export const updateAttributeValueCase: CaseReducer<
           ...state.byId[id].attributes,
           [attribute]: {
             ...state.byId[id].attributes[attribute],
-            items: action.payload.items,
+            style: {
+              ...state.byId[id].attributes[attribute]?.style,
+              ...action.payload.style,
+            },
           },
         },
       },

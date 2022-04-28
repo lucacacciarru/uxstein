@@ -22,6 +22,11 @@ const mockBuilder: BuilderState = {
   entityId: 'anyId',
   entityType: 'persona',
   pageSettings: [],
+  globalStyle: {
+    backgroundColor: '',
+    columnGap: 0,
+    rowGap: 0,
+  },
 };
 
 const useMockExportModal = () => {

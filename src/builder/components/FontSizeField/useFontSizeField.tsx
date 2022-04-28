@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useDebouncedCallback } from 'use-debounce';
 import { textSizeSettings } from '../../config/styleSettings/text';
-import { updateAttributeStyle } from '../../store/actions/updateAttributeStyle';
+import { updateAttributeStyle } from '../../store/actions/update';
 import { getAttributeByNameAndId } from '../../store/selectors/getAttributeByNameAndId';
 import { AttributeName } from '../../store/types';
 import { getSizeByValueAndSizeSettings } from '../../utils/getSizeByValueAndSizeSettings';

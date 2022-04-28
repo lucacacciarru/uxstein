@@ -33,7 +33,12 @@ const MOCK_BUILDER_STATE: BuilderState = {
   pageSettings: [],
   entityId: 'any id',
   entityType: 'persona',
-  title: 'any title'
+  title: 'any title',
+  globalStyle: {
+    backgroundColor: '',
+    columnGap: 0,
+    rowGap: 0,
+  },
 };
 
 describe('useMultipleAttributeField hook', () => {
@@ -137,7 +142,12 @@ describe('useMultipleAttributeField hook', () => {
             pageSettings: [],
             entityId: 'any id',
             entityType: 'persona',
-            title: 'any title'
+            title: 'any title',
+            globalStyle: {
+              backgroundColor: '',
+              columnGap: 0,
+              rowGap: 0,
+            },
           },
         },
       },
