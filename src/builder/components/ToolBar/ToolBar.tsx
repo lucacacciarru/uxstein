@@ -1,11 +1,4 @@
-import {
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-  VStack,
-} from '@chakra-ui/react';
+import { TabPanel, TabPanels, Tabs, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { BlockSetup } from '../../hooks/useBlockSetup';
 import { AddTab } from '../AddTab/AddTab';
@@ -18,22 +11,11 @@ type Props = {
 };
 
 export const ToolBar: FC<Props> = ({ setBlockSetup }) => {
-  const {
-    addTabLabel,
-    editTabLabel,
-    selectedBlockId,
-    selectedIndex,
-    clearSelection,
-  } = useToolBar();
+  const { selectedBlockId, selectedIndex } = useToolBar();
 
   return (
     <VStack {...stackContainerBaseProps}>
-      <Tabs variant="soft-rounded" w={'full'} index={selectedIndex}>
-        <TabList placeContent={'center'}>
-          <Tab onClick={clearSelection}>{addTabLabel}</Tab>
-          <Tab isDisabled={!selectedBlockId}>{editTabLabel}</Tab>
-        </TabList>
-
+      <Tabs variant="unstyled" w="full" index={selectedIndex}>
         <TabPanels>
           <TabPanel>
             <AddTab setBlockSetup={setBlockSetup} />

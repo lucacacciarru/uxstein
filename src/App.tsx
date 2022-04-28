@@ -19,6 +19,7 @@ import { Faq } from './landing/pages/Faq';
 import { About } from './landing/pages/About';
 import { useToastNotifier } from './_shared/hooks/useToastNotifier';
 import { TOAST_NOTIFICATIONS_DICTIONARY } from './_shared/constants';
+import { Examples } from './landing/pages/Examples';
 
 i18n.use(initReactI18next).init(initI18n);
 
@@ -26,13 +27,14 @@ function App() {
   useToastNotifier(TOAST_NOTIFICATIONS_DICTIONARY);
 
   return (
-    <div className='App'>
+    <div className="App">
       <Routes>
         <Route path={PATHS.INDEX} element={<LandingLayout />}>
           <Route index element={<Landing />} />
           <Route path={PATHS.FAQ} element={<Faq />} />
           <Route path={PATHS.ABOUT} element={<About />} />
-          <Route path='*' element={<ErrorPage />} />
+          <Route path={PATHS.EXAMPLE} element={<Examples />} />
+          <Route path="*" element={<ErrorPage />} />
         </Route>
         <Route path={PATHS.LOGIN} element={<Login />} />
         <Route path={PATHS.SIGNUP} element={<Signup />} />

@@ -7,17 +7,17 @@ type GridGapSizes = {
   selected: keyof SizesModel;
 };
 
-const gridGap: GridGapSizes = {
+export const gridGapSizes: GridGapSizes = {
   sizes: { s: 10, m: 45, l: 70, none: 0 },
   selected: 'none',
 };
 
 export const globalStyles: GlobalStyle = {
-  backgroundColor: '#dadada',
-  columnGap: getSelectedSizeValue<number>(gridGap, {
+  backgroundColor: '#ffffff',
+  columnGap: getSelectedSizeValue<number>(gridGapSizes, {
     defaultReturnValue: 0,
   }),
-  rowGap: getSelectedSizeValue<number>(gridGap, {
+  rowGap: getSelectedSizeValue<number>(gridGapSizes, {
     defaultReturnValue: 0,
   }),
 };

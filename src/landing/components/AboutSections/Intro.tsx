@@ -2,7 +2,7 @@ import { Box, Center, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Icon } from '../../../_shared/components';
-import { PageHeading } from '../PageHeading/PageHeading';
+import { PageHeading } from '../PageHeading';
 import { SectionWrapper } from '../SectionWrapper';
 
 export const Intro: FC = () => {
@@ -10,7 +10,7 @@ export const Intro: FC = () => {
   return (
     <>
       <PageHeading
-        pageName={'landing.navigation.about'}
+        pageName="landing.navigation.about"
         title="landing.about.intro.title"
       />
       <SectionWrapper mt="0">

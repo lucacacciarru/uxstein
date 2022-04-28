@@ -4,10 +4,11 @@ import { navigation } from './navigation';
 import { features } from './features';
 import { workflow } from './workflow';
 import { shareInfo } from './shareInfo';
-import { mediaShowcase } from '../en/mediaShowcase';
+import { mediaShowcase } from './mediaShowcase';
 import { faq } from './faq';
 import { faqPage } from './faqPage';
 import { about } from './about';
+import { examples } from './examples';
 
 export const landing = {
   main,
@@ -20,4 +21,5 @@ export const landing = {
   faq,
   faqPage,
   about,
+  examples,
 };
