@@ -19,7 +19,7 @@ describe('usePageBgColorField', () => {
         type="color"
         value={result.current.backgroundColor}
         onChange={result.current.setColor}
-        data-testId="colorInput"
+        data-testid="colorInput"
       />,
     );
     const input = screen.getByTestId('colorInput');

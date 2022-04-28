@@ -1,6 +1,7 @@
 import { render } from '../../../../_shared/testConfig/customRender';
 import { ProgressFieldAttribute } from './ProgressFieldAttribute';
 
+// TODO - Received NaN for the `value` attribute. If this is expected, cast the value to a string.
 describe('ProgressFieldAttribute component', () => {
   test('Should be rendered', () => {
     render(<ProgressFieldAttribute blockItemId="1" name="title" />, {
