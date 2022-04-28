@@ -75,5 +75,7 @@ export const toolBar = {
   },
   general: {
     back: 'Indietro',
+    blocks: 'Blocchi',
+    globalStyle: 'Stili globali',
   },
 };

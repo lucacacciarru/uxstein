@@ -1,10 +1,11 @@
 // TODO: Change key of <WrapItem> to something better, like a id prop
-import { Center, Stack, Wrap, WrapItem } from '@chakra-ui/react';
+import { WrapItem } from '@chakra-ui/react';
 import { FC, useMemo } from 'react';
 import { DraggableBlock, DraggableBlockProps } from './DraggableBlock';
-import { SearchBar } from '../../../_shared/components/SearchBar';
 import { BlockSetup } from '../../hooks/useBlockSetup';
 import { GlobalStyleFields } from '../GlobalStyleFields/GlobalStyleFields';
+import { Collapsable } from '../../../_shared/components/Collapsable';
+import { DraggableBlocks } from './DraggableBlocks';
 
 const mockedDraggableBlocks: DraggableBlockProps[] = [
   { type: 'text', iconName: 'TextIcon' },
@@ -34,12 +35,9 @@ export const AddTab: FC<Props> = ({ setBlockSetup }) => {
   }, [setBlockSetup]);
 
   return (
-    <Stack spacing={'8'}>
-      <SearchBar />
-      <Center>
-        <Wrap spacing={'4'}>{renderedWrapItems}</Wrap>
-      </Center>
+    <Collapsable allowToggle={false} defaultIndex={0}>
+      <DraggableBlocks>{renderedWrapItems}</DraggableBlocks>
       <GlobalStyleFields />
-    </Stack>
+    </Collapsable>
   );
 };
