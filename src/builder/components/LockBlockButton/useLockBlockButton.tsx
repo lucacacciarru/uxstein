@@ -11,20 +11,20 @@ type Params = {
 
 export function useLockBlockButton({ id, iconColor }: Params) {
   const dispatch = useDispatch();
-  const isLocked = useSelector(getSingleLayout(id))?.isDraggable;
+  const isUnlocked = useSelector(getSingleLayout(id))?.isDraggable;
 
   const nameIcon = useMemo(
-    (): keyof IconComponentModel => (isLocked ? 'Unlock' : 'Lock'),
-    [isLocked],
+    (): keyof IconComponentModel => (isUnlocked ? 'Unlock' : 'Lock'),
+    [isUnlocked],
   );
 
   const iconLockColor = useMemo(
-    () => (isLocked ? iconColor : 'brand.primary'),
-    [iconColor, isLocked],
+    () => (isUnlocked ? iconColor : 'brand.primary'),
+    [iconColor, isUnlocked],
   );
 
   const toggleLockBlock = () => {
-    const newIsLocked = !isLocked;
+    const newIsLocked = !isUnlocked;
     dispatch(
       updateLayout({
         id,

@@ -74,7 +74,15 @@
               }
             },
             "pageSettings": [
-              { "i": "a", "x": 0, "y": 0, "w": 2, "h": 2, "maxW": 3 }
+              {
+                "i": "a",
+                "x": 0,
+                "y": 0,
+                "w": 2,
+                "h": 2,
+                "maxW": 3,
+                "isDraggable": true
+              }
             ]
           }
         },
