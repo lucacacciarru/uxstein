@@ -19,12 +19,12 @@ import { Faq } from './landing/pages/Faq';
 import { About } from './landing/pages/About';
 import { getLastNotification } from './_shared/store/notifications/selectors';
 import { useSelector } from 'react-redux';
+import { Examples } from './landing/pages/Examples';
 
 i18n.use(initReactI18next).init(initI18n);
 
 function App() {
-
-  const lastNotification = useSelector((state) => getLastNotification(state));
+  const lastNotification = useSelector(state => getLastNotification(state));
   React.useEffect(() => {
     if (!lastNotification) return;
 
@@ -38,6 +38,7 @@ function App() {
           <Route index element={<Landing />} />
           <Route path={PATHS.FAQ} element={<Faq />} />
           <Route path={PATHS.ABOUT} element={<About />} />
+          <Route path={PATHS.EXAMPLE} element={<Examples />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
         <Route path={PATHS.LOGIN} element={<Login />} />

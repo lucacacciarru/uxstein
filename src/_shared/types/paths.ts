@@ -9,6 +9,7 @@ export enum PATHS {
   TEMPLATES = 'my-templates',
   EDIT_ENTITY = ':entityId/edit',
   CREATE_ENTITY = 'create',
+  EXAMPLE = 'examples',
 }
 
 export const pathsWithHidedNavigation = [
