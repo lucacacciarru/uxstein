@@ -16,7 +16,7 @@ export type SizesModel<T = string> = {
 };
 
 type Props = {
-  sizes: SizesModel;
+  sizes: SizesModel | SizesModel<number>;
   selected: keyof SizesModel;
   select: Function;
   label: string;

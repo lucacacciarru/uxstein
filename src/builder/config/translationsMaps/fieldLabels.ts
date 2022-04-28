@@ -19,4 +19,7 @@ export const fieldLabelsMap: Record<string, TranslationKey> = {
   checkboxCheckColor: 'builder.toolBar.style.labels.checkboxCheckColor',
   colorRateIcon: 'builder.toolBar.style.labels.colorRateIcon',
   icon: 'builder.toolBar.style.labels.icon',
+  rowGap: 'builder.toolBar.style.labels.rowGap',
+  columnGap: 'builder.toolBar.style.labels.columnGap',
+  pageBackground: 'builder.toolBar.style.labels.pageBackground',
 };

@@ -49,6 +49,9 @@ export const toolBar = {
       colorRateIcon: 'Colore icone valutazione',
       objectFit: 'Adatta immagine',
       icon: 'Tipologia icona',
+      rowGap: 'Distanza righe',
+      columnGap: 'Distanza colonne',
+      pageBackground: 'Sfondo pagina',
     },
     buttons: {
       contain: 'Contain',
@@ -64,14 +67,13 @@ export const toolBar = {
   draggableBlocksLabels: {
     text: 'Testo',
     image: 'Immagine',
-    "image-list": 'Galleria',
-    "text-list": 'Elenco',
+    'image-list': 'Galleria',
+    'text-list': 'Elenco',
     checkbox: 'Checkbox',
     progress: 'Progressivo',
-    rate: 'Valutazione'
+    rate: 'Valutazione',
   },
-  tabLabels: {
-    add: 'Aggiungi',
-    edit: 'Modifica'
-  }
+  general: {
+    back: 'Indietro',
+  },
 };

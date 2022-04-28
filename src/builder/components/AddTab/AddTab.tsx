@@ -4,6 +4,7 @@ import { FC, useMemo } from 'react';
 import { DraggableBlock, DraggableBlockProps } from './DraggableBlock';
 import { SearchBar } from '../../../_shared/components/SearchBar';
 import { BlockSetup } from '../../hooks/useBlockSetup';
+import { GlobalStyleFields } from '../GlobalStyleFields/GlobalStyleFields';
 
 const mockedDraggableBlocks: DraggableBlockProps[] = [
   { type: 'text', iconName: 'TextIcon' },
@@ -38,6 +39,7 @@ export const AddTab: FC<Props> = ({ setBlockSetup }) => {
       <Center>
         <Wrap spacing={'4'}>{renderedWrapItems}</Wrap>
       </Center>
+      <GlobalStyleFields />
     </Stack>
   );
 };

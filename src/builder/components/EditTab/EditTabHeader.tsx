@@ -1,6 +1,7 @@
 import { Box, HStack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { BlockSetup } from '../../hooks/useBlockSetup';
+import { BackButton } from '../ToolBar/BackButton';
 import { useOptionalSettings } from './useOptionalSettings';
 
 type Props = {
@@ -12,8 +13,9 @@ export const EditTabHeader: FC<Props> = ({ title, optionalSettings }) => {
   const { settingsWithDefault } = useOptionalSettings(optionalSettings);
 
   return (
-    <Box as={'header'} pl="4" mb="8" mt="4">
-      <Text fontSize="4xl" textTransform="capitalize">
+    <Box as={'header'} pl="4" mb="8">
+      <BackButton />
+      <Text fontSize="4xl" textTransform="capitalize" mt="4">
         {title}
       </Text>
       <HStack spacing="8">

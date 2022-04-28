@@ -1,34 +1,22 @@
+import { Stack } from '@chakra-ui/react';
 import { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useDebouncedCallback } from 'use-debounce';
-import { updateGlobalStyle } from '../../store/actions/update';
-import { getGlobalStyle } from '../../store/selectors/getGlobalStyle';
-import { UpdateGlobalStylePayload } from '../../store/types/update';
-import { ColorField } from '../StyleFields/ColorField';
+import {
+  Collapsable,
+  CollapsableItem,
+} from '../../../_shared/components/Collapsable';
+import { GridGapField } from './GridGapField';
+import { PageBgColorField } from './PageBgColorField';
 
 export const GlobalStyleFields: FC = () => {
-  const dispatch = useDispatch();
-  const globalStyle = useSelector(getGlobalStyle);
-
-  const backgroundColor = globalStyle.backgroundColor;
-
-  const debouncedUpdateValue = useDebouncedCallback(
-    (value: UpdateGlobalStylePayload) => {
-      dispatch(updateGlobalStyle(value));
-    },
-    500,
-  );
-
-  const setColor = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const payload = { backgroundColor: e.target.value };
-    debouncedUpdateValue(payload);
-  };
-
   return (
-    <ColorField
-      label="Page background"
-      onChange={setColor}
-      value={backgroundColor}
-    />
+    <Collapsable>
+      <CollapsableItem name="Global styles">
+        <Stack spacing="6">
+          <PageBgColorField />
+          <GridGapField styleKey="rowGap" />
+          <GridGapField styleKey="columnGap" />
+        </Stack>
+      </CollapsableItem>
+    </Collapsable>
   );
 };
