@@ -9,7 +9,7 @@ const fnOnClose = jest.fn();
 describe('useTextInputModal hook', () => {
   test('if the text is longer than 20 characters, inputError should be true', () => {
     const { result } = renderHook(() =>
-      useTextInputModal(fn, fnOnClose, 'builder.toast.personaSaved'),
+      useTextInputModal(fn, fnOnClose),
     );
     render(
       <>
@@ -36,7 +36,7 @@ describe('useTextInputModal hook', () => {
   });
   test('if the text is empty, inputError should be true', () => {
     const { result } = renderHook(() =>
-      useTextInputModal(fn, fnOnClose, 'builder.toast.personaSaved'),
+      useTextInputModal(fn, fnOnClose),
     );
     render(
       <>
@@ -63,7 +63,7 @@ describe('useTextInputModal hook', () => {
   test('if inputError it is false, checkAndConfirm should put inputError on false and fire callback', () => {
     const fn = jest.fn();
     const { result } = renderHook(() =>
-      useTextInputModal(fn, fnOnClose, 'builder.toast.personaSaved'),
+      useTextInputModal(fn, fnOnClose),
     );
     render(
       <>

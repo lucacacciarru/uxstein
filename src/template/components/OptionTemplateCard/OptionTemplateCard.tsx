@@ -60,7 +60,6 @@ export const OptionTemplateCard: React.FC<Props> = ({ templateId }) => {
         textContent={{
           inputPlaceholder: 'template.modal.renamePlaceholder',
           header: 'template.modal.renameTitle',
-          toast: 'template.toast.renameTemplate',
         }}
       />
       <ActionModal
@@ -70,7 +69,6 @@ export const OptionTemplateCard: React.FC<Props> = ({ templateId }) => {
         textContent={{
           body: 'template.modal.deleteBody',
           header: 'template.modal.deleteTitle',
-          toast: 'template.toast.deleteTemplate',
         }}
       />
     </>

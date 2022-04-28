@@ -6,12 +6,11 @@ const fn = jest.fn();
 const fnOnClose = jest.fn();
 
 describe('useActionModal hook', () => {
-  test('if onClick is called the callback should be called and toast should be in the document', () => {
+  test('if onClick is called the callback should be called', () => {
     const { result } = renderHook(() =>
       useActionModal({
         onSubmit: fn,
         onClose: fnOnClose,
-        toastTranslation: 'builder.toast.personaSaved',
       }),
     );
     render(<button data-testid="button" onClick={result.current.onClick} />);
@@ -20,8 +19,5 @@ describe('useActionModal hook', () => {
     fireEvent.click(button);
     expect(fn).toBeCalled();
     expect(fnOnClose).toBeCalled();
-
-    const toast = screen.getByTestId('toast');
-    expect(toast).toBeInTheDocument();
   });
 });

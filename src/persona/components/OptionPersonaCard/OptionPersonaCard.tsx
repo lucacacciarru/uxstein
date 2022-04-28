@@ -62,7 +62,6 @@ export const OptionPersonaCard: React.FC<Props> = ({ personaId }) => {
         textContent={{
           header: 'persona.modal.renameTitle',
           inputPlaceholder: 'persona.modal.renamePlaceholder',
-          toast: 'persona.toast.renamePersona',
         }}
       />
       <ActionModal
@@ -72,7 +71,6 @@ export const OptionPersonaCard: React.FC<Props> = ({ personaId }) => {
         textContent={{
           header: 'persona.modal.deleteTitle',
           body: 'persona.modal.deleteBody',
-          toast: 'persona.toast.deletePersona',
         }}
       />
     </>
