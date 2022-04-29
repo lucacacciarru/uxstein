@@ -1,4 +1,3 @@
-//Todo: Delete rowsNumber and colsNumber when we will implement the feature to change the number of them
 import { useContext, useEffect } from 'react';
 import { Layout, ReactGridLayoutProps } from 'react-grid-layout';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,6 +11,8 @@ import { getGlobalStyle } from '../../store/selectors/getGlobalStyle';
 import { updatePageSettings } from '../../store/actions/update';
 import { BuilderContext } from '../BuilderContext';
 import { PlaceholderGridProps } from '../PlaceholderGrid';
+import { gridSettings } from '../../config/styleSettings/globals';
+import { useRowHeight } from '../../hooks/useRowHeight';
 
 export const useDroppablePage = (blockSetup: BlockSetup) => {
   const dispatch = useDispatch();
@@ -19,8 +20,7 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
   const layout = useSelector(getPageSettings);
   const globalStyle = useSelector(getGlobalStyle);
   const { setShowGridPlaceholder } = useContext(BuilderContext);
-  const rowsNumber = 5;
-  const colsNumber = 6;
+  const { rowHeight } = useRowHeight(globalStyle);
 
   const onDropHandler = (
     newLayout: Layout[],
@@ -75,10 +75,10 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
     isDroppable: true,
     preventCollision: true,
     isBounded: true,
-    cols: colsNumber,
-    rowHeight: 135,
-    maxRows: rowsNumber,
-    containerPadding: [60, 60],
+    cols: gridSettings.colsNumber,
+    maxRows: gridSettings.rowsNumber,
+    containerPadding: [gridSettings.paddingX, gridSettings.paddingY],
+    rowHeight: rowHeight,
     droppingItem: blockSetup.layoutSettings,
     layout,
     onDrop: onDropHandler,
@@ -92,14 +92,16 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
   const backgroundContainer = globalStyle.backgroundColor;
 
   const placeholderGridProps: PlaceholderGridProps = {
-    columns: colsNumber,
-    row: rowsNumber,
+    columns: gridSettings.colsNumber,
+    row: gridSettings.rowsNumber,
     p: '60px',
     position: 'absolute',
     top: '0',
+    left: '0',
     h: '100%',
     w: '100%',
-    gap: '1px',
+    spacingX: `${globalStyle.columnGap}px`,
+    spacingY: `${globalStyle.rowGap}px`,
     zIndex: 'base',
   };
 

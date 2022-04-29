@@ -11,10 +11,12 @@ export const PlaceholderGrid: React.FC<PlaceholderGridProps> = ({
   row,
   ...rest
 }) => {
-  const { renderPlaceholderBlocks, opacityContainer } = usePlaceholderGrid(
+  const { renderPlaceholderBlocks, opacityContainer } = usePlaceholderGrid({
     columns,
-    row,
-  );
+    rows: row,
+    columnGap: rest.spacingX,
+    rowGap: rest.spacingY,
+  });
   return (
     <SimpleGrid
       columns={columns}

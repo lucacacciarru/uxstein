@@ -21,3 +21,11 @@ export const globalStyles: GlobalStyle = {
     defaultReturnValue: 0,
   }),
 };
+
+export const gridSettings = {
+  rowsNumber: 5,
+  colsNumber: 6,
+  paddingX: 60,
+  paddingY: 60,
+  pageHeight: 800,
+};
