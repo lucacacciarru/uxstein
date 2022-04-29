@@ -19,6 +19,11 @@ const PERSONA_INITIAL_STATE: PersonaState = {
         builderData: {
           pageSettings: [],
           gridItems: {},
+          globalStyle: {
+            backgroundColor: '#000000',
+            columnGap: 0,
+            rowGap: 0,
+          },
         },
       },
     },

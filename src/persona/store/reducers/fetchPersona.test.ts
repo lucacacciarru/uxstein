@@ -23,6 +23,11 @@ const mockPersona: Persona[] = [
     builderData: {
       pageSettings: [],
       gridItems: {},
+      globalStyle: {
+        backgroundColor: '#000000',
+        columnGap: 0,
+        rowGap: 0,
+      },
     },
   },
 ];
@@ -59,6 +64,11 @@ describe('FETCHPERSONA REDUCER', () => {
           builderData: {
             pageSettings: [],
             gridItems: {},
+            globalStyle: {
+              backgroundColor: '#000000',
+              columnGap: 0,
+              rowGap: 0,
+            },
           },
         },
       },

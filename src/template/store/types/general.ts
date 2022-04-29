@@ -1,5 +1,5 @@
 import { Layout } from 'react-grid-layout';
-import { GridItem } from '../../../builder/store/types';
+import { GlobalStyle, GridItem } from '../../../builder/store/types';
 
 export type Template = {
   id: string;
@@ -9,7 +9,8 @@ export type Template = {
   builderData: {
     gridItems: Record<string, GridItem>;
     pageSettings: Layout[];
-  }
+    globalStyle: GlobalStyle;
+  };
 };
 
 export type TemplatesData = {

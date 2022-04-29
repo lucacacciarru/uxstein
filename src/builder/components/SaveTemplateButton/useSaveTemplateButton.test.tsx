@@ -35,7 +35,11 @@ const MOCK_TEMPLATE_STATE: TemplateState = {
       [ENTITY_ID]: {
         id: ENTITY_ID,
         src: 'anySrc',
-        builderData: { gridItems: {}, pageSettings: [] },
+        builderData: {
+          gridItems: {},
+          pageSettings: [],
+          globalStyle: { backgroundColor: '#000000', columnGap: 0, rowGap: 0 },
+        },
         name: 'anyName',
         isDefault: false,
       },

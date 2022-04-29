@@ -7,7 +7,7 @@ import { TEMP_ID } from '../../../_shared/utils';
 export function useSavePersonaAsTemplateButton() {
   const dispatch = useDispatch();
   const builder = useSelector(baseSelector);
-  const { pageSettings } = builder;
+  const { pageSettings, globalStyle } = builder;
   const gridItems = builder.byId;
 
   const savePersonaAsTemplate = (templateName: string) => {
@@ -19,6 +19,7 @@ export function useSavePersonaAsTemplateButton() {
       builderData: {
         gridItems,
         pageSettings,
+        globalStyle,
       },
     };
 

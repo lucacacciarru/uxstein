@@ -11,7 +11,7 @@ export function useSaveTemplateButton() {
   const dispatch = useDispatch();
   const toast = useToast();
   const builder = useSelector(baseSelector);
-  const { entityId, pageSettings, title } = builder;
+  const { entityId, pageSettings, title, globalStyle } = builder;
   const gridItems = builder.byId;
 
   const saveTemplate = () => {
@@ -22,6 +22,7 @@ export function useSaveTemplateButton() {
       builderData: {
         gridItems,
         pageSettings,
+        globalStyle,
       },
       name: 'New Template',
       isDefault: false,
@@ -34,7 +35,7 @@ export function useSaveTemplateButton() {
         updateTemplateTrigger({
           id: entityId,
           properties: {
-            builderData: { gridItems, pageSettings },
+            builderData: { gridItems, pageSettings, globalStyle },
             name: title,
           },
         }),
