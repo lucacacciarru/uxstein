@@ -13,20 +13,20 @@ type Props = {
 };
 
 export const EditTab: FC<Props> = ({ selectedBlockId = '' }) => {
-  const { headerProps, attributesNameKeyList, blockStyle } =
+  const { headerProps, attributesNameKeyList, blockStyle, accordionLabels } =
     useEditTab(selectedBlockId);
 
   return (
     <>
       <EditTabHeader {...headerProps} />
       <Collapsable defaultIndex={0}>
-        <CollapsableItem name="Attributes">
+        <CollapsableItem name={accordionLabels.attributes}>
           <Attributes
             items={attributesNameKeyList}
             blockItemId={selectedBlockId}
           />
         </CollapsableItem>
-        <CollapsableItem name="Style">
+        <CollapsableItem name={accordionLabels.style}>
           <BlockStyleFields style={blockStyle} blockItemId={selectedBlockId} />
         </CollapsableItem>
       </Collapsable>

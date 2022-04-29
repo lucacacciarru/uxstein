@@ -76,5 +76,18 @@ export const toolBar = {
     back: 'Back',
     blocks: 'Blocks',
     globalStyle: 'Global styles',
+    attributes: 'Attributes',
+    style: 'Style',
+  },
+  attributeAccordionLabel: {
+    title: 'Title style',
+    subtitle: 'Subtitle style',
+    body: 'Body style',
+    image: 'Image style',
+    'image-list': 'Image-list style',
+    progress: 'Progress style',
+    checkbox: 'Checkbox style',
+    'text-list': 'Text-list style',
+    rate: 'Rate style',
   },
 };
