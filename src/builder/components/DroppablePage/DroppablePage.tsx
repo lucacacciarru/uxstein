@@ -11,6 +11,7 @@ import { Box, HStack } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { BuilderContext } from '../BuilderContext';
 import { PlaceholderGrid } from '../PlaceholderGrid';
+import { gridSettings } from '../../config/styleSettings/globals';
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -49,7 +50,7 @@ export const DroppablePage: React.FC<Props> = ({ blockSetup }) => {
         w="70vw"
         border="dark.s"
         position="relative"
-        h="800px"
+        h={`${gridSettings.pageHeight}px`}
         background={backgroundContainer}
       >
         <ReactGridLayout {...gridLayoutProps}>{renderMapItem}</ReactGridLayout>
