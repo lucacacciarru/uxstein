@@ -17,8 +17,8 @@ export function usePasswordProfileField() {
   const { updateProfile } = useAuth();
 
   const mapErrorMessage: Record<string, string> = {
-    tooShort: t('modal.textInputModal.errors.renameEmptyText'),
-    empty: t('modal.textInputModal.errors.renameEmptyText'),
+    equal: t('auth.profile.errors.password.equal'),
+    empty: t('auth.profile.errors.password.empty'),
   };
 
   const labels = {

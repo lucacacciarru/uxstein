@@ -18,6 +18,10 @@ export const profile = {
       isNotEmail: 'Inserisci una mail valida',
       equalEmail: 'Inserisci una mail diversa da quella attiva',
     },
+    password: {
+      equal: 'Non puoi inserire una password uguale a quella che hai già',
+      empty: 'Inserisci una password valida',
+    },
   },
   avatar: {
     openModalButton: 'Cambia avatar',
