@@ -14,6 +14,8 @@ export type GlobalStyle = {
   backgroundColor: string;
   columnGap: number;
   rowGap: number;
+  containerPaddingX: number;
+  containerPaddingY: number;
 };
 
 export type BuilderState = {

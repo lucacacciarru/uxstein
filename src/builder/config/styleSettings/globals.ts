@@ -12,6 +12,11 @@ export const gridGapSizes: GridGapSizes = {
   selected: 'none',
 };
 
+export const gridPaddingSizes: GridGapSizes = {
+  sizes: { s: 10, m: 45, l: 60, none: 0 },
+  selected: 'none',
+};
+
 export const globalStyles: GlobalStyle = {
   backgroundColor: '#ffffff',
   columnGap: getSelectedSizeValue<number>(gridGapSizes, {
@@ -20,12 +25,16 @@ export const globalStyles: GlobalStyle = {
   rowGap: getSelectedSizeValue<number>(gridGapSizes, {
     defaultReturnValue: 0,
   }),
+  containerPaddingX: getSelectedSizeValue<number>(gridPaddingSizes, {
+    defaultReturnValue: 0,
+  }),
+  containerPaddingY: getSelectedSizeValue<number>(gridPaddingSizes, {
+    defaultReturnValue: 0,
+  }),
 };
 
 export const gridSettings = {
   rowsNumber: 5,
   colsNumber: 6,
-  paddingX: 60,
-  paddingY: 60,
   pageHeight: 800,
 };

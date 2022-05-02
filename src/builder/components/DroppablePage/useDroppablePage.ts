@@ -77,7 +77,10 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
     isBounded: true,
     cols: gridSettings.colsNumber,
     maxRows: gridSettings.rowsNumber,
-    containerPadding: [gridSettings.paddingX, gridSettings.paddingY],
+    containerPadding: [
+      globalStyle.containerPaddingX,
+      globalStyle.containerPaddingY,
+    ],
     rowHeight: rowHeight,
     droppingItem: blockSetup.layoutSettings,
     layout,
@@ -94,7 +97,8 @@ export const useDroppablePage = (blockSetup: BlockSetup) => {
   const placeholderGridProps: PlaceholderGridProps = {
     columns: gridSettings.colsNumber,
     row: gridSettings.rowsNumber,
-    p: '60px',
+    px: `${globalStyle.containerPaddingX}px`,
+    py: `${globalStyle.containerPaddingY}px`,
     position: 'absolute',
     top: '0',
     left: '0',

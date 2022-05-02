@@ -19,6 +19,8 @@ const MOCK_SINGLE_TEMPLATE: Record<string, Template> = {
         backgroundColor: '#000000',
         columnGap: 0,
         rowGap: 0,
+        containerPaddingX: 0,
+        containerPaddingY: 0,
       },
     },
   },

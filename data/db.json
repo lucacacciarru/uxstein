@@ -87,7 +87,9 @@
             "globalStyle": {
               "backgroundColor": "#000000",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -103,7 +105,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -119,7 +123,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -135,7 +141,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -151,7 +159,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -167,7 +177,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -183,7 +195,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -199,7 +213,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -215,7 +231,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -231,7 +249,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         }
@@ -304,7 +324,9 @@
             "globalStyle": {
               "backgroundColor": "#000000",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -319,7 +341,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -334,7 +358,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -349,7 +375,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -364,7 +392,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -379,7 +409,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -390,7 +422,14 @@
           "isDefault": false,
           "builderData": {
             "gridItems": {},
-            "pageSettings": []
+            "pageSettings": [],
+            "globalStyle": {
+              "backgroundColor": "#FFFFFF",
+              "rowGap": 0,
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
+            }
           }
         },
         {
@@ -400,7 +439,14 @@
           "isDefault": false,
           "builderData": {
             "gridItems": {},
-            "pageSettings": []
+            "pageSettings": [],
+            "globalStyle": {
+              "backgroundColor": "#FFFFFF",
+              "rowGap": 0,
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
+            }
           }
         },
         {
@@ -410,7 +456,14 @@
           "isDefault": false,
           "builderData": {
             "gridItems": {},
-            "pageSettings": []
+            "pageSettings": [],
+            "globalStyle": {
+              "backgroundColor": "#FFFFFF",
+              "rowGap": 0,
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
+            }
           }
         }
       ]
@@ -429,7 +482,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -440,7 +495,14 @@
           "isDefault": true,
           "builderData": {
             "gridItems": {},
-            "pageSettings": []
+            "pageSettings": [],
+            "globalStyle": {
+              "backgroundColor": "#FFFFFF",
+              "rowGap": 0,
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
+            }
           }
         },
         {
@@ -454,7 +516,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -469,7 +533,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -484,7 +550,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         },
@@ -499,7 +567,9 @@
             "globalStyle": {
               "backgroundColor": "#FFFFFF",
               "rowGap": 0,
-              "columnGap": 0
+              "columnGap": 0,
+              "containerPaddingX": 0,
+              "containerPaddingY": 0
             }
           }
         }

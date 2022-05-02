@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ColorField } from '../StyleFields/ColorField';
+import { ColorField } from '../../StyleFields/ColorField';
 import { usePageBgcColorField } from './usePageBgColorField';
 
 export const PageBgColorField: FC = () => {

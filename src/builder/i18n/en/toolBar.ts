@@ -51,6 +51,8 @@ export const toolBar = {
       rowGap: 'Row gap',
       columnGap: 'Column gap',
       pageBackground: 'Page background',
+      containerPaddingX: 'Horizontal margin',
+      containerPaddingY: 'Vertical margin',
     },
     buttons: {
       contain: 'Contain',

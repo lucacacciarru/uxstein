@@ -25,6 +25,8 @@ const TEMPLATE_MOCK: TemplateState = {
             backgroundColor: '#000000',
             columnGap: 0,
             rowGap: 0,
+            containerPaddingX: 0,
+            containerPaddingY: 0,
           },
         },
         name: TEMPLATE_NAME,
@@ -45,6 +47,8 @@ const CREATE_PERSONA_EXPECTED_BUILDER_STATE: BuilderState = {
     backgroundColor: '#000000',
     columnGap: 0,
     rowGap: 0,
+    containerPaddingX: 0,
+    containerPaddingY: 0,
   },
 };
 
@@ -59,6 +63,8 @@ const EDIT_TEMPLATE_EXPECTED_BUILDER_STATE: BuilderState = {
     backgroundColor: '#000000',
     columnGap: 0,
     rowGap: 0,
+    containerPaddingX: 0,
+    containerPaddingY: 0,
   },
 };
 

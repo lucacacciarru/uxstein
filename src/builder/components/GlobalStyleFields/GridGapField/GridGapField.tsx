@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { SelectOneSize } from '../StyleFields/SelectOneSize';
+import { SelectOneSize } from '../../StyleFields/SelectOneSize';
 import { useGridGapField } from './useGridGapField';
 
 type Props = {

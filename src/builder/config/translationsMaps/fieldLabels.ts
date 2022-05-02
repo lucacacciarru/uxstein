@@ -22,4 +22,6 @@ export const fieldLabelsMap: Record<string, TranslationKey> = {
   rowGap: 'builder.toolBar.style.labels.rowGap',
   columnGap: 'builder.toolBar.style.labels.columnGap',
   pageBackground: 'builder.toolBar.style.labels.pageBackground',
+  containerPaddingX: 'builder.toolBar.style.labels.containerPaddingX',
+  containerPaddingY: 'builder.toolBar.style.labels.containerPaddingY',
 };
