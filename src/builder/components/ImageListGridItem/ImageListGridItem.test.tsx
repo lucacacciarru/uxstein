@@ -14,8 +14,6 @@ describe('ImageListGridItem', () => {
             style: {},
           },
         }}
-        id="1"
-        style={{}}
       />,
     );
   });

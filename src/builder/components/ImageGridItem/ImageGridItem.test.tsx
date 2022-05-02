@@ -14,8 +14,6 @@ describe('ImageGridItem', () => {
             style: {},
           },
         }}
-        id="1"
-        style={{}}
       />,
     );
   });

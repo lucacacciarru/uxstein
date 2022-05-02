@@ -1,31 +1,20 @@
 import { Box, Image, SimpleGrid, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { AttributesModel } from '../../store/types';
-import { Handles } from '../Handles/Handles';
 import { ImageFallback } from '../ImageFallback/ImageFallback';
 
 type Props = {
-  style: Record<string, string>;
   attributes: AttributesModel;
-  id: string;
 };
 
-export const ImageListGridItem: FC<Props> = ({ style, id, attributes }) => {
+export const ImageListGridItem: FC<Props> = ({ attributes }) => {
   return (
-    <Box
-      style={{
-        width: '100%',
-        height: '100%',
-        ...style,
-      }}
-      display="flex"
-      flexDir="column"
-    >
+    <Box display="flex" flexDir="column">
       <Text {...attributes.title?.style} p="4" flexGrow="0">
         {attributes.title?.items[0].value}
       </Text>
       <SimpleGrid
-        minChildWidth={'10vw'}
+        minChildWidth="10vw"
         spacing="8"
         gridTemplateRows="auto"
         overflow="hidden"
@@ -40,7 +29,6 @@ export const ImageListGridItem: FC<Props> = ({ style, id, attributes }) => {
           />
         ))}
       </SimpleGrid>
-      <Handles id={id} bg={style.backgroundColor} />
     </Box>
   );
 };

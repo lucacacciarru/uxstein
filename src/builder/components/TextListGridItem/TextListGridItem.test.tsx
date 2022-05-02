@@ -1,4 +1,4 @@
-import { render, screen } from '../../../_shared/testConfig/customRender';
+import { render } from '../../../_shared/testConfig/customRender';
 import { TextListGridItem } from './TextListGridItem';
 
 describe('TextListGridItem component', () => {
@@ -14,11 +14,7 @@ describe('TextListGridItem component', () => {
             style: {},
           },
         }}
-        id="anyId"
-        style={{}}
       />,
     );
-    const progressBar = screen.getByTestId('text-list');
-    expect(progressBar).toBeInTheDocument();
   });
 });
