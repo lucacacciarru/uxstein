@@ -2,8 +2,10 @@ import { useSelector } from 'react-redux';
 import { getGridItemById } from '../../store/selectors/getGridItemById';
 import { AttributeName, GridItem } from '../../store/types';
 import { blockItemSettings } from '../../config/blockItemSettings';
+import { useTranslation } from 'react-i18next';
 
 export const useEditTab = (selectedBlockId: string) => {
+  const { t } = useTranslation();
   const selectedBlockItem: GridItem | undefined = useSelector(
     getGridItemById(selectedBlockId),
   );
@@ -11,7 +13,7 @@ export const useEditTab = (selectedBlockId: string) => {
   const type = selectedBlockItem?.type || '';
 
   const headerProps = {
-    title: type, //probably attributes will have a title value soon
+    title: t(`builder.toolBar.draggableBlocksLabels.${type}`),
     optionalSettings: blockItemSettings[type]?.optionalSettings,
   };
 
@@ -21,9 +23,15 @@ export const useEditTab = (selectedBlockId: string) => {
 
   const blockStyle = selectedBlockItem?.style || {};
 
+  const accordionLabels = {
+    attributes: t('builder.toolBar.general.attributes'),
+    style: t('builder.toolBar.general.style'),
+  };
+
   return {
     headerProps,
     attributesNameKeyList: attributesNameKeyList as AttributeName[],
     blockStyle,
+    accordionLabels,
   };
 };

@@ -1,5 +1,6 @@
 import { Stack } from '@chakra-ui/react';
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Collapsable,
   CollapsableItem,
@@ -20,9 +21,11 @@ export const AttributeStyleFields: FC<AttributeStyleFieldsProps> = ({
   blockItemId,
   style,
 }) => {
+  const { t } = useTranslation();
+  const accordionLabel = t(`builder.toolBar.attributeAccordionLabel.${name}`);
   return (
     <Collapsable mt="2">
-      <CollapsableItem name={`${name} style`} nested>
+      <CollapsableItem name={accordionLabel} nested>
         <Stack spacing={'6'}>
           {styleKeys.map(styleKey => (
             <MapStyleField

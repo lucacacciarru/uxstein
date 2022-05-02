@@ -77,5 +77,18 @@ export const toolBar = {
     back: 'Indietro',
     blocks: 'Blocchi',
     globalStyle: 'Stili globali',
+    attributes: 'Attributi',
+    style: 'Stile',
+  },
+  attributeAccordionLabel: {
+    title: 'Stile titolo',
+    subtitle: 'Stile sottotitolo',
+    body: 'Stile corpo',
+    image: 'Stile immagine',
+    'image-list': 'Stile galleria',
+    progress: 'Stile progressivo',
+    checkbox: 'Stile checkbox',
+    'text-list': 'Stile elenco',
+    rate: 'Stile valutazione',
   },
 };
