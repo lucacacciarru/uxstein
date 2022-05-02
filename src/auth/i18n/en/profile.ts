@@ -19,6 +19,11 @@ export const profile = {
       equalEmail: 'Enter a different email than the active one',
     },
   },
+  avatar: {
+    openModalButton: 'Change avatar',
+    placeholderAvatarInput: 'Type URL',
+    confirmButton: 'Update',
+  },
   toast: {
     username: 'Username has been changed',
     email: 'Email has been changed',

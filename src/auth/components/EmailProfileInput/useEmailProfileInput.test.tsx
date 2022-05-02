@@ -1,4 +1,5 @@
 import { FormControl, Input } from '@chakra-ui/react';
+import { useSelector } from 'react-redux';
 import {
   render,
   fireEvent,
@@ -7,6 +8,7 @@ import {
 } from '../../../_shared/testConfig/customRender';
 import { renderHook } from '../../../_shared/testConfig/customRenderHook';
 import { AuthState } from '../../store';
+import { getUserProfile } from '../../store/selectors';
 import { useEmailProfileInput } from './useEmailProfileInput';
 
 const anyValue = 'Any value';
@@ -14,8 +16,22 @@ const notValidValue = 'Not valid email';
 const validEmail = 'test@mail.com';
 const registeredEmail = 'test@test.com';
 
+const useMockHook = () => {
+  const { onChange, inputValue, onSubmit, inputError } = useEmailProfileInput();
+  const emailUser = useSelector(getUserProfile)?.email;
+
+  return {
+    onChange,
+    inputValue,
+    onSubmit,
+    emailUser,
+    inputError,
+  };
+};
+
 const authMock: AuthState = {
   profile: {
+    id: 'anyId',
     email: registeredEmail,
     password: 'anyPassword',
     username: 'test',
@@ -77,15 +93,15 @@ describe('useEmailProfileInput hook', () => {
     fireEvent.submit(form);
     expect(result.current.inputError).toBeTruthy();
   });
-  test('if inputValue.email is right, inputError should be false ', async () => {
-    const { result } = renderHook(() => useEmailProfileInput(), {
+  test('if inputValue.email is right, inputError should be false and the user email should change ', async () => {
+    const { result } = renderHook(() => useMockHook(), {
       mocks: { auth: authMock },
     });
     render(
       <FormControl
         as="form"
         data-testid="form"
-        onSubmit={result.current.onSubmit}
+        onSubmit={e => result.current.onSubmit(e)}
       >
         <Input
           data-testid="emailInput"
@@ -99,7 +115,9 @@ describe('useEmailProfileInput hook', () => {
     const input = screen.getByTestId('emailInput');
     fireEvent.change(input, { target: { value: validEmail } });
     fireEvent.submit(form);
-    waitFor(() => {
+    await waitFor(() => {
+      expect(result.current.emailUser).toEqual(validEmail);
+      expect(result.current.inputValue.email).toEqual('');
       expect(result.current.inputError).toBeFalsy();
     });
   });

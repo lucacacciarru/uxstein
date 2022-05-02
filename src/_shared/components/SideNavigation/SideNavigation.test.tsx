@@ -7,6 +7,7 @@ import { PATHS } from '../../types/paths';
 const MOCK_AUTH_LOGGED_STATE: AuthState = {
   status: 'logged',
   profile: {
+    id: 'anyId',
     email: 'anyMail',
     password: 'anyPassword',
     username: 'anyUsername',

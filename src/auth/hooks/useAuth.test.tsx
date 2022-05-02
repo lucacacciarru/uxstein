@@ -1,8 +1,13 @@
 import { useAuth } from './useAuth';
-import { renderHook, act } from '../../_shared/testConfig/customRenderHook';
+import {
+  renderHook,
+  act,
+  waitFor,
+} from '../../_shared/testConfig/customRenderHook';
 import { AuthState, User } from '../store';
 
 const MOCK_PROFILE: User = {
+  id: 'anyId',
   username: 'Frank',
   email: 'frak.enstain@mail.com',
   password: 'aa',
@@ -33,7 +38,7 @@ describe('useAuth', () => {
     expect(result.current.isLogged).toBeTruthy();
   });
 
-  test('isLogged shoud be false if call logout', () => {
+  test('isLogged should be false if call logout', () => {
     const { result } = renderHook(() => useAuth(), {
       mocks: { auth: MOCK_AUTH_STATE },
     });
@@ -65,5 +70,21 @@ describe('useAuth', () => {
     });
 
     expect(result.current.profile).toEqual(MOCK_PROFILE);
+  });
+
+  test('If updateProfile is called, profile should change', () => {
+    const newUsername = 'newUsername';
+    const { result } = renderHook(() => useAuth(), {
+      mocks: {
+        auth: { status: 'logged', profile: MOCK_PROFILE },
+      },
+    });
+
+    const { profile, updateProfile } = result.current;
+
+    act(() => updateProfile(MOCK_PROFILE.id, { username: newUsername }));
+    waitFor(() => {
+      expect(profile?.username).toEqual(newUsername);
+    });
   });
 });

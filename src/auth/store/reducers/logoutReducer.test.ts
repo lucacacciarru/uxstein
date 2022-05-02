@@ -4,7 +4,12 @@ import { AuthState } from '../types';
 
 const AUTH_INITIAL_STATE: AuthState = {
   status: 'logged',
-  profile: { email: 'test@test.com', password: 'Test1234', username: 'Frank' },
+  profile: {
+    email: 'test@test.com',
+    password: 'Test1234',
+    username: 'Frank',
+    id: 'anyId',
+  },
 };
 
 describe('LOGOUT REDUCERS', () => {
@@ -16,6 +21,7 @@ describe('LOGOUT REDUCERS', () => {
         email: 'test@test.com',
         password: 'Test1234',
         username: 'Frank',
+        id: 'anyId',
       },
     });
   });

@@ -1,8 +1,8 @@
 import { Image, useDisclosure } from '@chakra-ui/react';
 import { FC } from 'react';
+import { UploadImageBox } from '../../../_shared/components/UploadImageBox';
+import { UploadImageModal } from '../../../_shared/components/UploadImageModal';
 import { ClickableBoxWithDelete } from '../ClickableBoxWithDelete/ClickableBoxWithDelete';
-import { UploadImageBox } from '../ImageFieldAttribute/UploadImageBox';
-import { ModalUploadImage } from '../ModalUploadImage/ModalUploadImage';
 
 type Props = {
   value: string;
@@ -32,7 +32,7 @@ export const InputModal: FC<Props> = ({
         objectFit={'contain'}
         fallback={<UploadImageBox />}
       />
-      <ModalUploadImage
+      <UploadImageModal
         inputValue={value}
         placeholder={placeholder}
         onChange={e => onChangeValue(id, e.target.value)}

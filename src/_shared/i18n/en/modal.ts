@@ -7,4 +7,10 @@ export const modal = {
       renameEmptyText: 'Enter valid name',
     },
   },
+  imageModal: {
+    modalHeader: 'Upload image',
+    modalButton: 'Done !',
+    modalUploadTab: 'Upload',
+    modalUrlTab: 'Url',
+  },
 };

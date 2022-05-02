@@ -1,43 +1,42 @@
-import { useToast } from '@chakra-ui/react';
 import { useState } from 'react';
-import { GenericToast } from '../../_shared/components/GenericToast';
-import { TranslationKey } from '../../_shared/types/i18n';
+import { useSelector } from 'react-redux';
+import { getUserProfile } from '../store/selectors';
 
-type Params = {
-  toastText: TranslationKey;
+type UserAttributes = {
+  username: string;
+  oldPassword: string;
+  email: string;
+  newPassword: string;
 };
+export function useProfileInput() {
+  const id = useSelector(getUserProfile)?.id as string;
 
-export function useProfileInput({ toastText }: Params) {
-  const toast = useToast();
-
-  const [inputValue, setInputValue] = useState<Record<string, string>>({});
+  const [inputValue, setInputValue] = useState<UserAttributes>({
+    email: '',
+    newPassword: '',
+    oldPassword: '',
+    username: '',
+  });
   const [inputError, setInputError] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue({ ...inputValue, [e.target.name]: e.target.value });
+    setInputValue(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const showToast = () => {
-    console.log('TOAST CALLED')
-    toast({
-      render: () => (
-        <GenericToast
-          status="success"
-          translationKey={toastText}
-          data-testid="genericToast"
-        />
-      ),
-    });
+  const resetSpecificValue = (attribute: keyof UserAttributes) => {
+    setInputValue(prev => ({ ...prev, [attribute]: '' }));
   };
 
   return {
     inputError,
     errorMessage,
     onChange,
-    showToast,
     setErrorMessage,
     inputValue,
     setInputError,
+    id,
+    resetSpecificValue,
+    setInputValue,
   };
 }

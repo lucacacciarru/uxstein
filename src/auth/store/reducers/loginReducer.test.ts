@@ -11,7 +11,7 @@ describe('LOGIN REDUCER', () => {
     const returnValue = authRootReducer(undefined, { type: '' });
     expect(returnValue).toEqual(AUTH_INITIAL_STATE);
   });
-  test('shoud handle login request', () => {
+  test('should handle login request', () => {
     const returnValue = authRootReducer(
       AUTH_INITIAL_STATE,
       loginRequest({ email: '', password: '' }),
@@ -22,13 +22,14 @@ describe('LOGIN REDUCER', () => {
 
     expect(returnValue).toEqual(expectedValue);
   });
-  test('shoud handle login success', () => {
+  test('should handle login success', () => {
     const prevState: AuthState = {
       status: 'logging',
     };
     const returnValue = authRootReducer(
       prevState,
       loginSuccess({
+        id: 'anyId',
         email: 'test@test.com',
         password: 'Test123',
         username: 'Frank',
@@ -37,6 +38,7 @@ describe('LOGIN REDUCER', () => {
     const expectedValue = {
       status: 'logged',
       profile: {
+        id: 'anyId',
         email: 'test@test.com',
         password: 'Test123',
         username: 'Frank',

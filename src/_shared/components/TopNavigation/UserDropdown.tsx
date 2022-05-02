@@ -38,7 +38,11 @@ export const UserDropdown: FC = () => {
   return (
     <Menu>
       <MenuButton as={Box} role="button">
-        <Avatar name={profile?.username} icon={<Icon name="Frank" />} />
+        <Avatar
+          name={profile?.username}
+          src={profile?.avatar}
+          icon={<Icon name="Frank" />}
+        />
       </MenuButton>
 
       <MenuList data-testid="menu-list">

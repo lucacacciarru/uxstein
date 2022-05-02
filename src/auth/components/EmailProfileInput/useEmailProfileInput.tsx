@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useProfileInput } from '../../hooks';
+import { useAuth, useProfileInput } from '../../hooks';
 import { getUserProfile } from '../../store/selectors';
 import { checkEmail } from '../../utils/checkEmail';
 
 export function useEmailProfileInput() {
   const { t } = useTranslation();
+  const { updateProfile } = useAuth();
   const {
     errorMessage,
     inputError,
@@ -13,8 +14,9 @@ export function useEmailProfileInput() {
     onChange,
     setErrorMessage,
     setInputError,
-    showToast,
-  } = useProfileInput({ toastText: 'auth.profile.toast.email' });
+    id,
+    resetSpecificValue,
+  } = useProfileInput();
 
   const email = useSelector(getUserProfile)?.email as string;
   const mapErrorMessage: Record<string, string> = {
@@ -40,8 +42,9 @@ export function useEmailProfileInput() {
       setErrorMessage(mapErrorMessage.isNotEmail);
       return;
     }
+    updateProfile(id, { email: inputValue.email });
     setInputError(false);
-    showToast();
+    resetSpecificValue('email');
   };
 
   return {

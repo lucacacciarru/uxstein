@@ -22,12 +22,8 @@ export const toolBar = {
     },
     image: {
       label: 'Immagine',
-      placeholder: 'Carica la tua immagine',
-      modalHeader: 'Carica immagine',
-      modalButton: 'Fatto !',
-      modalUploadTab: 'Carica',
-      modalUrlTab: 'Url',
       addOnePlaceholder: 'Inserisci un nuovo elemento',
+      placeholder: 'Carica la tua immagine',
     },
   },
   style: {

@@ -7,6 +7,7 @@ import { logoutTrigger } from '../store/actions/logout';
 
 const initial_state: AuthState = {
   profile: {
+    id: 'anyId',
     email: 'test@test.com',
     password: 'test',
     username: 'test',

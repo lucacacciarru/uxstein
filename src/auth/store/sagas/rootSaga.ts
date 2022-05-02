@@ -4,11 +4,13 @@ import { LoadingKeys } from '../../../_shared/store/loading/types';
 import { initAuth } from '../actions/init';
 import { loginTrigger } from '../actions/login';
 import { logoutTrigger } from '../actions/logout';
+import { updateTrigger } from '../actions/update';
 import { PostAuthOptions } from '../types';
 import { init } from './init';
 import { loginSaga } from './login';
 import { logoutSaga } from './logout';
 import { postAuth } from './postAuth';
+import { updateProfileSaga } from './update';
 
 export function createAuthRootSaga(options: PostAuthOptions) {
   return function* authRootSaga() {
@@ -23,6 +25,12 @@ export function createAuthRootSaga(options: PostAuthOptions) {
     yield takeLatest(
       logoutTrigger,
       createSagaWithLoadingManagement(logoutSaga, { key: LoadingKeys.auth }),
+    );
+    yield takeLatest(
+      updateTrigger,
+      createSagaWithLoadingManagement(updateProfileSaga, {
+        key: LoadingKeys.auth,
+      }),
     );
 
     /**

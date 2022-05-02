@@ -7,6 +7,7 @@ describe('AvatarTemplate component', () => {
       mocks: {
         auth: {
           profile: {
+            id: 'anyId',
             email: 'anyEmail',
             password: 'anyPassword',
             username: 'Test',

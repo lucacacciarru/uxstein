@@ -6,6 +6,7 @@ import { useLayoutApp } from './useLayoutApp';
 const MOCK_AUTH_LOGGED_STATE: AuthState = {
   status: 'logged',
   profile: {
+    id: 'anyId',
     email: 'anyMail',
     password: 'anyPassword',
     username: 'anyUsername',
