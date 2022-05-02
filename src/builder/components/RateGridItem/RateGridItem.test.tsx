@@ -14,6 +14,6 @@ const ATTRIBUTES_MOCK: Partial<Record<AttributeName, ItemAttribute>> = {
 
 describe('RateGridItem component', () => {
   test('Should be rendered', () => {
-    render(<RateGridItem style={{}} attributes={ATTRIBUTES_MOCK} id="anyId" />);
+    render(<RateGridItem  attributes={ATTRIBUTES_MOCK} />);
   });
 });

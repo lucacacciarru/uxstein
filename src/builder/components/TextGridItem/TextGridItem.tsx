@@ -1,24 +1,13 @@
 import { Box, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { AttributesModel } from '../../store/types';
-import { Handles } from '../Handles/Handles';
 
 type Props = {
-  style: Record<string, string>;
   attributes: AttributesModel;
-  id: string;
 };
-export const TextGridItem: FC<Props> = ({ style, attributes, id }) => {
+export const TextGridItem: FC<Props> = ({ attributes }) => {
   return (
-    <Box
-      style={{
-        width: '100%',
-        height: '100%',
-        ...style,
-      }}
-      data-testid="text-grid-item"
-      p="4"
-    >
+    <Box p="4">
       <Text style={attributes.title?.style}>
         {attributes.title?.items[0].value}
       </Text>
@@ -28,7 +17,6 @@ export const TextGridItem: FC<Props> = ({ style, attributes, id }) => {
       <Text style={attributes.body?.style} mt="4">
         {attributes.body?.items[0].value}
       </Text>
-      <Handles id={id} bg={style.backgroundColor} />
     </Box>
   );
 };

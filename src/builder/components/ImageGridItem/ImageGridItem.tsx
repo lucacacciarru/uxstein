@@ -1,31 +1,19 @@
-import { Box, Image } from '@chakra-ui/react';
+import { Image } from '@chakra-ui/react';
 import { FC } from 'react';
 import { AttributesModel } from '../../store/types';
-import { Handles } from '../Handles/Handles';
 import { ImageFallback } from '../ImageFallback/ImageFallback';
 
 type Props = {
-  style: Record<string, string>;
   attributes: AttributesModel;
-  id: string;
 };
 
-export const ImageGridItem: FC<Props> = ({ style, id, attributes }) => {
+export const ImageGridItem: FC<Props> = ({ attributes }) => {
   return (
-    <Box
-      style={{
-        width: '100%',
-        height: '100%',
-        ...style,
-      }}
-    >
-      <Image
-        src={attributes.image?.items[0].value}
-        boxSize="full"
-        fallback={<ImageFallback />}
-        objectFit={attributes.image?.style.objectFit as 'cover' | 'contain'}
-      />
-      <Handles id={id} bg={style.backgroundColor} />
-    </Box>
+    <Image
+      src={attributes.image?.items[0].value}
+      boxSize="full"
+      fallback={<ImageFallback />}
+      objectFit={attributes.image?.style.objectFit as 'cover' | 'contain'}
+    />
   );
 };

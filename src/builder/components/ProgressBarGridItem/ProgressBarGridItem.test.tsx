@@ -14,8 +14,6 @@ describe('ProgressBarGridItem component', () => {
             style: {},
           },
         }}
-        id="anyId"
-        style={{}}
       />,
     );
     const progressBar = screen.getByTestId('progressbar');

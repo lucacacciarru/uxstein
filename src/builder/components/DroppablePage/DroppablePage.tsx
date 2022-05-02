@@ -6,7 +6,6 @@ import RGL, { WidthProvider } from 'react-grid-layout';
 import { ComponentMap } from '../ComponentMap/ComponentMap';
 import { useDroppablePage } from './useDroppablePage';
 import { BlockSetup } from '../../hooks/useBlockSetup';
-import { useSelectedBlock } from '../../hooks/useSelectedBlock';
 import { Box, HStack } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { BuilderContext } from '../BuilderContext';
@@ -22,24 +21,16 @@ type Props = {
 export const DroppablePage: React.FC<Props> = ({ blockSetup }) => {
   const { layout, gridLayoutProps, backgroundContainer, placeholderGridProps } =
     useDroppablePage(blockSetup);
-  const { selectBlock } = useSelectedBlock();
   const { exportItemRef } = useContext(BuilderContext);
 
   const renderMapItem = useMemo(
     () =>
       layout.map(item => (
-        <Box
-          zIndex="docked"
-          data-grid={item}
-          key={item.i}
-          onClick={() => {
-            selectBlock(item.i);
-          }}
-        >
+        <Box zIndex="docked" data-grid={item} key={item.i}>
           <ComponentMap id={item.i} />
         </Box>
       )),
-    [layout, selectBlock],
+    [layout],
   );
 
   return (

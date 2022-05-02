@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { getGridItemById } from '../../store/selectors/getGridItemById';
 import { DraggableBlockType } from '../AddTab/DraggableBlock';
 import { CheckboxGridItem } from '../CheckboxGridItem/CheckboxGridItem';
+import { GridItemWrapper } from '../GridItemWrapper/GridItemWrapper';
 import { ImageGridItem } from '../ImageGridItem/ImageGridItem';
 import { ImageListGridItem } from '../ImageListGridItem/ImageListGridItem';
 import { ProgressbarGridItem } from '../ProgressBarGridItem/ProgressBarGridItem';
@@ -30,5 +31,9 @@ export const ComponentMap: FC<Props> = ({ id }) => {
   if (!Component) {
     return <></>;
   }
-  return <Component {...gridItem} id={id} />;
+  return (
+    <GridItemWrapper style={gridItem.style} id={id}>
+      <Component {...gridItem} id={id} />
+    </GridItemWrapper>
+  );
 };
