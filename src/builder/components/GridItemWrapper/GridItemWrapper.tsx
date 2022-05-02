@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const GridItemWrapper: FC<Props> = ({ style, id, children }) => {
-  const { opacity, select } = useGridItemWrapper(id);
+  const { opacity, select, clearSelection } = useGridItemWrapper(id);
   return (
     <Box
       m="0"
@@ -24,6 +24,8 @@ export const GridItemWrapper: FC<Props> = ({ style, id, children }) => {
       data-testid="text-grid-item"
       opacity={opacity}
       onClick={select}
+      tabIndex={0}
+      onBlur={clearSelection}
     >
       {children}
       <Handles id={id} bg={style.backgroundColor} />
