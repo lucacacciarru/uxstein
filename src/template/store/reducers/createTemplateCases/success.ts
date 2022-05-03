@@ -1,7 +1,7 @@
 import { CaseReducer } from '@reduxjs/toolkit';
 import { CreateTemplateSuccessAction } from '../../types/createTemplate';
 import { TemplateState } from '../../types/general';
-import { TEMP_ID } from '../../../../_shared/utils';
+import { TEMP_ID } from '../../../../_shared/constants';
 import { removeTemplateById } from '../../utils';
 
 export const successCase: CaseReducer<

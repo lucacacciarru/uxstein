@@ -25,7 +25,6 @@ type Props = {
   textContent: {
     header: TranslationKey;
     inputPlaceholder: TranslationKey;
-    toast: TranslationKey;
   };
 };
 
@@ -44,7 +43,7 @@ export const TextInputModal: React.FC<Props> = ({
     inputError,
     nameValue,
     onChangeInputRename,
-  } = useTextInputModal(onSubmit, onClose, textContent.toast);
+  } = useTextInputModal(onSubmit, onClose);
 
   return (
     <>

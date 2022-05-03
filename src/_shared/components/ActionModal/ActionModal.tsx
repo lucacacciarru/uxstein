@@ -23,7 +23,6 @@ type Props = {
   textContent: {
     header: TranslationKey;
     body: TranslationKey;
-    toast: TranslationKey;
   };
 };
 
@@ -37,7 +36,6 @@ export const ActionModal: React.FC<Props> = ({
   const { onClick } = useActionModal({
     onSubmit,
     onClose,
-    toastTranslation: textContent.toast,
   });
 
   return (

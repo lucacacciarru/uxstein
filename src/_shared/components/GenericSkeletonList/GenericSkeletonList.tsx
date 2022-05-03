@@ -13,7 +13,7 @@ export const GenericSkeletonList: React.FC<Props> = ({
   const numberOfItemsList = Array.from(Array(numberOfItems).keys());
 
   const renderSkeletons = useMemo(
-    () => numberOfItemsList.map(_ => <Skeleton {...styleChildren} />),
+    () => numberOfItemsList.map(n => <Skeleton key={n} {...styleChildren} />),
     [numberOfItemsList, styleChildren],
   );
   return <>{renderSkeletons}</>;

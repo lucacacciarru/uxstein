@@ -4,7 +4,7 @@ import { SendNotificationPayload } from './types';
 import { removeNotification, sendNotification } from './actions';
 
 const resolveActionsToNotify = (action: Action) => {
-  return action.type.match(/(success)|(failure)/gi);
+  return !action.type.match(/(notifications)|(loading)/gi);
 };
 
 export function* sendNotificationSaga(action: PayloadAction<any>) {

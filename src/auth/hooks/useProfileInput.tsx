@@ -19,6 +19,7 @@ export function useProfileInput({ toastText }: Params) {
   };
 
   const showToast = () => {
+    console.log('TOAST CALLED')
     toast({
       render: () => (
         <GenericToast

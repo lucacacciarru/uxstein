@@ -1,16 +1,11 @@
-import { useToast } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { TranslationKey } from '../../types/i18n';
-import { GenericToast } from '../GenericToast';
 
 export function useTextInputModal(
   onSubmit: (value: string) => void,
   onClose: Function,
-  toastTranslation: TranslationKey,
 ) {
   const { t } = useTranslation();
-  const toast = useToast();
 
   const mapErrorMessage: Record<string, string> = {
     tooLong: t('modal.textInputModal.errors.textTooLong'),
@@ -39,15 +34,6 @@ export function useTextInputModal(
     setInputError(false);
     onSubmit(nameValue);
     onClose();
-    toast({
-      render: () => (
-        <GenericToast
-          status="success"
-          translationKey={toastTranslation}
-          data-testid="role"
-        />
-      ),
-    });
   };
 
   return {

@@ -24,7 +24,6 @@ export const SavePersonaAsTemplateButton: React.FC = () => {
         textContent={{
           header: 'builder.modal.savePersonaAsTemplateTitle',
           inputPlaceholder: 'builder.modal.savePersonaAsTemplatePlaceholder',
-          toast: 'builder.toast.personaSavedAsTemplate',
         }}
       />
     </>
