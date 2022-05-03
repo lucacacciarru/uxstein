@@ -2,11 +2,11 @@ import {
   render,
   screen,
   fireEvent,
-} from '../../../_shared/testConfig/customRender';
+} from '../../../../_shared/testConfig/customRender';
 import {
   renderHook,
   waitFor,
-} from '../../../_shared/testConfig/customRenderHook';
+} from '../../../../_shared/testConfig/customRenderHook';
 import { usePageBgcColorField } from './usePageBgColorField';
 
 describe('usePageBgColorField', () => {

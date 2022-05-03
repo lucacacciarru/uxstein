@@ -38,6 +38,8 @@ const MOCK_BUILDER_STATE: BuilderState = {
     backgroundColor: '',
     columnGap: 0,
     rowGap: 0,
+    containerPaddingX: 0,
+    containerPaddingY: 0,
   },
 };
 
@@ -147,6 +149,8 @@ describe('useMultipleAttributeField hook', () => {
               backgroundColor: '',
               columnGap: 0,
               rowGap: 0,
+              containerPaddingX: 0,
+              containerPaddingY: 0,
             },
           },
         },

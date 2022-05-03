@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useDebouncedCallback } from 'use-debounce';
-import { fieldLabelsMap } from '../../config/translationsMaps/fieldLabels';
-import { updateGlobalStyle } from '../../store/actions/update';
-import { getGlobalStyle } from '../../store/selectors/getGlobalStyle';
-import { UpdateGlobalStylePayload } from '../../store/types/update';
+import { fieldLabelsMap } from '../../../config/translationsMaps/fieldLabels';
+import { updateGlobalStyle } from '../../../store/actions/update';
+import { getGlobalStyle } from '../../../store/selectors/getGlobalStyle';
+import { UpdateGlobalStylePayload } from '../../../store/types/update';
 
 export const usePageBgcColorField = () => {
   const { t } = useTranslation();

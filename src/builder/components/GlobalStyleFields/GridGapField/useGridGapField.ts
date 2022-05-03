@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useDebouncedCallback } from 'use-debounce';
-import { gridGapSizes } from '../../config/styleSettings/globals';
-import { fieldLabelsMap } from '../../config/translationsMaps/fieldLabels';
-import { updateGlobalStyle } from '../../store/actions/update';
-import { getGlobalStyle } from '../../store/selectors/getGlobalStyle';
-import { UpdateGlobalStylePayload } from '../../store/types/update';
-import { getSizeByValueAndSizeSettings } from '../../utils/getSizeByValueAndSizeSettings';
-import { SizesModel } from '../StyleFields/SelectOneSize';
+import { gridGapSizes } from '../../../config/styleSettings/globals';
+import { fieldLabelsMap } from '../../../config/translationsMaps/fieldLabels';
+import { updateGlobalStyle } from '../../../store/actions/update';
+import { getGlobalStyle } from '../../../store/selectors/getGlobalStyle';
+import { UpdateGlobalStylePayload } from '../../../store/types/update';
+import { getSizeByValueAndSizeSettings } from '../../../utils/getSizeByValueAndSizeSettings';
+import { SizesModel } from '../../StyleFields/SelectOneSize';
 
 export const useGridGapField = (styleKey: 'rowGap' | 'columnGap') => {
   const { t } = useTranslation();

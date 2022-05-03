@@ -29,10 +29,12 @@ const INITIAL_STATE: DefaultRootState = {
       backgroundColor: '',
       columnGap: 0,
       rowGap: 0,
+      containerPaddingX: 0,
+      containerPaddingY: 0,
     },
   },
   loading: {},
-  notifications: []
+  notifications: [],
 };
 
 const sagaMiddleware = createSagaMiddleware();

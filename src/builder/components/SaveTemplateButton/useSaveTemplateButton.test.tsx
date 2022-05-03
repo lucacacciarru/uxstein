@@ -25,6 +25,8 @@ const MOCK_BUILDER_STATE: BuilderState = {
     backgroundColor: '',
     columnGap: 0,
     rowGap: 0,
+    containerPaddingX: 0,
+    containerPaddingY: 0,
   },
 };
 
@@ -38,7 +40,13 @@ const MOCK_TEMPLATE_STATE: TemplateState = {
         builderData: {
           gridItems: {},
           pageSettings: [],
-          globalStyle: { backgroundColor: '#000000', columnGap: 0, rowGap: 0 },
+          globalStyle: {
+            backgroundColor: '#000000',
+            columnGap: 0,
+            rowGap: 0,
+            containerPaddingX: 0,
+            containerPaddingY: 0,
+          },
         },
         name: 'anyName',
         isDefault: false,

@@ -3,8 +3,8 @@ import {
   renderHook,
   waitFor,
   act,
-} from '../../../_shared/testConfig/customRenderHook';
-import { getGlobalStyle } from '../../store/selectors/getGlobalStyle';
+} from '../../../../_shared/testConfig/customRenderHook';
+import { getGlobalStyle } from '../../../store/selectors/getGlobalStyle';
 import { useGridGapField } from './useGridGapField';
 
 const useTestHook = (styleKey: 'rowGap' | 'columnGap') => {

@@ -37,6 +37,8 @@ describe('IconField component', () => {
             backgroundColor: '',
             columnGap: 0,
             rowGap: 0,
+            containerPaddingX: 0,
+            containerPaddingY: 0,
           },
         },
       },
