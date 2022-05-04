@@ -1,34 +1,10 @@
-import { renderHook, act } from '../../../_shared/testConfig/customRenderHook';
-import { useSelectedBlock } from '../../hooks/useSelectedBlock';
+import { renderHook } from '../../../_shared/testConfig/customRenderHook';
 import { useGridItemWrapper } from './useGridItemWrapper';
 
 const EXAMPLE_ID = 'any id';
 const SELECTED_ID = 'selected id';
 
-const useTestHook = () => {
-  const { selectedBlockId } = useSelectedBlock();
-
-  const { select } = useGridItemWrapper(EXAMPLE_ID);
-
-  return {
-    select,
-    selectedBlockId,
-  };
-};
-
 describe('useGridItemWrapper', () => {
-  test('select() should select an item with a specific id', () => {
-    const { result } = renderHook(() => useTestHook());
-
-    expect(result.current.selectedBlockId).toBeUndefined();
-
-    act(() => {
-      result.current.select();
-    });
-
-    expect(result.current.selectedBlockId).toBe(EXAMPLE_ID);
-  });
-
   test('if no items selected, default opacity should be 1', () => {
     const { result } = renderHook(() => useGridItemWrapper(EXAMPLE_ID));
 
