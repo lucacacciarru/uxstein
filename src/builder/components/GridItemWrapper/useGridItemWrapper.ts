@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 import { useSelectedBlock } from '../../hooks/useSelectedBlock';
 
 export const useGridItemWrapper = (id: string) => {
-  const { selectedBlockId, selectBlock, clearSelection } = useSelectedBlock();
+  const { selectedBlockId, selectBlock } = useSelectedBlock();
   const isSelected = useMemo(
     () => selectedBlockId !== id,
     [id, selectedBlockId],
@@ -12,13 +12,16 @@ export const useGridItemWrapper = (id: string) => {
     [isSelected, selectedBlockId],
   );
 
-  const select = useCallback(() => {
-    selectBlock(id);
-  }, [id, selectBlock]);
+  const select = useCallback(
+    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+      e.stopPropagation();
+      selectBlock(id);
+    },
+    [id, selectBlock],
+  );
 
   return {
     opacity,
     select,
-    clearSelection,
   };
 };

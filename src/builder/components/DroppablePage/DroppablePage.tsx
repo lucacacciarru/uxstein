@@ -11,6 +11,7 @@ import { useContext } from 'react';
 import { BuilderContext } from '../BuilderContext';
 import { PlaceholderGrid } from '../PlaceholderGrid';
 import { gridSettings } from '../../config/styleSettings/globals';
+import { useSelectedBlock } from '../../hooks/useSelectedBlock';
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -22,6 +23,7 @@ export const DroppablePage: React.FC<Props> = ({ blockSetup }) => {
   const { layout, gridLayoutProps, backgroundContainer, placeholderGridProps } =
     useDroppablePage(blockSetup);
   const { exportItemRef } = useContext(BuilderContext);
+  const { clearSelection } = useSelectedBlock();
 
   const renderMapItem = useMemo(
     () =>
@@ -43,6 +45,7 @@ export const DroppablePage: React.FC<Props> = ({ blockSetup }) => {
         position="relative"
         h={`${gridSettings.pageHeight}px`}
         background={backgroundContainer}
+        onClick={clearSelection}
       >
         <ReactGridLayout {...gridLayoutProps}>{renderMapItem}</ReactGridLayout>
         <PlaceholderGrid {...placeholderGridProps} />

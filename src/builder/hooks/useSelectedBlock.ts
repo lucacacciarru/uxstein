@@ -9,7 +9,10 @@ export const useSelectedBlock = () => {
   const selectedBlockId = useSelector(getSelectedBlockId);
   const { setShowGridPlaceholder } = useContext(BuilderContext);
 
-  const clearSelection = () => dispatch(clearSelected());
+  const clearSelection = useCallback(
+    async () => dispatch(clearSelected()),
+    [dispatch],
+  );
 
   const selectBlock = useCallback(
     (id: string) => {
