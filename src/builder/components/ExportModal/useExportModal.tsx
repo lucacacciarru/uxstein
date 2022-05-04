@@ -26,6 +26,7 @@ export function useExportModal(
   };
 
   const onOpenModal = async () => {
+    // TODO: remove await and use startTransition whenever we will update to react18
     await clearSelection();
     onOpen();
     getImageSrc();

@@ -9,6 +9,7 @@ export const useSelectedBlock = () => {
   const selectedBlockId = useSelector(getSelectedBlockId);
   const { setShowGridPlaceholder } = useContext(BuilderContext);
 
+  // TODO: remove async and use startTransition whenever we will update to react18
   const clearSelection = useCallback(
     async () => dispatch(clearSelected()),
     [dispatch],
