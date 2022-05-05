@@ -5,8 +5,8 @@ import {
   Input,
   InputRightElement,
 } from '@chakra-ui/react';
-import { Icon } from '../../../../_shared/components';
-import { MaxLengthMessage } from '../../../../_shared/components/MaxLengthMessage';
+import { Icon } from '../../../_shared/components';
+import { MaxLengthMessage } from '../../../_shared/components/MaxLengthMessage';
 import { useAddItem } from './useAddItem';
 
 type Props = {

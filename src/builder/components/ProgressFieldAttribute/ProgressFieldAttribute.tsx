@@ -1,6 +1,6 @@
 import { Box, FormLabel, Stack } from '@chakra-ui/react';
 import { useMemo } from 'react';
-import { LabelItemField } from '../Attribute/LabelItemField';
+import { LabelItemField } from '../LabelItemField';
 import { useMultipleAttributeField } from '../../hooks/useMultipleAttributeField';
 import { AttributeName } from '../../store/types';
 import { ProgressFieldItem } from './ProgressFieldItem';

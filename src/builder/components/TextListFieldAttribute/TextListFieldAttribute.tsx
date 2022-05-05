@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { useMultipleAttributeField } from '../../hooks/useMultipleAttributeField';
 import { AttributeName } from '../../store/types';
 import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
-import { LabelItemField } from '../Attribute/LabelItemField';
+import { LabelItemField } from '../LabelItemField';
 import { SortableList } from '../SortableList';
 import { TextListFieldItem } from './TextListFieldItem';
 

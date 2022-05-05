@@ -1,7 +1,7 @@
 import { AttributeName } from '../../store/types';
 import { useMultipleAttributeField } from '../../hooks/useMultipleAttributeField';
 import { Box, FormLabel, Stack } from '@chakra-ui/react';
-import { LabelItemField } from '../Attribute/LabelItemField';
+import { LabelItemField } from '../LabelItemField';
 import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
 import { useMemo } from 'react';
 import { RateFieldItem } from './RateFieldItem';

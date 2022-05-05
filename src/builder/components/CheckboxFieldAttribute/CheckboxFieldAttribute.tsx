@@ -1,7 +1,7 @@
 import { Box, FormLabel, Stack } from '@chakra-ui/react';
 import { FC, useMemo } from 'react';
 import { AttributeName } from '../../store/types';
-import { LabelItemField } from '../Attribute/LabelItemField';
+import { LabelItemField } from '../LabelItemField';
 import { useMultipleAttributeField } from '../../hooks/useMultipleAttributeField';
 import { CheckboxFieldItem } from './CheckboxFieldItem';
 import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
