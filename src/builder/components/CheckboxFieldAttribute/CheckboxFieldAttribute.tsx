@@ -5,6 +5,7 @@ import { LabelItemField } from '../Attribute/LabelItemField';
 import { useMultipleAttributeField } from '../../hooks/useMultipleAttributeField';
 import { CheckboxFieldItem } from './CheckboxFieldItem';
 import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
+import { SortableList } from '../SortableList';
 type Props = {
   blockItemId: string;
   name: AttributeName;
@@ -17,6 +18,8 @@ export const CheckboxFieldAttribute: FC<Props> = ({ blockItemId, name }) => {
     placeholder,
     attributeItems,
     attributeStyleFieldsProps,
+    updateValueItems,
+    setAttributeItems,
     ...restCallbacks
   } = useMultipleAttributeField(blockItemId, name);
 
@@ -34,8 +37,12 @@ export const CheckboxFieldAttribute: FC<Props> = ({ blockItemId, name }) => {
         placeholder={placeholder}
         initValue=""
       />
-      <Stack gap="2" mt="8">
-        {renderAttributeItems}
+      <Stack gap="2" mt="4">
+        <SortableList
+          updateValue={updateValueItems}
+          elementList={renderAttributeItems}
+          setItemsList={setAttributeItems}
+        />
       </Stack>
       <AttributeStyleFields {...attributeStyleFieldsProps} />
     </Box>

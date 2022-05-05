@@ -5,6 +5,7 @@ import { ReactComponent as Settings2 } from '../SVG/Settings2.svg';
 import { ReactComponent as ResizeIcon } from '../SVG/ResizeIcon.svg';
 import { ReactComponent as Lock } from '../SVG/Lock.svg';
 import { ReactComponent as Unlock } from '../SVG/Unlock.svg';
+import { ReactComponent as Drag } from '../SVG/Drag.svg';
 
 export const edit = {
   Edit,
@@ -14,4 +15,5 @@ export const edit = {
   ResizeIcon,
   Lock,
   Unlock,
+  Drag,
 };

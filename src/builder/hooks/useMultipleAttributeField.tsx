@@ -15,6 +15,7 @@ export function useMultipleAttributeField(
     attribute,
     attributeStyleFieldsProps,
     debouncedUpdateValue,
+    updateValueItems,
   } = useAttributeField(blockId, attributeName);
 
   const toast = useToast();
@@ -82,5 +83,7 @@ export function useMultipleAttributeField(
     addItem,
     deleteItem,
     attributeStyleFieldsProps,
+    setAttributeItems,
+    updateValueItems,
   };
 }

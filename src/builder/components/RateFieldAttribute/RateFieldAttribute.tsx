@@ -5,6 +5,7 @@ import { LabelItemField } from '../Attribute/LabelItemField';
 import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
 import { useMemo } from 'react';
 import { RateFieldItem } from './RateFieldItem';
+import { SortableList } from '../SortableList';
 
 type Props = {
   blockItemId: string;
@@ -18,6 +19,8 @@ export const RateFieldAttribute: React.FC<Props> = ({ blockItemId, name }) => {
     placeholder,
     attributeItems,
     attributeStyleFieldsProps,
+    setAttributeItems,
+    updateValueItems,
     ...rest
   } = useMultipleAttributeField(blockItemId, name);
 
@@ -37,8 +40,12 @@ export const RateFieldAttribute: React.FC<Props> = ({ blockItemId, name }) => {
         placeholder={placeholder}
         initValue="3"
       />
-      <Stack gap="2" mt="8">
-        {renderAttributeItems}
+      <Stack gap="2" mt="2">
+        <SortableList
+          updateValue={updateValueItems}
+          elementList={renderAttributeItems}
+          setItemsList={setAttributeItems}
+        />
       </Stack>
       <AttributeStyleFields {...attributeStyleFieldsProps} />
     </Box>

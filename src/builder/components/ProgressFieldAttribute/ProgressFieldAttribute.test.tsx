@@ -1,4 +1,4 @@
-import { render } from '../../../../_shared/testConfig/customRender';
+import { render } from '../../../_shared/testConfig/customRender';
 import { ProgressFieldAttribute } from './ProgressFieldAttribute';
 
 // TODO - Received NaN for the `value` attribute. If this is expected, cast the value to a string.

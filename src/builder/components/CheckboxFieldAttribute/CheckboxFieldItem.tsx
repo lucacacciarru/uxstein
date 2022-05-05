@@ -1,6 +1,5 @@
 import {
   Checkbox,
-  Divider,
   Editable,
   EditableInput,
   EditablePreview,
@@ -29,23 +28,17 @@ export const CheckboxFieldItem: FC<Props> = ({ label, ...rest }) => {
   } = useCheckboxItem({ ...rest });
 
   return (
-    <>
-      <HStack>
-        <Checkbox
-          isChecked={isChecked}
-          onChange={handlerOnChangeValue}
-          iconColor="brand.primary"
-        />
-        <Editable defaultValue={label}>
-          <EditablePreview />
-          <EditableInput pl="1" onChange={handlerOnChangeLabel} value={label} />
-        </Editable>
-        <IconButton
-          {...iconButtonProps}
-          icon={<Icon name="Delete" color="" />}
-        />
-      </HStack>
-      <Divider />
-    </>
+    <HStack>
+      <Checkbox
+        isChecked={isChecked}
+        onChange={handlerOnChangeValue}
+        iconColor="brand.primary"
+      />
+      <Editable defaultValue={label}>
+        <EditablePreview />
+        <EditableInput pl="1" onChange={handlerOnChangeLabel} value={label} />
+      </Editable>
+      <IconButton {...iconButtonProps} icon={<Icon name="Delete" color="" />} />
+    </HStack>
   );
 };

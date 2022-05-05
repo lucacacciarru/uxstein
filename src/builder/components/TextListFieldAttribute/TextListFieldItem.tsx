@@ -1,5 +1,4 @@
 import {
-  Divider,
   Editable,
   EditableInput,
   EditablePreview,
@@ -22,18 +21,12 @@ export const TextListFieldItem: React.FC<Props> = ({ label, ...rest }) => {
     ...rest,
   });
   return (
-    <>
-      <HStack>
-        <Editable defaultValue={label}>
-          <EditablePreview />
-          <EditableInput pl="1" onChange={handlerOnChangeLabel} value={label} />
-        </Editable>
-        <IconButton
-          {...iconButtonProps}
-          icon={<Icon name="Delete" color="" />}
-        />
-      </HStack>
-      <Divider />
-    </>
+    <HStack>
+      <Editable defaultValue={label}>
+        <EditablePreview />
+        <EditableInput pl="1" onChange={handlerOnChangeLabel} value={label} />
+      </Editable>
+      <IconButton {...iconButtonProps} icon={<Icon name="Delete" color="" />} />
+    </HStack>
   );
 };

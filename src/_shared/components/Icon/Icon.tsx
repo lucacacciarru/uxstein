@@ -8,12 +8,12 @@ export const DEFAULT_SIZE = 'full';
 export const DEFAULT_COLOR = 'black.0';
 
 export type IconComponentModel = typeof iconLibrary;
-type Props = {
+export type CustomIconProps = {
   name: keyof IconComponentModel;
   size?: string;
 } & IconProps;
 
-export const Icon: FC<Props> = ({
+export const Icon: FC<CustomIconProps> = ({
   name,
   size = DEFAULT_SIZE,
   color = DEFAULT_COLOR,
