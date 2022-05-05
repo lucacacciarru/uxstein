@@ -36,10 +36,10 @@ export const useSortableItem = (id: string) => {
     size: '6',
     name: 'Drag',
     cursor: 'grab',
-    color: 'black.50',
-    _hover: { color: 'black.0' },
+    color: isDragging ? 'black.0' : 'black.50',
     transition: 'all .3s ease',
-
+    _focus: { border: 'none', outline: 'none', boxShadow: 'none' },
+    _active: { border: 'none', outline: 'none', boxShadow: 'none' },
     ...attributes,
     ...listeners,
   };
