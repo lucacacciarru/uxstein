@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { AttributeName } from '../../store/types';
-import { ProgressFieldAttribute } from './ProgressFieldAttribute/ProgressFieldAttribute';
+import { ProgressFieldAttribute } from '../ProgressFieldAttribute/ProgressFieldAttribute';
 import { TextAreaFieldAttribute } from '../TextAreaFieldAttribute/TextAreaFieldAttribute';
 import { TextFieldAttribute } from '../TextFieldAttribute/TextFieldAttribute';
 import { CheckboxFieldAttribute } from '../CheckboxFieldAttribute/CheckboxFieldAttribute';

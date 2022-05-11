@@ -1,10 +1,10 @@
-import { AttributeName } from '../../store/types';
-import { useMultipleAttributeField } from '../../hooks/useMultipleAttributeField';
 import { Box, FormLabel, Stack } from '@chakra-ui/react';
-import { LabelItemField } from '../LabelItemField';
-import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
 import { useMemo } from 'react';
-import { RateFieldItem } from './RateFieldItem';
+import { LabelItemField } from '../LabelItemField';
+import { useMultipleAttributeField } from '../../hooks/useMultipleAttributeField';
+import { AttributeName } from '../../store/types';
+import { ProgressFieldItem } from './ProgressFieldItem';
+import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
 import { SortableList } from '../SortableList';
 
 type Props = {
@@ -12,38 +12,46 @@ type Props = {
   name: AttributeName;
 };
 
-export const RateFieldAttribute: React.FC<Props> = ({ blockItemId, name }) => {
+export const ProgressFieldAttribute: React.FC<Props> = ({
+  blockItemId,
+  name,
+}) => {
   const {
-    addItem,
-    label,
-    placeholder,
     attributeItems,
+    placeholder,
+    addItem,
     attributeStyleFieldsProps,
-    setAttributeItems,
     updateValueItems,
+    setAttributeItems,
     ...rest
   } = useMultipleAttributeField(blockItemId, name);
 
-  const renderAttributeItems = useMemo(
+  const renderProgressField = useMemo(
     () =>
-      attributeItems.map(item => (
-        <RateFieldItem key={item.id} {...item} {...rest} />
+      attributeItems?.map(item => (
+        <ProgressFieldItem
+          {...rest}
+          key={item.id}
+          value={parseInt(item.value)}
+          id={item.id}
+          label={item.label}
+        />
       )),
     [attributeItems, rest],
   );
 
   return (
     <Box>
-      <FormLabel>{label}</FormLabel>
+      <FormLabel>{rest.label}</FormLabel>
       <LabelItemField
         addCallback={addItem}
         placeholder={placeholder}
-        initValue="3"
+        initValue="30"
       />
       <Stack gap="2" mt="2">
         <SortableList
           updateValue={updateValueItems}
-          elementList={renderAttributeItems}
+          elementList={renderProgressField}
           setItemsList={setAttributeItems}
         />
       </Stack>

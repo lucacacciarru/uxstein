@@ -1,5 +1,5 @@
-import { IconButtonProps } from '@chakra-ui/react';
 import React from 'react';
+import { useDeleteItemButton } from '../../hooks/useDeleteItemButton';
 
 type Params = {
   id: string;
@@ -12,16 +12,7 @@ export function useTextListItem({ id, onChangeLabel, deleteItem }: Params) {
     onChangeLabel(id, e.target.value);
   };
 
-  const iconButtonProps: IconButtonProps = {
-    'aria-label': 'Delete',
-    variant: 'ghost',
-    color: 'black.50',
-    _hover: { color: 'black.0' },
-    size: 'icon-xs',
-    pos: 'absolute',
-    right: '10',
-    onClick: () => deleteItem(id),
-  };
+  const { iconButtonProps } = useDeleteItemButton({ id, deleteItem });
 
   return {
     handlerOnChangeLabel,

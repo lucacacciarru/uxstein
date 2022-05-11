@@ -3,7 +3,8 @@ import { useMemo } from 'react';
 import { useMultipleAttributeField } from '../../hooks/useMultipleAttributeField';
 import { AttributeName } from '../../store/types';
 import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
-import { LabelItemField } from '../Attribute/LabelItemField';
+import { LabelItemField } from '../LabelItemField';
+import { SortableList } from '../SortableList';
 import { TextListFieldItem } from './TextListFieldItem';
 
 type Props = {
@@ -21,6 +22,8 @@ export const TextListFieldAttribute: React.FC<Props> = ({
     placeholder,
     attributeItems,
     attributeStyleFieldsProps,
+    updateValueItems,
+    setAttributeItems,
     ...rest
   } = useMultipleAttributeField(blockItemId, name);
 
@@ -41,7 +44,11 @@ export const TextListFieldAttribute: React.FC<Props> = ({
         initValue=""
       />
       <Stack gap="2" mt="8">
-        {renderAttributeItems}
+        <SortableList
+          updateValue={updateValueItems}
+          elementList={renderAttributeItems}
+          setItemsList={setAttributeItems}
+        />
       </Stack>
       <AttributeStyleFields {...attributeStyleFieldsProps} />
     </Box>

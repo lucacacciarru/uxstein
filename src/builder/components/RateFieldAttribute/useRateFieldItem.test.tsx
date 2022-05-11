@@ -7,7 +7,6 @@ import {
 import { useRateFieldItem } from './useRateFieldItem';
 
 const ITEM_ID = 'anyItemId';
-const ITEM_VALUE = 'anyItemValue';
 
 const onChangeLabel = jest.fn();
 const onChangeValue = jest.fn();
@@ -20,7 +19,6 @@ describe('RateFieldItem hook', () => {
         onChangeLabel,
         deleteItem,
         onChangeValue,
-        value: ITEM_VALUE,
         id: ITEM_ID,
       }),
     );
@@ -42,7 +40,6 @@ describe('RateFieldItem hook', () => {
         onChangeLabel,
         deleteItem,
         onChangeValue,
-        value: ITEM_VALUE,
         id: ITEM_ID,
       }),
     );
@@ -65,7 +62,6 @@ describe('RateFieldItem hook', () => {
         onChangeLabel,
         deleteItem,
         onChangeValue,
-        value: ITEM_VALUE,
         id: ITEM_ID,
       }),
     );

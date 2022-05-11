@@ -3,41 +3,41 @@ import {
   screen,
   fireEvent,
   waitFor,
-} from '../../../../_shared/testConfig/customRender';
-import { NumberInputSlider } from './NumberInputSlider';
+} from '../../../_shared/testConfig/customRender';
+import { ProgressFieldItem } from './ProgressFieldItem';
 
 const fn = jest.fn();
 
-const prop = {
+const props = {
   deleteItem: fn,
-  idItem: 'test',
+  id: 'test',
   label: 'test',
-  numberValue: 100,
+  value: 100,
   onChangeLabel: fn,
   onChangeValue: fn,
 };
 
 describe('NumberInputSlider component', () => {
   test('Should be rendered', () => {
-    render(<NumberInputSlider {...prop} />);
+    render(<ProgressFieldItem {...props} />);
   });
 
   test('deleteItem should be called on click deleteButton', () => {
-    render(<NumberInputSlider {...prop} />);
+    render(<ProgressFieldItem {...props} />);
     const deleteButton = screen.getByTestId('deleteButton');
     fireEvent.click(deleteButton);
     expect(fn).toBeCalled();
   });
 
   test('onChangeValue should be called on change value of NumberInput ', () => {
-    render(<NumberInputSlider {...prop} />);
+    render(<ProgressFieldItem {...props} />);
     const numberInput = screen.getByTestId('numberInput');
     fireEvent.change(numberInput, { target: { value: '30' } });
     expect(fn).toBeCalled();
   });
 
   test('onChangeLabel should be called on change value of labelInput ', async () => {
-    render(<NumberInputSlider {...prop} />);
+    render(<ProgressFieldItem {...props} />);
     const labelInput = screen.getByTestId('labelInput');
     fireEvent.change(labelInput, { target: { value: 'test' } });
     waitFor(() => {

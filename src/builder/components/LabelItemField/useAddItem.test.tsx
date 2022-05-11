@@ -3,7 +3,7 @@ import {
   renderHook,
   screen,
   fireEvent,
-} from '../../../../_shared/testConfig/customRenderHook';
+} from '../../../_shared/testConfig/customRenderHook';
 import { useAddItem } from './useAddItem';
 
 const fn = jest.fn();

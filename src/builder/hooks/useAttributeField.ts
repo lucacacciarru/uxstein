@@ -32,15 +32,19 @@ export const useAttributeField = (
     styleKeys: Object.keys(attribute?.style || {}),
   };
 
+  const updateValueItems = (items: UpdateAttributeValuePayload['items']) => {
+    dispatch(
+      updateAttributeValue({
+        attributeToUpdate: attributeName,
+        blockId,
+        items: items || [],
+      }),
+    );
+  };
+
   const debouncedUpdateValue = useDebouncedCallback(
     (items: UpdateAttributeValuePayload['items']) => {
-      dispatch(
-        updateAttributeValue({
-          attributeToUpdate: attributeName,
-          blockId,
-          items: items || [],
-        }),
-      );
+      updateValueItems(items);
     },
     500,
   );
@@ -51,5 +55,6 @@ export const useAttributeField = (
     attributeStyleFieldsProps,
     attribute,
     debouncedUpdateValue,
+    updateValueItems,
   };
 };

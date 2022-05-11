@@ -15,10 +15,11 @@ const iconButtonProps: IconButtonProps = {
 
 const containerProps: BoxProps = {
   h: '32',
-  mb: '4',
+  my: '4',
+  w: '90%',
   border: 'dark.s',
   _hover: { border: 'green.s', '>.deleteIcon': { opacity: '1' } },
-  transition: 'all 1s linear',
+  transition: 'all 0.3s ease',
   pos: 'relative',
 };
 

@@ -1,5 +1,5 @@
 import {
-  Divider,
+  Box,
   Editable,
   EditableInput,
   EditablePreview,
@@ -24,10 +24,11 @@ export const RateFieldItem: React.FC<Props> = ({
   label,
   value,
   id,
+  children,
   ...rest
 }) => {
   const { handlerOnChangeLabel, handlerOnClickValue, iconButtonProps } =
-    useRateFieldItem({ value, id, ...rest });
+    useRateFieldItem({ id, ...rest });
 
   const numberOfItems = Array.from(Array(5).keys());
   const renderSingleRate = useMemo(
@@ -46,7 +47,7 @@ export const RateFieldItem: React.FC<Props> = ({
     [handlerOnClickValue, numberOfItems, value],
   );
   return (
-    <>
+    <Box>
       <HStack>
         <Editable defaultValue={label}>
           <EditablePreview />
@@ -56,9 +57,9 @@ export const RateFieldItem: React.FC<Props> = ({
           {...iconButtonProps}
           icon={<Icon name="Delete" color="" />}
         />
+        {children}
       </HStack>
-      <HStack>{renderSingleRate}</HStack>
-      <Divider />
-    </>
+      <HStack mt="2">{renderSingleRate}</HStack>
+    </Box>
   );
 };
