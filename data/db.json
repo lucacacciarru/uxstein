@@ -1,12 +1,14 @@
 {
   "users": [
     {
+      "id": "a9609b8f-214d-4c02-bf57-61698383778d",
       "email": "test@test.com",
       "password": "Test1234",
       "token": "Bearer test-token",
       "username": "test"
     },
     {
+      "id": "daca015a-5a68-4c26-83a8-9068d18bc0c8",
       "email": "gennaro@test.com",
       "password": "test",
       "token": "Bearer gennaro-token",

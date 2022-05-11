@@ -1,11 +1,11 @@
 import { Box, FormLabel, Image, useDisclosure } from '@chakra-ui/react';
 import { FC } from 'react';
+import { UploadImageBox } from '../../../_shared/components/UploadImageBox';
+import { UploadImageModal } from '../../../_shared/components/UploadImageModal';
 import { useSingleAttributeField } from '../../hooks/useSingleAttributeField';
 import { AttributeName } from '../../store/types';
 import { AttributeStyleFields } from '../Attribute/AttributeStyleFields';
 import { ClickableBoxWithDelete } from '../ClickableBoxWithDelete/ClickableBoxWithDelete';
-import { ModalUploadImage } from '../ModalUploadImage/ModalUploadImage';
-import { UploadImageBox } from './UploadImageBox';
 
 type Props = {
   blockItemId: string;
@@ -30,7 +30,7 @@ export const ImageFieldAttribute: FC<Props> = ({ name, blockItemId }) => {
         />
       </ClickableBoxWithDelete>
       <AttributeStyleFields {...attributeStyleFieldsProps} />
-      <ModalUploadImage
+      <UploadImageModal
         inputValue={value}
         placeholder={placeholder}
         onChange={onChange}

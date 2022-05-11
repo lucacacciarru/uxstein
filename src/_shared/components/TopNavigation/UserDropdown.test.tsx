@@ -54,6 +54,7 @@ describe('UserDropdown', () => {
         auth: {
           status: 'logged',
           profile: {
+            id: 'anyId',
             email: 'anyEmail',
             password: 'anyPassword',
             username: 'anyUsername',

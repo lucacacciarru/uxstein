@@ -1,10 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useProfileInput } from '../../hooks';
+import { useAuth, useProfileInput } from '../../hooks';
 import { getUserProfile } from '../../store/selectors';
 
 export function useUsernameProfileInput() {
   const { t } = useTranslation();
+  const { updateProfile } = useAuth();
+
   const {
     errorMessage,
     inputError,
@@ -12,8 +14,9 @@ export function useUsernameProfileInput() {
     onChange,
     setErrorMessage,
     setInputError,
-    showToast,
-  } = useProfileInput({ toastText: 'auth.profile.toast.username' });
+    id,
+    resetSpecificValue,
+  } = useProfileInput();
 
   const username = useSelector(getUserProfile)?.username as string;
 
@@ -35,7 +38,8 @@ export function useUsernameProfileInput() {
       return;
     }
     setInputError(false);
-    showToast();
+    updateProfile(id, { username: inputValue.username });
+    resetSpecificValue('username');
   };
 
   return {

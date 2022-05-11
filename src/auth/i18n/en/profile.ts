@@ -18,6 +18,16 @@ export const profile = {
       isNotEmail: 'Enter a valid email',
       equalEmail: 'Enter a different email than the active one',
     },
+    password: {
+      equal:
+        'you cannot enter a password that is the same as the one you already have',
+      empty: 'Enter a valid password',
+    },
+  },
+  avatar: {
+    openModalButton: 'Change avatar',
+    placeholderAvatarInput: 'Type URL',
+    confirmButton: 'Update',
   },
   toast: {
     username: 'Username has been changed',

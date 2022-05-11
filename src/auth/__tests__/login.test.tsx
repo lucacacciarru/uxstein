@@ -6,7 +6,7 @@ import { User } from '../store';
 import { loginTrigger } from '../store/actions/login';
 
 const users: User[] = [
-  { email: 'test@test.com', password: 'test', username: 'test' },
+  { email: 'test@test.com', password: 'test', username: 'test', id: 'anyId' },
 ];
 
 describe('login', () => {

@@ -22,12 +22,8 @@ export const toolBar = {
     },
     image: {
       label: 'Image',
-      placeholder: 'Upload your image',
-      modalHeader: 'Upload image',
-      modalButton: 'Done !',
-      modalUploadTab: 'Upload',
-      modalUrlTab: 'Url',
       addOnePlaceholder: 'Add a new item',
+      placeholder: 'Upload your image',
     },
   },
   style: {

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useProfileInput } from '../../hooks';
+import { useAuth, useProfileInput } from '../../hooks';
 
 export function usePasswordProfileField() {
   const { t } = useTranslation();
@@ -10,12 +10,15 @@ export function usePasswordProfileField() {
     onChange,
     setErrorMessage,
     setInputError,
-    showToast,
-  } = useProfileInput({ toastText: 'auth.profile.toast.password' });
+    id,
+    resetSpecificValue,
+    setInputValue,
+  } = useProfileInput();
+  const { updateProfile } = useAuth();
 
   const mapErrorMessage: Record<string, string> = {
-    tooShort: t('auth.form.errors.email.invalid'),
-    empty: t('modal.textInputModal.errors.renameEmptyText'),
+    equal: t('auth.profile.errors.password.equal'),
+    empty: t('auth.profile.errors.password.empty'),
   };
 
   const labels = {
@@ -23,18 +26,20 @@ export function usePasswordProfileField() {
     newPassword: t('auth.profile.label.newPassword'),
   };
 
-  function onSubmit(e: React.FormEvent<HTMLDivElement>) {
+  function onSubmit(e: React.FormEvent<any>) {
     e.preventDefault();
-    const selectedNewPassword = inputValue.newPassword || '';
-    const selectedOldPassword = inputValue.oldPassword || '';
+    const selectedNewPassword = inputValue.newPassword;
+    const selectedOldPassword = inputValue.oldPassword;
 
-    if (selectedOldPassword.length < 4 || selectedNewPassword.length < 4) {
+    if (selectedOldPassword === selectedNewPassword) {
       setInputError(true);
       setErrorMessage(mapErrorMessage.tooShort);
       return;
     }
+    updateProfile(id, { password: inputValue.newPassword });
     setInputError(false);
-    showToast();
+    resetSpecificValue('newPassword');
+    resetSpecificValue('oldPassword');
   }
   return {
     inputValue,
@@ -43,5 +48,6 @@ export function usePasswordProfileField() {
     onChange,
     onSubmit,
     labels,
+    setInputValue,
   };
 }
