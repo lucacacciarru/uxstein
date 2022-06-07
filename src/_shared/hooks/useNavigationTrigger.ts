@@ -1,7 +1,11 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { NavigateOptions, useLocation, useNavigate } from 'react-router-dom';
 import { DependencyList, useEffect } from 'react';
 
-export function useNavigationTrigger(route: string | undefined, triggers: DependencyList) {
+export function useNavigationTrigger(
+  route: string | undefined,
+  triggers: DependencyList,
+  options?: NavigateOptions,
+) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
@@ -10,6 +14,6 @@ export function useNavigationTrigger(route: string | undefined, triggers: Depend
       return;
     }
 
-    navigate(route);
+    navigate(route, options);
   }, triggers);
 }

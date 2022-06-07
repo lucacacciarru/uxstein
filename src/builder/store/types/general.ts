@@ -27,6 +27,7 @@ export type BuilderState = {
   entityType: BuilderEntityType;
   title: string;
   globalStyle: GlobalStyle;
+  isDirty?: boolean;
 };
 
 export enum BUILDER_ACTION_TYPES {

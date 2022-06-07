@@ -16,7 +16,7 @@ export const Builder: React.FC = () => {
 
   const { entityId, entityType } = useSelector(baseSelector);
   const route = useBuilderEntityRouteResolver(entityType, entityId, ['edit']);
-  useNavigationTrigger(route, [entityType, entityId]);
+  useNavigationTrigger(route, [entityType, entityId], { replace: true });
 
   return (
     <BuilderProvider>
