@@ -12,6 +12,7 @@ import { BuilderContext } from '../BuilderContext';
 import { PlaceholderGrid } from '../PlaceholderGrid';
 import { gridSettings } from '../../config/styleSettings/globals';
 import { useSelectedBlock } from '../../hooks/useSelectedBlock';
+import { useNavigationBlocker } from '../../hooks/useNavigationBlocker';
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -20,6 +21,7 @@ type Props = {
 };
 
 export const DroppablePage: React.FC<Props> = ({ blockSetup }) => {
+  useNavigationBlocker();
   const { layout, gridLayoutProps, backgroundContainer, placeholderGridProps } =
     useDroppablePage(blockSetup);
   const { exportItemRef } = useContext(BuilderContext);

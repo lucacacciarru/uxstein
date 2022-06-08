@@ -54,7 +54,7 @@ export const SignupForm: React.FC = () => {
           <Text as="p">
             {t('auth.form.textForLogin')}{' '}
             <Text color="status.link" cursor="pointer" as="span">
-              <Link to={PATHS.LOGIN}>{t('auth.form.linkForLogin')}</Link>
+              <Link to={`/${PATHS.LOGIN}`}>{t('auth.form.linkForLogin')}</Link>
             </Text>
           </Text>
           <Button type="submit">{t('auth.form.buttonSignup')}</Button>

@@ -7,15 +7,18 @@ import { Provider } from 'react-redux';
 import { store } from './_shared/store/configureStore';
 import '@fontsource/nunito';
 import '@fontsource/lato';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { CustomRouter } from './_shared/components/CustomRouter/CustomRouter';
+import { getHistory } from './_shared/utils';
+
+const history = getHistory();
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ChakraProvider theme={customTheme}>
-        <Router>
+        <CustomRouter history={history}>
           <App />
-        </Router>
+        </CustomRouter>
       </ChakraProvider>
     </Provider>
   </React.StrictMode>,
