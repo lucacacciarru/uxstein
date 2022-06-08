@@ -33,7 +33,7 @@ export const useNavigationBlocker = () => {
     const isConfirm = window.confirm(
       `Stai cercando di tornare a ${location.pathname}. I dati non salvati verranno persi`,
     );
-    //TODO: Change it with a chakra modal
+    //TODO: Change it with a chakra modal, setup translation
 
     if (isConfirm) {
       retry();

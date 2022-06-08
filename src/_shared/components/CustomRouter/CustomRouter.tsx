@@ -12,10 +12,12 @@ export const CustomRouter: React.FC<HistoryRouterProps> = ({
   });
 
   React.useLayoutEffect(() => {
-      history.listen(() => setState({
+    history.listen(() =>
+      setState({
         action: history.action,
         location: history.location,
-      }))
+      }),
+    );
   }, [history.location, history.action]);
 
   return (
