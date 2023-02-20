@@ -1,581 +1,596 @@
 {
-  "users": [
-    {
-      "id": "a9609b8f-214d-4c02-bf57-61698383778d",
-      "email": "test@test.com",
-      "password": "Test1234",
-      "token": "Bearer test-token",
-      "username": "test"
-    },
-    {
-      "id": "daca015a-5a68-4c26-83a8-9068d18bc0c8",
-      "email": "gennaro@test.com",
-      "password": "test",
-      "token": "Bearer gennaro-token",
-      "username": "Gennaro"
-    }
-  ],
-  "personas": [
-    {
-      "username": "test",
+  "Users": {
+    "_": {
+      "items": 2,
       "data": [
         {
-          "id": "0144ab8e-9ae3-11ec-b909-0242ac120002",
-          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-11.png",
-          "title": "Popolato",
-          "createdAt": "0",
-          "updatedAt": "0",
-          "builderData": {
-            "gridItems": {
-              "a": {
-                "type": "text",
-                "attributes": {
-                  "title": {
-                    "label": "builder.toolBar.attributes.title.label",
-                    "placeholder": "builder.toolBar.attributes.title.placeholder",
-                    "items": [{ "id": "1", "value": "Prova" }],
-                    "initialValue": [],
-                    "style": {
-                      "fontSize": "40px",
-                      "color": "#ffffff"
-                    }
-                  },
-                  "subtitle": {
-                    "label": "builder.toolBar.attributes.subtitle.label",
-                    "placeholder": "builder.toolBar.attributes.subtitle.placeholder",
-                    "items": [{ "id": "1", "value": "Subtitle" }],
-                    "initialValue": [],
-                    "style": {
-                      "fontSize": "18px",
-                      "color": "#ffffff",
-                      "fontStyle": "italic"
-                    }
-                  },
-                  "body": {
-                    "label": "builder.toolBar.attributes.body.label",
-                    "placeholder": "builder.toolBar.attributes.body.placeholder",
-                    "items": [
-                      {
-                        "id": "1",
-                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et morbi adipiscing leo nibh porttitor diam in nibh malesuada. Sed velit lobortis volutpat, eget."
+          "id": "a9609b8f-214d-4c02-bf57-61698383778d",
+          "email": "test@test.com",
+          "password": "Test1234",
+          "token": "Bearer test-token",
+          "username": "test"
+        },
+        {
+          "id": "daca015a-5a68-4c26-83a8-9068d18bc0c8",
+          "email": "gennaro@test.com",
+          "password": "test",
+          "token": "Bearer gennaro-token",
+          "username": "Gennaro"
+        }
+      ]
+    }
+  },
+  "Personas": {
+    "_": {
+      "items": 10,
+      "data": [
+        {
+          "username": "test",
+          "data": [
+            {
+              "id": "0144ab8e-9ae3-11ec-b909-0242ac120002",
+              "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-11.png",
+              "title": "Popolato",
+              "createdAt": "0",
+              "updatedAt": "0",
+              "builderData": {
+                "gridItems": {
+                  "a": {
+                    "type": "text",
+                    "attributes": {
+                      "title": {
+                        "label": "builder.toolBar.attributes.title.label",
+                        "placeholder": "builder.toolBar.attributes.title.placeholder",
+                        "items": [{ "id": "1", "value": "Prova" }],
+                        "initialValue": [],
+                        "style": {
+                          "fontSize": "40px",
+                          "color": "#ffffff"
+                        }
+                      },
+                      "subtitle": {
+                        "label": "builder.toolBar.attributes.subtitle.label",
+                        "placeholder": "builder.toolBar.attributes.subtitle.placeholder",
+                        "items": [{ "id": "1", "value": "Subtitle" }],
+                        "initialValue": [],
+                        "style": {
+                          "fontSize": "18px",
+                          "color": "#ffffff",
+                          "fontStyle": "italic"
+                        }
+                      },
+                      "body": {
+                        "label": "builder.toolBar.attributes.body.label",
+                        "placeholder": "builder.toolBar.attributes.body.placeholder",
+                        "items": [
+                          {
+                            "id": "1",
+                            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et morbi adipiscing leo nibh porttitor diam in nibh malesuada. Sed velit lobortis volutpat, eget."
+                          }
+                        ],
+                        "initialValue": [],
+                        "style": {
+                          "fontSize": "13px",
+                          "color": "#44ca6c"
+                        }
                       }
-                    ],
-                    "initialValue": [],
+                    },
                     "style": {
-                      "fontSize": "13px",
-                      "color": "#44ca6c"
+                      "backgroundColor": "#000000",
+                      "borderColor": "",
+                      "borderWidth": "3px",
+                      "borderRadius": "10px"
                     }
                   }
                 },
-                "style": {
+                "pageSettings": [
+                  {
+                    "i": "a",
+                    "x": 0,
+                    "y": 0,
+                    "w": 2,
+                    "h": 2,
+                    "maxW": 3,
+                    "isDraggable": true
+                  }
+                ],
+                "globalStyle": {
                   "backgroundColor": "#000000",
-                  "borderColor": "",
-                  "borderWidth": "3px",
-                  "borderRadius": "10px"
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
                 }
               }
             },
-            "pageSettings": [
-              {
-                "i": "a",
-                "x": 0,
-                "y": 0,
-                "w": 2,
-                "h": 2,
-                "maxW": 3,
-                "isDraggable": true
+            {
+              "id": "0121ab8e-9ae3-11ec-b909-0242ac120002",
+              "src": "https://assets.justinmind.com/wp-content/uploads/2020/07/young-working-student-user-persona.png",
+              "title": "Test",
+              "createdAt": "0",
+              "updatedAt": "0",
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
               }
-            ],
-            "globalStyle": {
-              "backgroundColor": "#000000",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
+            },
+            {
+              "id": "0121ab8e-23ha-11ec-bab09-0242ac120002",
+              "src": "https://assets.justinmind.com/wp-content/uploads/2020/07/young-working-student-user-persona.png",
+              "title": "Test",
+              "createdAt": "0",
+              "updatedAt": "0",
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "0121ab8e-23ha-aaec-22909-0242ac120002",
+              "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
+              "title": "Test",
+              "createdAt": "0",
+              "updatedAt": "0",
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "0121ab8e-23ha-ryaec-b909-0242ac120042",
+              "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
+              "title": "Test",
+              "createdAt": "0",
+              "updatedAt": "0",
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "012112b8e-23ha-aaec-b909-0242ac120042",
+              "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
+              "title": "Test",
+              "createdAt": "0",
+              "updatedAt": "0",
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "0121sb8e-23ha-aaec-b909-03322ac120042",
+              "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
+              "title": "Test",
+              "createdAt": "0",
+              "updatedAt": "0",
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "0121sb8e-23ha-aaec-b909-02dfd2ac120042",
+              "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
+              "title": "Test",
+              "createdAt": "0",
+              "updatedAt": "0",
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "0121sb8e-23ha-aaec-b909-02kkac120042",
+              "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
+              "title": "Test",
+              "createdAt": "0",
+              "updatedAt": "0",
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "0121sb8e-23ha-aaec-b909-0242ac1dmnd042",
+              "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
+              "title": "Test",
+              "createdAt": "0",
+              "updatedAt": "0",
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
             }
-          }
-        },
-        {
-          "id": "0121ab8e-9ae3-11ec-b909-0242ac120002",
-          "src": "https://assets.justinmind.com/wp-content/uploads/2020/07/young-working-student-user-persona.png",
-          "title": "Test",
-          "createdAt": "0",
-          "updatedAt": "0",
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "0121ab8e-23ha-11ec-bab09-0242ac120002",
-          "src": "https://assets.justinmind.com/wp-content/uploads/2020/07/young-working-student-user-persona.png",
-          "title": "Test",
-          "createdAt": "0",
-          "updatedAt": "0",
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "0121ab8e-23ha-aaec-22909-0242ac120002",
-          "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
-          "title": "Test",
-          "createdAt": "0",
-          "updatedAt": "0",
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "0121ab8e-23ha-ryaec-b909-0242ac120042",
-          "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
-          "title": "Test",
-          "createdAt": "0",
-          "updatedAt": "0",
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "012112b8e-23ha-aaec-b909-0242ac120042",
-          "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
-          "title": "Test",
-          "createdAt": "0",
-          "updatedAt": "0",
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "0121sb8e-23ha-aaec-b909-03322ac120042",
-          "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
-          "title": "Test",
-          "createdAt": "0",
-          "updatedAt": "0",
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "0121sb8e-23ha-aaec-b909-02dfd2ac120042",
-          "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
-          "title": "Test",
-          "createdAt": "0",
-          "updatedAt": "0",
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "0121sb8e-23ha-aaec-b909-02kkac120042",
-          "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
-          "title": "Test",
-          "createdAt": "0",
-          "updatedAt": "0",
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "0121sb8e-23ha-aaec-b909-0242ac1dmnd042",
-          "src": "https://clearbridgemob-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/userpersonaapp.png",
-          "title": "Test",
-          "createdAt": "0",
-          "updatedAt": "0",
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
+          ]
         }
       ]
     }
-  ],
-  "templates": [
-    {
-      "username": "test",
-      "default": false,
+  },
+  "Templates": {
+    "_": {
+      "items": 15,
       "data": [
         {
-          "id": "AAA",
-          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-2.png",
-          "name": "Personal Template",
-          "isDefault": false,
-          "builderData": {
-            "gridItems": {
-              "a": {
-                "type": "text",
-                "attributes": {
-                  "title": {
-                    "label": "builder.toolBar.attributes.title.label",
-                    "placeholder": "builder.toolBar.attributes.title.placeholder",
-                    "items": [{ "id": "1", "value": "Prova" }],
-                    "initialValue": [],
-                    "style": {
-                      "fontSize": "40px",
-                      "color": "#ffffff"
-                    }
-                  },
-                  "subtitle": {
-                    "label": "builder.toolBar.attributes.subtitle.label",
-                    "placeholder": "builder.toolBar.attributes.subtitle.placeholder",
-                    "items": [{ "id": "1", "value": "Subtitle" }],
-                    "initialValue": [],
-                    "style": {
-                      "fontSize": "18px",
-                      "color": "#ffffff",
-                      "fontStyle": "italic"
-                    }
-                  },
-                  "body": {
-                    "label": "builder.toolBar.attributes.body.label",
-                    "placeholder": "builder.toolBar.attributes.body.placeholder",
-                    "items": [
-                      {
-                        "id": "1",
-                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et morbi adipiscing leo nibh porttitor diam in nibh malesuada. Sed velit lobortis volutpat, eget."
+          "username": "test",
+          "default": false,
+          "data": [
+            {
+              "id": "AAA",
+              "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-2.png",
+              "name": "Personal Template",
+              "isDefault": false,
+              "builderData": {
+                "gridItems": {
+                  "a": {
+                    "type": "text",
+                    "attributes": {
+                      "title": {
+                        "label": "builder.toolBar.attributes.title.label",
+                        "placeholder": "builder.toolBar.attributes.title.placeholder",
+                        "items": [{ "id": "1", "value": "Prova" }],
+                        "initialValue": [],
+                        "style": {
+                          "fontSize": "40px",
+                          "color": "#ffffff"
+                        }
+                      },
+                      "subtitle": {
+                        "label": "builder.toolBar.attributes.subtitle.label",
+                        "placeholder": "builder.toolBar.attributes.subtitle.placeholder",
+                        "items": [{ "id": "1", "value": "Subtitle" }],
+                        "initialValue": [],
+                        "style": {
+                          "fontSize": "18px",
+                          "color": "#ffffff",
+                          "fontStyle": "italic"
+                        }
+                      },
+                      "body": {
+                        "label": "builder.toolBar.attributes.body.label",
+                        "placeholder": "builder.toolBar.attributes.body.placeholder",
+                        "items": [
+                          {
+                            "id": "1",
+                            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et morbi adipiscing leo nibh porttitor diam in nibh malesuada. Sed velit lobortis volutpat, eget."
+                          }
+                        ],
+                        "initialValue": [],
+                        "style": {
+                          "fontSize": "13px",
+                          "color": "#44ca6c"
+                        }
                       }
-                    ],
-                    "initialValue": [],
+                    },
                     "style": {
-                      "fontSize": "13px",
-                      "color": "#44ca6c"
+                      "backgroundColor": "#000000",
+                      "borderColor": "",
+                      "borderWidth": "3px",
+                      "borderRadius": "10px"
                     }
                   }
                 },
-                "style": {
+                "pageSettings": [
+                  { "i": "a", "x": 0, "y": 0, "w": 2, "h": 2, "maxW": 3 }
+                ],
+                "globalStyle": {
                   "backgroundColor": "#000000",
-                  "borderColor": "",
-                  "borderWidth": "3px",
-                  "borderRadius": "10px"
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
                 }
               }
             },
-            "pageSettings": [
-              { "i": "a", "x": 0, "y": 0, "w": 2, "h": 2, "maxW": 3 }
-            ],
-            "globalStyle": {
-              "backgroundColor": "#000000",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
+            {
+              "id": "BBB",
+              "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-3.png",
+              "name": "Personal Template",
+              "isDefault": false,
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "CCC",
+              "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-1.png",
+              "name": "Personal Template",
+              "isDefault": false,
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "DDD",
+              "src": "https://i1.wp.com/assets.productschool.com/wp-content/uploads/2019/05/14083916/persona-24-24_2x.png",
+              "name": "Personal Template",
+              "isDefault": false,
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "EEE",
+              "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-7.png",
+              "name": "Personal Template",
+              "isDefault": false,
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "FFF",
+              "src": "https://i1.wp.com/assets.productschool.com/wp-content/uploads/2019/05/14083916/persona-24-24_2x.png",
+              "name": "Personal Template",
+              "isDefault": false,
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "GGG",
+              "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-8.png",
+              "name": "Personal Template",
+              "isDefault": false,
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "HHH",
+              "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-9.png",
+              "name": "Personal Template",
+              "isDefault": false,
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "III",
+              "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-11.png",
+              "name": "Personal Template",
+              "isDefault": false,
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
             }
-          }
+          ]
         },
         {
-          "id": "BBB",
-          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-3.png",
-          "name": "Personal Template",
-          "isDefault": false,
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
+          "default": true,
+          "data": [
+            {
+              "id": "123",
+              "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
+              "name": "Template Default 1",
+              "isDefault": true,
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "456",
+              "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-12.png",
+              "name": "Template Default 1",
+              "isDefault": true,
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "789",
+              "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
+              "name": "Template Default 1",
+              "isDefault": true,
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "XYZ",
+              "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
+              "name": "Template Default 1",
+              "isDefault": true,
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "UVW",
+              "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
+              "name": "Template Default 1",
+              "isDefault": true,
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
+            },
+            {
+              "id": "LLL",
+              "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
+              "name": "Template Default 1",
+              "isDefault": true,
+              "builderData": {
+                "gridItems": {},
+                "pageSettings": [],
+                "globalStyle": {
+                  "backgroundColor": "#FFFFFF",
+                  "rowGap": 0,
+                  "columnGap": 0,
+                  "containerPaddingX": 0,
+                  "containerPaddingY": 0
+                }
+              }
             }
-          }
-        },
-        {
-          "id": "CCC",
-          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-1.png",
-          "name": "Personal Template",
-          "isDefault": false,
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "DDD",
-          "src": "https://i1.wp.com/assets.productschool.com/wp-content/uploads/2019/05/14083916/persona-24-24_2x.png",
-          "name": "Personal Template",
-          "isDefault": false,
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "EEE",
-          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-7.png",
-          "name": "Personal Template",
-          "isDefault": false,
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "FFF",
-          "src": "https://i1.wp.com/assets.productschool.com/wp-content/uploads/2019/05/14083916/persona-24-24_2x.png",
-          "name": "Personal Template",
-          "isDefault": false,
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "GGG",
-          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-8.png",
-          "name": "Personal Template",
-          "isDefault": false,
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "HHH",
-          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-9.png",
-          "name": "Personal Template",
-          "isDefault": false,
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "III",
-          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-11.png",
-          "name": "Personal Template",
-          "isDefault": false,
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        }
-      ]
-    },
-    {
-      "default": true,
-      "data": [
-        {
-          "id": "123",
-          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
-          "name": "Template Default 1",
-          "isDefault": true,
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "456",
-          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-12.png",
-          "name": "Template Default 1",
-          "isDefault": true,
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "789",
-          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
-          "name": "Template Default 1",
-          "isDefault": true,
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "XYZ",
-          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
-          "name": "Template Default 1",
-          "isDefault": true,
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "UVW",
-          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
-          "name": "Template Default 1",
-          "isDefault": true,
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
-        },
-        {
-          "id": "LLL",
-          "src": "https://www.susannafer.com/wordpress/wp-content/uploads/2020/10/esempio-personas-template-6.png",
-          "name": "Template Default 1",
-          "isDefault": true,
-          "builderData": {
-            "gridItems": {},
-            "pageSettings": [],
-            "globalStyle": {
-              "backgroundColor": "#FFFFFF",
-              "rowGap": 0,
-              "columnGap": 0,
-              "containerPaddingX": 0,
-              "containerPaddingY": 0
-            }
-          }
+          ]
         }
       ]
     }
-  ]
+  }
 }
