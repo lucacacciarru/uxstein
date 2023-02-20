@@ -7,7 +7,11 @@ dotenv.config({
 });
 
 exec(
-  `npx json-server --watch --watch data/db.json --port ${process.env.JSON_SERVER_PORT}`,
+  `npx json-server ${
+    process.env.NODE_ENV === 'development' ? '--watch' : ''
+  } data/db.json --port ${process.env.JSON_SERVER_PORT} --host ${
+    process.env.JSON_SERVER_HOST
+  }`,
   {
     cwd: process.cwd(),
   },
