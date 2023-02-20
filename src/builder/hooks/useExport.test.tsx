@@ -6,11 +6,11 @@ import { useExport } from './useExport';
 
 const useMockExport = () => {
   const mockRef = useRef(null);
-  const { exportPersona, getPreviewImage } = useExport(mockRef);
+  const { exportPersona, getImagePreview } = useExport(mockRef);
   return {
     mockRef,
     exportPersona,
-    getPreviewImage,
+    getImagePreview,
   };
 };
 

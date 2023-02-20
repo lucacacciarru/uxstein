@@ -51,7 +51,4 @@ export const textList: BlockSetup = {
     w: 2,
     i: '',
   },
-  optionalSettings: {
-    maxW: 3,
-  },
 };

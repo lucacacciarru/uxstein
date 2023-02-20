@@ -7,6 +7,7 @@ import {
   typography,
   fonts,
   textStyles,
+  outline,
 } from './style';
 import { Heading } from './components';
 import {
@@ -40,6 +41,7 @@ const config = {
   borders,
   fonts,
   textStyles,
+  outline,
   styles: {
     global: {
       ...typography,

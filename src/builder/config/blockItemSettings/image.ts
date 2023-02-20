@@ -32,7 +32,4 @@ export const image: BlockSetup = {
     w: 2,
     i: '',
   },
-  optionalSettings: {
-    maxW: 3,
-  },
 };

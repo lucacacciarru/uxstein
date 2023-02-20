@@ -13,7 +13,7 @@ export const ExportButton: React.FC = () => {
   return (
     <>
       <IconButton
-        aria-label="save-template"
+        aria-label="export-persona"
         h="10"
         minW="20"
         variant="outlineBlack"

@@ -45,7 +45,4 @@ export const imageList: BlockSetup = {
     w: 2,
     i: '',
   },
-  optionalSettings: {
-    minH: 2,
-  },
 };

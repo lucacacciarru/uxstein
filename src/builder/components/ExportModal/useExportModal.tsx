@@ -12,7 +12,7 @@ export function useExportModal(
   const { clearSelection } = useSelectedBlock();
   const toast = useToast();
   const { isOpen, onClose, onOpen } = useDisclosure();
-  const { exportPersona, getPreviewImage, exportPdf } =
+  const { exportPersona, getImagePreview, exportPdf } =
     useExport(exportItemRef);
   const title = useSelector(baseSelector).title;
 
@@ -21,8 +21,8 @@ export function useExportModal(
   const [imagePreview, setImagePreview] = useState<string | null>(null);
 
   const getImageSrc = async () => {
-    const image = await getPreviewImage();
-    setImagePreview(image);
+    const image = await getImagePreview();
+    setImagePreview(image as string);
   };
 
   const onOpenModal = async () => {

@@ -1,5 +1,5 @@
-import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import * as htmlToImage from 'html-to-image';
 
 type Params = {
   fileType: string;
@@ -7,41 +7,34 @@ type Params = {
 };
 
 export function useExport(exportItemRef: React.RefObject<HTMLElement> | null) {
-  const getInitialCanvas = async ({ fileType }: Params) => {
-    const result = await html2canvas(exportItemRef?.current as HTMLElement);
-    const image = result.toDataURL(`image/${fileType}`, 1.0);
-    return image;
-  };
-
-  const getPreviewImage = async () => {
-    const image = await getInitialCanvas({
-      fileType: 'png',
-      nameFile: 'Preview',
-    });
-    return image;
+  const getImagePreview = async () => {
+    if (exportItemRef?.current) {
+      const image = await htmlToImage.toPng(exportItemRef?.current);
+      return image;
+    }
   };
 
   const exportPersona = async ({ fileType, nameFile }: Params) => {
-    const image = await getInitialCanvas({ fileType, nameFile });
-    const temporallyDownload = document.createElement('a');
-    temporallyDownload.href = image;
-    temporallyDownload.download = nameFile;
-    document.body.appendChild(temporallyDownload);
-    temporallyDownload.click();
-    document.body.removeChild(temporallyDownload);
+    const imageUrl = await getImagePreview();
+    if (imageUrl) {
+      const link = document.createElement('a');
+      link.download = nameFile;
+      link.href = imageUrl;
+      link.click();
+    }
   };
 
   const exportPdf = async (nameFile: string) => {
     const itemRefWidth = exportItemRef?.current?.offsetWidth as number;
     const itemRefHeight = exportItemRef?.current?.offsetHeight as number;
-    const image = await getPreviewImage();
+    const image = await getImagePreview();
     const doc = new jsPDF({
       orientation: 'landscape',
       unit: 'px',
       format: [itemRefHeight, itemRefWidth],
     });
     doc.addImage(
-      image,
+      image || '',
       'PNG',
       0,
       0,
@@ -53,7 +46,7 @@ export function useExport(exportItemRef: React.RefObject<HTMLElement> | null) {
 
   return {
     exportPersona,
-    getPreviewImage,
+    getImagePreview,
     exportPdf,
   };
 }

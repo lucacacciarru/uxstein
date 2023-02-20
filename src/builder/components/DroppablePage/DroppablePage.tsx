@@ -42,8 +42,8 @@ export const DroppablePage: React.FC<Props> = ({ blockSetup }) => {
       <Box
         id="test"
         ref={exportItemRef as React.LegacyRef<HTMLDivElement>}
-        w="70vw"
-        border="dark.s"
+        w="1000px"
+        outline="2px solid #1b1b1b"
         position="relative"
         h={`${gridSettings.pageHeight}px`}
         background={backgroundContainer}

@@ -6,9 +6,9 @@ export const useValidationTextField = (attributeName: AttributeName) => {
   const { t } = useTranslation();
 
   const maxLengthTextMap: Partial<Record<AttributeName, number>> = {
-    title: 20,
-    subtitle: 25,
-    body: 200,
+    title: 40,
+    subtitle: 55,
+    body: 500,
   };
 
   const [errorInput, setErrorInput] = useState<boolean>(false);
